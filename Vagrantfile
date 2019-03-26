@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
   # config.vm.network :forwarded_port, guest: 8081, host: 8081
 
   # Webpack Dev Server
-  config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.vm.network :forwarded_port, guest: 3474, host: 3474
 
   # Geoprocessing
   # config.vm.network :forwarded_port, guest: 8090, host: 8090

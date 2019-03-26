@@ -30,7 +30,7 @@ vagrant ssh
 
 | Service            | Port                            |
 | ------------------ | ------------------------------- |
-| Webpack Dev Server | [`3000`](http://localhost:3000) |
+| Webpack Dev Server | [`3474`](http://localhost:3474) |
 
 ### Testing
 

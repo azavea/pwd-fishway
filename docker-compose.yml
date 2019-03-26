@@ -4,7 +4,7 @@ services:
     image: node:10-slim
     working_dir: /usr/src
     ports:
-      - "3000:3000"
+      - "3474:3474"
     environment:
       - CHOKIDAR_USEPOLLING=true
       - CHOKIDAR_INTERVAL=100
