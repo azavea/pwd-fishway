@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
 SCRIPT
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "deployment/ansible/project-name.yml"
+    ansible.playbook = "deployment/ansible/pwd-fishway.yml"
     ansible.galaxy_role_file = "deployment/ansible/roles.yml"
   end
 end

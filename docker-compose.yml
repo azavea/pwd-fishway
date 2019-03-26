@@ -13,5 +13,5 @@ services:
         - ./src/nginx/srv/dist:/usr/src/static
         - ./dist:/usr/dist
         # Ensure node_modules cache doesn't clash with other jobs on CI.
-        - /var/cache/project-name-node-modules:/usr/src/node_modules
+        - /var/cache/pwd-fishway-node-modules:/usr/src/node_modules
     command: yarn start

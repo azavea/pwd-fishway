@@ -65,5 +65,3 @@ pin it to a specific version.
 #### Notes
 
 * We usually pin packages to a specific version to minimize build errors.
-* For packages in the regular/non-dev dependencies section of `package.json`,
-  manually add the package name to the `vendor` array in `webpack.config.json`

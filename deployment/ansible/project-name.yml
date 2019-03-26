@@ -9,5 +9,5 @@
   roles:
     - { role: "azavea.ntp" }
     - { role: "azavea.python-security" }
-    - { role: "project-name.docker" }
-    - { role: "project-name.shellcheck" }
+    - { role: "pwd-fishway.docker" }
+    - { role: "pwd-fishway.shellcheck" }

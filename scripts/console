@@ -31,5 +31,5 @@ if [ -n "$NORMAL_CONTAINER" ]; then
 fi
 
 if [ -n "$DATABASE_CONTAINER" ]; then
-    docker-compose exec database gosu postgres psql -d project-name
+    docker-compose exec database gosu postgres psql -d pwd-fishway
 fi
