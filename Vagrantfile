@@ -14,23 +14,8 @@ Vagrant.configure(2) do |config|
   end
 
   # Civic Apps Port Mappings
-  # Uncomment those you need, delete those you don't
-  # Remove this comment when done
-
-  # Nginx
-  # config.vm.network :forwarded_port, guest: 9100, host: 9100
-
-  # Gunicorn
-  # config.vm.network :forwarded_port, guest: 8080, host: 8080
-
-  # Django debug server
-  # config.vm.network :forwarded_port, guest: 8081, host: 8081
-
   # Webpack Dev Server
   config.vm.network :forwarded_port, guest: 3474, host: 3474
-
-  # Geoprocessing
-  # config.vm.network :forwarded_port, guest: 8090, host: 8090
 
   # Change working directory to /vagrant upon session start.
   config.vm.provision "shell", inline: <<SCRIPT
