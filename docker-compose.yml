@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    image: node:10-slim
+    working_dir: /usr/src
+    ports:
+      - "3474:3474"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=100
+    volumes:
+        - ./src/app:/usr/src
+        - ./src/nginx/srv/dist:/usr/src/static
+        - ./dist:/usr/dist
+        # Ensure node_modules cache doesn't clash with other jobs on CI.
+        - /var/cache/pwd-fishway-node-modules:/usr/src/node_modules
+    command: yarn start
