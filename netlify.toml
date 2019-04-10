@@ -4,7 +4,7 @@
 [build]
   base    = "src/app/"
   publish = "src/app/build/"
-  command = "pushd ../.. && ./scripts/cibuild && popd"
+  command = "yarn build"
 
 [[redirects]]
   from = "/*"
