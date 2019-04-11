@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/azavea/pwd-fishway/issues"
   },
-  "homepage": "https://github.com/azavea/pwd-fishway",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
