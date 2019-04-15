@@ -2,9 +2,9 @@
   ID = "pwd-fishway"
 
 [build]
-  base    = "src/app/"
-  publish = "src/app/build/"
-  command = "yarn build"
+  base    = "./src/app/"
+  publish = "./src/app/build/"
+  command = "pushd ../.. && ./scripts/cibuild && popd"
 
 [[redirects]]
   from = "/*"
