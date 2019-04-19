@@ -3,8 +3,24 @@
 
 Vagrant.require_version ">= 1.8"
 
+FISHWAY_SHARED_FOLDER_TYPE = ENV.fetch("FISHWAY_SHARED_FOLDER_TYPE", "nfs")
+if FISHWAY_SHARED_FOLDER_TYPE == "nfs"
+  if not Vagrant::Util::Platform.linux? then
+    FISHWAY_MOUNT_OPTIONS = ['vers=3', 'udp', 'actimeo=1']
+  end
+else
+  if ENV.has_key?("FISHWAY_MOUNT_OPTIONS")
+    FISHWAY_MOUNT_OPTIONS = ENV.fetch("FISHWAY_MOUNT_OPTIONS").split
+  else
+    FISHWAY_MOUNT_OPTIONS = ["rw"]
+  end
+end
+
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
+
+  config.vm.synced_folder ".", "/vagrant", type: FISHWAY_SHARED_FOLDER_TYPE, mount_options: FISHWAY_MOUNT_OPTIONS
+  config.vm.synced_folder "~/.aws", "/home/vagrant/.aws", type: FISHWAY_SHARED_FOLDER_TYPE, mount_options: FISHWAY_MOUNT_OPTIONS
 
   config.vm.synced_folder "~/.aws", "/home/vagrant/.aws"
 
@@ -16,6 +32,9 @@ Vagrant.configure(2) do |config|
   # Civic Apps Port Mappings
   # Webpack Dev Server
   config.vm.network :forwarded_port, guest: 3474, host: 3474
+
+  # NFS
+  config.vm.network "private_network", ip: "192.168.110.221"
 
   # Change working directory to /vagrant upon session start.
   config.vm.provision "shell", inline: <<SCRIPT
