@@ -1,0 +1,12 @@
+.screensaver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__message {
+        @include heading(600);
+
+        margin-top: 40vh;
+        text-align: center;
+    }
+}
