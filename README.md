@@ -12,7 +12,7 @@ Interactive fishway exhibit for the Fairmount Water Works Museum
 Install the application and all required dependencies.
 
 ```sh
-./scripts/setup.sh
+./scripts/setup
 ```
 
 #### Development
@@ -22,8 +22,8 @@ Rebuild Docker images and run application.
 ```sh
 vagrant up
 vagrant ssh
-./scripts/update.sh
-./scripts/server.sh
+./scripts/update
+./scripts/server
 ```
 
 ### Ports
@@ -35,7 +35,7 @@ vagrant ssh
 ### Testing
 
 ```
-./scripts/test.sh
+./scripts/test
 ```
 
 ### Scripts
@@ -47,7 +47,7 @@ vagrant ssh
 | `console`      | Run interactive shell inside application container            |
 | `lint`         | Lint source code                                              |
 | `server`       | Run Docker Compose services                                   |
-| `setup`        | Provision Vagrant VM and run `update.sh`                      |
+| `setup`        | Provision Vagrant VM and run `update`                         |
 | `test`         | Run unit tests                                                |
 | `update`       | Build Docker images                                           |
 
