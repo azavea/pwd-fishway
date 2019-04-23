@@ -54,6 +54,7 @@
     "prop-types": "~15.6.1",
     "react": "^16.8.5",
     "react-app-polyfill": "^0.2.2",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.5",
     "react-hot-loader": "~4.0.1",
