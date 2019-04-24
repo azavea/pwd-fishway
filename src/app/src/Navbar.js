@@ -4,7 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 
 export default function Navbar() {
     return (
-        <Tabs defaultActiveKey='View from the Fishway' className='navbar'>
+        <Tabs defaultActiveKey='about' className='navbar'>
             <Tab eventKey='about' title='About'>
                 <div>About</div>
             </Tab>

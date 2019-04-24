@@ -3,3 +3,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+[aria-hidden="true"] {
+    display: none;
+}
