@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bool } from 'prop-types';
 import Screensaver from './Screensaver';
 import Navbar from './Navbar';
 
 class App extends Component {
     render() {
-        return (
-            <div className='App'>
+        const { isScreensaverVisible } = this.props;
+        const app = isScreensaverVisible ? (
+            <Screensaver />
+        ) : (
+            <div>
                 <Navbar />
-                <Screensaver />
             </div>
         );
+        return <div className='App'>{app}</div>;
     }
 }
 
-export default App;
+App.propTypes = {
+    isScreensaverVisible: bool.isRequired,
+};
+
+function mapStateToProps(state) {
+    return {
+        isScreensaverVisible: state.isScreensaverVisible,
+    };
+}
+export default connect(mapStateToProps)(App);
