@@ -19,6 +19,10 @@ then
     then
         usage
     else
+        # Create dirs expected by docker, if they don't exist
+        mkdir -p /vagrant/dist
+        mkdir -p /vagrant/src/nginx/srv/dist
+
         # Install NPM modules
         docker-compose \
             -f docker-compose.yml \

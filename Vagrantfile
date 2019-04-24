@@ -7,6 +7,8 @@ FISHWAY_SHARED_FOLDER_TYPE = ENV.fetch("FISHWAY_SHARED_FOLDER_TYPE", "nfs")
 if FISHWAY_SHARED_FOLDER_TYPE == "nfs"
   if not Vagrant::Util::Platform.linux? then
     FISHWAY_MOUNT_OPTIONS = ['vers=3', 'udp', 'actimeo=1']
+  else
+    FISHWAY_MOUNT_OPTIONS = ['rw', 'vers=3', 'tcp', 'nolock', 'actimeo=1']
   end
 else
   if ENV.has_key?("FISHWAY_MOUNT_OPTIONS")
