@@ -1,0 +1,11 @@
+.screensaver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screensaver__message {
+    font-size: 2rem;
+    margin-top: 40vh;
+    text-align: center;
+}
