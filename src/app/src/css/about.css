@@ -1,0 +1,12 @@
+.about {
+    padding-top: 1rem;
+}
+
+.about > h2 {
+    text-align: center;
+}
+
+.about__slide {
+    height: 80vh;
+    padding: 1rem;
+}
