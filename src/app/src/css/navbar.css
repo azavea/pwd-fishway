@@ -4,6 +4,6 @@
     justify-content: space-evenly;
 }
 
-[aria-hidden="true"] {
+.tab-pane[aria-hidden="true"] {
     display: none;
 }

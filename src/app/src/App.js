@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bool } from 'prop-types';
-import Screensaver from './Screensaver';
+
 import Navbar from './Navbar';
+import Screensaver from './Screensaver';
 
 class App extends Component {
     render() {
