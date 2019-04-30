@@ -1,16 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export default function MeetTheFish() {
+const Header = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Text = styled.p`
+    text-align: center;
+    width: 400px;
+`;
+
+const MeetTheFish = () => {
     return (
-        <div className='meet-the-fish'>
-            <div className='header'>
-                <h3>Meet the Fish</h3>
-                <div className='header__description'>
-                    Over 48 different species of fish live in the waterways of
-                    Philadelphia. Here are 24 of the most popular species.
-                    <h4>Be an aquatic biologist and know your fish!</h4>
-                </div>
-            </div>
+        <div>
+            <Header>
+                <Text as='h3'>Meet the Fish</Text>
+                <Text>
+                    Did you know over 48 species of fish live in the waterways
+                    of Philadelphia? Here are 24 of the most common species.
+                </Text>
+            </Header>
         </div>
     );
-}
+};
+
+export default MeetTheFish;
