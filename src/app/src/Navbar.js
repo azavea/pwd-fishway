@@ -1,9 +1,10 @@
 import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import SeeTheFishway from './SeeTheFishway';
 
+import SeeTheFishway from './SeeTheFishway';
 import About from './About';
+import MeetTheFish from './MeetTheFish';
 
 export default function Navbar() {
     return (
@@ -15,7 +16,7 @@ export default function Navbar() {
                 <SeeTheFishway />
             </Tab>
             <Tab eventKey='meet' title='Meet the Fish'>
-                <div>Meet the Fish</div>
+                <MeetTheFish />
             </Tab>
             <Tab eventKey='test' title='Test your Skills'>
                 <div>Test your Skills</div>
