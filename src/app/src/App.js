@@ -4,18 +4,18 @@ import { bool } from 'prop-types';
 
 import Navbar from './Navbar';
 import Screensaver from './Screensaver';
+import GlobalStyle from './globalStyle';
 
 class App extends Component {
     render() {
         const { isScreensaverVisible } = this.props;
-        const app = isScreensaverVisible ? (
-            <Screensaver />
-        ) : (
-            <div>
-                <Navbar />
+        const app = isScreensaverVisible ? <Screensaver /> : <Navbar />;
+        return (
+            <div className='App'>
+                <GlobalStyle />
+                {app}
             </div>
         );
-        return <div className='App'>{app}</div>;
     }
 }
 
