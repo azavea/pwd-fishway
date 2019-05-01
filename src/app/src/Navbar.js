@@ -1,15 +1,22 @@
 import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+import styled from 'styled-components';
 
 import About from './About';
-import MeetTheFish from './MeetTheFish';
 import SeeTheFishway from './SeeTheFishway';
+import MeetTheFish from './MeetTheFish';
 import Quiz from './Quiz';
 
-export default function Navbar() {
+const StyledTabs = styled(Tabs)`
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+`;
+
+const Navbar = () => {
     return (
-        <Tabs defaultActiveKey='about' className='navbar'>
+        <StyledTabs defaultActiveKey='about'>
             <Tab eventKey='about' title='About'>
                 <About />
             </Tab>
@@ -22,6 +29,8 @@ export default function Navbar() {
             <Tab eventKey='test' title='Test your Skills'>
                 <Quiz />
             </Tab>
-        </Tabs>
+        </StyledTabs>
     );
-}
+};
+
+export default Navbar;
