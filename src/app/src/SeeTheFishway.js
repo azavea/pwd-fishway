@@ -1,8 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export default function SeeTheFishway() {
+const StyledSeeTheFishway = styled.div`
+    display: flex;
+
+    .video-panel {
+        min-width: 300px;
+    }
+`;
+
+const SeeTheFishway = () => {
     return (
-        <div className='see-the-fishway'>
+        <StyledSeeTheFishway>
             <div className='library'>
                 <div className='library__description'>
                     <h1>See the Fishway</h1>
@@ -16,6 +25,8 @@ export default function SeeTheFishway() {
                 <div className='videos' />
             </div>
             <div className='video-panel' />
-        </div>
+        </StyledSeeTheFishway>
     );
-}
+};
+
+export default SeeTheFishway;

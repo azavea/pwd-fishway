@@ -1,9 +1,0 @@
-.navbar {
-    width: 100;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.tab-pane[aria-hidden="true"] {
-    display: none;
-}
