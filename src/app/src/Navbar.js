@@ -2,9 +2,10 @@ import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
-import SeeTheFishway from './SeeTheFishway';
 import About from './About';
 import MeetTheFish from './MeetTheFish';
+import SeeTheFishway from './SeeTheFishway';
+import Quiz from './Quiz';
 
 export default function Navbar() {
     return (
@@ -19,7 +20,7 @@ export default function Navbar() {
                 <MeetTheFish />
             </Tab>
             <Tab eventKey='test' title='Test your Skills'>
-                <div>Test your Skills</div>
+                <Quiz />
             </Tab>
         </Tabs>
     );
