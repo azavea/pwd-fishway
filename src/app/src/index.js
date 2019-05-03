@@ -1,22 +1,22 @@
-import React from "react";
-import { render } from "react-dom";
-import { Provider } from "react-redux";
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-import * as serviceWorker from "./serviceWorker";
-import { store } from "./store";
+import * as serviceWorker from './serviceWorker';
+import { store } from './store';
 
-import { ThemeProvider } from "styled-components";
-import theme from "./theme";
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
-import App from "./App";
+import App from './App';
 
 render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </Provider>,
-  document.getElementById("root")
+    <Provider store={store}>
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
+    </Provider>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
