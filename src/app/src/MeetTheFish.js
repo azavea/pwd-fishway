@@ -1,28 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Flex, Box, Heading, Text } from 'rebass';
 
-const Header = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const Text = styled.p`
+const StyledMeetTheFish = styled(Flex)`
+    justify-content: center;
     text-align: center;
-    width: 400px;
 `;
 
 const MeetTheFish = () => {
     return (
-        <div>
-            <Header>
-                <Text as='h3'>Meet the Fish</Text>
-                <Text>
+        <StyledMeetTheFish>
+            <Box width={1 / 2}>
+                <Heading as='h1' fontSize='2' mb='3'>
+                    Meet the Fish
+                </Heading>
+                <Text as='p' fontSize='1'>
                     Did you know over 48 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
                 </Text>
-            </Header>
-        </div>
+            </Box>
+        </StyledMeetTheFish>
     );
 };
 
