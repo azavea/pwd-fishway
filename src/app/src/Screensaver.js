@@ -16,16 +16,13 @@ const Screensaver = props => {
     const { dispatch } = props;
 
     return (
-        <StyledScreensaver
-            className='screensaver'
-            onClick={() => dispatch(hideScreensaver())}
-        >
+        <StyledScreensaver onClick={() => dispatch(hideScreensaver())}>
             <Box width={1 / 2}>
                 <Heading as='h1' fontSize='3' mb='4'>
                     Learn how the fish ladder helps fish populations and whether
                     you have what it takes to be an aquatic biologist.
                 </Heading>
-                <Button className='screensaver__button'>Let's go!</Button>
+                <Button>Let's go!</Button>
             </Box>
         </StyledScreensaver>
     );
