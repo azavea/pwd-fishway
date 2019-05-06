@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
 import IdleTimer from 'react-idle-timer';
 
-import Navbar from './Navbar';
-import Screensaver from './Screensaver';
-import GlobalStyle from './globalStyle';
 import { resetAppState } from './actions';
 import { RESET, PAUSE, MAX_IDLE_TIME } from './constants';
+
+import Navbar from './components/Navbar';
+import Screensaver from './components/Screensaver';
+import GlobalStyle from './util/globalStyle';
 
 class App extends Component {
     constructor() {
