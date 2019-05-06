@@ -33,133 +33,201 @@ export const aboutProfiles = [
     },
 ];
 
+const AMERICAN_SHAD_COMMON_NAME = 'American Shad';
+const AMERICAN_SHAD_SCIENTIFIC_NAME = 'Alosa sapidissima';
+const AMERICAN_SHAD = {
+    commonName: AMERICAN_SHAD_COMMON_NAME,
+    scientificName: AMERICAN_SHAD_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/american_shad_large.png',
+};
+
+const QUILLBACK_COMMON_NAME = 'Quillback';
+const QUILLBACK_SCIENTIFIC_NAME = 'Carpiodes cyprinus';
+const QUILLBACK = {
+    commonName: QUILLBACK_COMMON_NAME,
+    scientificName: QUILLBACK_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/quillback_large.png',
+};
+
+const STRIPED_BASS_COMMON_NAME = 'Striped Bass';
+const STRIPED_BASS_SCIENTIFIC_NAME = 'Striped Bass';
+const STRIPED_BASS = {
+    commonName: STRIPED_BASS_COMMON_NAME,
+    scientificName: STRIPED_BASS_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/striped_bass_large.png',
+};
+
+const HYBRID_STRIPED_BASS_COMMON_NAME = `Hybrid ${STRIPED_BASS_COMMON_NAME}`;
+const HYBRID_STRIPED_BASS_SCIENTIFIC_NAME = `${STRIPED_BASS_SCIENTIFIC_NAME} x Morone chrysops`;
+const HYBRID_STRIPED_BASS = {
+    commonName: HYBRID_STRIPED_BASS_COMMON_NAME,
+    scientificName: HYBRID_STRIPED_BASS_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/striped_bass_hybrid_large.png',
+};
+
+const COMMON_CARP_COMMON_NAME = 'Common Carp';
+const COMMON_CARP_SCIENTIFIC_NAME = 'Cyprinus carpio';
+const COMMON_CARP = {
+    commonName: COMMON_CARP_COMMON_NAME,
+    scientificName: COMMON_CARP_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/common_carp_large.png',
+};
+const CHANNEL_CATFISH_COMMON_NAME = 'Channel Catfish';
+const CHANNEL_CATFISH_SCIENTIFIC_NAME = 'Ictalurus punctatus';
+const CHANNEL_CATFISH = {
+    commonName: CHANNEL_CATFISH_COMMON_NAME,
+    scientificName: CHANNEL_CATFISH_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/channel_catfish_large.png',
+};
+
+const PUMPKINSEED_COMMON_NAME = 'Pumpkinseed';
+const PUMPKINSEED_SCIENTIFIC_NAME = 'Lepomis gibbosus';
+const PUMPKINSEED = {
+    commonName: PUMPKINSEED_COMMON_NAME,
+    scientificName: PUMPKINSEED_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/pumpkinseed_large.png',
+};
+
+const WHITE_PERCH_COMMON_NAME = 'White Perch';
+const WHITE_PERCH_SCIENTIFIC_NAME = 'Morone americana';
+const WHITE_PERCH = {
+    commonName: WHITE_PERCH_COMMON_NAME,
+    scientificName: WHITE_PERCH_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/white_perch_large.png',
+};
+
+const WHITE_SUCKER_COMMON_NAME = 'White Sucker';
+const WHITE_SUCKER_SCIENTIFIC_NAME = 'Catostomus commersoni';
+const WHITE_SUCKER = {
+    commonName: WHITE_SUCKER_COMMON_NAME,
+    scientificName: WHITE_SUCKER_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/white_sucker_large.png',
+};
+
+const BLUEGILL_COMMON_NAME = 'Bluegill';
+const BLUEGILL_SCIENTIFIC_NAME = 'Lepomis macrochirus';
+const BLUEGILL = {
+    commonName: BLUEGILL_COMMON_NAME,
+    scientificName: BLUEGILL_SCIENTIFIC_NAME,
+    picturePath: './media/meetthefish/bluegill_large.png',
+};
+
 export const fishHighlights = [
     {
-        commonName: 'American Shad',
-        scientificName: 'Alosa sapidissima',
+        ...AMERICAN_SHAD,
+        videoPath: './media/seethefishway/shad.mp4',
         timestamp: 1118762520000,
         notes:
             'Three American shad dart through the ladder during their annual spawning migration',
-        filename: 'shad',
     },
     {
-        filename: 'quillback',
-        commonName: 'Quillback',
-        scientificName: 'Carpiodes cyprinus',
-        timestamp: 1115046300000,
-        notes:
-            "This fish is named for its pointed dorsal fin — thought to be in the shape of a 'quill.'",
-    },
-    {
-        filename: 'pumpkinseed',
-        commonName: 'Pumpkinseed',
-        scientificName: 'Lepomis gibbosus',
-        timestamp: 1116184920000,
-        notes:
-            'This fish is a type of sunfish common to PA waters. Can you guess where its name comes from?',
-    },
-    {
-        filename: 'hybrid_striped_bass',
-        commonName: 'Hybrid Striped Bass',
-        scientificName: 'Morone saxatilis x Morone chrysops',
-        timestamp: 1114074720000,
-        notes:
-            'Striped bass migrate upriver each year to spawn, much like the American shad.',
-    },
-    {
-        filename: 'turtle',
-        commonName: 'Turtle',
-        scientificName: '—',
-        timestamp: 1114119720000,
-        notes:
-            'A turtle moves downstream through the ladder, carried along by the current.',
-    },
-    {
-        filename: 'snake',
-        commonName: 'Snake',
-        scientificName: '—',
-        timestamp: 1115907780000,
-        notes:
-            'A 3-foot long river snake swims downstream. Some snakes can swim almost as well as fish!',
-    },
-    {
-        filename: 'rainbow_trout',
-        commonName: 'Rainbow Trout',
-        scientificName: 'Oncorhynchus mykiss',
-        timestamp: 1115870340000,
-        notes:
-            'A rainbow trout is shown just before midnight – captured in the act of feeding.',
-    },
-    {
-        filename: 'carp',
-        commonName: 'Common Carp',
-        scientificName: 'Cyprinus carpio',
-        timestamp: 1115826720000,
-        notes:
-            'Two enormous carp move through the ladder at night. The first carp is over three feet long!',
-    },
-    {
-        filename: 'river_otter',
-        commonName: 'River Otter',
-        scientificName: 'Lutra canadensis',
-        timestamp: 1111371600000,
-        notes: 'River Otter swims through the fish ladder to star in a video.',
-    },
-    {
-        filename: 'american_shad',
-        commonName: 'American Shad',
-        scientificName: 'Alosa sapidissima',
+        ...AMERICAN_SHAD,
+        videoPath: './media/seethefishway/american_shad.mp4',
         timestamp: 1085515200000,
         notes:
             'An American shad swims upstream during the annual spawning migration.',
     },
     {
-        filename: 'channel_catfish',
-        commonName: 'Channel Catfish',
-        scientificName: 'Ictalurus punctatus',
-        timestamp: 1084417680000,
-        notes: 'Catfish group, traveling at night.',
+        ...QUILLBACK,
+        videoPath: './media/seethefishway/quillback.mp4',
+        timestamp: 1115046300000,
+        notes:
+            "This fish is named for its pointed dorsal fin — thought to be in the shape of a 'quill.'",
     },
     {
-        filename: 'common_carp',
-        commonName: 'Common Carp',
-        scientificName: 'Cyprinus carpio',
-        timestamp: 1084512000000,
-        notes: 'A very large female carp, pregnant with eggs.',
-    },
-    {
-        filename: 'quillback_carp',
-        commonName: 'Quillback and Common Carp',
-        scientificName: 'Carpiodes cyprinus and Cyprinus carpio',
-        timestamp: 1084417860000,
-        notes: 'A quillback and a carp try to swim together upriver.',
-    },
-    {
-        filename: 'quillbacks',
-        commonName: 'Quillback',
-        scientificName: 'Carpiodes cyprinus',
+        ...QUILLBACK,
+        videoPath: './media/seethefishway/quillbacks.mp4',
         timestamp: 1084454640000,
         notes: 'Three quillbacks swim by the viewing window.',
     },
     {
-        filename: 'quillback_catfish',
-        commonName: 'Quillbacks and Channel Catfish',
-        scientificName: 'Carpiodes cyprinus and Ictalurus punctatus',
+        ...PUMPKINSEED,
+        videoPath: './media/seethefishway/pumpkinseed.mp4',
+        timestamp: 1116184920000,
+        notes:
+            'This fish is a type of sunfish common to PA waters. Can you guess where its name comes from?',
+    },
+    {
+        ...HYBRID_STRIPED_BASS,
+        videoPath: './media/seethefishway/hybrid_striped_bass.mp4',
+        timestamp: 1114074720000,
+        notes:
+            'Striped bass migrate upriver each year to spawn, much like the American shad.',
+    },
+    {
+        ...HYBRID_STRIPED_BASS,
+        videoPath: './media/seethefishway/striped_bass_hybrid.mp4',
+        timestamp: 1084279080000,
+        notes: 'A very large, hybrid striped bass — an excellent specimen.',
+    },
+    {
+        commonName: 'Turtle',
+        scientificName: '—',
+        videoPath: './media/seethefishway/turtle.mp4',
+        timestamp: 1114119720000,
+        notes:
+            'A turtle moves downstream through the ladder, carried along by the current.',
+    },
+    {
+        commonName: 'Snake',
+        scientificName: '—',
+        videoPath: './media/seethefishway/snake.mp4',
+        timestamp: 1115907780000,
+        notes:
+            'A 3-foot long river snake swims downstream. Some snakes can swim almost as well as fish!',
+    },
+    {
+        commonName: 'Rainbow Trout',
+        scientificName: 'Oncorhynchus mykiss',
+        videoPath: './media/seethefishway/rainbow_trout.mp4',
+        timestamp: 1115870340000,
+        notes:
+            'A rainbow trout is shown just before midnight – captured in the act of feeding.',
+    },
+    {
+        ...COMMON_CARP,
+        videoPath: './media/seethefishway/carp.mp4',
+        timestamp: 1115826720000,
+        notes:
+            'Two enormous carp move through the ladder at night. The first carp is over three feet long!',
+    },
+    {
+        ...COMMON_CARP,
+        videoPath: './media/seethefishway/common_carp.mp4',
+        timestamp: 1084512000000,
+        notes: 'A very large female carp, pregnant with eggs.',
+    },
+    {
+        commonName: `${QUILLBACK_COMMON_NAME} and ${COMMON_CARP_COMMON_NAME}`,
+        scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${COMMON_CARP_SCIENTIFIC_NAME}`,
+        videoPath: './media/seethefishway/quillback_carp.mp4',
+        timestamp: 1084417860000,
+        notes: 'A quillback and a carp try to swim together upriver.',
+    },
+    {
+        commonName: 'River Otter',
+        scientificName: 'Lutra canadensis',
+        videoPath: './media/seethefishway/river_otter.mp4',
+        timestamp: 1111371600000,
+        notes: 'River Otter swims through the fish ladder to star in a video.',
+    },
+    {
+        ...CHANNEL_CATFISH,
+        videoPath: './media/seethefishway/channel_catfish.mp4',
+        timestamp: 1084417680000,
+        notes: 'Catfish group, traveling at night.',
+    },
+    {
+        commonName: `${QUILLBACK_COMMON_NAME}s and ${CHANNEL_CATFISH_COMMON_NAME}`,
+        scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${CHANNEL_CATFISH_SCIENTIFIC_NAME}`,
+        videoPath: './media/seethefishway/quillback_catfish.mp4',
         timestamp: 1084461660000,
         notes:
             'A group of quillbacks swim through the fish ladder, followed by two catfish.',
     },
     {
-        filename: 'striped_bass_hybrid',
-        commonName: 'Hybrid Striped Bass',
-        scientificName: 'Morone saxatilis x Morone chrysops',
-        timestamp: 1084279080000,
-        notes: 'A very large, hybrid striped bass — an excellent specimen.',
-    },
-    {
-        filename: 'white_perch',
-        commonName: 'White Perch',
-        scientificName: 'Morone americana',
+        ...WHITE_PERCH,
+        videoPath: './media/seethefishway/white_perch.mp4',
         timestamp: 1084379160000,
         notes: 'A white perch darts through the water.',
     },
@@ -169,6 +237,7 @@ export const fish = [
     {
         commonName: 'Alewife',
         scientificName: 'Alosa pseudoharengus',
+        picturePath: './media/meetthefish/alewife_large.png',
         overview:
             'The alewife is an anadromous herring in its natural range, living its adult life in salt water and swimming into freshwater tributaries to spawn. Its original distribution was along the Atlantic Coast, from South Carolina northward into Canada. Alewives enter Pennsylvania’s Delaware River on spawning migrations. The alewife can also live entirely in fresh water. It has become established in all the Great Lakes, including the Pennsylvania portion of Lake Erie. It was first reported in Lake Ontario in the 1870s, there either by accidental introduction or by making its way through water routes from New York’s Finger Lakes, the St. Lawrence River or the Erie Canal. By 1931, the alewife was reported in Lake Erie, having bypassed Niagara Falls via the Welland Canal. As a food fish for larger game fish, alewives have also been stocked in impoundments across the state. They have also been accidentally spread as escapees from fishermen’s bait buckets. Its small size, large schools and availability to openwater game fish have made the alewife suited for stocking in some inland reservoirs as a forage fish. It has been introduced in Pennsylvania for that purpose in some of our larger impoundments. The species name “pseudoharengus” means “false herring.”',
         characteristics:
@@ -181,16 +250,17 @@ export const fish = [
     {
         commonName: 'American Eel',
         scientificName: 'Family Anguillidae',
+        picturePath: './media/meetthefish/american_eel_large.png',
         overview:
             'Freshwater eels are the only catadromous fishes in North America. “Catadromous” means that they spawn in salt water and live as adults in fresh water. Anadromous fishes, like salmon and American shad, spawn in fresh water but live as adults in the ocean. On this continent, eels are represented by a single species, the American eel (Anguilla rostrata). Although the eel looks snakelike, it is a fish. The American eel is found widely along the Atlantic and Gulf coasts, where the young eels move far upstream into small tributaries. The Delaware River in Pennsylvania has the most abundant population of eels of all the state’s streams, because there are no dam obstructions to prevent the eel’s upriver migration. Eels are rarely found in the Susquehanna River system. Passageways and lifts to move fish past all the Susquehanna’s dams should soon return eels, shad and other ocean-migrating fish to that watershed. Eels are also occasionally seen in the Potomac River watershed. They have even been reported from some headwater sections of the Ohio River watershed in Pennsylvania. While in fresh water, eels live in a variety of stream habitats, especially where they can hide under logs, rocks and undercut banks. Until the early 1900s, eels supported an intense commercial fishery in the Susquehanna and Delaware River systems. Adult eels on their downstream migration toward the sea were trapped by low, in-river V-shaped wing dams, which were barricades made of rocks. The eels entered these eel racks from the wide upstream side and swam through the small funnel opening downstream, into holding baskets. The remains of old “eel weirs” can still be seen in some Delaware and Susquehanna River watershed streams. Even in a “poor” eel year, the take was staggering: In 1912, called an “off year,” 50,000 eels weighing more than 44,000 pounds were caught in Pennsylvania. Today, eels are caught mostly by anglers looking for food and sport (eels are good eating, especially smoked). The genus name “Anguilla” is Latin for “eel.” The species name “rostrata” means “long nose.”',
         characteristics:
             'The American eel’s body is long and slender, and seems scaleless. Actually, it has smooth, tiny scales that are embedded in the skin. A long, low dorsal fin extends over at least two-thirds of the back. It blends with the caudal fin and the anal fin, which is also long and low, on the underside. There are no pelvic fins, but the pectoral fins are well-developed. The presence of pectoral fins can be used to distinguish an eel from a lamprey, which has no paired fins. The head has a smallish eye. The head is long, and tapers to a small mouth. The lower jaw sticks out a little farther than the upper jaw. Eels are yellowish brown to dark-olive, and lighter underneath. In Pennsylvania, the maximum size is two to three feet, although four feet or more is possible. Females grow larger than males.',
+        habitat: '',
         history:
             'The mysterious life history of freshwater eels was revealed only in this century, and even today, eels are not completely understood. The principal puzzle for many years was where eels spawned. Their spawning grounds have finally been identified as the Sargasso Sea, in the northern Caribbean-Bermuda region of the Atlantic Ocean. The eels that arrive there to spawn come from two directions, the American eel from the west and the European eel from the east. But how young eels of each species know which continent to go to has not yet been explained. After the adult eels spawn, they die. The larval eels, called “leptocephali,” are ribbonlike and transparent. These “glass eels” drift with other tiny organisms in the northward-flowing ocean currents. The transforming young eels, called elvers, enter river estuaries when they reach the continent. The females don’t stop. They continue swimming many miles upstream, mainly at night, even to the river system’s headwaters. The trip from the spawning grounds in the ocean to the eel’s freshwater upstream home takes about a year. The male eels, which remain smaller than the females, stay in the lower reaches of the coastal river and in the brackish tidewater just off the river’s mouth. After remaining in fresh water for 10 to 20 years, the adult females, now called “silver eels” because of their silvery appearance, migrate downstream in the fall on their long way back to the Sargasso Sea. Sexually mature female eels may contain two million or more eggs. Eels are predators. They eat a wide variety of aquatic insects, crayfish and other crustaceans, frogs, fishes and worms. They feed mostly at night.',
     },
     {
-        commonName: 'American Shad',
-        scientificName: 'Alosa sapidissima',
+        ...AMERICAN_SHAD,
         overview:
             'The American shad is the largest member of the herring family that lives in or visits Pennsylvania waters. The annual migration of shad up rivers that feed the Atlantic Coast was used as food by American Indians as well as early European settlers. The spring shad run is credited with helping to save General Washington’s starving troops at Valley Forge during the Revolutionary War, arriving just in time. Shad also supported a commercial fishery on the Susquehanna River as well as the Delaware River. The Susquehanna’s runs stopped when hydroelectric power dams were built across the river in the early 1900s. Since that blockage, efforts led by the Pennsylvania Fish & Boat Commission have been aimed at restoring shad to the Susquehanna watershed. The result is that now there are fish passage devices to enable fish passage at nearly all the dams. Full access to the river system should be possible soon. Shad are once again returning to the Susquehanna through the fishways, and the shad are providing evidence of natural spawning. The Pennsylvania Fish & Boat Commission has also stocked shad in the Juniata River system, above the Susquehanna River dams, to help restore the run. There are also fishways that allow shad migration over dam obstacles on the Schuylkill River and Lehigh River, but the only major waterway completely accessible to the natural shad migration in Pennsylvania is the Delaware River. Adult shad travel at least as far up as the confluence of the West Branch and East Branch of the Delaware, in extreme northeastern Pennsylvania. Along the Atlantic Coast, shad range from Labrador to Florida, ascending coastal rivers all along the way during spawning runs, but they are most abundant from Connecticut to North Carolina. American shad were introduced into the Sacramento and Columbia rivers in California in 1871, and today there is a shad fishery on the Pacific Coast. In fact, shad eggs collected from the introduced population in the Columbia River have been used in the Susquehanna River restoration efforts. Past attempts failed to establish shad in Lake Ontario, the Mississippi River watershed and the Great Salt Lake. The American shad’s genus name “Alosa” is from “allis,” an old Saxon name for the European shad. The species name “sapidissima” means “most savory.” Even though shad are bony, the meat is tasty, and the roe, or eggs, are a delicacy.',
         characteristics:
@@ -203,6 +273,7 @@ export const fish = [
     {
         commonName: 'Blueback Herring',
         scientificName: 'Alosa aestivalis',
+        picturePath: './media/meetthefish/blueback_herring_large.png',
         overview:
             'Blueback herring look much like a closely related species, the alewife. Their marine range is along the Atlantic Coast from Nova Scotia to Florida. They migrate for spawning into the lower reaches of freshwater streams and rivers. In Pennsylvania, the blueback herring is found only in the lower Delaware River and the Delaware estuary, where it returns to spawn. Throughout its range, dams have blocked the blueblack from entering streams, and reduced its abundance and distribution in freshwater. South of Pennsylvania, blueback herring can be very common in river mouths in the spring, giving it the common name “glut herring.”',
         characteristics:
@@ -213,8 +284,7 @@ export const fish = [
             'As anadromous fish, blueback herring begin their lives in the flowing sections of ocean tributaries, not far from the stream’s outlet. Adult bluebacks are mature and spawn in their fourth year, migrating from the sea into the mouths of freshwater rivers in late spring, after the alewife has spawned. These schooling fish spawn in brackish water and in fresh water over a firm, not silted bottom. Their sticky eggs sink and adhere there. After spawning, the parents head for the sea again, taking no care of the eggs or young. The tiny one-millimeter-long eggs hatch in two or three days, at a little over 70 degrees. When young bluebacks are about one month old and about two inches long, they head for salt water. Bluebacks feed on zooplankton, as well as shrimp, small fish and fish eggs.',
     },
     {
-        commonName: 'Bluegill',
-        scientificName: 'Lepomis macrochirus',
+        ...BLUEGILL,
         overview:
             'The bluegill is what many people think of as a “sunfish.” It is what they usually catch when they go fishing for “sunnies.” The common name refers to the bluish color that curves from the lower jaw around the bottom of the gill cover. The scientific species name “macrochirus” means “large hand,” probably describing the fish’s body shape. The bluegill is found throughout Pennsylvania nowadays. It is believed not to have been present originally in Atlantic Ocean watersheds.',
         characteristics:
@@ -227,6 +297,7 @@ export const fish = [
     {
         commonName: 'Brown Trout',
         scientificName: 'Salmo trutta',
+        picturePath: './media/meetthefish/brown_trout_large.png',
         overview:
             'The brown trout is not a native Pennsylvanian, although it is now naturalized and widespread here in the wild, even becoming the main trout species in streams previously dominated by brook trout. Brown trout were originally found in Eurasia and were stocked in the late 1800s in the United States as strains from various locations, including Scotland and Germany. Pennsylvania received its first brown trout in 1886. Brown trout are considered more difficult to catch than brook trout. The larger ones tend to feed at night. Brown trout are closely related to Atlantic salmon (Salmo salar). The genus name “Salmo” is the Latin name for the Atlantic salmon. The species name “trutta” is the Latin name for “trout.”',
         characteristics:
@@ -237,8 +308,7 @@ export const fish = [
             'Brown trout spawn in the fall, a little later than brook trout, when water temperatures are in the mid-40s to high 40s. Eggs are deposited in a stream gravel depression that the female prepares with swimming actions of her fins and body. Large females produce 4,000 to 12,000 eggs. Several males may accompany the female during spawning. The eggs hatch the following spring, with no parental attention. Brown trout eat aquatic and terrestrial insects, crayfish and other crustaceans, and especially fish. The big ones may also eat small mammals (like mice), salamanders, frogs and turtles. Large browns feed mainly at night, especially during the summer. Their life span in the wild can be 10 to 12 years.',
     },
     {
-        commonName: 'Channel Catfish',
-        scientificName: 'Ictalurus punctatus',
+        ...CHANNEL_CATFISH,
         overview:
             'Next to the flathead catfish, the channel catfish is the largest catfish in Pennsylvania. Weights of up to 15 pounds are not unusual at lengths of about 30 inches. The state record is over 35 pounds. Channel “cats” are avidly sought sport fish and are raised commercially for the table. They are found statewide, introduced where they did not occur naturally. The native range of channel catfish is believed to be the Great Lakes and St. Lawrence River watershed, the Missouri River system, the Mississippi River watershed, Gulf of Mexico watershed and parts of Mexico. They were not native to the Atlantic Coast north of Florida. The channel catfish’s species name “punctatus” means “spotted,” referring to the small, dark spots on its sides. The channel catfish is the only catfish that has these dots.',
         characteristics:
@@ -249,8 +319,7 @@ export const fish = [
             'Channel catfish spawn in May to early June, when the water temperature ranges from 75 to 85 degrees, with 80 degrees the optimum. The male prepares the nest, which is usually a depression or hole in an undercut bank, or an excavated burrow under logs or rocks. Sometimes channel cats spawn in sunken, hollow logs or abandoned muskrat holes. In clear ponds, spawning channel cats must have semi-darkened shelters, either natural or provided. From reservoirs, channel catfish sometimes move upstream to spawn in tributary rivers. A female channel cat may lay 2,000 to 70,000 eggs per year, depending on her size. After spawning, the males protect the adhesive egg mass and aerate and clean the eggs by fanning their fins. The males also guard the hatched fish for a time. Young channel cats are insect-eaters, feeding on mayfly nymphs, caddis larvae and midge larvae. As they grow, they switch to fish, crayfish and mollusks, but still feed on aquatic insects, and occasionally eat plant matter. Yearling and subadult channel cats are more tolerant of fast water than larger adults. They move out of slow water into the quicker current or swim short distances into tributary streams to feed. Channel cats feed mostly at night, but may forage on the bottom, where it’s dim during the day. Channel catfish, especially young fish, have been known to feed on the surface. Like other catfish, at night they depend on their barbels and their sense of taste to find food. Even so, channel cats are believed to be more of a sight-feeder than other catfishes, because of their clear-water habitat.',
     },
     {
-        commonName: 'Common Carp',
-        scientificName: 'Cyprinus carpio',
+        ...COMMON_CARP,
         overview:
             'Pennsylvania’s biggest minnow is not a native of this continent, or this hemisphere. It was originally distributed throughout Europe and Asia. It is not known exactly when carp were brought to the United States from Europe, probably the mid-1800s to late 1800s. Some earlier reports by European settlers of “carp” in North America are thought to be misidentifications of the quillback (see page 75). By 1880, the U.S. Fish Commission had distributed more than 12,000 carp to people in 25 states and territories to establish the fish in this country. Today, carp are found not only throughout the United States, where they are especially abundant in the fertile waters of the Mississippi River watershed, but they occur in all 67 Pennsylvania counties. Young carp are an important part of the aquatic food base. Larger carp are a fisherman’s challenge because of their tackle-testing weight. Carp are also pursued by bow fishermen, especially when the fish move into shallow water to spawn. The genus name “Cyprinus” is the old-world name for carp. “Carpio” is a Latinized word meaning “carp.”',
         characteristics:
@@ -263,6 +332,7 @@ export const fish = [
     {
         commonName: 'Flathead Catfish',
         scientificName: 'Pylodictis olivaris',
+        picturePath: './media/meetthefish/flathead_catfish_large.png',
         overview:
             'Flathead catfish grow longer and heavier than other Pennsylvania catfish. In fact, they are one of the state’s biggest fish, of any kind. Flathead catfish are known to grow to more than 100 pounds, but 20 or 30 pounds is more likely in Pennsylvania. The Pennsylvania record is over 40 pounds. Flathead catfish are native to the lower Great Lakes and the Mississippi River basin, from western Pennsylvania southward. They are also in Gulf of Mexico watersheds, and can live in reservoirs. In Pennsylvania, flatheads are found mainly in the Ohio, Allegheny and Monongahela rivers. Fossils of this catfish genus that are about 15 million years old, from the mid-Miocene Epoch, can’t be distinguished from the modern flathead catfish. The flathead’s genus name “Pylodictis” means “mud fish,” and its species name “olivaris” means “olive-colored.”',
         characteristics:
@@ -275,6 +345,7 @@ export const fish = [
     {
         commonName: 'Gizzard Shad',
         scientificName: 'Dorosoma cepedianum',
+        picturePath: './media/meetthefish/gizzard_shad_large.png',
         overview:
             'The gizzard shad is a herring with a difference. It is set apart from its herring relatives (that are in the genus Alosa), by its gizzardlike stomach. The gizzard shad is found mainly in the Ohio River watershed and Lake Erie in appropriate habitat. However, as a result of both intentional and unintentional stocking, it is found statewide. The gizzard shad’s original home range was the southeastern United States, except for the Appalachian Mountains, but the fish seems to be spreading northward. Biologists question whether or not the gizzard shad was native to Lake Erie. They believe it probably invaded the Great Lakes from the upper Mississippi River. Today, gizzard shad can be found in the St. Lawrence River, the Great Lakes, the Mississippi River and its tributaries, and the Atlantic and Gulf Coast watersheds. The gizzard shad gets its common name from its muscular, gizzardlike stomach, which helps process the plankton and plant food this fish strains from the water. The genus name “Dorosoma” refers to a lancelike body. The species name “cepedianum” recognizes a French ichthyologist named Lacepede.',
         characteristics:
@@ -287,6 +358,7 @@ export const fish = [
     {
         commonName: 'Green Sunfish',
         scientificName: 'Lepomis cyanellus',
+        picturePath: './media/meetthefish/green_sunfish_large.png',
         overview:
             'The green sunfish was originally found west of the Appalachian Mountains, throughout the Mississippi watershed. It has been introduced elsewhere in the East, and is now found in most of Pennsylvania, although not in great numbers. The species name “cyanellus” means “blue.”',
         characteristics:
@@ -299,6 +371,7 @@ export const fish = [
     {
         commonName: 'Hickory Shad',
         scientificName: 'Alosa mediocris',
+        picturePath: './media/meetthefish/hickory_shad_large.png',
         overview:
             'Hickory shad live in coastal marine waters and move into fresh water to spawn. Hickory shad range from the Bay of Fundy in Maine to the St. Johns River in Florida. The hickory shad is common from Chesapeake Bay to North Carolina and in coastal waters of the northeast states. Between these areas, it is scarce. In Latin, the name “mediocris” means “not important,” or “ordinary.” Like American shad, hickory shad are anadromous. They live in coastal ocean waters as adults and enter brackish estuaries, like the Delaware, and swim far upstream to spawn in freshwater rivers and creeks. Hickory shad are returning to the Susquehanna River watershed because of fish lifts on dams. Currently, they are on the list of endangered, threatened, and candidate fishes because of their extremely limited distribution and abundance. In states where their numbers are sufficient to allow sport fishing, they are pursued by light-tackle specialists for their fighting and leaping abilities.',
         characteristics:
@@ -311,6 +384,7 @@ export const fish = [
     {
         commonName: 'Largemouth Bass',
         scientificName: 'Micropterus salmoides',
+        picturePath: './media/meetthefish/largemouth_bass_large.png',
         overview:
             'Largemouth bass were originally distributed in the Ohio River and Lake Erie watersheds in Pennsylvania. The largemouth has been established statewide in appropriate habitat. The largemouth bass is Pennsylvania’s biggest sunfish. The state angling record is over 11 pounds, and the fish can grow two feet or more in length. The largest largemouths are generally females. The species name “salmoides” refers to trout (“salmo”), because the largemouth is sometimes called a “trout” in the southern United States. One nickname is “bucketmouth,” which, like the common name “largemouth,” is well-deserved by the fish’s gaping jaw, with which it can swallow sizable prey.',
         characteristics:
@@ -323,6 +397,7 @@ export const fish = [
     {
         commonName: 'Muskellunge',
         scientificName: 'Esox masquinongy',
+        picturePath: './media/meetthefish/muskellunge_large.png',
         overview:
             'A voracious predator, the muskellunge is one of Pennsylvania’s largest and fastest-growing fish, with the state record standing at over 54 pounds. The muskellunge’s original North American range was the St. Lawrence River, throughout the Great Lakes and Hudson Bay, and the Mississippi River basin, but it has been widely propagated and stocked elsewhere for sport fishing. In Pennsylvania, muskies were originally restricted to the northwest region, the Lake Erie and Ohio River watersheds, especially in the large glacier- formed lakes, like Conneaut Lake in Crawford County and Presque Isle Bay in Lake Erie. The species name “masquinongy” comes from an Ojibwa (Chippewa) name for the fish—“mas,” meaning “ugly,” and “kinononge,” meaning “fish.”',
         characteristics:
@@ -333,8 +408,7 @@ export const fish = [
             'Muskellunge are solitary, territorial predators. They are very aggressive and will even attack and eat one another. Their main diet is fish, but they will take what opportunity gives them, including snakes, frogs, muskrats, mice and waterbirds. Muskies spawn in the spring, after the northern pike, when water temperatures are in the high 50s to high 60s. They spawn at night in shallow water, often just six to 12 inches deep. Relatively long-distance spawning migrations have been documented because adults tend to return to the same spawning locations each year. As the male and female swim over the spawning site, which usually features underwater stumps and logs on a muck bottom, the eggs are released to fall as they will. Female muskies 25 to 53 inches long produce 22,000 to 180,000 eggs. The adhesive eggs hatch in eight to 14 days, and as is usual for the pike family, the fry attach themselves to sunken debris as they absorb their egg sacs. Mortality of fry is high, because fish eat the vulnerable musky young. When muskies are about four days old, they turn the tables, and begin eating fish. On that diet they can grow to one foot long in only four months. Muskies are sexually mature at about three years old and a little over 20 inches long. Females grow faster than males, and all muskies grow best in the early summer and fall, when water temperatures reach about 68 degrees. Muskies naturally hybridize with northern pike, producing the “tiger musky” (see page 97). Tiger muskies are also bred artificially in fish hatcheries and stocked for sport. The usual age of a musky that is caught is three to six years, but some have reached nearly 20 years old.',
     },
     {
-        commonName: 'Pumpkinseed',
-        scientificName: 'Lepomis gibbosus',
+        ...PUMPKINSEED,
         overview:
             'As highly colored as any tropical fish, the pumpkinseed is one of our most common and frequently caught sunfish. Pumpkinseeds are found throughout Pennsylvania, and in eastern Canada and the eastern United States in the Atlantic watershed and upper Mississippi watershed. The species name “gibbosus” means that it is “formed like the full moon,” appropriate for its flat, roundish body.',
         characteristics:
@@ -345,8 +419,7 @@ export const fish = [
             'Pumpkinseeds spawn in late May to early June. The males clear small, saucer-shaped nests on the bottom in water three feet deep or less. Pumpkinseeds nest in small groups of up to three nests, but these groups of nests can be very close. The nests may have several thousand eggs each, which have been deposited by several females. Although the nest is guarded, other males may rush in and fertilize eggs. It takes about three days for the eggs to hatch, and each nest may produce more than 14,000 young pumpkinseeds. Pumpkinseeds may hybridize with bluegills and green, redbreast, longear and other sunfish. They feed heavily on snails and have special throat structures for doing so. Pumpkinseeds feed mostly on the bottom of a stream or pond, where they also eat burrowing and other aquatic insects. Like the bluegill, small baits, jigs and flies take pumpkinseeds best.',
     },
     {
-        commonName: 'Quillback',
-        scientificName: 'Carpiodes cyprinus',
+        ...QUILLBACK,
         overview:
             'One of the quillback’s common names is “quillback carpsucker.” “Quillback” refers to the lengthy first dorsal rays and several following rays that form a long projection at the leading edge of the back fin, which might remind some of a quill pen or feather quill. “Carpsucker” is also appropriate because this sucker does look much like a carp. Its genus name “Carpiodes” means “carplike,” and its species name “cyprinus” is the generic name of the carp. Quillbacks are uncommon even though they range from the Great Lakes and St. Lawrence River south along the Atlantic Coast to Virginia. They are present in the Mississippi River watershed, and in Gulf Coast watersheds. They are in all of Pennsylvania’s major watersheds. Quillbacks are the only carpsuckers now living in the state’s waters.',
 
@@ -360,6 +433,7 @@ export const fish = [
     {
         commonName: 'Rainbow Trout',
         scientificName: 'Oncorhynchus mykiss',
+        picturePath: './media/meetthefish/rainbown_trout_large.png',
         overview:
             'Rainbow trout are a western North American species, native to the Pacific slope from California to Alaska. In a turn-of-the-century effort to restore Pennsylvania’s degraded trout fishery, rainbows were introduced throughout the state. But today, as wild fish, rainbows sustain reproducing populations only in a handful of fast-falling creeks scattered around the state. As stocked, hatchery-reared fish, rainbows are found throughout Pennsylvania’s watersheds. For many years the rainbow was considered a near relative of the brown trout, and it was given the scientific name Salmo gairdneri, which still appears in some reference books. Today, biologists consider the rainbow more closely akin to the Pacific salmons and the cutthroat trout of the West. Its scientific name was changed to reflect that link. Like those salmons, some rainbows (steelhead) run to the ocean or a large sealike lake, like the Great Lakes, if they have access, returning upstream for spawning. Then they are called “steelhead” (they appear steel- colored, or more silvery, than stream rainbows). Rainbows are flashy fighters when hooked, jumping out of the water more than other trout. The genus name “Oncorhynchus” means “hooked snout,” referring to the hooked lower jaw of big, breeding males.',
         characteristics:
@@ -372,6 +446,7 @@ export const fish = [
     {
         commonName: 'Redbreast Sunfish',
         scientificName: 'Lepomis auritus',
+        picturePath: './media/meetthefish/redbreast_sunfish_large.png',
         overview:
             'The redbreast sunfish is native to Atlantic Coast watersheds. It is found in southern and eastern Pennsylvania in the Delaware, Susquehanna and Potomac River watersheds. The species name “auritus” means “eared,” referring to the long, dark gill flap. The common name describes the deep-orange or reddish belly.',
         characteristics:
@@ -384,6 +459,7 @@ export const fish = [
     {
         commonName: 'Smallmouth Bass',
         scientificName: 'Micropterus dolomieui',
+        picturePath: './media/meetthefish/smallmouth_bass_large.png',
         overview:
             'The smallmouth bass was native to and found only in the Great Lakes and Ohio River watersheds until the mid-1800s. When the railroads spread around the country in the second half of the 19th century, so did the smallmouth. It was transported by train and eventually became a popular sport fish throughout the United States. It is now found all across Pennsylvania. Because of its body’s brownish-gold tints, the smallmouth has been nicknamed “bronzeback.” Its species name recognizes a French naturalist, M. Dolomieu.',
         characteristics:
@@ -394,8 +470,7 @@ export const fish = [
             'Smallmouth bass spawn in spring, May to early June, when water temperatures reach 60 to 70 degrees. The male builds the nest. The male fans a circular depression in gravel or sand with his fins. The nest is 14 to 30 inches in diameter and usually in three or four feet of water, although it may be more than 20 feet deep in clear water, as in Lake Erie. Smallmouths in lakes often move into tributary streams to spawn. Several females spawn on the same nest, adding 2,000 to 7,000 eggs per pound of body weight. Because the females spawn at different times, the eggs the male is guarding do not all hatch at the same time. Depending on water temperature, the eggs hatch in two to nine days. The young fish are ready to leave the nest five or six days after that. In rivers and streams, flow and temperature can affect the survival of young smallmouth bass. High flows can sweep eggs and fry downriver, where they may perish. Conversely, moderate flows may lead to high fry survival. These early season events frequently lead to low or high densities of adult smallmouth bass. Young smallmouths eat tiny crustaceans. Then they graduate to insect larvae, crayfish and fish. Smallmouths may reach 20 inches or more in length. The Pennsylvania smallmouth angling record is over seven pounds.',
     },
     {
-        commonName: 'Striped Bass Hybrid',
-        scientificName: 'Morone saxatilis x Morone chrysops',
+        ...HYBRID_STRIPED_BASS,
         overview:
             'The striped bass hybrid is a hatchery-created cross between a white bass and a striped bass. It is stocked primarily because it tolerates warmer water than the purebred striped bass, which, as it grows older and larger, requires well-oxygenated water during the summer. In Pennsylvania it is stocked mostly in the western part of the state, in reservoirs such as Lake Arthur and Shenango Lake, and in the big-river area of the Ohio and Allegheny rivers near Pittsburgh. Here the hybrid typically grows larger than the white bass. Fisheries managers in the state do not tend to stock the striped bass hybrid in lakes and rivers that lead to Delaware or Chesapeake bays to minimize the chance of the hybrids mixing and reproducing with wild marine striped bass.',
         characteristics:
@@ -406,8 +481,7 @@ export const fish = [
             'The striped bass hybrid is fast-growing, which is typical of hybrids. It is generally sterile, and can be stocked instead of the purebred striped bass into waters to avoid the purebred’s potential of reproducing too prolifically and outstripping its food source. However, occasionally fertile striped bass hybrids have occurred, and some states have reported the hybrid back-crossing with the white bass. Striped bass hybrids feast on forage fish as adults.',
     },
     {
-        commonName: 'Striped Bass',
-        scientificName: 'Morone saxatilis',
+        ...STRIPED_BASS,
         overview:
             'In their native habitat, the Atlantic Coast from the St. Lawrence River to Florida and some tributaries of the Gulf of Mexico, the striped bass is a true anadromous fish, living in salt water but traveling to fresh water to spawn. Through stocking, striped bass have reached the West Coast. Striped bass can also live entirely in fresh water as a landlocked form that cannot reach the sea. In Pennsylvania, striped bass are found in the Delaware River, and historically had been found throughout the Susquehanna River, the fish traveling upstream from the Chesapeake Bay. Dams on the Susquehanna had blocked the striped bass upstream migration to spawning grounds, but fish lifts, or fishways, on the dams should soon make access possible to the middle Susquehanna for this and other anadromous fishes. Striped bass have also been stocked in several of Pennsylvania’s large inland reservoirs, with an especially good fishery having developed in Raystown Lake in Huntingdon County. Striped bass are valuable food fish, as well as much sought-after sport fish. Striped bass provided an important food source for the Plymouth colonists, who as early as 1623 netted enough of the fish to support themselves during the summer months. Captain John Smith wrote of the excellent eating qualities of striped bass. The seagoing stripers along the Atlantic Coast occur in definite “races,” or stocks, different from one another but not so much to be called subspecies, depending on where their home range is located. When the Santee River in South Carolina was impounded during the 1940s, the striped bass present there produced a population that adapted to a freshwater landlocked existence. Offspring and subsequent generations of these fish have been stocked in many inland waters, reservoirs and the rivers that run into them throughout North America. South of Pennsylvania and New Jersey, fishermen call stripers “rockfish.” Their species name “saxatilis” means “dwelling among rocks.”',
         characteristics:
@@ -420,6 +494,7 @@ export const fish = [
     {
         commonName: 'Walleye',
         scientificName: 'Stizostedion vitreum',
+        picturePath: './media/meetthefish/walleye_large.png',
         overview:
             'Walleyes are native to central North America and Canada, including the Ohio River and Great Lakes watersheds. Popular sport fish, they have been extensively stocked. In Pennsylvania they are now found throughout the state, including the Susquehanna and Delaware River watersheds, as well as their original Allegheny River and Lake Erie watershed homes. One of the walleye’s nicknames is “Susquehanna salmon.” It has also been called “yellow pike” and even “pickerel.” All these nicknames put it in the wrong fish family–it’s neither a pike cousin nor a salmon. It’s the biggest, toothiest member of the perch family. The name “walleye” refers to the fish’s large, milky eye that looks luminous when light is shined on it. The eye has a reflecting membrane behind the retina, which causes this effect. The species name “vitreum” means “glassy,” and refers to the luminous eye.',
         characteristics:
@@ -430,8 +505,7 @@ export const fish = [
             'Walleyes travel, feed and spawn in schools. They range widely in their home lakes or rivers. Walleyes are one of the first fish to spawn in the spring, sometimes even before the ice has completely melted from the surface or around the shoreline. They return year after year to their spawning sites, sometimes traveling a long distance, so they truly make a “spawning run.” The spawning site may be rocky or gravelly shoals or shallows in a lake or river cove at the base of dams or riffles, or the walleyes may travel up a tributary stream to spawn over flooded marsh grass. The females move into the spawning area first, when water temperatures reach 45 to 50 degrees. The eggs are scattered randomly. The females spawn with several males, usually at night. Eggs are commonly deposited where there is some water movement, whether from stream flow or wave action near the edges of the lake. After they are extruded, the eggs fall into protective spaces in the rocks and gravel. Walleye eggs hatch in about 12 to 18 days, depending on water temperature. Females produce 25,000 eggs per pound of body weight, so a single large female could spawn 500,000 minute eggs or more. When they hatch, walleye fry are about a half-inch long and paper-thin. At first they drift about, absorbing the yolk sac. Young walleyes feed on microscopic animals, or zooplankton. When they reach several inches long, walleyes switch to other small fish as their primary food. Like the adults, they spend much of their time in deep water, moving closer to shore during mornings and evenings to feed. Typically, adult walleyes feed at dusk during the cooler months and at night during the summer. In turbid water, walleyes can be active during the day. The light-reflective coating behind the walleye’s retinas, which gives the eye the glowing appearance, is an adaptation to feeding at night and in dim light. Walleyes are often the top predator fish in their habitat, eating other fishes, as well as frogs, crayfish and large insect larvae. Walleyes can grow to 36 inches. The state record is over 17 pounds. Although walleyes can be caught at any time of day, night fishing or fishing the dim depths with live bait or fishlike lures and jigs is effective for catching walleyes.',
     },
     {
-        commonName: 'White Perch',
-        scientificName: 'Morone americana',
+        ...WHITE_PERCH,
         overview:
             'Although the white perch has “perch” in its common name, it does not look like, nor is it closely related to, the yellow perch. The white perch is a temperate bass native to the Atlantic Coast of North America, from Nova Scotia to North Carolina. It also occurs in Lake Ontario and the non-Pennsylvania portion of Lake Erie. In Pennsylvania, white perch are in the lower Delaware River and its estuary, where salt water mixes with fresh water, and in the lower Susquehanna River. They are also becoming more common in Lake Erie since colonization this century. Unfortunately, populations have been established in several southeastern Pennsylvania waters by illegal stocking.',
         characteristics:
@@ -442,8 +516,7 @@ export const fish = [
             'White perch are gregarious school fish with seasonal movements. In the spring they migrate upstream from brackish estuaries to spawn in freshwater runs and tributaries. Then they go back to the deeper, saltier water for fall and winter. They are haphazard about spawning, but have great fertility and spawning success. When white perch spawn, the females and males chase one another in open water, milling about and splashing. The males release milt without pairing with specific females. The females extrude thousands of tiny eggs, about 150,000 for a one-pound fish. The eggs stick to anything they touch and hatch in less than five days. White perch populations fluctuate, but they do not seem to be affected by angling pressure because they are very capable of replenishing their numbers. White perch may overpopulate waters and become stunted and slow-growing. Illegal releases of this species have upset the natural balance of fish communities in several southeastern Pennsylvania lakes. White perch average eight to 10 inches long and less than a pound, but in brackish water they can grow to 15 inches or so and about two pounds. They have a long lifespan, and fish 12 years old are not uncommon. Their diet varies with the season. White perch eat bottom- dwelling insect larvae in the winter and early spring. Then during the warmer months they consume large burrowing mayflies, crustaceans, water fleas and small fish. They seldom go into very shallow water, where minnows are abundant, but remain in deep water by day and near shore at sundown. In marine habitats, white perch eat small fish, squid, crabs and shrimp.',
     },
     {
-        commonName: 'White Sucker',
-        scientificName: 'Catostomus commersoni',
+        ...WHITE_SUCKER,
         overview:
             'The white sucker is found across Pennsylvania. It is the most common and widely distributed sucker in the state. Its natural range is from northern Canada to Florida, throughout the uplands of eastern North America, and west to the Plains region. It grows large enough to be sought by anglers, who usually fish for them during the white sucker’s spring spawning run. The genus name “Catostomus” means “inferior mouth,” referring to the bottom position of the mouth on the head. The species name “commersoni” recognizes an early French naturalist, P. Commerson.',
         characteristics:
@@ -452,5 +525,53 @@ export const fish = [
             'White suckers live in many habitats, from cool, clear headwater streams to warm rivers, to lakes, ponds and reservoirs. They are tolerant of pollution, low oxygen and silted water. Not particularly choosy about their home, white suckers can be found in dense weed beds, or in the rocky pools and riffles of streams.',
         history:
             'In spring, when water temperatures reach about 50 degrees, white suckers make their spawning runs, or migrations. They sometimes enter small gravel-bottomed streams by the thousands. The fish may home in on spawning sites they have visited before. The fish spawn from early May to early June, which has given the white sucker one of its nicknames, “June sucker.” In lakes, they spawn along the edges or on shallow shoals, over gravel. Spawning runs take place at night, with the actual spawning done after dark as well, in shallow water, sometimes with the fish’s back out of the water. Two or more males spawn with each female, pressing against her as eggs and milt are released. The tiny, slightly adhesive eggs scatter over the gravel, generally 20,000 to 50,000 per female. The eggs adhere to the rocks or drift downstream before settling to the bottom. The motions of the spawning act disturb the gravel and help to cover the eggs slightly. Neither parent cares for the eggs or young, which is typical of the sucker family. After they hatch, young white suckers remain in the safety of the gravel for a week or two. Then they move off. White suckers can grow rapidly with sufficient food, and they themselves are an important food for game fish. If not caught or eaten, white suckers can live up to 12 years. White suckers are moderately active in the daytime, but do most of their feeding at sunrise and sunset, when they can move into shallow water in dim light. They are bottom-feeders. They eat both plant and animal material, like zooplankton, aquatic insects, mollusks and crustaceans. White suckers are schooling fish, and can sometimes be seen in groups in the pools of clear streams.',
+    },
+];
+
+export const quizFish = [
+    {
+        ...AMERICAN_SHAD,
+        videoPath: './media/quiz/american_shad_clip.mp4',
+        hint: '',
+    },
+    {
+        ...BLUEGILL,
+        videoPath: './media/quiz/bluegill_clip.mp4',
+        hint: '',
+    },
+    {
+        ...CHANNEL_CATFISH,
+        videoPath: './media/quiz/channel_catfish_clip.mp4',
+        hint: '',
+    },
+    {
+        ...COMMON_CARP,
+        videoPath: './media/quiz/common_carp_clip.mp4',
+        hint: '',
+    },
+    {
+        ...QUILLBACK,
+        videoPath: './media/quiz/quillback_clip.mp4',
+        hint: '',
+    },
+    {
+        ...STRIPED_BASS,
+        videoPath: './media/quiz/striped_bass_clip.mp4',
+        hint: '',
+    },
+    {
+        HYBRID_STRIPED_BASS,
+        videoPath: './media/quiz/strped_bass_hybrid_clip.mp4',
+        hint: '',
+    },
+    {
+        ...WHITE_PERCH,
+        videoPath: './media/quiz/white_perch_clip.mp4',
+        hint: '',
+    },
+    {
+        ...WHITE_SUCKER,
+        videoPath: './media/quiz/white_sucker_clip.mp4',
+        hint: '',
     },
 ];
