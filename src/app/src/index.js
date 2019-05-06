@@ -5,11 +5,16 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store';
 
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+
 import App from './App';
 
 render(
     <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </Provider>,
     document.getElementById('root')
 );
