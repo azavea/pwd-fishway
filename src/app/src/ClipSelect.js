@@ -1,9 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Box, Heading, Text } from 'rebass';
+import { themeGet } from 'styled-system';
+
+const StyledClipSelect = styled(Box)`
+    background: ${themeGet('colors.lightgray')};
+`;
 
 const ClipSelect = () => {
     return (
-        <Box bg='lightgray'>
+        <StyledClipSelect>
             <Heading as='h2' fontSize='2'>
                 Highlight reel
             </Heading>
@@ -11,7 +17,7 @@ const ClipSelect = () => {
                 Check out some of the wildlife that scientists have caught on
                 tape over the years.
             </Text>
-        </Box>
+        </StyledClipSelect>
     );
 };
 
