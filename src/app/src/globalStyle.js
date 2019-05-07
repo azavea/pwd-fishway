@@ -70,12 +70,10 @@ const GlobalStyle = createGlobalStyle`
     /* Global styles */
     html {
        font-size: 16px;
-       font-family: 'Fira Sans';
+       font-family: Fira Sans, Helvetica, Arial, sans-serif;
     }
     body {
        line-height: 1;
-       font-family: 'Fira Sans', 'Helvetica', sans-serif;
-       font-weight: 400;
     }
 
     #root, 
