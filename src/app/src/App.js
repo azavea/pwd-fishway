@@ -40,11 +40,10 @@ class App extends Component {
     }
 
     render() {
-        const { isScreensaverVisible, dispatch, isQuizVisible } = this.props;
-        const app = isScreensaverVisible ? <Screensaver /> : <Navbar />;
+        const { isScreensaverVisible, isQuizVisible, dispatch } = this.props;
         const screensaver = <Screensaver />;
-        const quiz = <QuizView />;
-        const app = <Navbar />;
+        const quiz = <QuizView dispatch={dispatch} />;
+        const app = <Navbar isQuizVisible={isQuizVisible} />;
         const idleTimer = (
             <IdleTimer
                 ref={ref => {
@@ -56,13 +55,14 @@ class App extends Component {
                 timeout={MAX_IDLE_TIME}
             />
         );
+
         return (
             <div className='App'>
                 <GlobalStyle />
                 {isScreensaverVisible && screensaver}
                 {!isScreensaverVisible && idleTimer}
-                {!isScreensaverVisible && !isQuizVisible && app}
                 {isQuizVisible && quiz}
+                {!isScreensaverVisible && app}
             </div>
         );
     }
@@ -73,6 +73,7 @@ App.propTypes = {
     dispatch: func.isRequired,
     timerEvent: string.isRequired,
     isQuizVisible: bool.isRequired,
+    dispatch: func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -81,6 +82,7 @@ function mapStateToProps(state) {
         dispatch: state.dispatch,
         timerEvent: state.timerEvent,
         isQuizVisible: state.isQuizVisible,
+        dispatch: state.dispatch,
     };
 }
 export default connect(mapStateToProps)(App);
