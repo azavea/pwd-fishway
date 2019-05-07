@@ -29,6 +29,9 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         ./node_modules/.bin/eslint \
         src/ --ext .js --ext .jsx --max-warnings=0
 
+        # Run style linter
+        ./node_modules/.bin/stylelint './src/**/*.js'
+
         yarn build
 
         popd

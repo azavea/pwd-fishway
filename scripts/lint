@@ -27,5 +27,11 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
             -f docker-compose.yml \
             run --rm --entrypoint ./node_modules/.bin/eslint \
             app src/ --ext .js --ext .jsx
+
+        # Lint styled-components
+        docker-compose \
+            -f docker-compose.yml \
+            run --rm --entrypoint ./node_modules/.bin/stylelint \
+            app './src/**/*.js'
     fi
 fi
