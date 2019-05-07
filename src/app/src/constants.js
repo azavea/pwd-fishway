@@ -1,3 +1,6 @@
+export const PAUSE = 'PAUSE';
+export const RESET = 'RESET';
+
 export const ABOUT_PROFILES = [
     {
         title: 'About the Fishway',
