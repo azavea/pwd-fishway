@@ -1,4 +1,4 @@
-export const aboutProfiles = [
+export const AB0UT_PROFILES = [
     {
         title: 'About the Fishway',
         name: '',
@@ -112,7 +112,7 @@ const BLUEGILL = {
     picturePath: './media/meetthefish/bluegill_large.png',
 };
 
-export const fishHighlights = [
+export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
         videoPath: './media/seethefishway/shad.mp4',
@@ -233,7 +233,7 @@ export const fishHighlights = [
     },
 ];
 
-export const fish = [
+export const FISH = [
     {
         commonName: 'Alewife',
         scientificName: 'Alosa pseudoharengus',
@@ -528,7 +528,7 @@ export const fish = [
     },
 ];
 
-export const quizFish = [
+export const QUIZ_FISH = [
     {
         ...AMERICAN_SHAD,
         videoPath: './media/quiz/american_shad_clip.mp4',
