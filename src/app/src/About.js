@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { saveAboutSlideIndex } from './actions';
+import AboutSlide from './AboutSlide';
+import { aboutProfiles } from './constants';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
 const slidesToShow = 1.3;
@@ -16,15 +18,18 @@ const StyledAbout = styled.div`
     > h2 {
         text-align: center;
     }
-
-    .about__slide {
-        height: 80vh;
-        padding: 1rem;
-    }
 `;
 
 const About = props => {
     const { dispatch, aboutSlideIndex } = props;
+
+    const slides = aboutProfiles.map((profile, index) => (
+        <AboutSlide
+            key={index}
+            active={index === aboutSlideIndex}
+            {...profile}
+        />
+    ));
 
     return (
         <StyledAbout>
@@ -42,14 +47,7 @@ const About = props => {
                     dispatch(saveAboutSlideIndex(slideIndex))
                 }
             >
-                <div className='about__slide'>The Fishway! So cool!!</div>
-                <div className='about__slide'>
-                    Marine biologists! Even cooler!
-                </div>
-                <div className='about__slide'>
-                    Computer Engineers! Pretty cool too!
-                </div>
-                <div className='about__slide'>Dams! The coolest!</div>
+                {slides}
             </Carousel>
         </StyledAbout>
     );

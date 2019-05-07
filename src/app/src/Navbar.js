@@ -16,7 +16,9 @@ const StyledTabs = styled(Tabs)`
 
 const Navbar = () => {
     return (
-        <StyledTabs defaultActiveKey='about'>
+        // unmountOnExit is used to ensure that videos restart when switching
+        // from About tab to another tab and back again
+        <StyledTabs defaultActiveKey='about' unmountOnExit={true}>
             <Tab eventKey='about' title='About'>
                 <About />
             </Tab>

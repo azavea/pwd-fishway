@@ -1,0 +1,100 @@
+import React, { Component } from 'react';
+import { Button, Flex, Heading, Text } from 'rebass';
+import styled from 'styled-components';
+
+const StyledAboutSlide = styled(Flex)`
+    height: 80vh;
+    padding: 1rem;
+
+    video {
+        margin: auto;
+        height: fit-content;
+        max-width: 100%;
+    }
+`;
+
+const PlayButton = styled(Button)`
+    position: absolute;
+    background: gray;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    opacity: 0.5;
+    top: 50%;
+    left: 18%;
+    transform: translateY(-50%);
+    font-size: 150px;
+    text-align: center;
+`;
+
+export default class AboutSlide extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            playing: true,
+        };
+        this.videoRef = React.createRef();
+        this.togglePlayPause = this.togglePlayPause.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (
+            prevProps.active !== this.props.active ||
+            prevState.playing !== this.state.playing
+        ) {
+            this.autoplay();
+        }
+    }
+
+    autoplay() {
+        const videoElem = this.videoRef.current;
+        if (this.props.active && this.state.playing) {
+            videoElem.play();
+        } else {
+            videoElem.pause();
+        }
+    }
+
+    togglePlayPause() {
+        this.setState({ playing: !this.state.playing });
+    }
+
+    render() {
+        const { active, description, job, name, title, videoPath } = this.props;
+
+        return (
+            <StyledAboutSlide>
+                <Flex width={3 / 5}>
+                    <video
+                        ref={this.videoRef}
+                        autoPlay={active}
+                        src={videoPath}
+                        onClick={this.togglePlayPause}
+                    />
+                    {!this.state.playing && (
+                        <PlayButton onClick={this.togglePlayPause}>
+                            ▶
+                        </PlayButton>
+                    )}
+                </Flex>
+                <Flex
+                    width={2 / 5}
+                    padding='2rem'
+                    margin='auto'
+                    flexDirection='column'
+                >
+                    <Heading as='h3'>{title}</Heading>
+                    {job && (
+                        <>
+                            <Heading as='h4'>Name</Heading>
+                            <Text>{name}</Text>
+                            <Text>{job}</Text>
+                            <Heading as='h4'>What he does</Heading>
+                        </>
+                    )}
+                    <Text>{description}</Text>
+                </Flex>
+            </StyledAboutSlide>
+        );
+    }
+}
