@@ -10,6 +10,9 @@ import theme from './theme';
 
 import App from './App';
 
+export { default as Heading } from './Heading';
+export { default as Text } from './Text';
+
 render(
     <Provider store={store}>
         <ThemeProvider theme={theme}>

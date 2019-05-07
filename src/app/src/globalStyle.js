@@ -70,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
     /* Global styles */
     html {
        font-size: 16px;
+       font-family: 'Fira Sans';
     }
     body {
        line-height: 1;
