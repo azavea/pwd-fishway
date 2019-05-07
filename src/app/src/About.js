@@ -4,6 +4,8 @@ import { func, number } from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+import { Heading, Text } from '../src';
 
 import { saveAboutSlideIndex } from './actions';
 import AboutSlide from './AboutSlide';
@@ -14,6 +16,7 @@ const slidesToShow = 1.3;
 
 const StyledAbout = styled.div`
     padding-top: 1rem;
+    background: ${themeGet('colors.teals.4')};
 
     > h2 {
         text-align: center;
@@ -33,7 +36,7 @@ const About = props => {
 
     return (
         <StyledAbout>
-            <h2>About</h2>
+            <Heading as='h2'>About</Heading>
             <Carousel
                 autoplay={false}
                 cellAlign={'center'}

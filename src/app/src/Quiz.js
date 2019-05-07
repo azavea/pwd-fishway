@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, Box, Heading, Text, Button } from 'rebass';
+import { Flex, Box, Button } from 'rebass';
+import { Heading, Text } from '../src';
+import { themeGet } from 'styled-system';
 
 const StyledQuiz = styled(Flex)`
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: ${themeGet('colors.teals.0')};
 `;
 
 const Quiz = () => {
     return (
         <StyledQuiz>
             <Box width={1 / 2} mb='4'>
-                <Heading as='h1' fontSize='3' mb='4'>
-                    Test your skills
-                </Heading>
-                <Text as='p' fontSize='1'>
+                <Heading as='h1'>Test your skills</Heading>
+                <Text as='p' variant='big'>
                     Aquatic biologists need to identify each fish that moves
                     through the fishway. This can be tough, because fish swim
                     fast and are hard to see!
@@ -27,7 +28,7 @@ const Quiz = () => {
                     the highest score!
                 </Text>
             </Box>
-            <Button>Play</Button>
+            <Button mt='compact'>Play</Button>
         </StyledQuiz>
     );
 };

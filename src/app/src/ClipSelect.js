@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Heading, Text } from 'rebass';
+import { Box } from 'rebass';
+import { Heading, Text } from '../src';
 import { themeGet } from 'styled-system';
 
 const StyledClipSelect = styled(Box)`
@@ -10,7 +11,7 @@ const StyledClipSelect = styled(Box)`
 const ClipSelect = () => {
     return (
         <StyledClipSelect>
-            <Heading as='h2' fontSize='2'>
+            <Heading as='h2' fontSize='2' variant='sectionTitle'>
                 Highlight reel
             </Heading>
             <Text as='p' fontSize='0'>

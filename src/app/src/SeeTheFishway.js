@@ -1,17 +1,25 @@
 import React from 'react';
-import { Flex, Box, Heading, Text } from 'rebass';
+import { Flex, Box } from 'rebass';
+import { Heading, Text } from '../src';
 import Sidebar from './Sidebar.js';
 import ClipSelect from './ClipSelect.js';
+import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+
+const StyledSeeTheFishway = styled.div`
+    height: 100%;
+    background: ${themeGet('colors.teals.2')};
+`;
 
 const SeeTheFishway = () => {
     return (
-        <div>
+        <StyledSeeTheFishway>
             <Flex>
                 <Box>
                     <Heading as='h1' fontSize='2' mb='3'>
                         See the Fishway
                     </Heading>
-                    <Text as='p' fontSize='1'>
+                    <Text as='p' fontSize='1' variant='big'>
                         During the Spring migration, a video camera transmits
                         live images to this exhibit, and to aquatic biologists.
                     </Text>
@@ -25,7 +33,7 @@ const SeeTheFishway = () => {
                 <Sidebar />
             </Flex>
             <ClipSelect />
-        </div>
+        </StyledSeeTheFishway>
     );
 };
 
