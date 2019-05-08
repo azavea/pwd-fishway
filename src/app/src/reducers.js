@@ -4,12 +4,16 @@ import update from 'immutability-helper';
 import {
     hideScreensaver,
     saveAboutSlideIndex,
-    showScreensaver,
+    resetAppState,
+    resetTimer,
+    pauseTimer,
 } from './actions';
+import { RESET, PAUSE } from './constants';
 
 export const initialState = {
     aboutSlideIndex: 0,
     isScreensaverVisible: true,
+    timerEvent: '',
 };
 
 export default createReducer(
@@ -18,11 +22,9 @@ export default createReducer(
             update(state, { aboutSlideIndex: { $set: payload } }),
         [hideScreensaver]: state =>
             update(state, { isScreensaverVisible: { $set: false } }),
-        [showScreensaver]: state =>
-            update(state, {
-                aboutSlideIndex: { $set: initialState.aboutSlideIndex },
-                isScreensaverVisible: { $set: true },
-            }),
+        [resetAppState]: state => update(state, { $set: initialState }),
+        [resetTimer]: state => update(state, { timerEvent: { $set: RESET } }),
+        [pauseTimer]: state => update(state, { timerEvent: { $set: PAUSE } }),
     },
     initialState
 );

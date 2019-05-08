@@ -1,3 +1,7 @@
+export const PAUSE = 'PAUSE';
+export const RESET = 'RESET';
+export const MAX_IDLE_TIME = 10000; //in ms
+
 export const ABOUT_PROFILES = [
     {
         title: 'About the Fishway',

@@ -1,13 +1,13 @@
 import Carousel from 'nuka-carousel';
 import { PagingDots } from 'nuka-carousel/lib';
 import { func, number } from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { Heading } from './custom-styled-components';
 
-import { saveAboutSlideIndex } from './actions';
+import { saveAboutSlideIndex, resetTimer } from './actions';
 import AboutSlide from './AboutSlide';
 import { ABOUT_PROFILES } from './constants';
 
@@ -24,40 +24,48 @@ const StyledAbout = styled.div`
     }
 `;
 
-const About = props => {
-    const { dispatch, aboutSlideIndex } = props;
+class About extends Component {
+    componentWillUnmount() {
+        const { dispatch } = this.props;
+        dispatch(resetTimer());
+    }
 
-    const slides = ABOUT_PROFILES.map((profile, index) => (
-        <AboutSlide
-            key={index}
-            active={index === aboutSlideIndex}
-            {...profile}
-        />
-    ));
+    render() {
+        const { dispatch, aboutSlideIndex } = this.props;
 
-    return (
-        <StyledAbout>
-            <Heading as='h1' textAlign='center'>
-                About
-            </Heading>
-            <Carousel
-                autoplay={false}
-                cellAlign={'center'}
-                renderCenterLeftControls={null}
-                renderCenterRightControls={null}
-                renderBottomCenterControls={null}
-                renderTopCenterControls={props => <PagingDots {...props} />}
-                slideIndex={aboutSlideIndex}
-                slidesToShow={slidesToShow}
-                afterSlide={slideIndex =>
-                    dispatch(saveAboutSlideIndex(slideIndex))
-                }
-            >
-                {slides}
-            </Carousel>
-        </StyledAbout>
-    );
-};
+        const slides = ABOUT_PROFILES.map((profile, index) => (
+            <AboutSlide
+                key={index}
+                active={index === aboutSlideIndex}
+                {...profile}
+                dispatch={dispatch}
+            />
+        ));
+
+        return (
+            <StyledAbout>
+                <Heading as='h1' textAlign='center'>
+                    About
+                </Heading>
+                <Carousel
+                    autoplay={false}
+                    cellAlign={'center'}
+                    renderCenterLeftControls={null}
+                    renderCenterRightControls={null}
+                    renderBottomCenterControls={null}
+                    renderTopCenterControls={props => <PagingDots {...props} />}
+                    slideIndex={aboutSlideIndex}
+                    slidesToShow={slidesToShow}
+                    afterSlide={slideIndex =>
+                        dispatch(saveAboutSlideIndex(slideIndex))
+                    }
+                >
+                    {slides}
+                </Carousel>
+            </StyledAbout>
+        );
+    }
+}
 
 About.propTypes = {
     aboutSlideIndex: number.isRequired,
