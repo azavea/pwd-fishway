@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Heading } from 'rebass';
+import { Box } from 'rebass';
+import { Heading } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledSidebar = styled(Box)`
@@ -11,7 +12,7 @@ const StyledSidebar = styled(Box)`
 const Sidebar = () => {
     return (
         <StyledSidebar>
-            <Heading as='h2' fontSize='2'>
+            <Heading as='h2' variant='small'>
                 Sidebar
             </Heading>
         </StyledSidebar>

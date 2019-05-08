@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Flex, Heading, Text } from 'rebass';
+import { Button, Flex } from 'rebass';
+import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
 const StyledAboutSlide = styled(Flex)`
@@ -83,13 +84,19 @@ export default class AboutSlide extends Component {
                     margin='auto'
                     flexDirection='column'
                 >
-                    <Heading as='h3'>{title}</Heading>
+                    <Heading as='h2' variant='small'>
+                        {title}
+                    </Heading>
                     {job && (
                         <>
-                            <Heading as='h4'>Name</Heading>
+                            <Heading as='h3' variant='xSmall'>
+                                Name
+                            </Heading>
                             <Text>{name}</Text>
                             <Text>{job}</Text>
-                            <Heading as='h4'>What he does</Heading>
+                            <Heading as='h3' variant='xSmall'>
+                                What he does
+                            </Heading>
                         </>
                     )}
                     <Text>{description}</Text>

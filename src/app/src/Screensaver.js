@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import { hideScreensaver } from './actions';
 import styled from 'styled-components';
-import { Flex, Box, Heading, Button } from 'rebass';
+import { Flex, Box, Button } from 'rebass';
+import { Heading } from './custom-styled-components';
+import { themeGet } from 'styled-system';
 
 const StyledScreensaver = styled(Flex)`
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: ${themeGet('colors.teals.0')};
 `;
 
 const Screensaver = props => {
@@ -17,8 +20,13 @@ const Screensaver = props => {
 
     return (
         <StyledScreensaver onClick={() => dispatch(hideScreensaver())}>
-            <Box width={1 / 2}>
-                <Heading as='h1' fontSize='3' mb='4'>
+            <Box>
+                <Heading
+                    as='h1'
+                    variant='medium'
+                    textShadow='large'
+                    opacity='0.95'
+                >
                     Learn how the fish ladder helps fish populations and whether
                     you have what it takes to be an aquatic biologist.
                 </Heading>
