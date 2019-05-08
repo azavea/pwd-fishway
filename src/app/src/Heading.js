@@ -33,6 +33,15 @@ const Heading = styled(BaseHeading)`
             font-weight: ${themeGet('fontWeights.semibold')};
             margin-bottom: ${themeGet('space.small')};
         `};
+    ${props =>
+        props.variant === 'xSmall' &&
+        css`
+            font-size: ${themeGet('fontSizes.1')};
+            font-weight: ${themeGet('fontWeights.semibold')};
+            margin-bottom: ${themeGet('space.small')};
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        `};
 `;
 
 Heading.displayName = 'Heading';
