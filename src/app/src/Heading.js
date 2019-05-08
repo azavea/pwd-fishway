@@ -46,6 +46,10 @@ const Heading = styled(BaseHeading)`
 
 Heading.displayName = 'Heading';
 
+Heading.propTypes = {
+    variant: PropTypes.string.isRequired,
+};
+
 Heading.PropTypes = {
     ...variant.PropTypes,
 };

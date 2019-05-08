@@ -35,6 +35,10 @@ const Text = styled(BaseText)`
 
 Text.displayName = 'Text';
 
+Text.propTypes = {
+    variant: PropTypes.string.isRequired,
+};
+
 Text.PropTypes = {
     ...variant.PropTypes,
 };
