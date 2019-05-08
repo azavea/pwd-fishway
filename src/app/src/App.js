@@ -8,7 +8,7 @@ import { RESET, PAUSE, MAX_IDLE_TIME } from './constants';
 
 import Navbar from './components/Navbar';
 import Screensaver from './components/Screensaver';
-import QuizView from './components/QuizView';
+import Quiz from './components/Quiz';
 import GlobalStyle from './util/globalStyle';
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
     render() {
         const { isScreensaverVisible, isQuizVisible, dispatch } = this.props;
         const screensaver = <Screensaver />;
-        const quiz = <QuizView dispatch={dispatch} />;
+        const quiz = <Quiz dispatch={dispatch} />;
         const app = <Navbar isQuizVisible={isQuizVisible} />;
         const idleTimer = (
             <IdleTimer

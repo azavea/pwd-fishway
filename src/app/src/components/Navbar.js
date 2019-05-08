@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import About from './About';
 import SeeTheFishway from './SeeTheFishway';
 import MeetTheFish from './MeetTheFish';
-import Quiz from './Quiz';
+import QuizHome from './QuizHome';
 
 const StyledTabs = styled(Tabs)`
     width: 100%;
@@ -34,7 +34,7 @@ const Navbar = props => {
                     <MeetTheFish />
                 </Tab>
                 <Tab eventKey='test' title='Test your Skills'>
-                    <Quiz />
+                    <QuizHome />
                 </Tab>
             </StyledTabs>
         </StyledNavbar>
