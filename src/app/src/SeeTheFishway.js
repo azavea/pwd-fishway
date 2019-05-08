@@ -16,10 +16,8 @@ const SeeTheFishway = () => {
         <StyledSeeTheFishway>
             <Flex>
                 <Box>
-                    <Heading as='h1' fontSize='2' mb='3'>
-                        See the Fishway
-                    </Heading>
-                    <Text as='p' fontSize='1' variant='big'>
+                    <Heading as='h1'>See the Fishway</Heading>
+                    <Text as='p' variant='large'>
                         During the Spring migration, a video camera transmits
                         live images to this exhibit, and to aquatic biologists.
                     </Text>

@@ -14,10 +14,8 @@ const MeetTheFish = () => {
     return (
         <StyledMeetTheFish>
             <Box width={1 / 2}>
-                <Heading as='h1' fontSize='2' mb='3'>
-                    Meet the Fish
-                </Heading>
-                <Text as='p' fontSize='1' variant='big'>
+                <Heading as='h1'>Meet the Fish</Heading>
+                <Text as='p' variant='large'>
                     Did you know over 48 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
                 </Text>

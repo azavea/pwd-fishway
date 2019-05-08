@@ -21,7 +21,12 @@ const Screensaver = props => {
     return (
         <StyledScreensaver onClick={() => dispatch(hideScreensaver())}>
             <Box>
-                <Heading as='h1' variant='intro'>
+                <Heading
+                    as='h1'
+                    variant='medium'
+                    textShadow='large'
+                    opacity='0.95'
+                >
                     Learn how the fish ladder helps fish populations and whether
                     you have what it takes to be an aquatic biologist.
                 </Heading>

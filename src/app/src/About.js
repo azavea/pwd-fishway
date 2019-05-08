@@ -18,8 +18,9 @@ const StyledAbout = styled.div`
     padding-top: 1rem;
     background: ${themeGet('colors.teals.4')};
 
-    > h2 {
-        text-align: center;
+    .about__slide {
+        height: 80vh;
+        padding: 1rem;
     }
 `;
 
@@ -36,7 +37,9 @@ const About = props => {
 
     return (
         <StyledAbout>
-            <Heading as='h2'>About</Heading>
+            <Heading as='h1' textAlign='center'>
+                About
+            </Heading>
             <Carousel
                 autoplay={false}
                 cellAlign={'center'}

@@ -17,7 +17,7 @@ const Quiz = () => {
         <StyledQuiz>
             <Box width={1 / 2} mb='4'>
                 <Heading as='h1'>Test your skills</Heading>
-                <Text as='p' variant='big'>
+                <Text as='p' variant='large'>
                     Aquatic biologists need to identify each fish that moves
                     through the fishway. This can be tough, because fish swim
                     fast and are hard to see!

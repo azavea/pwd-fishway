@@ -11,10 +11,10 @@ const StyledClipSelect = styled(Box)`
 const ClipSelect = () => {
     return (
         <StyledClipSelect>
-            <Heading as='h2' fontSize='2' variant='sectionTitle'>
+            <Heading as='h2' variant='small'>
                 Highlight reel
             </Heading>
-            <Text as='p' fontSize='0'>
+            <Text as='p'>
                 Check out some of the wildlife that scientists have caught on
                 tape over the years.
             </Text>

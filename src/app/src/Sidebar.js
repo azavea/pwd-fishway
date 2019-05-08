@@ -12,7 +12,7 @@ const StyledSidebar = styled(Box)`
 const Sidebar = () => {
     return (
         <StyledSidebar>
-            <Heading as='h2' fontSize='2' variant='sectionTitle'>
+            <Heading as='h2' variant='small'>
                 Sidebar
             </Heading>
         </StyledSidebar>

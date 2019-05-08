@@ -9,26 +9,27 @@ const variant = style({
 });
 
 const Text = styled(BaseText)`
-    ${props =>
-        props.variant === 'big' &&
-        css`
-            font-size: ${themeGet('fontSizes.1')};
-            color: ${themeGet('colors.white')};
-            font-weight: ${themeGet('fontWeights.medium')};
-            line-height: ${themeGet('lineHeights.normal')};
-            margin-bottom: ${themeGet('space.small')};
-            opacity: 0.8;
-        `};
+    color: ${themeGet('colors.white')};
+    font-weight: ${themeGet('fontWeights.normal')};
+    line-height: ${themeGet('lineHeights.normal')};
+    margin-bottom: ${themeGet('space.small')};
+    opacity: 0.8;
 
     ${props =>
-        props.variant === 'body' &&
+        props.variant === 'large' &&
+        css`
+            font-size: ${themeGet('fontSizes.2')};
+            font-weight: ${themeGet('fontWeights.medium')};
+        `};
+    ${props =>
+        props.variant === 'base' &&
+        css`
+            font-size: ${themeGet('fontSizes.1')};
+        `};
+    ${props =>
+        props.variant === 'small' &&
         css`
             font-size: ${themeGet('fontSizes.0')};
-            color: ${themeGet('colors.white')};
-            font-weight: ${themeGet('fontWeights.normal')};
-            line-height: ${themeGet('lineHeights.normal')};
-            margin-bottom: ${themeGet('space.small')};
-            opacity: 0.8;
         `};
 `;
 
@@ -39,7 +40,7 @@ Text.PropTypes = {
 };
 
 Text.defaultProps = {
-    variant: 'body',
+    variant: 'base',
 };
 
 export default Text;
