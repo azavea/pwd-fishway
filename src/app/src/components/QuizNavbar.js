@@ -5,7 +5,6 @@ import { Flex, Button, Text } from 'rebass';
 import { hideQuiz } from '../actions';
 
 const StyledQuizNavbar = styled(Flex)`
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
