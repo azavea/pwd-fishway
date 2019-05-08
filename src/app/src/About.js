@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import { saveAboutSlideIndex } from './actions';
 import AboutSlide from './AboutSlide';
-import { aboutProfiles } from './constants';
+import { ABOUT_PROFILES } from './constants';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
 const slidesToShow = 1.3;
@@ -23,7 +23,7 @@ const StyledAbout = styled.div`
 const About = props => {
     const { dispatch, aboutSlideIndex } = props;
 
-    const slides = aboutProfiles.map((profile, index) => (
+    const slides = ABOUT_PROFILES.map((profile, index) => (
         <AboutSlide
             key={index}
             active={index === aboutSlideIndex}
