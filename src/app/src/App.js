@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 import Screensaver from './Screensaver';
 import GlobalStyle from './globalStyle';
 import { resetAppState } from './actions';
-import { RESET, PAUSE } from './constants';
+import { RESET, PAUSE, MAX_IDLE_TIME } from './constants';
 
 class App extends Component {
     constructor() {
@@ -17,16 +17,16 @@ class App extends Component {
         this.pauseTimer = this.pauseTimer.bind(this);
     }
 
-    shouldComponentUpdate(nextProps) {
-        const { timerEvent: nextTimerEvent } = nextProps;
-        if (nextTimerEvent !== this.props.timerEvent) {
-            if (nextTimerEvent === RESET) {
+    componentDidUpdate(prevProps) {
+        const { timerEvent: prevTimerEvent } = prevProps;
+        const { timerEvent: currentTimerEvent } = this.props;
+        if (this.idleTimer && prevTimerEvent !== currentTimerEvent) {
+            if (currentTimerEvent === RESET) {
                 this.resetTimer();
-            } else if (nextTimerEvent === PAUSE) {
+            } else if (currentTimerEvent === PAUSE) {
                 this.pauseTimer();
             }
         }
-        return true;
     }
 
     pauseTimer() {
@@ -48,7 +48,7 @@ class App extends Component {
                 element={document}
                 onIdle={() => dispatch(resetAppState())}
                 onAction={this.resetTimer}
-                timeout={5000}
+                timeout={MAX_IDLE_TIME}
             />
         );
         return (
