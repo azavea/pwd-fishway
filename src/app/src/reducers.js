@@ -10,7 +10,7 @@ import {
     showQuiz,
     hideQuiz,
 } from './actions';
-import { RESET, PAUSE } from './constants';
+import { RESET, PAUSE } from './util/constants';
 
 export const initialState = {
     aboutSlideIndex: 0,

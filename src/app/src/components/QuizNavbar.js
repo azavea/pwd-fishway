@@ -9,12 +9,10 @@ const StyledQuizNavbar = styled(Flex)`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 50px
+    height: 50px;
     background-color: #296882;
     padding: 0 10px 0 30px;
 `;
-
-const CloseButton = styled(Button)``;
 
 const QuizNavbar = props => {
     const { dispatch } = props;
@@ -23,7 +21,7 @@ const QuizNavbar = props => {
             <Text as='h5' fontSize='0'>
                 TEST YOUR SKILLS
             </Text>
-            <CloseButton onClick={() => dispatch(hideQuiz())}>x</CloseButton>
+            <Button onClick={() => dispatch(hideQuiz())}>x</Button>
         </StyledQuizNavbar>
     );
 };

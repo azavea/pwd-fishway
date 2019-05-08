@@ -6,8 +6,6 @@ import { themeGet } from 'styled-system';
 import QuizNavbar from './QuizNavbar';
 import Sidebar from './Sidebar';
 
-const StyledQuiz = styled(Box)``;
-
 const QuizContainer = styled(Flex)`
     text-align: center;
     background: ${themeGet('colors.teals.0')};
@@ -15,12 +13,12 @@ const QuizContainer = styled(Flex)`
 
 const Quiz = props => {
     return (
-        <StyledQuiz>
+        <Box>
             <QuizNavbar dispatch={props.dispatch} />
             <QuizContainer>
                 <Sidebar />
             </QuizContainer>
-        </StyledQuiz>
+        </Box>
     );
 };
 

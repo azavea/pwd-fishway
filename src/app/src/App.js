@@ -4,12 +4,12 @@ import { bool, func, string } from 'prop-types';
 import IdleTimer from 'react-idle-timer';
 
 import { resetAppState } from './actions';
-import { RESET, PAUSE, MAX_IDLE_TIME } from './constants';
 
 import Navbar from './components/Navbar';
 import Screensaver from './components/Screensaver';
 import Quiz from './components/Quiz';
 import GlobalStyle from './util/globalStyle';
+import { RESET, PAUSE, MAX_IDLE_TIME } from './util/constants';
 
 class App extends Component {
     constructor() {
@@ -42,8 +42,7 @@ class App extends Component {
     render() {
         const { isScreensaverVisible, isQuizVisible, dispatch } = this.props;
         const screensaver = <Screensaver />;
-        const quiz = <Quiz dispatch={dispatch} />;
-        const app = <Navbar isQuizVisible={isQuizVisible} />;
+        const navbar = <Navbar isQuizVisible={isQuizVisible} />;
         const idleTimer = (
             <IdleTimer
                 ref={ref => {
@@ -55,14 +54,22 @@ class App extends Component {
                 timeout={MAX_IDLE_TIME}
             />
         );
+        const quiz = <Quiz dispatch={dispatch} />;
+
+        const app = isScreensaverVisible ? (
+            screensaver
+        ) : (
+            <>
+                {navbar}
+                {idleTimer}
+            </>
+        );
 
         return (
             <div className='App'>
                 <GlobalStyle />
-                {isScreensaverVisible && screensaver}
-                {!isScreensaverVisible && idleTimer}
+                {app}
                 {isQuizVisible && quiz}
-                {!isScreensaverVisible && app}
             </div>
         );
     }
@@ -73,7 +80,6 @@ App.propTypes = {
     dispatch: func.isRequired,
     timerEvent: string.isRequired,
     isQuizVisible: bool.isRequired,
-    dispatch: func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -82,7 +88,6 @@ function mapStateToProps(state) {
         dispatch: state.dispatch,
         timerEvent: state.timerEvent,
         isQuizVisible: state.isQuizVisible,
-        dispatch: state.dispatch,
     };
 }
 export default connect(mapStateToProps)(App);

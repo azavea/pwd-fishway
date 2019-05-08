@@ -20,9 +20,9 @@ const StyledNavbar = styled.div`
 
 const Navbar = props => {
     return (
-        // unmountOnExit is used to ensure that videos restart when switching
-        // from About tab to another tab and back again
         <StyledNavbar hide={props.isQuizVisible ? 'none' : 'visible'}>
+            {/* unmountOnExit is used to ensure that videos restart when
+            switching from About tab to another tab and back again */}
             <StyledTabs defaultActiveKey='about' unmountOnExit={true}>
                 <Tab eventKey='about' title='About'>
                     <About />
