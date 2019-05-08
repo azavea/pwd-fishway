@@ -316,6 +316,12 @@ module.exports = function(webpackEnv) {
                     ],
                     include: paths.appSrc,
                 },
+                {
+                    test: /\.(js|jsx)$/,
+                    enforce: 'pre',
+                    loader: 'stylelint-custom-processor-loader',
+                    include: paths.appSrc,
+                },
                 // Run prettier to clean up code
                 {
                     test: /\.jsx?$/,
