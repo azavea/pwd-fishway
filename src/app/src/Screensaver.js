@@ -4,7 +4,7 @@ import { func } from 'prop-types';
 import { hideScreensaver } from './actions';
 import styled from 'styled-components';
 import { Flex, Box, Button } from 'rebass';
-import { Heading } from '../src';
+import { Heading } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledScreensaver = styled(Flex)`

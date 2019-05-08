@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Flex } from 'rebass';
-import { Heading, Text } from '../src';
+import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
 const StyledAboutSlide = styled(Flex)`

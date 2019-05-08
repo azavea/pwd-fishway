@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
-import { Heading, Text } from '../src';
+import { Heading, Text } from './custom-styled-components';
 import Sidebar from './Sidebar.js';
 import ClipSelect from './ClipSelect.js';
 import styled from 'styled-components';

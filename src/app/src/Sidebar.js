@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
-import { Heading } from '../src';
+import { Heading } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledSidebar = styled(Box)`

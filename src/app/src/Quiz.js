@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex, Box, Button } from 'rebass';
-import { Heading, Text } from '../src';
+import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledQuiz = styled(Flex)`

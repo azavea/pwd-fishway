@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
-import { Heading, Text } from '../src';
+import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledMeetTheFish = styled(Flex)`
