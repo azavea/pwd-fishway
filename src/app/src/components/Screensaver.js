@@ -26,7 +26,8 @@ const Screensaver = props => {
                     as='h1'
                     variant='medium'
                     textShadow='large'
-                    opacity='0.95'
+                    fontWeight='medium'
+                    opacity={0.9}
                 >
                     Learn how the fish ladder helps fish populations and whether
                     you have what it takes to be an aquatic biologist.
