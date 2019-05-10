@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import styled from 'styled-components';
-import { Flex, Box, Button } from 'rebass';
-import { Heading } from './custom-styled-components';
+import { Flex, Box } from 'rebass';
+import { Heading, Button } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 import { hideScreensaver } from '../actions';
@@ -32,7 +32,7 @@ const Screensaver = props => {
                     Learn how the fish ladder helps fish populations and whether
                     you have what it takes to be an aquatic biologist.
                 </Heading>
-                <Button>Let's go!</Button>
+                <Button>Let’s go!</Button>
             </Box>
         </StyledScreensaver>
     );
