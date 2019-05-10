@@ -7,9 +7,10 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { Heading } from './custom-styled-components';
 
-import { saveAboutSlideIndex, resetTimer } from './actions';
+import { saveAboutSlideIndex, resetTimer } from '../actions';
+import { ABOUT_PROFILES } from '../util/constants';
+
 import AboutSlide from './AboutSlide';
-import { ABOUT_PROFILES } from './constants';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
 const slidesToShow = 1.3;

@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
 import IdleTimer from 'react-idle-timer';
 
-import Navbar from './Navbar';
-import Screensaver from './Screensaver';
-import GlobalStyle from './globalStyle';
 import { resetAppState } from './actions';
-import { RESET, PAUSE, MAX_IDLE_TIME } from './constants';
+
+import Navbar from './components/Navbar';
+import Screensaver from './components/Screensaver';
+import Quiz from './components/Quiz';
+import GlobalStyle from './util/globalStyle';
+import { RESET, PAUSE, MAX_IDLE_TIME } from './util/constants';
 
 class App extends Component {
     constructor() {
@@ -38,8 +40,9 @@ class App extends Component {
     }
 
     render() {
-        const { isScreensaverVisible, dispatch } = this.props;
-        const app = isScreensaverVisible ? <Screensaver /> : <Navbar />;
+        const { isScreensaverVisible, isQuizVisible, dispatch } = this.props;
+        const screensaver = <Screensaver />;
+        const navbar = <Navbar isQuizVisible={isQuizVisible} />;
         const idleTimer = (
             <IdleTimer
                 ref={ref => {
@@ -51,11 +54,22 @@ class App extends Component {
                 timeout={MAX_IDLE_TIME}
             />
         );
+        const quiz = <Quiz dispatch={dispatch} />;
+
+        const app = isScreensaverVisible ? (
+            screensaver
+        ) : (
+            <>
+                {navbar}
+                {idleTimer}
+            </>
+        );
+
         return (
             <div className='App'>
                 <GlobalStyle />
-                {!isScreensaverVisible && idleTimer}
                 {app}
+                {isQuizVisible && quiz}
             </div>
         );
     }
@@ -65,6 +79,7 @@ App.propTypes = {
     isScreensaverVisible: bool.isRequired,
     dispatch: func.isRequired,
     timerEvent: string.isRequired,
+    isQuizVisible: bool.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -72,6 +87,7 @@ function mapStateToProps(state) {
         isScreensaverVisible: state.isScreensaverVisible,
         dispatch: state.dispatch,
         timerEvent: state.timerEvent,
+        isQuizVisible: state.isQuizVisible,
     };
 }
 export default connect(mapStateToProps)(App);

@@ -1,10 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { func } from 'prop-types';
 import { Flex, Box, Button } from 'rebass';
-import { Heading, Text } from './custom-styled-components';
+import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-const StyledQuiz = styled(Flex)`
+import { Heading, Text } from './custom-styled-components';
+
+import { showQuiz } from '../actions';
+
+const StyledQuizHome = styled(Flex)`
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -12,9 +17,10 @@ const StyledQuiz = styled(Flex)`
     background: ${themeGet('colors.teals.0')};
 `;
 
-const Quiz = () => {
+const QuizHome = props => {
+    const { dispatch } = props;
     return (
-        <StyledQuiz>
+        <StyledQuizHome>
             <Box width={1 / 2} mb='4'>
                 <Heading as='h1'>Test your skills</Heading>
                 <Text as='p' variant='large'>
@@ -28,9 +34,20 @@ const Quiz = () => {
                     the highest score!
                 </Text>
             </Box>
-            <Button mt='compact'>Play</Button>
-        </StyledQuiz>
+            <Button mt='compact' onClick={() => dispatch(showQuiz())}>
+                Play
+            </Button>
+        </StyledQuizHome>
     );
 };
 
-export default Quiz;
+QuizHome.propTypes = {
+    dispatch: func.isRequired,
+};
+
+function mapStateToProps(state) {
+    return {
+        dispatch: state.dispatch,
+    };
+}
+export default connect(mapStateToProps)(QuizHome);

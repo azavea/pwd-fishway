@@ -7,13 +7,16 @@ import {
     resetAppState,
     resetTimer,
     pauseTimer,
+    showQuiz,
+    hideQuiz,
 } from './actions';
-import { RESET, PAUSE } from './constants';
+import { RESET, PAUSE } from './util/constants';
 
 export const initialState = {
     aboutSlideIndex: 0,
     isScreensaverVisible: true,
     timerEvent: '',
+    isQuizVisible: false,
 };
 
 export default createReducer(
@@ -25,6 +28,8 @@ export default createReducer(
         [resetAppState]: state => update(state, { $set: initialState }),
         [resetTimer]: state => update(state, { timerEvent: { $set: RESET } }),
         [pauseTimer]: state => update(state, { timerEvent: { $set: PAUSE } }),
+        [showQuiz]: state => update(state, { isQuizVisible: { $set: true } }),
+        [hideQuiz]: state => update(state, { isQuizVisible: { $set: false } }),
     },
     initialState
 );

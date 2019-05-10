@@ -1,0 +1,25 @@
+import React from 'react';
+import styled from 'styled-components';
+import { Flex, Box } from 'rebass';
+import { themeGet } from 'styled-system';
+
+import QuizNavbar from './QuizNavbar';
+import Sidebar from './Sidebar';
+
+const QuizContainer = styled(Flex)`
+    text-align: center;
+    background: ${themeGet('colors.teals.0')};
+`;
+
+const Quiz = props => {
+    return (
+        <Box>
+            <QuizNavbar dispatch={props.dispatch} />
+            <QuizContainer>
+                <Sidebar />
+            </QuizContainer>
+        </Box>
+    );
+};
+
+export default Quiz;

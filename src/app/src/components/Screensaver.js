@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
-import { hideScreensaver } from './actions';
 import styled from 'styled-components';
 import { Flex, Box, Button } from 'rebass';
 import { Heading } from './custom-styled-components';
 import { themeGet } from 'styled-system';
+
+import { hideScreensaver } from '../actions';
 
 const StyledScreensaver = styled(Flex)`
     text-align: center;

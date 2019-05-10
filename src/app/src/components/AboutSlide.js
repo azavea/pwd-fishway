@@ -3,7 +3,7 @@ import { Button, Flex } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
-import { pauseTimer, resetTimer } from './actions';
+import { pauseTimer, resetTimer } from '../actions';
 
 const StyledAboutSlide = styled(Flex)`
     height: 80vh;

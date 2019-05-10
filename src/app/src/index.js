@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { store } from './store';
 
 import { ThemeProvider } from 'styled-components';
-import theme from './theme';
+import theme from './util/theme';
 
 import App from './App';
 
