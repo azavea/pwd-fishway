@@ -72,8 +72,13 @@ const GlobalStyle = createGlobalStyle`
        font-size: 16px;
        font-family: Fira Sans, Helvetica, Arial, sans-serif;
     }
+
     body {
        line-height: 1;
+    }
+    
+    *::selection {
+        background: transparent;
     }
 
     #root, 
