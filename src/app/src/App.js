@@ -11,6 +11,60 @@ import Quiz from './components/Quiz';
 import GlobalStyle from './util/globalStyle';
 import { RESET, PAUSE, MAX_IDLE_TIME } from './util/constants';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTimes as falTimes, faCheck } from '@fortawesome/pro-light-svg-icons';
+import {
+    faBullseyePointer,
+    faEye,
+    faInfoCircle,
+    faHome,
+    faTimes,
+    faHistory,
+    faLongArrowRight,
+    faLongArrowLeft,
+    faQuestionCircle,
+    faExclamationCircle,
+    faUndo,
+} from '@fortawesome/pro-regular-svg-icons';
+import {
+    faInfoCircle as fasInfoCircle,
+    faVideo,
+    faVolumeSlash,
+    faVolume,
+    faFish,
+    faPlayCircle,
+    faPauseCircle,
+    faEye as fasEye,
+    faHome as fasHome,
+    faHistory as fasHistory,
+} from '@fortawesome/pro-solid-svg-icons';
+
+library.add(
+    faInfoCircle,
+    fasInfoCircle,
+    faVideo,
+    faFish,
+    faBullseyePointer,
+    faVolumeSlash,
+    faVolume,
+    faPlayCircle,
+    faPauseCircle,
+    faEye,
+    fasEye,
+    faHome,
+    fasHome,
+    faHistory,
+    fasHistory,
+    falTimes,
+    faTimes,
+    faLongArrowRight,
+    faLongArrowLeft,
+    faQuestionCircle,
+    faExclamationCircle,
+    faCheck,
+    faUndo
+);
+
 class App extends Component {
     constructor() {
         super();
