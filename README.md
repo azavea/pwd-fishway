@@ -62,6 +62,16 @@ pin it to a specific version.
     - `package.json`
     - `yarn.lock`
 
+### FontAwesome Pro
+We are using a paid FontAwesome Pro subscription on this project. Please follow the steps below to properly register the imported font styles with FortAwesome:
+1. Add a `.npmrc` file to the same folder as `package.json`.
+2. Paste the following in that file:
+```
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken={AZAVEA_TOKEN}
+```
+3. Replace `{AZAVEA_TOKEN}` with the token visible in FontAwesome’s LastPass notes.
+
 #### Notes
 
 * We usually pin packages to a specific version to minimize build errors.
