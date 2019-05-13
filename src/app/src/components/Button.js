@@ -91,6 +91,24 @@ const Button = styled(BaseButton)`
     &:active {
         opacity: 0.5;
     }
+
+    ${props =>
+        props.variant === 'close' &&
+        css`
+            color: ${themeGet('colors.black')};
+            background-color: ${themeGet('colors.white')};
+            box-shadow: 1px transparent;
+            border: 6px solid ${themeGet('colors.teals.3')};
+            font-size: ${themeGet('fontSizes.2')};
+            font-weight: ${themeGet('fontWeights.semibold')};
+            border-radius: 100%;
+            padding: 0;
+            width: 4rem;
+            height: 4rem;
+            &:active {
+                opacity: 0.8;
+            }
+        `};
 `;
 
 Button.displayName = 'Button';

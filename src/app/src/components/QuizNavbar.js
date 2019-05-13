@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, Button, Text } from 'rebass';
+import { Flex } from 'rebass';
+import { Heading, Button } from './custom-styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { hideQuiz } from '../actions';
 
@@ -18,10 +20,12 @@ const QuizNavbar = props => {
     const { dispatch } = props;
     return (
         <StyledQuizNavbar>
-            <Text as='h5' fontSize='0'>
+            <Heading as='h1' variant='xSmall' fontSize='0'>
                 TEST YOUR SKILLS
-            </Text>
-            <Button onClick={() => dispatch(hideQuiz())}>x</Button>
+            </Heading>
+            <Button variant='close' onClick={() => dispatch(hideQuiz())}>
+                <FontAwesomeIcon icon={['fal', 'times']} />
+            </Button>
         </StyledQuizNavbar>
     );
 };
