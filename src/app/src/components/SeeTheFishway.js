@@ -1,20 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex, Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
-import Sidebar from './Sidebar.js';
-import ClipSelect from './ClipSelect.js';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-const StyledSeeTheFishway = styled.div`
+import { FISH_HIGHLIGHTS } from '../util/constants';
+
+import Sidebar from './Sidebar';
+import VideoCard from './VideoCard';
+
+const StyledSeeTheFishway = styled(Flex)`
     height: 100%;
     background: ${themeGet('colors.teals.2')};
 `;
 
+const SeeTheFishwayTray = styled(Flex)`
+    flex-direction: column;
+    width: 100%;
+`;
+
+const VideoCardButton = styled.button`
+    background: transparent;
+    border: none;
+    margin: 5px;
+
+    &:focus {
+        outline: 0;
+    }
+`;
+
 const SeeTheFishway = () => {
+    const [selectedFish, selectFish] = useState(FISH_HIGHLIGHTS[0]);
+
+    const cards = FISH_HIGHLIGHTS.map(fish => (
+        <VideoCardButton key={fish.timestamp} onClick={() => selectFish(fish)}>
+            <VideoCard
+                fish={fish}
+                selected={
+                    selectedFish.timestamp === fish.timestamp ? true : false
+                }
+            />
+        </VideoCardButton>
+    ));
     return (
         <StyledSeeTheFishway>
-            <Flex>
+            <SeeTheFishwayTray>
                 <Box>
                     <Heading as='h1'>See the Fishway</Heading>
                     <Text as='p' variant='large'>
@@ -28,9 +58,16 @@ const SeeTheFishway = () => {
                         Ladder is most active.
                     </Text>
                 </Box>
-                <Sidebar />
-            </Flex>
-            <ClipSelect />
+                <Heading as='h2' variant='small'>
+                    Highlight reel
+                </Heading>
+                <Text as='p'>
+                    Check out some of the wildlife that scientists have caught
+                    on tape over the years.
+                </Text>
+                <Flex flexWrap='wrap'>{cards}</Flex>
+            </SeeTheFishwayTray>
+            <Sidebar fish={selectedFish} />
         </StyledSeeTheFishway>
     );
 };
