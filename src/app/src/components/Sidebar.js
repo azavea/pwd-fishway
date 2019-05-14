@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
-import { Heading } from './custom-styled-components';
+import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledSidebar = styled(Box)`
@@ -11,13 +11,20 @@ const StyledSidebar = styled(Box)`
 `;
 
 const Sidebar = ({ fish }) => {
-    const video = fish && <video src={`${fish.path}.mp4`} autoPlay={true} />;
+    const { commonName, scientificName, path, notes, timestamp } = fish;
+    const date = new Date(timestamp).toLocaleString();
+    const video = fish && <video src={`${path}.mp4`} autoPlay={true} />;
     return (
         <StyledSidebar>
             <Heading as='h2' variant='small'>
-                Sidebar
+                {commonName}
+                <Text variant='small'>{scientificName}</Text>
             </Heading>
             {video}
+            <footer>
+                <Text variant='small'>{notes}</Text>
+                <Text variant='small'>{date}</Text>
+            </footer>
         </StyledSidebar>
     );
 };
