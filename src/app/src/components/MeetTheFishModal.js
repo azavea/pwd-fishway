@@ -137,7 +137,6 @@ export default class MeetTheFishModal extends Component {
                                 {fish.commonName}
                             </StyledHeading>
                             <StyledText>{fish.scientificName}</StyledText>
-
                             <Link
                                 onClick={() => this.scrollTo(this.overviewRef)}
                             >
@@ -150,11 +149,15 @@ export default class MeetTheFishModal extends Component {
                             >
                                 Characteristics
                             </Link>
-                            <Link
-                                onClick={() => this.scrollTo(this.habitatRef)}
-                            >
-                                Habitat
-                            </Link>
+                            {fish.habitat !== '' && (
+                                <Link
+                                    onClick={() =>
+                                        this.scrollTo(this.habitatRef)
+                                    }
+                                >
+                                    Habitat
+                                </Link>
+                            )}
                             <Link
                                 onClick={() => this.scrollTo(this.lifespanRef)}
                             >
@@ -170,7 +173,6 @@ export default class MeetTheFishModal extends Component {
                                     Overview
                                 </StyledHeading>
                                 <StyledText>{fish.overview}</StyledText>
-
                                 <StyledHeading
                                     as='h4'
                                     ref={this.characteristicsRef}
@@ -178,12 +180,17 @@ export default class MeetTheFishModal extends Component {
                                     Characteristics
                                 </StyledHeading>
                                 <StyledText>{fish.characteristics}</StyledText>
-
-                                <StyledHeading as='h4' ref={this.habitatRef}>
-                                    Habitat
-                                </StyledHeading>
-                                <StyledText>{fish.habitat}</StyledText>
-
+                                {fish.habitat !== '' && (
+                                    <>
+                                        <StyledHeading
+                                            as='h4'
+                                            ref={this.habitatRef}
+                                        >
+                                            Habitat
+                                        </StyledHeading>
+                                        <StyledText>{fish.habitat}</StyledText>
+                                    </>
+                                )}
                                 <StyledHeading as='h4' ref={this.lifespanRef}>
                                     Lifespan
                                 </StyledHeading>
