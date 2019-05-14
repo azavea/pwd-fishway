@@ -23,3 +23,6 @@ deployment/terraform/.terraform
 *.tfvars
 *.tfstate*
 *.tfplan
+
+# FontAwesome
+docker-compose.env
