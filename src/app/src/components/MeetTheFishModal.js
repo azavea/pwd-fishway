@@ -95,6 +95,12 @@ export default class MeetTheFishModal extends Component {
         );
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.index !== this.state.index) {
+            this.overviewRef.current.scrollIntoView();
+        }
+    }
+
     render() {
         const { children } = this.props;
 
