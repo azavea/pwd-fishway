@@ -15,6 +15,14 @@ Install the application and all required dependencies.
 ./scripts/setup
 ```
 
+### Set Environment Variables
+Fishway uses a paid FontAwesome Pro subscription which requires a secret token for use. To configure this, from the project root directory copy the example Docker configuration file:
+
+```sh
+$ cp docker-compose.env.example docker-compose.env
+```
+Open docker-compose.env in a text editor and add the FontAwesome token. Find the token in the Notes section of the FontAwesome entry in LastPass. If using the Lastpass browser extension, "edit" the entry to see the Notes section.
+
 #### Development
 
 Rebuild Docker images and run application.
@@ -61,16 +69,6 @@ pin it to a specific version.
 - Commit the changes to the following files to git:
     - `package.json`
     - `yarn.lock`
-
-### FontAwesome Pro
-We are using a paid FontAwesome Pro subscription on this project. Please follow the steps below to properly register the imported font styles with FortAwesome:
-1. Add a `.npmrc` file to the same folder as `package.json`.
-2. Paste the following in that file:
-```
-@fortawesome:registry=https://npm.fontawesome.com/
-//npm.fontawesome.com/:_authToken={AZAVEA_TOKEN}
-```
-3. Replace `{AZAVEA_TOKEN}` with the token visible in FontAwesome’s LastPass notes.
 
 #### Notes
 
