@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Button, Text } from 'rebass';
 
@@ -24,6 +25,10 @@ const QuizNavbar = props => {
             <Button onClick={() => dispatch(hideQuiz())}>x</Button>
         </StyledQuizNavbar>
     );
+};
+
+QuizNavbar.propTypes = {
+    dispatch: func.isRequired,
 };
 
 export default QuizNavbar;
