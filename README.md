@@ -9,12 +9,6 @@ Interactive fishway exhibit for the Fairmount Water Works Museum
 
 ### Getting Started
 
-Install the application and all required dependencies.
-
-```sh
-./scripts/setup
-```
-
 ### Set Environment Variables
 Fishway uses a paid FontAwesome Pro subscription which requires a secret token for use. To configure this, from the project root directory copy the example Docker configuration file:
 
@@ -22,6 +16,13 @@ Fishway uses a paid FontAwesome Pro subscription which requires a secret token f
 $ cp docker-compose.env.example docker-compose.env
 ```
 Open docker-compose.env in a text editor and add the FontAwesome token. Find the token in the Notes section of the FontAwesome entry in LastPass. If using the Lastpass browser extension, "edit" the entry to see the Notes section.
+
+### Create the Virtual Environments
+Install the application and all required dependencies.
+
+```sh
+./scripts/setup
+```
 
 #### Development
 
