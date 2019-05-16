@@ -4,6 +4,7 @@ export default {
         medium: '52em',
         large: '64em',
     },
+    font: 'Fira Sans, Helvetica, Arial, sans-serif',
     fontSizes: [
         '1rem', // 0
         '1.2rem', // 1
@@ -25,10 +26,14 @@ export default {
         normal: '1.25',
         comfortable: '1.85',
     },
+    letterSpacings: {
+        0: '0',
+        caps: '2px',
+    },
     colors: {
         white: '#fff',
-        lightblue: '#E7FDFF',
-        greens: ['#e9f563', '#CEE007'],
+        lightblues: ['#d1f0f3', '#E7FDFF', '#a5dde2', '#84bdc2'],
+        greens: ['#e9f563', '#CEE007', '#c1d12f', '#a0af04'],
         red: '#C5603B',
         teals: [
             '#296882',

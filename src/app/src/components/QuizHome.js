@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
-import { Flex, Box, Button } from 'rebass';
-import styled from 'styled-components';
+import { Flex, Box } from 'rebass';
+import { Heading, Text, Button } from './custom-styled-components';
 import { themeGet } from 'styled-system';
-
-import { Heading, Text } from './custom-styled-components';
-
+import styled from 'styled-components';
 import { showQuiz } from '../actions';
 
 const StyledQuizHome = styled(Flex)`

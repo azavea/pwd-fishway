@@ -1,7 +1,7 @@
 import { Text as BaseText } from 'rebass';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { themeGet, style } from 'styled-system';
+import { themeGet, style, opacity } from 'styled-system';
 
 const variant = style({
     prop: 'variant',
@@ -9,12 +9,7 @@ const variant = style({
 });
 
 const Text = styled(BaseText)`
-    color: ${themeGet('colors.white')};
-    font-weight: ${themeGet('fontWeights.normal')};
-    line-height: ${themeGet('lineHeights.normal')};
-    margin-bottom: ${themeGet('space.small')};
-    opacity: 0.8;
-
+    ${opacity};
     ${props =>
         props.variant === 'large' &&
         css`
@@ -41,9 +36,15 @@ Text.propTypes = {
 
 Text.PropTypes = {
     ...variant.PropTypes,
+    ...opacity.PropTypes,
 };
 
 Text.defaultProps = {
+    color: 'white',
+    fontWeight: 'normal',
+    lineHeight: 'normal',
+    mb: 'small',
+    opacity: '0.8',
     variant: 'base',
 };
 
