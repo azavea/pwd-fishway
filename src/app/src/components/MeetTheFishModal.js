@@ -96,7 +96,10 @@ export default class MeetTheFishModal extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.index !== this.state.index) {
+        if (
+            prevState.index !== this.state.index &&
+            this.overviewRef.current !== null
+        ) {
             this.overviewRef.current.scrollIntoView();
         }
     }
