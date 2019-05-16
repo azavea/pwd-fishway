@@ -1,8 +1,10 @@
 import React from 'react';
+import { Box, Button, Flex } from 'rebass';
 import styled from 'styled-components';
-import { Flex, Box } from 'rebass';
-import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
+
+import { Heading, Text } from './custom-styled-components';
+import MeetTheFishModal from './MeetTheFishModal';
 
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
@@ -19,6 +21,9 @@ const MeetTheFish = () => {
                     Did you know over 48 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
                 </Text>
+                <MeetTheFishModal index={0}>
+                    <Button>Meet a fish!</Button>
+                </MeetTheFishModal>
             </Box>
         </StyledMeetTheFish>
     );
