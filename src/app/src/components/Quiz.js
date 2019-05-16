@@ -7,7 +7,7 @@ import QuizNavbar from './QuizNavbar';
 import QuizGuess from './QuizGuess';
 import Sidebar from './Sidebar';
 
-import { QUIZ_FISH, GUESS_MESSAGE } from '../util/constants';
+import { QUIZ_FISH, GUESS_MESSAGE_TIME } from '../util/constants';
 
 const QuizContainer = styled(Flex)`
     text-align: center;
@@ -20,7 +20,7 @@ const Quiz = props => {
 
     function checkGuess(fish) {
         setGuess(fish);
-        setTimeout(() => setGuess(null), GUESS_MESSAGE);
+        setTimeout(() => setGuess(null), GUESS_MESSAGE_TIME);
     }
 
     const quizState = guess ? (
