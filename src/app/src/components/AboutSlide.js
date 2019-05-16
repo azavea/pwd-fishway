@@ -3,7 +3,7 @@ import { Button, Flex } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
-import { pauseTimer, resetTimer } from '../actions';
+import Video from './Video';
 
 const StyledAboutSlide = styled(Flex)`
     height: 80vh;
@@ -63,27 +63,16 @@ export default class AboutSlide extends Component {
     }
 
     render() {
-        const {
-            active,
-            description,
-            job,
-            name,
-            title,
-            videoPath,
-            dispatch,
-        } = this.props;
+        const { active, description, job, name, title, videoPath } = this.props;
 
         return (
             <StyledAboutSlide>
                 <Flex width={3 / 5}>
-                    <video
+                    <Video
                         ref={this.videoRef}
                         autoPlay={active}
                         src={videoPath}
                         onClick={this.togglePlayPause}
-                        onPlay={() => dispatch(pauseTimer())}
-                        onPause={() => dispatch(resetTimer())}
-                        onEnded={() => dispatch(resetTimer())}
                     />
                     {!this.state.playing && (
                         <PlayButton onClick={this.togglePlayPause}>
