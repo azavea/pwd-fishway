@@ -39,7 +39,6 @@ class About extends Component {
                 key={index}
                 active={index === aboutSlideIndex}
                 {...profile}
-                dispatch={dispatch}
             />
         ));
 

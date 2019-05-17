@@ -1,22 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
-import { Heading } from './custom-styled-components';
+import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
+import { HighlightFish } from '../util/HighlightFish';
+
+import Video from './Video';
+
 const StyledSidebar = styled(Box)`
-    width: 300px;
-    background: ${themeGet('colors.lightgray')};
+    background: ${themeGet('colors.teals.5')};
+    text-align: center;
+    width: 100%;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ fish }) => {
+    const { commonName, scientificName, path, notes, timestamp } = fish;
+    const date = new Date(timestamp).toLocaleString();
+    const video = fish && (
+        <Video src={`${path}.mp4`} autoPlay={true} setref={null} />
+    );
     return (
         <StyledSidebar>
             <Heading as='h2' variant='small'>
-                Sidebar
+                {commonName}
+                <Text variant='small'>{scientificName}</Text>
             </Heading>
+            {video}
+            <footer>
+                <Text variant='small'>{notes}</Text>
+                <Text variant='small'>{date}</Text>
+            </footer>
         </StyledSidebar>
     );
+};
+
+Sidebar.propTypes = {
+    fish: HighlightFish.isRequired,
 };
 
 export default Sidebar;

@@ -120,55 +120,55 @@ const BLUEGILL = {
 export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
-        videoPath: './media/seethefishway/shad.mp4',
+        path: './media/seethefishway/shad',
         timestamp: 1118762520000,
         notes:
             'Three American shad dart through the ladder during their annual spawning migration',
     },
     {
         ...AMERICAN_SHAD,
-        videoPath: './media/seethefishway/american_shad.mp4',
+        path: './media/seethefishway/american_shad',
         timestamp: 1085515200000,
         notes:
             'An American shad swims upstream during the annual spawning migration.',
     },
     {
         ...QUILLBACK,
-        videoPath: './media/seethefishway/quillback.mp4',
+        path: './media/seethefishway/quillback',
         timestamp: 1115046300000,
         notes:
             "This fish is named for its pointed dorsal fin — thought to be in the shape of a 'quill.'",
     },
     {
         ...QUILLBACK,
-        videoPath: './media/seethefishway/quillbacks.mp4',
+        path: './media/seethefishway/quillbacks',
         timestamp: 1084454640000,
         notes: 'Three quillbacks swim by the viewing window.',
     },
     {
         ...PUMPKINSEED,
-        videoPath: './media/seethefishway/pumpkinseed.mp4',
+        path: './media/seethefishway/pumpkinseed',
         timestamp: 1116184920000,
         notes:
             'This fish is a type of sunfish common to PA waters. Can you guess where its name comes from?',
     },
     {
         ...HYBRID_STRIPED_BASS,
-        videoPath: './media/seethefishway/hybrid_striped_bass.mp4',
+        path: './media/seethefishway/hybrid_striped_bass',
         timestamp: 1114074720000,
         notes:
             'Striped bass migrate upriver each year to spawn, much like the American shad.',
     },
     {
         ...HYBRID_STRIPED_BASS,
-        videoPath: './media/seethefishway/striped_bass_hybrid.mp4',
+        path: './media/seethefishway/striped_bass_hybrid',
         timestamp: 1084279080000,
         notes: 'A very large, hybrid striped bass — an excellent specimen.',
     },
     {
         commonName: 'Turtle',
         scientificName: '—',
-        videoPath: './media/seethefishway/turtle.mp4',
+        path: './media/seethefishway/turtle',
         timestamp: 1114119720000,
         notes:
             'A turtle moves downstream through the ladder, carried along by the current.',
@@ -176,7 +176,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'Snake',
         scientificName: '—',
-        videoPath: './media/seethefishway/snake.mp4',
+        path: './media/seethefishway/snake',
         timestamp: 1115907780000,
         notes:
             'A 3-foot long river snake swims downstream. Some snakes can swim almost as well as fish!',
@@ -184,55 +184,55 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'Rainbow Trout',
         scientificName: 'Oncorhynchus mykiss',
-        videoPath: './media/seethefishway/rainbow_trout.mp4',
+        path: './media/seethefishway/rainbow_trout',
         timestamp: 1115870340000,
         notes:
             'A rainbow trout is shown just before midnight – captured in the act of feeding.',
     },
     {
         ...COMMON_CARP,
-        videoPath: './media/seethefishway/carp.mp4',
+        path: './media/seethefishway/carp',
         timestamp: 1115826720000,
         notes:
             'Two enormous carp move through the ladder at night. The first carp is over three feet long!',
     },
     {
         ...COMMON_CARP,
-        videoPath: './media/seethefishway/common_carp.mp4',
+        path: './media/seethefishway/common_carp',
         timestamp: 1084512000000,
         notes: 'A very large female carp, pregnant with eggs.',
     },
     {
         commonName: `${QUILLBACK_COMMON_NAME} and ${COMMON_CARP_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${COMMON_CARP_SCIENTIFIC_NAME}`,
-        videoPath: './media/seethefishway/quillback_carp.mp4',
+        path: './media/seethefishway/quillback_carp',
         timestamp: 1084417860000,
         notes: 'A quillback and a carp try to swim together upriver.',
     },
     {
         commonName: 'River Otter',
         scientificName: 'Lutra canadensis',
-        videoPath: './media/seethefishway/river_otter.mp4',
+        path: './media/seethefishway/river_otter',
         timestamp: 1111371600000,
         notes: 'River Otter swims through the fish ladder to star in a video.',
     },
     {
         ...CHANNEL_CATFISH,
-        videoPath: './media/seethefishway/channel_catfish.mp4',
+        path: './media/seethefishway/channel_catfish',
         timestamp: 1084417680000,
         notes: 'Catfish group, traveling at night.',
     },
     {
         commonName: `${QUILLBACK_COMMON_NAME}s and ${CHANNEL_CATFISH_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${CHANNEL_CATFISH_SCIENTIFIC_NAME}`,
-        videoPath: './media/seethefishway/quillback_catfish.mp4',
+        path: './media/seethefishway/quillback_catfish',
         timestamp: 1084461660000,
         notes:
             'A group of quillbacks swim through the fish ladder, followed by two catfish.',
     },
     {
         ...WHITE_PERCH,
-        videoPath: './media/seethefishway/white_perch.mp4',
+        path: './media/seethefishway/white_perch',
         timestamp: 1084379160000,
         notes: 'A white perch darts through the water.',
     },
