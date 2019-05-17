@@ -69,7 +69,7 @@ export default class AboutSlide extends Component {
             <StyledAboutSlide>
                 <Flex width={3 / 5}>
                     <Video
-                        ref={this.videoRef}
+                        setref={this.videoRef}
                         autoPlay={active}
                         src={videoPath}
                         onClick={this.togglePlayPause}

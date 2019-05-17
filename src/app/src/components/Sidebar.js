@@ -4,6 +4,8 @@ import { Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
+import { HighlightFish } from '../util/HighlightFish';
+
 import Video from './Video';
 
 const StyledSidebar = styled(Box)`
@@ -15,7 +17,9 @@ const StyledSidebar = styled(Box)`
 const Sidebar = ({ fish }) => {
     const { commonName, scientificName, path, notes, timestamp } = fish;
     const date = new Date(timestamp).toLocaleString();
-    const video = fish && <Video src={`${path}.mp4`} autoPlay={true} />;
+    const video = fish && (
+        <Video src={`${path}.mp4`} autoPlay={true} setref={null} />
+    );
     return (
         <StyledSidebar>
             <Heading as='h2' variant='small'>
@@ -29,6 +33,10 @@ const Sidebar = ({ fish }) => {
             </footer>
         </StyledSidebar>
     );
+};
+
+Sidebar.propTypes = {
+    fish: HighlightFish.isRequired,
 };
 
 export default Sidebar;

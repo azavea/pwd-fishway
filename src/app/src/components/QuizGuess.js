@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex } from 'rebass';
-import { objectOf } from 'prop-types';
 import { themeGet } from 'styled-system';
 
 import Text from './Text';
@@ -19,9 +18,7 @@ const Answer = styled(Flex)`
     text-align: center;
 `;
 
-const QuizGuess = props => {
-    const { answer, guess } = props;
-
+const QuizGuess = ({ answer, guess }) => {
     const message =
         answer.commonName === guess.commonName
             ? 'CORRECT!'
@@ -47,8 +44,8 @@ const QuizGuess = props => {
 };
 
 QuizGuess.propTypes = {
-    answer: objectOf(QuizFish).isRequired,
-    guess: objectOf(QuizFish).isRequired,
+    answer: QuizFish.isRequired,
+    guess: QuizFish.isRequired,
 };
 
 export default QuizGuess;

@@ -5,14 +5,15 @@ import { func } from 'prop-types';
 import { pauseTimer, resetTimer } from '../actions';
 
 const Video = props => {
-    const { dispatch } = props;
+    const { dispatch, setref, ...otherProps } = props;
 
     return (
         <video
             onPlay={() => dispatch(pauseTimer())}
             onPause={() => dispatch(resetTimer())}
             onEnded={() => dispatch(resetTimer())}
-            {...props}
+            ref={setref}
+            {...otherProps}
         />
     );
 };
