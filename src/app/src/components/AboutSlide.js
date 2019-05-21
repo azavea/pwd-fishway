@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
-import { Button, Flex } from 'rebass';
-import { Heading, Text } from './custom-styled-components';
+import { Flex } from 'rebass';
+import { Heading, Text, Button } from './custom-styled-components';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { themeGet } from 'styled-system';
 
 import Video from './Video';
 
 const StyledAboutSlide = styled(Flex)`
     height: 80vh;
     padding: 1rem;
+    align-items: center;
 
     video {
         margin: auto;
         height: fit-content;
         max-width: 100%;
     }
+`;
+
+const VideoContainer = styled(Flex)`
+    position: relative;
+    padding: 2px;
+    border: 1px solid ${themeGet('colors.teals.3')};
+    background: ${themeGet('colors.teals.6')};
 `;
 
 const PlayButton = styled(Button)`
@@ -32,12 +41,9 @@ const PlayButton = styled(Button)`
 `;
 
 const MuteButton = styled(Button)`
-    background: none;
-    height: 50px;
-    width: 50px;
-    text-align: center;
     position: absolute;
-    bottom: 50px;
+    bottom: 0.75rem;
+    left: 1rem;
 `;
 
 export default class AboutSlide extends Component {
@@ -83,7 +89,7 @@ export default class AboutSlide extends Component {
 
         return (
             <StyledAboutSlide>
-                <Flex width={3 / 5}>
+                <VideoContainer width={3 / 5}>
                     <Video
                         setref={this.videoRef}
                         autoPlay={active}
@@ -97,12 +103,13 @@ export default class AboutSlide extends Component {
                         </PlayButton>
                     )}
                     <MuteButton
+                        variant='link'
                         onClick={this.toggledMuted}
                         color={muteIconColor}
                     >
                         <FontAwesomeIcon icon={['fa', muteIcon]} />
                     </MuteButton>
-                </Flex>
+                </VideoContainer>
                 <Flex
                     width={2 / 5}
                     padding='2rem'

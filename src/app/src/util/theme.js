@@ -42,6 +42,7 @@ export default {
             '#163846',
             '#112c37',
             '#0d2029',
+            '#010d13',
         ],
         xlighttan: '#fffdf9',
         lighttan: '#FBF8F4',
