@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Flex } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Video from './Video';
 
@@ -30,14 +31,23 @@ const PlayButton = styled(Button)`
     text-align: center;
 `;
 
+const MuteButton = styled(Button)`
+    background: none;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+`;
+
 export default class AboutSlide extends Component {
     constructor(props) {
         super(props);
         this.state = {
             playing: true,
+            muted: false,
         };
         this.videoRef = React.createRef();
-        this.togglePlayPause = this.togglePlayPause.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -58,12 +68,18 @@ export default class AboutSlide extends Component {
         }
     }
 
-    togglePlayPause() {
+    togglePlayPause = () => {
         this.setState({ playing: !this.state.playing });
-    }
+    };
+
+    toggledMuted = () => {
+        this.setState({ muted: !this.state.muted });
+    };
 
     render() {
         const { active, description, job, name, title, videoPath } = this.props;
+        const muteIcon = this.state.muted ? 'volume' : 'volume-slash';
+        const muteIconColor = this.state.muted ? '#fff' : '#666';
 
         return (
             <StyledAboutSlide>
@@ -73,12 +89,19 @@ export default class AboutSlide extends Component {
                         autoPlay={active}
                         src={videoPath}
                         onClick={this.togglePlayPause}
+                        muted={this.state.muted}
                     />
                     {!this.state.playing && (
                         <PlayButton onClick={this.togglePlayPause}>
                             ▶
                         </PlayButton>
                     )}
+                    <MuteButton
+                        onClick={this.toggledMuted}
+                        color={muteIconColor}
+                    >
+                        <FontAwesomeIcon icon={['fa', muteIcon]} />
+                    </MuteButton>
                 </Flex>
                 <Flex
                     width={2 / 5}
