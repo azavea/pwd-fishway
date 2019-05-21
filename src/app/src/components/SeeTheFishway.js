@@ -11,7 +11,6 @@ import VideoCard from './VideoCard';
 
 const StyledSeeTheFishway = styled(Flex)`
     height: 100%;
-    background: ${themeGet('colors.teals.2')};
 `;
 
 const SeeTheFishwayTray = styled(Flex)`

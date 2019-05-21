@@ -13,7 +13,6 @@ const StyledScreensaver = styled(Flex)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${themeGet('colors.teals.0')};
 `;
 
 const Screensaver = props => {

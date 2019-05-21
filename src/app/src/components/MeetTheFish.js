@@ -9,7 +9,6 @@ import MeetTheFishModal from './MeetTheFishModal';
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
     text-align: center;
-    background: ${themeGet('colors.teals.1')};
 `;
 
 const MeetTheFish = () => {

@@ -17,7 +17,6 @@ const slidesToShow = 1.3;
 
 const StyledAbout = styled.div`
     padding-top: 1rem;
-    background: ${themeGet('colors.teals.4')};
 
     .about__slide {
         height: 80vh;

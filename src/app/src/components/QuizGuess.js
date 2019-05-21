@@ -9,7 +9,6 @@ import { QuizFish } from '../util/QuizFish';
 
 const StyledQuizGuess = styled(Flex)`
     text-align: center;
-    background: ${themeGet('colors.teals.0')};
     flex-direction: column;
 `;
 
