@@ -7,6 +7,7 @@ import { resetAppState } from './actions';
 
 import Navbar from './components/Navbar';
 import Screensaver from './components/Screensaver';
+import Background from './components/Background';
 import Quiz from './components/Quiz';
 import GlobalStyle from './util/globalStyle';
 import { RESET, PAUSE, MAX_IDLE_TIME } from './util/constants';
@@ -124,6 +125,7 @@ class App extends Component {
                 <GlobalStyle />
                 {app}
                 {isQuizVisible && quiz}
+                <Background />
             </div>
         );
     }
