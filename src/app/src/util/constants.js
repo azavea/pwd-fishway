@@ -1,6 +1,6 @@
 export const PAUSE = 'PAUSE';
 export const RESET = 'RESET';
-export const MAX_IDLE_TIME = 10000; //in ms
+export const MAX_IDLE_TIME = 100000000; //in ms
 export const GUESS_MESSAGE_TIME = 2500; //in ms
 
 export const ABOUT_PROFILES = [
