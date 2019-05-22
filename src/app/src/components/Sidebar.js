@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
+import moment from 'moment';
 
 import { HighlightFish } from '../util/HighlightFish';
 
@@ -16,7 +17,9 @@ const StyledSidebar = styled(Box)`
 
 const Sidebar = ({ fish }) => {
     const { commonName, scientificName, path, notes, timestamp } = fish;
-    const date = new Date(timestamp).toLocaleString();
+    const date = moment(timestamp)
+        .format('MMMM Do')
+        .toUpperCase();
     const video = fish && (
         <Video src={`${path}.mp4`} autoPlay={true} setref={null} />
     );
