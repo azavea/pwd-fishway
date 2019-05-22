@@ -10,10 +10,9 @@ const StyledVideoCard = styled('img')(props => ({
 }));
 
 const VideoCard = ({ fish, selected }) => {
-    const picPath = `${fish.path}.jpg`;
     return (
         <StyledVideoCard
-            src={picPath}
+            src={fish.photo}
             alt={fish.commonName}
             selected={selected}
         />
