@@ -1,3 +1,35 @@
+import americanShadIllustration from '../media/meetthefish/american_shad_large.png';
+import americanShadPhoto from '../media/seethefishway/american_shad.jpg';
+import bluegillIllustration from '../media/meetthefish/bluegill_large.png';
+import carpPhoto from '../media/seethefishway/carp.jpg';
+import channelCatfishIllustration from '../media/meetthefish/channel_catfish_large.png';
+import channelCatfishPhoto from '../media/seethefishway/channel_catfish.jpg';
+import commonCarpIllustration from '../media/meetthefish/common_carp_large.png';
+import commonCarpPhoto from '../media/seethefishway/common_carp.jpg';
+import hybridStripedBassPhoto from '../media/seethefishway/hybrid_striped_bass.jpg';
+import pumpkinseedIllustration from '../media/meetthefish/pumpkinseed_large.png';
+import pumpkinseedPhoto from '../media/seethefishway/pumpkinseed.jpg';
+import quillbackCarpPhoto from '../media/seethefishway/quillback_carp.jpg';
+import quillbackCatfishPhoto from '../media/seethefishway/quillback_catfish.jpg';
+import quillbackIllustration from '../media/meetthefish/quillback_large.png';
+import quillbackPhoto from '../media/seethefishway/quillback.jpg';
+import quillbacksPhoto from '../media/seethefishway/quillbacks.jpg';
+import rainbowTroutPhoto from '../media/seethefishway/rainbow_trout.jpg';
+import riverOtterPhoto from '../media/seethefishway/river_otter.jpg';
+import shadPhoto from '../media/seethefishway/shad.jpg';
+import snakePhoto from '../media/seethefishway/snake.jpg';
+import stripedBassHybridIllustration from '../media/meetthefish/striped_bass_hybrid_large.png';
+import stripedBassIllustration from '../media/meetthefish/striped_bass_large.png';
+import stripedBassHybridPhoto from '../media/seethefishway/striped_bass_hybrid.jpg';
+import turtlePhoto from '../media/seethefishway/turtle.jpg';
+import whitePerchIllustration from '../media/meetthefish/white_perch_large.png';
+import whitePerchPhoto from '../media/seethefishway/white_perch.jpg';
+import whiteSuckerIllustration from '../media/meetthefish/white_sucker_large.png';
+import overviewVideo from '../media/about/overview.mp4';
+import biologistVideo from '../media/about/biologist.mp4';
+import engineerVideo from '../media/about/engineer.mp4';
+import schuylkillVideo from '../media/about/schuylkill.mp4';
+
 export const PAUSE = 'PAUSE';
 export const RESET = 'RESET';
 export const MAX_IDLE_TIME = 100000000; //in ms
@@ -10,7 +42,7 @@ export const ABOUT_PROFILES = [
         job: '',
         description:
             'The Fish Ladder at the Fairmount Dam was constructed in 1979. This animated 3-D video explains how the Fish Ladder works, and how it helps fish to migrate, and survive.',
-        videoPath: './media/about/overview.mp4',
+        videoPath: overviewVideo,
     },
     {
         title: 'Meet the Biologist',
@@ -18,7 +50,7 @@ export const ABOUT_PROFILES = [
         job: 'Aquatic Biologist, PWD',
         description:
             'Studies fish and the ecology of local streams. Records data about fish populations, tracks migration of species, and reports on the general health of local watersheds.',
-        videoPath: './media/about/biologist.mp4',
+        videoPath: biologistVideo,
     },
     {
         title: 'Meet the Engineer',
@@ -26,7 +58,7 @@ export const ABOUT_PROFILES = [
         job: 'Water Resources Engineer, PWD',
         description:
             'Prepares computer models of rivers and streams, works on watershed restoration projects, and develops watershed management plans.',
-        videoPath: './media/about/engineer.mp4',
+        videoPath: engineerVideo,
     },
     {
         title: 'Dams Along the Schuylkill',
@@ -34,7 +66,7 @@ export const ABOUT_PROFILES = [
         job: 'Engineer, Army Corps of Engineers',
         description:
             'Works to construct and maintain fish ladders and other environmental projects for area waterways and rivers.',
-        videoPath: './media/about/schuylkill.mp4',
+        videoPath: schuylkillVideo,
     },
 ];
 
@@ -43,7 +75,7 @@ const AMERICAN_SHAD_SCIENTIFIC_NAME = 'Alosa sapidissima';
 const AMERICAN_SHAD = {
     commonName: AMERICAN_SHAD_COMMON_NAME,
     scientificName: AMERICAN_SHAD_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/american_shad_large.png',
+    picturePath: americanShadIllustration,
 };
 
 const QUILLBACK_COMMON_NAME = 'Quillback';
@@ -51,7 +83,7 @@ const QUILLBACK_SCIENTIFIC_NAME = 'Carpiodes cyprinus';
 const QUILLBACK = {
     commonName: QUILLBACK_COMMON_NAME,
     scientificName: QUILLBACK_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/quillback_large.png',
+    picturePath: quillbackIllustration,
 };
 
 const STRIPED_BASS_COMMON_NAME = 'Striped Bass';
@@ -59,7 +91,7 @@ const STRIPED_BASS_SCIENTIFIC_NAME = 'Striped Bass';
 const STRIPED_BASS = {
     commonName: STRIPED_BASS_COMMON_NAME,
     scientificName: STRIPED_BASS_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/striped_bass_large.png',
+    picturePath: stripedBassIllustration,
 };
 
 const HYBRID_STRIPED_BASS_COMMON_NAME = `Hybrid ${STRIPED_BASS_COMMON_NAME}`;
@@ -67,7 +99,7 @@ const HYBRID_STRIPED_BASS_SCIENTIFIC_NAME = `${STRIPED_BASS_SCIENTIFIC_NAME} x M
 const HYBRID_STRIPED_BASS = {
     commonName: HYBRID_STRIPED_BASS_COMMON_NAME,
     scientificName: HYBRID_STRIPED_BASS_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/striped_bass_hybrid_large.png',
+    picturePath: stripedBassHybridIllustration,
 };
 
 const COMMON_CARP_COMMON_NAME = 'Common Carp';
@@ -75,14 +107,14 @@ const COMMON_CARP_SCIENTIFIC_NAME = 'Cyprinus carpio';
 const COMMON_CARP = {
     commonName: COMMON_CARP_COMMON_NAME,
     scientificName: COMMON_CARP_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/common_carp_large.png',
+    picturePath: commonCarpIllustration,
 };
 const CHANNEL_CATFISH_COMMON_NAME = 'Channel Catfish';
 const CHANNEL_CATFISH_SCIENTIFIC_NAME = 'Ictalurus punctatus';
 const CHANNEL_CATFISH = {
     commonName: CHANNEL_CATFISH_COMMON_NAME,
     scientificName: CHANNEL_CATFISH_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/channel_catfish_large.png',
+    picturePath: channelCatfishIllustration,
 };
 
 const PUMPKINSEED_COMMON_NAME = 'Pumpkinseed';
@@ -90,7 +122,7 @@ const PUMPKINSEED_SCIENTIFIC_NAME = 'Lepomis gibbosus';
 const PUMPKINSEED = {
     commonName: PUMPKINSEED_COMMON_NAME,
     scientificName: PUMPKINSEED_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/pumpkinseed_large.png',
+    picturePath: pumpkinseedIllustration,
 };
 
 const WHITE_PERCH_COMMON_NAME = 'White Perch';
@@ -98,7 +130,7 @@ const WHITE_PERCH_SCIENTIFIC_NAME = 'Morone americana';
 const WHITE_PERCH = {
     commonName: WHITE_PERCH_COMMON_NAME,
     scientificName: WHITE_PERCH_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/white_perch_large.png',
+    picturePath: whitePerchIllustration,
 };
 
 const WHITE_SUCKER_COMMON_NAME = 'White Sucker';
@@ -106,7 +138,7 @@ const WHITE_SUCKER_SCIENTIFIC_NAME = 'Catostomus commersoni';
 const WHITE_SUCKER = {
     commonName: WHITE_SUCKER_COMMON_NAME,
     scientificName: WHITE_SUCKER_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/white_sucker_large.png',
+    picturePath: whiteSuckerIllustration,
 };
 
 const BLUEGILL_COMMON_NAME = 'Bluegill';
@@ -114,13 +146,14 @@ const BLUEGILL_SCIENTIFIC_NAME = 'Lepomis macrochirus';
 const BLUEGILL = {
     commonName: BLUEGILL_COMMON_NAME,
     scientificName: BLUEGILL_SCIENTIFIC_NAME,
-    picturePath: './media/meetthefish/bluegill_large.png',
+    picturePath: bluegillIllustration,
 };
 
 export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
         path: './media/seethefishway/shad',
+        photo: shadPhoto,
         timestamp: 1118762520000,
         notes:
             'Three American shad dart through the ladder during their annual spawning migration',
@@ -128,6 +161,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
         path: './media/seethefishway/american_shad',
+        photo: americanShadPhoto,
         timestamp: 1085515200000,
         notes:
             'An American shad swims upstream during the annual spawning migration.',
@@ -135,6 +169,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...QUILLBACK,
         path: './media/seethefishway/quillback',
+        photo: quillbackPhoto,
         timestamp: 1115046300000,
         notes:
             "This fish is named for its pointed dorsal fin — thought to be in the shape of a 'quill.'",
@@ -142,12 +177,14 @@ export const FISH_HIGHLIGHTS = [
     {
         ...QUILLBACK,
         path: './media/seethefishway/quillbacks',
+        photo: quillbacksPhoto,
         timestamp: 1084454640000,
         notes: 'Three quillbacks swim by the viewing window.',
     },
     {
         ...PUMPKINSEED,
         path: './media/seethefishway/pumpkinseed',
+        photo: pumpkinseedPhoto,
         timestamp: 1116184920000,
         notes:
             'This fish is a type of sunfish common to PA waters. Can you guess where its name comes from?',
@@ -155,6 +192,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...HYBRID_STRIPED_BASS,
         path: './media/seethefishway/hybrid_striped_bass',
+        photo: hybridStripedBassPhoto,
         timestamp: 1114074720000,
         notes:
             'Striped bass migrate upriver each year to spawn, much like the American shad.',
@@ -162,6 +200,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...HYBRID_STRIPED_BASS,
         path: './media/seethefishway/striped_bass_hybrid',
+        photo: stripedBassHybridPhoto,
         timestamp: 1084279080000,
         notes: 'A very large, hybrid striped bass — an excellent specimen.',
     },
@@ -169,6 +208,7 @@ export const FISH_HIGHLIGHTS = [
         commonName: 'Turtle',
         scientificName: '—',
         path: './media/seethefishway/turtle',
+        photo: turtlePhoto,
         timestamp: 1114119720000,
         notes:
             'A turtle moves downstream through the ladder, carried along by the current.',
@@ -177,6 +217,7 @@ export const FISH_HIGHLIGHTS = [
         commonName: 'Snake',
         scientificName: '—',
         path: './media/seethefishway/snake',
+        photo: snakePhoto,
         timestamp: 1115907780000,
         notes:
             'A 3-foot long river snake swims downstream. Some snakes can swim almost as well as fish!',
@@ -185,6 +226,7 @@ export const FISH_HIGHLIGHTS = [
         commonName: 'Rainbow Trout',
         scientificName: 'Oncorhynchus mykiss',
         path: './media/seethefishway/rainbow_trout',
+        photo: rainbowTroutPhoto,
         timestamp: 1115870340000,
         notes:
             'A rainbow trout is shown just before midnight – captured in the act of feeding.',
@@ -192,6 +234,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...COMMON_CARP,
         path: './media/seethefishway/carp',
+        photo: carpPhoto,
         timestamp: 1115826720000,
         notes:
             'Two enormous carp move through the ladder at night. The first carp is over three feet long!',
@@ -199,6 +242,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...COMMON_CARP,
         path: './media/seethefishway/common_carp',
+        photo: commonCarpPhoto,
         timestamp: 1084512000000,
         notes: 'A very large female carp, pregnant with eggs.',
     },
@@ -206,6 +250,7 @@ export const FISH_HIGHLIGHTS = [
         commonName: `${QUILLBACK_COMMON_NAME} and ${COMMON_CARP_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${COMMON_CARP_SCIENTIFIC_NAME}`,
         path: './media/seethefishway/quillback_carp',
+        photo: quillbackCarpPhoto,
         timestamp: 1084417860000,
         notes: 'A quillback and a carp try to swim together upriver.',
     },
@@ -213,12 +258,14 @@ export const FISH_HIGHLIGHTS = [
         commonName: 'River Otter',
         scientificName: 'Lutra canadensis',
         path: './media/seethefishway/river_otter',
+        photo: riverOtterPhoto,
         timestamp: 1111371600000,
         notes: 'River Otter swims through the fish ladder to star in a video.',
     },
     {
         ...CHANNEL_CATFISH,
         path: './media/seethefishway/channel_catfish',
+        photo: channelCatfishPhoto,
         timestamp: 1084417680000,
         notes: 'Catfish group, traveling at night.',
     },
@@ -226,6 +273,7 @@ export const FISH_HIGHLIGHTS = [
         commonName: `${QUILLBACK_COMMON_NAME}s and ${CHANNEL_CATFISH_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${CHANNEL_CATFISH_SCIENTIFIC_NAME}`,
         path: './media/seethefishway/quillback_catfish',
+        photo: quillbackCatfishPhoto,
         timestamp: 1084461660000,
         notes:
             'A group of quillbacks swim through the fish ladder, followed by two catfish.',
@@ -233,6 +281,7 @@ export const FISH_HIGHLIGHTS = [
     {
         ...WHITE_PERCH,
         path: './media/seethefishway/white_perch',
+        photo: whitePerchPhoto,
         timestamp: 1084379160000,
         notes: 'A white perch darts through the water.',
     },
