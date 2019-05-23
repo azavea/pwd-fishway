@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
 import IdleTimer from 'react-idle-timer';
 
-import { resetAppState } from './actions';
+import { resetAppState, setBackgroundPosition } from './actions';
 
 import Navbar from './components/Navbar';
 import Screensaver from './components/Screensaver';
@@ -95,9 +95,16 @@ class App extends Component {
     }
 
     render() {
-        const { isScreensaverVisible, isQuizVisible, dispatch } = this.props;
+        const {
+            isScreensaverVisible,
+            isQuizVisible,
+            dispatch,
+            backgroundPosition,
+        } = this.props;
         const screensaver = <Screensaver />;
-        const navbar = <Navbar isQuizVisible={isQuizVisible} />;
+        const navbar = (
+            <Navbar dispatch={dispatch} isQuizVisible={isQuizVisible} />
+        );
         const idleTimer = (
             <IdleTimer
                 ref={ref => {
@@ -125,7 +132,7 @@ class App extends Component {
                 <GlobalStyle />
                 {app}
                 {isQuizVisible && quiz}
-                <Background />
+                <Background position={backgroundPosition} />
             </div>
         );
     }
@@ -136,6 +143,7 @@ App.propTypes = {
     dispatch: func.isRequired,
     timerEvent: string.isRequired,
     isQuizVisible: bool.isRequired,
+    backgroundPosition: string.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -144,6 +152,7 @@ function mapStateToProps(state) {
         dispatch: state.dispatch,
         timerEvent: state.timerEvent,
         isQuizVisible: state.isQuizVisible,
+        backgroundPosition: state.backgroundPosition,
     };
 }
 export default connect(mapStateToProps)(App);

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { fontFace } from './fontFace';
+import { themeGet } from 'styled-system';
 
 const GlobalStyle = createGlobalStyle`
     div, span, applet, object, iframe,
@@ -75,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
        line-height: 1;
+       background: ${themeGet('colors.lightblues.0')};
     }
     
     *::selection {

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { setBackgroundPosition } from '../actions';
 import About from './About';
 import SeeTheFishway from './SeeTheFishway';
 import MeetTheFish from './MeetTheFish';
@@ -17,8 +18,7 @@ const StyledTabs = styled(Tabs)`
     justify-content: space-evenly;
     align-items: center;
     height: 5rem;
-    border-bottom: 1px solid ${themeGet('colors.teals.1')};
-    background: ${themeGet('colors.teals.3')};
+    border-bottom: 1px solid rgba(256, 256, 256, 0.2);
 
     .nav-item {
         text-decoration: none;
@@ -73,6 +73,18 @@ const StyledNavbar = styled.div`
     display: ${props => props.hide};
 `;
 
+const getPositionForTab = key => {
+    if (key === 'about') {
+        return 'bottom';
+    } else if (key === 'see') {
+        return 'high';
+    } else if (key === 'meet') {
+        return 'low';
+    } else if (key === 'test') {
+        return 'top';
+    }
+};
+
 const Navbar = props => {
     const titles = {
         about: (
@@ -120,12 +132,19 @@ const Navbar = props => {
             </Heading>
         ),
     };
-
     return (
         <StyledNavbar hide={props.isQuizVisible ? 'none' : 'visible'}>
             {/* unmountOnExit is used to ensure that videos restart when
             switching from About tab to another tab and back again */}
-            <StyledTabs defaultActiveKey='about' unmountOnExit={true}>
+            <StyledTabs
+                defaultActiveKey='about'
+                unmountOnExit={true}
+                onSelect={key =>
+                    props.dispatch(
+                        setBackgroundPosition(getPositionForTab(key))
+                    )
+                }
+            >
                 <Tab eventKey='about' title={titles.about}>
                     <About />
                 </Tab>
