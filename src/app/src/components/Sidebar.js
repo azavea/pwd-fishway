@@ -7,7 +7,7 @@ import moment from 'moment';
 
 import { HighlightFish } from '../util/HighlightFish';
 
-import Video from './Video';
+import VideoPlayer from './VideoPlayer';
 
 const StyledSidebar = styled(Box)`
     background: ${themeGet('colors.teals.5')};
@@ -20,9 +20,7 @@ const Sidebar = ({ fish }) => {
     const date = moment(timestamp)
         .format('MMMM Do')
         .toUpperCase();
-    const video = fish && (
-        <Video src={`${path}.mp4`} autoPlay={true} setref={null} />
-    );
+    const video = fish && <VideoPlayer src={`${path}.mp4`} />;
     return (
         <StyledSidebar>
             <Heading as='h2' variant='small'>
