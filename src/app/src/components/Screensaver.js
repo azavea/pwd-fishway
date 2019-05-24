@@ -28,8 +28,8 @@ const Screensaver = props => {
                     fontWeight='medium'
                     opacity={0.9}
                 >
-                    Learn how the fish ladder helps fish populations and whether
-                    you have what it takes to be an aquatic biologist.
+                    Learn how fishways help fish reach their spawning grounds
+                    and test your fish identification skills!
                 </Heading>
                 <Button>Let’s go!</Button>
             </Box>
