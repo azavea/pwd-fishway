@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bool, func, string } from 'prop-types';
 import IdleTimer from 'react-idle-timer';
 
-import { resetAppState, setBackgroundPosition } from './actions';
+import { resetAppState } from './actions';
 
 import Navbar from './components/Navbar';
 import Screensaver from './components/Screensaver';

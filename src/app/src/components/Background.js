@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Box, Image } from 'rebass';
+import { Box } from 'rebass';
 import { themeGet } from 'styled-system';
-import { CSSTransition } from 'react-transition-group';
 import Lottie from 'react-lottie';
 import animationData from '../media/lotties/wave.json';
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Flex, Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 
 import { FISH_HIGHLIGHTS } from '../util/constants';
 

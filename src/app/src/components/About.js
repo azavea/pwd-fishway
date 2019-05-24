@@ -4,7 +4,6 @@ import { func, number } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 import { Heading } from './custom-styled-components';
 
 import { saveAboutSlideIndex, resetTimer } from '../actions';

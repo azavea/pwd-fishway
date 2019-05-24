@@ -4,7 +4,6 @@ import { func } from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import { Heading, Button } from './custom-styled-components';
-import { themeGet } from 'styled-system';
 
 import { hideScreensaver } from '../actions';
 
