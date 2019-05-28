@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { fontFace } from './fontFace';
 
 const GlobalStyle = createGlobalStyle`
     div, span, applet, object, iframe,
@@ -57,15 +56,6 @@ const GlobalStyle = createGlobalStyle`
     *:before {
        box-sizing: border-box;
     }
-
-    /* FontFace Fira*/
-    ${fontFace('Fira Sans', 'fira/FiraSans-Regular', 400, 'normal')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-Italic', 400, 'italic')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-Medium', 500, 'normal')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-MediumItalic', 500, 'italic')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-SemiBold', 600, 'normal')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-SemiBoldItalic', 600, 'italic')}
-    ${fontFace('Fira Sans', 'fira/FiraSans-ExtraBold', 800, 'normal')}
 
     /* Global styles */
     html {
