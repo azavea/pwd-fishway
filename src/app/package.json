@@ -13,10 +13,10 @@
   "dependencies": {
     "@babel/core": "7.2.2",
     "@fortawesome/fontawesome-svg-core": "1.2.18",
-    "@fortawesome/react-fontawesome": "0.1.4",
     "@fortawesome/pro-light-svg-icons": "^5.8.2",
-    "@fortawesome/pro-solid-svg-icons": "^5.8.2",
     "@fortawesome/pro-regular-svg-icons": "^5.8.2",
+    "@fortawesome/pro-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "0.1.4",
     "@svgr/webpack": "4.1.0",
     "axios": "~0.18.0",
     "babel-core": "7.0.0-bridge.0",
@@ -59,6 +59,7 @@
     "postcss-safe-parser": "4.0.1",
     "prettier-loader": "^2.1.1",
     "prop-types": "~15.6.1",
+    "rc-slider": "^8.6.11",
     "react": "^16.8.5",
     "react-app-polyfill": "^0.2.2",
     "react-bootstrap": "^1.0.0-beta.8",
@@ -89,7 +90,6 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^5.0.3",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
     "prettier": "^1.16.4",

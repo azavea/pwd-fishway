@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
-import Video from './Video';
+import VideoPlayer from './VideoPlayer';
 
 const StyledQuizSidebar = styled(Box)`
     background: ${themeGet('colors.teals.5')};
@@ -13,9 +13,7 @@ const StyledQuizSidebar = styled(Box)`
 `;
 
 const QuizSidebar = ({ fish }) => {
-    const video = fish && (
-        <Video src={fish.videoPath} autoPlay={true} setref={null} />
-    );
+    const video = fish && <VideoPlayer src={fish.videoPath} />;
     return (
         <StyledQuizSidebar>
             <Heading as='h2' variant='small'>
