@@ -1,30 +1,62 @@
+import alewifeIllustration from '../media/meetthefish/alewife_large.png';
+import americanEelIllustration from '../media/meetthefish/american_eel_large.png';
 import americanShadIllustration from '../media/meetthefish/american_shad_large.png';
 import americanShadPhoto from '../media/seethefishway/american_shad.jpg';
+import americanShadVideo from '../media/seethefishway/american_shad.mp4';
+import bluebackHerringIllustration from '../media/meetthefish/blueback_herring_large.png';
 import bluegillIllustration from '../media/meetthefish/bluegill_large.png';
+import brownTroutIllustration from '../media/meetthefish/brown_trout_large.png';
 import carpPhoto from '../media/seethefishway/carp.jpg';
+import carpVideo from '../media/seethefishway/carp.mp4';
 import channelCatfishIllustration from '../media/meetthefish/channel_catfish_large.png';
 import channelCatfishPhoto from '../media/seethefishway/channel_catfish.jpg';
+import channelCatfishVideo from '../media/seethefishway/channel_catfish.mp4';
 import commonCarpIllustration from '../media/meetthefish/common_carp_large.png';
 import commonCarpPhoto from '../media/seethefishway/common_carp.jpg';
+import commonCarpVideo from '../media/seethefishway/common_carp.mp4';
+import flatheadCatfishIllustration from '../media/meetthefish/flathead_catfish_large.png';
+import gizzardShadIllustration from '../media/meetthefish/gizzard_shad_large.png';
+import greenSunfishIllustration from '../media/meetthefish/green_sunfish_large.png';
+import hickoryShadIllustration from '../media/meetthefish/hickory_shad_large.png';
 import hybridStripedBassPhoto from '../media/seethefishway/hybrid_striped_bass.jpg';
+import hybridStripedBassVideo from '../media/seethefishway/hybrid_striped_bass.mp4';
+import largemouthBassIllustration from '../media/meetthefish/largemouth_bass_large.png';
+import muskellungeIllustration from '../media/meetthefish/muskellunge_large.png';
 import pumpkinseedIllustration from '../media/meetthefish/pumpkinseed_large.png';
 import pumpkinseedPhoto from '../media/seethefishway/pumpkinseed.jpg';
+import pumpkinseedVideo from '../media/seethefishway/pumpkinseed.mp4';
 import quillbackCarpPhoto from '../media/seethefishway/quillback_carp.jpg';
+import quillbackCarpVideo from '../media/seethefishway/quillback_carp.mp4';
 import quillbackCatfishPhoto from '../media/seethefishway/quillback_catfish.jpg';
+import quillbackCatfishVideo from '../media/seethefishway/quillback_catfish.mp4';
 import quillbackIllustration from '../media/meetthefish/quillback_large.png';
 import quillbackPhoto from '../media/seethefishway/quillback.jpg';
+import quillbackVideo from '../media/seethefishway/quillback.mp4';
 import quillbacksPhoto from '../media/seethefishway/quillbacks.jpg';
+import quillbacksVideo from '../media/seethefishway/quillbacks.mp4';
+import rainbowTroutIllustration from '../media/meetthefish/rainbow_trout_large.png';
 import rainbowTroutPhoto from '../media/seethefishway/rainbow_trout.jpg';
+import rainbowTroutVideo from '../media/seethefishway/rainbow_trout.mp4';
+import redbreastSunfishIllustration from '../media/meetthefish/redbreast_sunfish_large.png';
 import riverOtterPhoto from '../media/seethefishway/river_otter.jpg';
+import riverOtterVideo from '../media/seethefishway/river_otter.mp4';
 import shadPhoto from '../media/seethefishway/shad.jpg';
+import shadVideo from '../media/seethefishway/shad.mp4';
+import smallmouthBassIllustration from '../media/meetthefish/smallmouth_bass_large.png';
 import snakePhoto from '../media/seethefishway/snake.jpg';
+import snakeVideo from '../media/seethefishway/snake.mp4';
 import stripedBassHybridIllustration from '../media/meetthefish/striped_bass_hybrid_large.png';
 import stripedBassIllustration from '../media/meetthefish/striped_bass_large.png';
 import stripedBassHybridPhoto from '../media/seethefishway/striped_bass_hybrid.jpg';
+import stripedBassHybridVideo from '../media/seethefishway/striped_bass_hybrid.mp4';
 import turtlePhoto from '../media/seethefishway/turtle.jpg';
+import turtleVideo from '../media/seethefishway/turtle.mp4';
+import walleyeIllustration from '../media/meetthefish/walleye_large.png';
 import whitePerchIllustration from '../media/meetthefish/white_perch_large.png';
 import whitePerchPhoto from '../media/seethefishway/white_perch.jpg';
+import whitePerchVideo from '../media/seethefishway/white_perch.mp4';
 import whiteSuckerIllustration from '../media/meetthefish/white_sucker_large.png';
+
 import overviewVideo from '../media/about/overview.mp4';
 import biologistVideo from '../media/about/biologist.mp4';
 import engineerVideo from '../media/about/engineer.mp4';
@@ -152,7 +184,7 @@ const BLUEGILL = {
 export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
-        path: './media/seethefishway/shad',
+        video: shadVideo,
         photo: shadPhoto,
         timestamp: 1118762520000,
         notes:
@@ -160,7 +192,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...AMERICAN_SHAD,
-        path: './media/seethefishway/american_shad',
+        video: americanShadVideo,
         photo: americanShadPhoto,
         timestamp: 1085515200000,
         notes:
@@ -168,7 +200,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...QUILLBACK,
-        path: './media/seethefishway/quillback',
+        video: quillbackVideo,
         photo: quillbackPhoto,
         timestamp: 1115046300000,
         notes:
@@ -176,14 +208,14 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...QUILLBACK,
-        path: './media/seethefishway/quillbacks',
+        video: quillbacksVideo,
         photo: quillbacksPhoto,
         timestamp: 1084454640000,
         notes: 'Three quillbacks swim by the viewing window.',
     },
     {
         ...PUMPKINSEED,
-        path: './media/seethefishway/pumpkinseed',
+        video: pumpkinseedVideo,
         photo: pumpkinseedPhoto,
         timestamp: 1116184920000,
         notes:
@@ -191,7 +223,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...HYBRID_STRIPED_BASS,
-        path: './media/seethefishway/hybrid_striped_bass',
+        video: hybridStripedBassVideo,
         photo: hybridStripedBassPhoto,
         timestamp: 1114074720000,
         notes:
@@ -199,7 +231,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...HYBRID_STRIPED_BASS,
-        path: './media/seethefishway/striped_bass_hybrid',
+        video: stripedBassHybridVideo,
         photo: stripedBassHybridPhoto,
         timestamp: 1084279080000,
         notes: 'A very large, hybrid striped bass — an excellent specimen.',
@@ -207,7 +239,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'Turtle',
         scientificName: '—',
-        path: './media/seethefishway/turtle',
+        video: turtleVideo,
         photo: turtlePhoto,
         timestamp: 1114119720000,
         notes:
@@ -216,7 +248,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'Snake',
         scientificName: '—',
-        path: './media/seethefishway/snake',
+        video: snakeVideo,
         photo: snakePhoto,
         timestamp: 1115907780000,
         notes:
@@ -225,7 +257,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'Rainbow Trout',
         scientificName: 'Oncorhynchus mykiss',
-        path: './media/seethefishway/rainbow_trout',
+        video: rainbowTroutVideo,
         photo: rainbowTroutPhoto,
         timestamp: 1115870340000,
         notes:
@@ -233,7 +265,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...COMMON_CARP,
-        path: './media/seethefishway/carp',
+        video: carpVideo,
         photo: carpPhoto,
         timestamp: 1115826720000,
         notes:
@@ -241,7 +273,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...COMMON_CARP,
-        path: './media/seethefishway/common_carp',
+        video: commonCarpVideo,
         photo: commonCarpPhoto,
         timestamp: 1084512000000,
         notes: 'A very large female carp, pregnant with eggs.',
@@ -249,7 +281,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: `${QUILLBACK_COMMON_NAME} and ${COMMON_CARP_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${COMMON_CARP_SCIENTIFIC_NAME}`,
-        path: './media/seethefishway/quillback_carp',
+        video: quillbackCarpVideo,
         photo: quillbackCarpPhoto,
         timestamp: 1084417860000,
         notes: 'A quillback and a carp try to swim together upriver.',
@@ -257,14 +289,14 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: 'River Otter',
         scientificName: 'Lutra canadensis',
-        path: './media/seethefishway/river_otter',
+        video: riverOtterVideo,
         photo: riverOtterPhoto,
         timestamp: 1111371600000,
         notes: 'River Otter swims through the fish ladder to star in a video.',
     },
     {
         ...CHANNEL_CATFISH,
-        path: './media/seethefishway/channel_catfish',
+        video: channelCatfishVideo,
         photo: channelCatfishPhoto,
         timestamp: 1084417680000,
         notes: 'Catfish group, traveling at night.',
@@ -272,7 +304,7 @@ export const FISH_HIGHLIGHTS = [
     {
         commonName: `${QUILLBACK_COMMON_NAME}s and ${CHANNEL_CATFISH_COMMON_NAME}`,
         scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${CHANNEL_CATFISH_SCIENTIFIC_NAME}`,
-        path: './media/seethefishway/quillback_catfish',
+        video: quillbackCatfishVideo,
         photo: quillbackCatfishPhoto,
         timestamp: 1084461660000,
         notes:
@@ -280,7 +312,7 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         ...WHITE_PERCH,
-        path: './media/seethefishway/white_perch',
+        video: whitePerchVideo,
         photo: whitePerchPhoto,
         timestamp: 1084379160000,
         notes: 'A white perch darts through the water.',
@@ -291,7 +323,7 @@ export const FISH = [
     {
         commonName: 'Alewife',
         scientificName: 'Alosa pseudoharengus',
-        picturePath: './media/meetthefish/alewife_large.png',
+        picturePath: alewifeIllustration,
         overview:
             'The alewife is an anadromous herring in its natural range, living its adult life in salt water and swimming into freshwater tributaries to spawn. Its original distribution was along the Atlantic Coast, from South Carolina northward into Canada. Alewives enter Pennsylvania’s Delaware River on spawning migrations. The alewife can also live entirely in fresh water. It has become established in all the Great Lakes, including the Pennsylvania portion of Lake Erie. It was first reported in Lake Ontario in the 1870s, there either by accidental introduction or by making its way through water routes from New York’s Finger Lakes, the St. Lawrence River or the Erie Canal. By 1931, the alewife was reported in Lake Erie, having bypassed Niagara Falls via the Welland Canal. As a food fish for larger game fish, alewives have also been stocked in impoundments across the state. They have also been accidentally spread as escapees from fishermen’s bait buckets. Its small size, large schools and availability to openwater game fish have made the alewife suited for stocking in some inland reservoirs as a forage fish. It has been introduced in Pennsylvania for that purpose in some of our larger impoundments. The species name “pseudoharengus” means “false herring.”',
         characteristics:
@@ -304,7 +336,7 @@ export const FISH = [
     {
         commonName: 'American Eel',
         scientificName: 'Family Anguillidae',
-        picturePath: './media/meetthefish/american_eel_large.png',
+        picturePath: americanEelIllustration,
         overview:
             'Freshwater eels are the only catadromous fishes in North America. “Catadromous” means that they spawn in salt water and live as adults in fresh water. Anadromous fishes, like salmon and American shad, spawn in fresh water but live as adults in the ocean. On this continent, eels are represented by a single species, the American eel (Anguilla rostrata). Although the eel looks snakelike, it is a fish. The American eel is found widely along the Atlantic and Gulf coasts, where the young eels move far upstream into small tributaries. The Delaware River in Pennsylvania has the most abundant population of eels of all the state’s streams, because there are no dam obstructions to prevent the eel’s upriver migration. Eels are rarely found in the Susquehanna River system. Passageways and lifts to move fish past all the Susquehanna’s dams should soon return eels, shad and other ocean-migrating fish to that watershed. Eels are also occasionally seen in the Potomac River watershed. They have even been reported from some headwater sections of the Ohio River watershed in Pennsylvania. While in fresh water, eels live in a variety of stream habitats, especially where they can hide under logs, rocks and undercut banks. Until the early 1900s, eels supported an intense commercial fishery in the Susquehanna and Delaware River systems. Adult eels on their downstream migration toward the sea were trapped by low, in-river V-shaped wing dams, which were barricades made of rocks. The eels entered these eel racks from the wide upstream side and swam through the small funnel opening downstream, into holding baskets. The remains of old “eel weirs” can still be seen in some Delaware and Susquehanna River watershed streams. Even in a “poor” eel year, the take was staggering: In 1912, called an “off year,” 50,000 eels weighing more than 44,000 pounds were caught in Pennsylvania. Today, eels are caught mostly by anglers looking for food and sport (eels are good eating, especially smoked). The genus name “Anguilla” is Latin for “eel.” The species name “rostrata” means “long nose.”',
         characteristics:
@@ -327,7 +359,7 @@ export const FISH = [
     {
         commonName: 'Blueback Herring',
         scientificName: 'Alosa aestivalis',
-        picturePath: './media/meetthefish/blueback_herring_large.png',
+        picturePath: bluebackHerringIllustration,
         overview:
             'Blueback herring look much like a closely related species, the alewife. Their marine range is along the Atlantic Coast from Nova Scotia to Florida. They migrate for spawning into the lower reaches of freshwater streams and rivers. In Pennsylvania, the blueback herring is found only in the lower Delaware River and the Delaware estuary, where it returns to spawn. Throughout its range, dams have blocked the blueblack from entering streams, and reduced its abundance and distribution in freshwater. South of Pennsylvania, blueback herring can be very common in river mouths in the spring, giving it the common name “glut herring.”',
         characteristics:
@@ -351,7 +383,7 @@ export const FISH = [
     {
         commonName: 'Brown Trout',
         scientificName: 'Salmo trutta',
-        picturePath: './media/meetthefish/brown_trout_large.png',
+        picturePath: brownTroutIllustration,
         overview:
             'The brown trout is not a native Pennsylvanian, although it is now naturalized and widespread here in the wild, even becoming the main trout species in streams previously dominated by brook trout. Brown trout were originally found in Eurasia and were stocked in the late 1800s in the United States as strains from various locations, including Scotland and Germany. Pennsylvania received its first brown trout in 1886. Brown trout are considered more difficult to catch than brook trout. The larger ones tend to feed at night. Brown trout are closely related to Atlantic salmon (Salmo salar). The genus name “Salmo” is the Latin name for the Atlantic salmon. The species name “trutta” is the Latin name for “trout.”',
         characteristics:
@@ -386,7 +418,7 @@ export const FISH = [
     {
         commonName: 'Flathead Catfish',
         scientificName: 'Pylodictis olivaris',
-        picturePath: './media/meetthefish/flathead_catfish_large.png',
+        picturePath: flatheadCatfishIllustration,
         overview:
             'Flathead catfish grow longer and heavier than other Pennsylvania catfish. In fact, they are one of the state’s biggest fish, of any kind. Flathead catfish are known to grow to more than 100 pounds, but 20 or 30 pounds is more likely in Pennsylvania. The Pennsylvania record is over 40 pounds. Flathead catfish are native to the lower Great Lakes and the Mississippi River basin, from western Pennsylvania southward. They are also in Gulf of Mexico watersheds, and can live in reservoirs. In Pennsylvania, flatheads are found mainly in the Ohio, Allegheny and Monongahela rivers. Fossils of this catfish genus that are about 15 million years old, from the mid-Miocene Epoch, can’t be distinguished from the modern flathead catfish. The flathead’s genus name “Pylodictis” means “mud fish,” and its species name “olivaris” means “olive-colored.”',
         characteristics:
@@ -399,7 +431,7 @@ export const FISH = [
     {
         commonName: 'Gizzard Shad',
         scientificName: 'Dorosoma cepedianum',
-        picturePath: './media/meetthefish/gizzard_shad_large.png',
+        picturePath: gizzardShadIllustration,
         overview:
             'The gizzard shad is a herring with a difference. It is set apart from its herring relatives (that are in the genus Alosa), by its gizzardlike stomach. The gizzard shad is found mainly in the Ohio River watershed and Lake Erie in appropriate habitat. However, as a result of both intentional and unintentional stocking, it is found statewide. The gizzard shad’s original home range was the southeastern United States, except for the Appalachian Mountains, but the fish seems to be spreading northward. Biologists question whether or not the gizzard shad was native to Lake Erie. They believe it probably invaded the Great Lakes from the upper Mississippi River. Today, gizzard shad can be found in the St. Lawrence River, the Great Lakes, the Mississippi River and its tributaries, and the Atlantic and Gulf Coast watersheds. The gizzard shad gets its common name from its muscular, gizzardlike stomach, which helps process the plankton and plant food this fish strains from the water. The genus name “Dorosoma” refers to a lancelike body. The species name “cepedianum” recognizes a French ichthyologist named Lacepede.',
         characteristics:
@@ -412,7 +444,7 @@ export const FISH = [
     {
         commonName: 'Green Sunfish',
         scientificName: 'Lepomis cyanellus',
-        picturePath: './media/meetthefish/green_sunfish_large.png',
+        picturePath: greenSunfishIllustration,
         overview:
             'The green sunfish was originally found west of the Appalachian Mountains, throughout the Mississippi watershed. It has been introduced elsewhere in the East, and is now found in most of Pennsylvania, although not in great numbers. The species name “cyanellus” means “blue.”',
         characteristics:
@@ -425,7 +457,7 @@ export const FISH = [
     {
         commonName: 'Hickory Shad',
         scientificName: 'Alosa mediocris',
-        picturePath: './media/meetthefish/hickory_shad_large.png',
+        picturePath: hickoryShadIllustration,
         overview:
             'Hickory shad live in coastal marine waters and move into fresh water to spawn. Hickory shad range from the Bay of Fundy in Maine to the St. Johns River in Florida. The hickory shad is common from Chesapeake Bay to North Carolina and in coastal waters of the northeast states. Between these areas, it is scarce. In Latin, the name “mediocris” means “not important,” or “ordinary.” Like American shad, hickory shad are anadromous. They live in coastal ocean waters as adults and enter brackish estuaries, like the Delaware, and swim far upstream to spawn in freshwater rivers and creeks. Hickory shad are returning to the Susquehanna River watershed because of fish lifts on dams. Currently, they are on the list of endangered, threatened, and candidate fishes because of their extremely limited distribution and abundance. In states where their numbers are sufficient to allow sport fishing, they are pursued by light-tackle specialists for their fighting and leaping abilities.',
         characteristics:
@@ -438,7 +470,7 @@ export const FISH = [
     {
         commonName: 'Largemouth Bass',
         scientificName: 'Micropterus salmoides',
-        picturePath: './media/meetthefish/largemouth_bass_large.png',
+        picturePath: largemouthBassIllustration,
         overview:
             'Largemouth bass were originally distributed in the Ohio River and Lake Erie watersheds in Pennsylvania. The largemouth has been established statewide in appropriate habitat. The largemouth bass is Pennsylvania’s biggest sunfish. The state angling record is over 11 pounds, and the fish can grow two feet or more in length. The largest largemouths are generally females. The species name “salmoides” refers to trout (“salmo”), because the largemouth is sometimes called a “trout” in the southern United States. One nickname is “bucketmouth,” which, like the common name “largemouth,” is well-deserved by the fish’s gaping jaw, with which it can swallow sizable prey.',
         characteristics:
@@ -451,7 +483,7 @@ export const FISH = [
     {
         commonName: 'Muskellunge',
         scientificName: 'Esox masquinongy',
-        picturePath: './media/meetthefish/muskellunge_large.png',
+        picturePath: muskellungeIllustration,
         overview:
             'A voracious predator, the muskellunge is one of Pennsylvania’s largest and fastest-growing fish, with the state record standing at over 54 pounds. The muskellunge’s original North American range was the St. Lawrence River, throughout the Great Lakes and Hudson Bay, and the Mississippi River basin, but it has been widely propagated and stocked elsewhere for sport fishing. In Pennsylvania, muskies were originally restricted to the northwest region, the Lake Erie and Ohio River watersheds, especially in the large glacier- formed lakes, like Conneaut Lake in Crawford County and Presque Isle Bay in Lake Erie. The species name “masquinongy” comes from an Ojibwa (Chippewa) name for the fish—“mas,” meaning “ugly,” and “kinononge,” meaning “fish.”',
         characteristics:
@@ -487,7 +519,7 @@ export const FISH = [
     {
         commonName: 'Rainbow Trout',
         scientificName: 'Oncorhynchus mykiss',
-        picturePath: './media/meetthefish/rainbow_trout_large.png',
+        picturePath: rainbowTroutIllustration,
         overview:
             'Rainbow trout are a western North American species, native to the Pacific slope from California to Alaska. In a turn-of-the-century effort to restore Pennsylvania’s degraded trout fishery, rainbows were introduced throughout the state. But today, as wild fish, rainbows sustain reproducing populations only in a handful of fast-falling creeks scattered around the state. As stocked, hatchery-reared fish, rainbows are found throughout Pennsylvania’s watersheds. For many years the rainbow was considered a near relative of the brown trout, and it was given the scientific name Salmo gairdneri, which still appears in some reference books. Today, biologists consider the rainbow more closely akin to the Pacific salmons and the cutthroat trout of the West. Its scientific name was changed to reflect that link. Like those salmons, some rainbows (steelhead) run to the ocean or a large sealike lake, like the Great Lakes, if they have access, returning upstream for spawning. Then they are called “steelhead” (they appear steel- colored, or more silvery, than stream rainbows). Rainbows are flashy fighters when hooked, jumping out of the water more than other trout. The genus name “Oncorhynchus” means “hooked snout,” referring to the hooked lower jaw of big, breeding males.',
         characteristics:
@@ -500,7 +532,7 @@ export const FISH = [
     {
         commonName: 'Redbreast Sunfish',
         scientificName: 'Lepomis auritus',
-        picturePath: './media/meetthefish/redbreast_sunfish_large.png',
+        picturePath: redbreastSunfishIllustration,
         overview:
             'The redbreast sunfish is native to Atlantic Coast watersheds. It is found in southern and eastern Pennsylvania in the Delaware, Susquehanna and Potomac River watersheds. The species name “auritus” means “eared,” referring to the long, dark gill flap. The common name describes the deep-orange or reddish belly.',
         characteristics:
@@ -513,7 +545,7 @@ export const FISH = [
     {
         commonName: 'Smallmouth Bass',
         scientificName: 'Micropterus dolomieui',
-        picturePath: './media/meetthefish/smallmouth_bass_large.png',
+        picturePath: smallmouthBassIllustration,
         overview:
             'The smallmouth bass was native to and found only in the Great Lakes and Ohio River watersheds until the mid-1800s. When the railroads spread around the country in the second half of the 19th century, so did the smallmouth. It was transported by train and eventually became a popular sport fish throughout the United States. It is now found all across Pennsylvania. Because of its body’s brownish-gold tints, the smallmouth has been nicknamed “bronzeback.” Its species name recognizes a French naturalist, M. Dolomieu.',
         characteristics:
@@ -548,7 +580,7 @@ export const FISH = [
     {
         commonName: 'Walleye',
         scientificName: 'Stizostedion vitreum',
-        picturePath: './media/meetthefish/walleye_large.png',
+        picturePath: walleyeIllustration,
         overview:
             'Walleyes are native to central North America and Canada, including the Ohio River and Great Lakes watersheds. Popular sport fish, they have been extensively stocked. In Pennsylvania they are now found throughout the state, including the Susquehanna and Delaware River watersheds, as well as their original Allegheny River and Lake Erie watershed homes. One of the walleye’s nicknames is “Susquehanna salmon.” It has also been called “yellow pike” and even “pickerel.” All these nicknames put it in the wrong fish family–it’s neither a pike cousin nor a salmon. It’s the biggest, toothiest member of the perch family. The name “walleye” refers to the fish’s large, milky eye that looks luminous when light is shined on it. The eye has a reflecting membrane behind the retina, which causes this effect. The species name “vitreum” means “glassy,” and refers to the luminous eye.',
         characteristics:
