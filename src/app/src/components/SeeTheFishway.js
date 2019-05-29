@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Flex, Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 
 import { FISH_HIGHLIGHTS } from '../util/constants';
 
@@ -11,7 +10,6 @@ import VideoCard from './VideoCard';
 
 const StyledSeeTheFishway = styled(Flex)`
     height: 100%;
-    background: ${themeGet('colors.teals.2')};
 `;
 
 const SeeTheFishwayTray = styled(Flex)`

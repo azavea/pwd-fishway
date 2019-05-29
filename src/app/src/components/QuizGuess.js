@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex } from 'rebass';
-import { themeGet } from 'styled-system';
 
 import Text from './Text';
 
@@ -9,7 +8,6 @@ import { QuizFish } from '../util/QuizFish';
 
 const StyledQuizGuess = styled(Flex)`
     text-align: center;
-    background: ${themeGet('colors.teals.0')};
     flex-direction: column;
 `;
 

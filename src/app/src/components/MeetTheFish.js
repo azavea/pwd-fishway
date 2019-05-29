@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Flex } from 'rebass';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 
 import { Heading, Text } from './custom-styled-components';
 import MeetTheFishModal from './MeetTheFishModal';
@@ -9,7 +8,6 @@ import MeetTheFishModal from './MeetTheFishModal';
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
     text-align: center;
-    background: ${themeGet('colors.teals.1')};
 `;
 
 const MeetTheFish = () => {

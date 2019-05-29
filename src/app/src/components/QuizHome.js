@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import { Flex, Box } from 'rebass';
 import { Heading, Text, Button } from './custom-styled-components';
-import { themeGet } from 'styled-system';
 import styled from 'styled-components';
 import { showQuiz } from '../actions';
 
@@ -12,7 +11,6 @@ const StyledQuizHome = styled(Flex)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${themeGet('colors.teals.0')};
 `;
 
 const QuizHome = props => {

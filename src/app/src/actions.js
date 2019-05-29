@@ -7,3 +7,4 @@ export const resetTimer = createAction('Reset timer');
 export const pauseTimer = createAction('Pause timer');
 export const showQuiz = createAction('Show quiz');
 export const hideQuiz = createAction('Hide quiz');
+export const setBackgroundPosition = createAction('Set Background position');
