@@ -16,18 +16,18 @@ const StyledSidebar = styled(Box)`
 `;
 
 const Sidebar = ({ fish }) => {
-    const { commonName, scientificName, path, notes, timestamp } = fish;
+    const { commonName, scientificName, video, notes, timestamp } = fish;
     const date = moment(timestamp)
         .format('MMMM Do')
         .toUpperCase();
-    const video = fish && <VideoPlayer src={`${path}.mp4`} />;
+    const videoPlayer = fish && <VideoPlayer src={video} />;
     return (
         <StyledSidebar>
             <Heading as='h2' variant='small'>
                 {commonName}
                 <Text variant='small'>{scientificName}</Text>
             </Heading>
-            {video}
+            {videoPlayer}
             <footer>
                 <Text variant='small'>{notes}</Text>
                 <Text variant='small'>{date}</Text>
