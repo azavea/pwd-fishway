@@ -73,16 +73,11 @@ const StyledNavbar = styled.div`
     display: ${props => props.hide};
 `;
 
-const getPositionForTab = key => {
-    if (key === 'about') {
-        return 'bottom';
-    } else if (key === 'see') {
-        return 'high';
-    } else if (key === 'meet') {
-        return 'low';
-    } else if (key === 'test') {
-        return 'top';
-    }
+const positions = {
+    about: 'bottom',
+    see: 'high',
+    meet: 'low',
+    test: 'top',
 };
 
 const Navbar = props => {
@@ -140,9 +135,7 @@ const Navbar = props => {
                 defaultActiveKey='about'
                 unmountOnExit={true}
                 onSelect={key =>
-                    props.dispatch(
-                        setBackgroundPosition(getPositionForTab(key))
-                    )
+                    props.dispatch(setBackgroundPosition(positions[key]))
                 }
             >
                 <Tab eventKey='about' title={titles.about}>
