@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import shuffle from 'lodash-es/shuffle';
+import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
 import { themeGet } from 'styled-system';
@@ -19,38 +20,80 @@ const QuizBody = styled(Box)`
     background: ${themeGet('colors.teals.2')};
 `;
 
-const Quiz = props => {
-    const [answer] = useState(QUIZ_FISH[0]);
-    const [results, setResults] = useState(null);
-
-    function checkResults(results) {
-        setResults(results);
-        setTimeout(() => setResults(null), GUESS_MESSAGE_TIME);
+class Quiz extends React.Component {
+    constructor() {
+        super();
+        const answers = shuffle(QUIZ_FISH).slice(0, 5);
+        const choices = answers.map(fish => {
+            const otherFish = QUIZ_FISH.filter(
+                a => a.commonName !== fish.commonName
+            );
+            const wrongChoices = shuffle(otherFish).slice(0, 2);
+            return shuffle(wrongChoices.concat(fish));
+        });
+        this.state = {
+            currentResult: null,
+            results: [],
+            question: 0,
+            answers,
+            choices,
+        };
     }
 
-    const correctGuess = results !== null && results.numWrong < 2;
-    const quizState =
-        results !== null ? (
-            <QuizGuess answer={answer} correct={correctGuess} />
-        ) : (
-            <QuizContainer>
-                <QuizSidebar fish={answer} width={1 / 5} />
-                <QuizBody width={4 / 5}>
-                    <QuizQuestion
-                        answer={answer}
-                        choices={[QUIZ_FISH[0], QUIZ_FISH[1], QUIZ_FISH[2]]}
-                        onDone={checkResults}
-                    />
-                </QuizBody>
-            </QuizContainer>
+    checkResults = result => {
+        this.setState({
+            currentResult: result,
+            results: this.state.results.concat(result),
+        });
+        setTimeout(
+            () =>
+                this.setState({
+                    currentResult: null,
+                    question: this.state.question + 1,
+                }),
+            GUESS_MESSAGE_TIME
         );
+    };
 
-    return (
-        <Box>
-            <QuizNavbar dispatch={props.dispatch} />
-            {quizState}
-        </Box>
-    );
-};
+    render() {
+        const {
+            choices,
+            currentResult,
+            results,
+            question,
+            answers,
+        } = this.state;
+        const answer = answers[question];
+
+        const correctGuess =
+            currentResult !== null && currentResult.numWrong < 2;
+        const quizState =
+            currentResult !== null ? (
+                <QuizGuess answer={answer} correct={correctGuess} />
+            ) : (
+                <QuizContainer>
+                    <QuizSidebar fish={answer} width={1 / 5} />
+                    <QuizBody width={4 / 5}>
+                        <QuizQuestion
+                            answer={answer}
+                            choices={choices[question]}
+                            onDone={this.checkResults}
+                        />
+                    </QuizBody>
+                </QuizContainer>
+            );
+
+        return (
+            <Box>
+                <QuizNavbar
+                    dispatch={this.props.dispatch}
+                    question={question}
+                    results={results}
+                />
+                {quizState}
+            </Box>
+        );
+    }
+}
 
 export default Quiz;

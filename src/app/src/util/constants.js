@@ -658,7 +658,7 @@ export const QUIZ_FISH = [
         hint: '',
     },
     {
-        HYBRID_STRIPED_BASS,
+        ...HYBRID_STRIPED_BASS,
         videoPath: stripedBassHybridClip,
         hint: '',
     },
