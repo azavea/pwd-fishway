@@ -9,7 +9,6 @@ import VideoPlayer from './VideoPlayer';
 const StyledQuizSidebar = styled(Box)`
     background: ${themeGet('colors.teals.5')};
     text-align: center;
-    width: 100%;
 `;
 
 const QuizSidebar = ({ fish }) => {

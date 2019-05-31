@@ -1,3 +1,4 @@
+import { bool } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Flex } from 'rebass';
@@ -16,11 +17,8 @@ const Answer = styled(Flex)`
     text-align: center;
 `;
 
-const QuizGuess = ({ answer, guess }) => {
-    const message =
-        answer.commonName === guess.commonName
-            ? 'CORRECT!'
-            : 'Sorry, it was the:';
+const QuizGuess = ({ answer, correct }) => {
+    const message = correct ? 'CORRECT!' : 'Sorry, it was the:';
 
     return (
         <StyledQuizGuess>
@@ -43,7 +41,7 @@ const QuizGuess = ({ answer, guess }) => {
 
 QuizGuess.propTypes = {
     answer: QuizFish.isRequired,
-    guess: QuizFish.isRequired,
+    correct: bool.isRequired,
 };
 
 export default QuizGuess;
