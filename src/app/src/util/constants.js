@@ -128,7 +128,7 @@ const QUILLBACK = {
 };
 
 const STRIPED_BASS_COMMON_NAME = 'Striped Bass';
-const STRIPED_BASS_SCIENTIFIC_NAME = 'Striped Bass';
+const STRIPED_BASS_SCIENTIFIC_NAME = 'Morone saxatilis';
 const STRIPED_BASS = {
     commonName: STRIPED_BASS_COMMON_NAME,
     scientificName: STRIPED_BASS_SCIENTIFIC_NAME,
