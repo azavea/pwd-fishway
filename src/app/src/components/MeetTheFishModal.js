@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { func, bool, number } from 'prop-types';
 import Popup from 'reactjs-popup';
 import { Box, Button, Flex, Link } from 'rebass';
 import styled from 'styled-components';
@@ -95,7 +96,7 @@ export default class MeetTheFishModal extends Component {
         );
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(_, prevState) {
         if (
             prevState.index !== this.state.index &&
             this.overviewRef.current !== null
@@ -105,7 +106,7 @@ export default class MeetTheFishModal extends Component {
     }
 
     render() {
-        const { children } = this.props;
+        const { open, onModalClose } = this.props;
 
         const fish = FISH[this.state.index];
 
@@ -133,10 +134,13 @@ export default class MeetTheFishModal extends Component {
 
         return (
             <StyledPopup
-                trigger={children}
+                open={open}
                 modal
                 closeOnDocumentClick
-                onClose={() => this.setState({ index: this.props.index })}
+                onClose={() => {
+                    this.setState({ index: this.props.index });
+                    onModalClose();
+                }}
             >
                 {close => (
                     <ModalContainer>
@@ -213,3 +217,9 @@ export default class MeetTheFishModal extends Component {
         );
     }
 }
+
+MeetTheFishModal.propTypes = {
+    open: bool.isRequired,
+    index: number.isRequired,
+    onModalClose: func.isRequired,
+};

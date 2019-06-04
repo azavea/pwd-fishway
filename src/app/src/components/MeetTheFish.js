@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
 
 import { Heading, Text } from './custom-styled-components';
+import MeetTheFishButton from './MeetTheFishButton';
 import MeetTheFishModal from './MeetTheFishModal';
 
-import { FISH } from '../util/constants';
+import { FISH, FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
@@ -15,52 +16,72 @@ const StyledMeetTheFish = styled(Flex)`
 `;
 
 const Header = styled(Box)`
-    margin: 50px auto;
+    margin-top: 50px;
 `;
 
-const FishButton = styled.button`
-    background-color: transparent;
-    border: none;
-`;
-
-const FishImage = styled.img`
-    max-width: 400px;
-    max-height: 350px;
+const Subtitle = styled(Text)`
+    padding: 0 300px;
 `;
 
 const FishReelContainer = styled(Box)`
     width: 100%;
     overflow-x: scroll;
+    padding-left: 100px;
 
     ::-webkit-scrollbar {
         display: none;
     }
 `;
 
+const FishButtonAndModal = styled(Box)`
+    padding: 20px;
+`;
+
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 380%;
+    width: 400%;
 `;
 
 const MeetTheFish = () => {
-    const buttons = FISH.map((fish, idx) => (
-        <MeetTheFishModal index={idx}>
-            <FishButton>
-                <FishImage src={fish.picturePath} />
-            </FishButton>
-        </MeetTheFishModal>
+    const [selectedFish, setSelectedFish] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const onModalClose = () => {
+        setIsModalOpen(false);
+        setSelectedFish(null);
+    };
+
+    const onButtonClick = idx => {
+        setSelectedFish(idx);
+        setTimeout(() => setIsModalOpen(true), FISH_MODAL_OPEN_DELAY);
+    };
+
+    const fishButtons = FISH.map((fish, idx) => (
+        <FishButtonAndModal key={fish.commonName}>
+            <MeetTheFishButton
+                fish={fish}
+                onButtonClick={onButtonClick}
+                index={idx}
+                disabled={selectedFish ? true : false}
+            />
+            <MeetTheFishModal
+                index={idx}
+                open={selectedFish === idx && isModalOpen ? true : false}
+                onModalClose={onModalClose}
+            />
+        </FishButtonAndModal>
     ));
     return (
         <StyledMeetTheFish>
             <Header>
                 <Heading as='h1'>Meet the Fish</Heading>
-                <Text as='p' variant='large' padding='0 400px'>
+                <Subtitle as='p' variant='large'>
                     Did you know over 48 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
-                </Text>
+                </Subtitle>
             </Header>
             <FishReelContainer>
-                <FishReel>{buttons}</FishReel>
+                <FishReel>{fishButtons}</FishReel>
             </FishReelContainer>
         </StyledMeetTheFish>
     );
