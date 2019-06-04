@@ -11,6 +11,11 @@ const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    width: 100%;
+`;
+
+const Header = styled(Box)`
+    margin: 50px auto;
 `;
 
 const FishButton = styled.button`
@@ -19,17 +24,22 @@ const FishButton = styled.button`
 `;
 
 const FishImage = styled.img`
-    max-width: 350px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 350px;
 `;
 
-const FishReel = styled(Flex)`
+const FishReelContainer = styled(Box)`
+    width: 100%;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 
     ::-webkit-scrollbar {
         display: none;
     }
+`;
+
+const FishReel = styled(Flex)`
+    flex-wrap: wrap;
+    width: 380%;
 `;
 
 const MeetTheFish = () => {
@@ -42,14 +52,16 @@ const MeetTheFish = () => {
     ));
     return (
         <StyledMeetTheFish>
-            <Box>
+            <Header>
                 <Heading as='h1'>Meet the Fish</Heading>
                 <Text as='p' variant='large' padding='0 400px'>
                     Did you know over 48 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
                 </Text>
-            </Box>
-            <FishReel>{buttons}</FishReel>
+            </Header>
+            <FishReelContainer>
+                <FishReel>{buttons}</FishReel>
+            </FishReelContainer>
         </StyledMeetTheFish>
     );
 };
