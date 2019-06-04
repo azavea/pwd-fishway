@@ -25,6 +25,7 @@ const Result = styled(Box)`
 
 const QuizNavbar = props => {
     const { dispatch, question, results } = props;
+
     const icons = [0, 1, 2, 3, 4].map(idx => {
         const result = results[idx];
         const correct = result && result.numWrong < 2;

@@ -10,6 +10,7 @@ import QuizQuestion from './QuizQuestion';
 import QuizSidebar from './QuizSidebar';
 
 import { QUIZ_FISH, GUESS_MESSAGE_TIME } from '../util/constants';
+import { hideQuiz } from '../actions';
 
 const QuizContainer = styled(Flex)`
     text-align: center;
@@ -23,7 +24,7 @@ const QuizBody = styled(Box)`
 class Quiz extends React.Component {
     constructor() {
         super();
-        const answers = shuffle(QUIZ_FISH).slice(0, 5);
+        const answers = shuffle(QUIZ_FISH).slice(0, 2);
         const choices = answers.map(fish => {
             const otherFish = QUIZ_FISH.filter(
                 a => a.commonName !== fish.commonName
@@ -45,14 +46,17 @@ class Quiz extends React.Component {
             currentResult: result,
             results: this.state.results.concat(result),
         });
-        setTimeout(
-            () =>
+
+        setTimeout(() => {
+            const { dispatch } = this.props;
+            if (this.state.question === 1) {
+                dispatch(hideQuiz());
+            } else
                 this.setState({
                     currentResult: null,
                     question: this.state.question + 1,
-                }),
-            GUESS_MESSAGE_TIME
-        );
+                });
+        }, GUESS_MESSAGE_TIME);
     };
 
     render() {
@@ -63,6 +67,7 @@ class Quiz extends React.Component {
             question,
             answers,
         } = this.state;
+
         const answer = answers[question];
 
         const correctGuess =
