@@ -14,7 +14,7 @@ import { ABOUT_PROFILES } from '../util/constants';
 import AboutSlide from './AboutSlide';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
-const slidesToShow = 1.3;
+const slidesToShow = 1;
 
 const StyledAbout = styled(Flex)`
     height: calc(100vh - 5rem);
