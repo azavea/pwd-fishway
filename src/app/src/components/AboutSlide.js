@@ -8,7 +8,6 @@ import { themeGet } from 'styled-system';
 import Video from './Video';
 
 const StyledAboutSlide = styled(Flex)`
-    height: 80vh;
     padding: 1rem;
     align-items: center;
 
@@ -83,7 +82,15 @@ export default class AboutSlide extends Component {
     };
 
     render() {
-        const { active, description, job, name, title, videoPath } = this.props;
+        const {
+            active,
+            descriptionIntro,
+            description,
+            job,
+            name,
+            title,
+            videoPath,
+        } = this.props;
         const muteIcon = this.state.muted ? 'volume' : 'volume-slash';
         const muteIconColor = this.state.muted ? '#fff' : '#666';
 
@@ -131,6 +138,7 @@ export default class AboutSlide extends Component {
                             </Heading>
                         </>
                     )}
+                    <Text>{descriptionIntro}</Text>
                     <Text>{description}</Text>
                 </Flex>
             </StyledAboutSlide>

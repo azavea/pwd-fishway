@@ -78,11 +78,13 @@ export const GUESS_MESSAGE_TIME = 2500; //in ms
 
 export const ABOUT_PROFILES = [
     {
-        title: 'About the Fishway',
+        title: 'History of the fishway',
         name: '',
         job: '',
+        descriptionIntro:
+            'When the Fairmount Dam was installed, it helped bring water to people, but was detrimental to fish who couldn’t cross to the other side.',
         description:
-            'The Fish Ladder at the Fairmount Dam was constructed in 1979. This animated 3-D video explains how the Fish Ladder works, and how it helps fish to migrate, and survive.',
+            'To counteract the negative environmental effects, the fishway at the Fairmount Dam was constructed in 1979. This animated 3-D video explains how the Fish Ladder works, and how it helps fish to migrate, and survive.',
         videoPath: overviewVideo,
     },
     {
