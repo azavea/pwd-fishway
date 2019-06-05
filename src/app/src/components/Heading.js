@@ -20,19 +20,19 @@ const Heading = styled(BaseHeading)`
         props.variant === 'base' &&
         css`
             font-size: ${themeGet('fontSizes.3')};
-            margin-bottom: ${themeGet('space.compact')};
+            margin-bottom: ${themeGet('space.medium')};
         `};
     ${props =>
         props.variant === 'small' &&
         css`
             font-size: ${themeGet('fontSizes.2')};
-            margin-bottom: ${themeGet('space.small')};
+            margin-bottom: ${themeGet('space.medium')};
         `};
     ${props =>
         props.variant === 'xSmall' &&
         css`
             font-size: ${themeGet('fontSizes.1')};
-            margin-bottom: ${themeGet('space.small')};
+            margin-bottom: ${themeGet('space.tiny')};
             text-transform: uppercase;
             letter-spacing: 1px;
         `};

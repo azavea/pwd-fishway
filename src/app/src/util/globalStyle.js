@@ -82,6 +82,14 @@ const GlobalStyle = createGlobalStyle`
     .tab-pane[aria-hidden='true'] {
         display: none;
     }
+
+    em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: bold;
+    }
 `;
 
 export default GlobalStyle;

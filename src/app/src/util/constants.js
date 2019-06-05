@@ -88,7 +88,7 @@ export const ABOUT_PROFILES = [
         videoPath: overviewVideo,
     },
     {
-        title: 'Meet the Biologist',
+        title: 'How do biologists use  the fishway?',
         name: 'Joe Perillo',
         job: 'Aquatic Biologist, PWD',
         description:
@@ -96,7 +96,7 @@ export const ABOUT_PROFILES = [
         videoPath: biologistVideo,
     },
     {
-        title: 'Meet the Engineer',
+        title: 'How do engineers use  the fishway?',
         name: 'Chad Pindar',
         job: 'Water Resources Engineer, PWD',
         description:
@@ -104,7 +104,7 @@ export const ABOUT_PROFILES = [
         videoPath: engineerVideo,
     },
     {
-        title: 'Dams Along the Schuylkill',
+        title: 'What about other dams along the Schuylkill River?',
         name: 'Glenn McKenzie',
         job: 'Engineer, Army Corps of Engineers',
         description:

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Flex } from 'rebass';
+import { Flex, Box } from 'rebass';
 import { Heading, Text, Button } from './custom-styled-components';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,11 +9,11 @@ import Video from './Video';
 
 const StyledAboutSlide = styled(Flex)`
     padding: 1rem;
-    align-items: center;
+    justify-content: flex-start;
 
     video {
         margin: auto;
-        height: fit-content;
+        height: 60vh;
         max-width: 100%;
     }
 `;
@@ -27,16 +27,10 @@ const VideoContainer = styled(Flex)`
 
 const PlayButton = styled(Button)`
     position: absolute;
-    background: gray;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    opacity: 0.5;
     top: 50%;
-    left: 18%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     font-size: 150px;
-    text-align: center;
 `;
 
 const MuteButton = styled(Button)`
@@ -105,8 +99,11 @@ export default class AboutSlide extends Component {
                         muted={this.state.muted}
                     />
                     {!this.state.playing && (
-                        <PlayButton onClick={this.togglePlayPause}>
-                            ▶
+                        <PlayButton
+                            variant='link'
+                            onClick={this.togglePlayPause}
+                        >
+                            <FontAwesomeIcon icon={['fas', 'play-circle']} />
                         </PlayButton>
                     )}
                     <MuteButton
@@ -117,13 +114,13 @@ export default class AboutSlide extends Component {
                         <FontAwesomeIcon icon={['fa', muteIcon]} />
                     </MuteButton>
                 </VideoContainer>
-                <Flex
-                    width={2 / 5}
-                    padding='2rem'
-                    margin='auto'
-                    flexDirection='column'
-                >
-                    <Heading as='h2' variant='small'>
+                <Box width={2 / 5} pl='3rem'>
+                    <Heading
+                        as='h2'
+                        variant='base'
+                        mb='spacious'
+                        lineHeight='medium'
+                    >
                         {title}
                     </Heading>
                     {job && (
@@ -131,16 +128,18 @@ export default class AboutSlide extends Component {
                             <Heading as='h3' variant='xSmall'>
                                 Name
                             </Heading>
-                            <Text>{name}</Text>
-                            <Text>{job}</Text>
-                            <Heading as='h3' variant='xSmall'>
+                            <Text mb='0'>{name}</Text>
+                            <Text as='em' lineHeight='medium' opacity={0.5}>
+                                {job}
+                            </Text>
+                            <Heading mt='medium' as='h3' variant='xSmall'>
                                 What he does
                             </Heading>
                         </>
                     )}
-                    <Text>{descriptionIntro}</Text>
+                    <Text variant='large'>{descriptionIntro}</Text>
                     <Text>{description}</Text>
-                </Flex>
+                </Box>
             </StyledAboutSlide>
         );
     }
