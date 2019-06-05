@@ -75,7 +75,7 @@ export const PAUSE = 'PAUSE';
 export const RESET = 'RESET';
 export const MAX_IDLE_TIME = 180000; //in ms, should be 180000 (3 minutes)
 export const GUESS_MESSAGE_TIME = 2500; //in ms, should be 2500
-export const FISH_MODAL_OPEN_DELAY = 1500; //in ms, should be 1500
+export const FISH_MODAL_OPEN_DELAY = 1000; //in ms, should be 1000
 
 export const ABOUT_PROFILES = [
     {

@@ -9,7 +9,7 @@ import { FISH_MODAL_OPEN_DELAY } from '../util/constants';
 const FishImage = styled.img`
     max-width: 400px;
     max-height: 450px;
-    transition: transform 0.5s linear;
+    transition: transform 1s linear;
 
     &.large {
         transform: scale(1.5);
