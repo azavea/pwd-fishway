@@ -88,8 +88,7 @@ export const ABOUT_PROFILES = [
         videoPath: overviewVideo,
     },
     {
-        // eslint-disable-next-line no-multi-str
-        title: 'How do biologists use  the fishway?',
+        title: 'How do biologists use the fishway?',
         name: 'Joe Perillo',
         job: 'Aquatic Biologist, PWD',
         description:
@@ -97,8 +96,7 @@ export const ABOUT_PROFILES = [
         videoPath: biologistVideo,
     },
     {
-        // eslint-disable-next-line no-multi-str
-        title: 'How do engineers use  the fishway?',
+        title: 'How do engineers use the fishway?',
         name: 'Chad Pindar',
         job: 'Water Resources Engineer, PWD',
         description:
