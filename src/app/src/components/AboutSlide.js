@@ -39,6 +39,25 @@ const MuteButton = styled(Button)`
     left: 1rem;
 `;
 
+const VideoDescription = styled(Box)`
+    padding-left: 3rem;
+`;
+
+const VideoHeading = styled(Heading)`
+    line-height: ${themeGet('lineHeights.medium')};
+`;
+
+const NameText = styled(Text)`
+    margin-bottom: 0;
+`;
+
+const JobText = styled(Text)`
+    font-style: ${themeGet('fontStyles.italic')};
+    line-height: ${themeGet('lineHeights.medium')};
+    opacity: 0.5;
+    margin-bottom: ${themeGet('space.medium')};
+`;
+
 export default class AboutSlide extends Component {
     constructor(props) {
         super(props);
@@ -114,32 +133,27 @@ export default class AboutSlide extends Component {
                         <FontAwesomeIcon icon={['fa', muteIcon]} />
                     </MuteButton>
                 </VideoContainer>
-                <Box width={2 / 5} pl='3rem'>
-                    <Heading
-                        as='h2'
-                        variant='base'
-                        mb='spacious'
-                        lineHeight='medium'
-                    >
+                <VideoDescription width={2 / 5}>
+                    <VideoHeading as='h2' variant='base'>
                         {title}
-                    </Heading>
+                    </VideoHeading>
                     {job && (
                         <>
                             <Heading as='h3' variant='xSmall'>
                                 Name
                             </Heading>
-                            <Text mb='0'>{name}</Text>
-                            <Text as='em' lineHeight='medium' opacity={0.5}>
-                                {job}
-                            </Text>
-                            <Heading mt='medium' as='h3' variant='xSmall'>
+                            <NameText>{name}</NameText>
+                            <JobText>{job}</JobText>
+                            <Heading as='h3' variant='xSmall'>
                                 What he does
                             </Heading>
                         </>
                     )}
-                    <Text variant='large'>{descriptionIntro}</Text>
+                    {descriptionIntro && (
+                        <Text variant='large'>{descriptionIntro}</Text>
+                    )}
                     <Text>{description}</Text>
-                </Box>
+                </VideoDescription>
             </StyledAboutSlide>
         );
     }
