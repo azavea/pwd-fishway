@@ -10,7 +10,7 @@ import QuizQuestion from './QuizQuestion';
 import QuizSidebar from './QuizSidebar';
 
 import { QUIZ_FISH, GUESS_MESSAGE_TIME } from '../util/constants';
-import { hideQuiz } from '../actions';
+import { hideQuiz, saveQuizResults } from '../actions';
 
 const QuizContainer = styled(Flex)`
     text-align: center;
@@ -50,6 +50,7 @@ class Quiz extends React.Component {
         setTimeout(() => {
             const { dispatch } = this.props;
             if (this.state.question === 1) {
+                dispatch(saveQuizResults(this.state.results));
                 dispatch(hideQuiz());
             } else
                 this.setState({
