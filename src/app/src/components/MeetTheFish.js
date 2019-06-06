@@ -39,7 +39,7 @@ const FishButtonAndModal = styled(Box)`
 
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 400%;
+    width: 280%;
 `;
 
 const MeetTheFish = () => {

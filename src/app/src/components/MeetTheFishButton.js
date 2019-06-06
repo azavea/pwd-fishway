@@ -7,8 +7,8 @@ import { CatalogFish } from '../util/CatalogFish';
 import { FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
 const FishImage = styled.img`
-    max-width: 400px;
-    max-height: 450px;
+    max-width: 350px;
+    max-height: 400px;
     transition: transform 1s linear;
 
     &.large {
