@@ -15,6 +15,10 @@ export default {
         '7.594rem', // 6
         '11.391rem', // 7
     ],
+    fontStyles: {
+        normal: 'normal',
+        italic: 'italic',
+    },
     fontWeights: {
         normal: '400',
         medium: '500',
@@ -23,7 +27,8 @@ export default {
     },
     lineHeights: {
         compact: '1',
-        normal: '1.25',
+        medium: '1.25',
+        normal: '1.65',
         comfortable: '1.85',
     },
     letterSpacings: {
@@ -50,6 +55,7 @@ export default {
         black: '#000',
     },
     space: {
+        0: '0',
         tiny: '2px',
         small: '0.5rem',
         compact: '1rem',

@@ -1,10 +1,12 @@
 import Carousel from 'nuka-carousel';
+import { Flex } from 'rebass';
 import { PagingDots } from 'nuka-carousel/lib';
 import { func, number } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Heading } from './custom-styled-components';
+import { themeGet } from 'styled-system';
 
 import { saveAboutSlideIndex, resetTimer } from '../actions';
 import { ABOUT_PROFILES } from '../util/constants';
@@ -12,14 +14,47 @@ import { ABOUT_PROFILES } from '../util/constants';
 import AboutSlide from './AboutSlide';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
-const slidesToShow = 1.3;
+const slidesToShow = 1;
 
-const StyledAbout = styled.div`
-    padding-top: 1rem;
+const StyledAbout = styled(Flex)`
+    height: calc(100vh - 5rem);
+    flex-direction: column;
+    justify-content: center;
 
-    .about__slide {
-        height: 80vh;
-        padding: 1rem;
+    .slider {
+        padding-top: 2rem;
+    }
+
+    .slider-slide {
+        opacity: 0.25;
+        transition: opacity 0.25s;
+    }
+
+    .slide-visible {
+        opacity: 1;
+    }
+
+    .paging-item button:focus {
+        outline: none;
+    }
+
+    .paging-dot {
+        background: ${themeGet('colors.teals.2')}!important;
+        width: 14px !important;
+        height: 14px !important;
+        opacity: 0.85 !important;
+        transform: scale(1);
+        transition: transform 0.25s, opacity 0.25s;
+        box-shadow: ${themeGet('shadows.large')};
+
+        &:active {
+            opacity: 1 !important;
+        }
+    }
+
+    .active .paging-dot {
+        opacity: 1;
+        transform: scale(1.5);
     }
 `;
 
@@ -48,6 +83,7 @@ class About extends Component {
                 <Carousel
                     autoplay={false}
                     cellAlign={'center'}
+                    animation={'zoom'}
                     renderCenterLeftControls={null}
                     renderCenterRightControls={null}
                     renderBottomCenterControls={null}

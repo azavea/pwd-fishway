@@ -19,13 +19,14 @@ const Screensaver = props => {
 
     return (
         <StyledScreensaver onClick={() => dispatch(hideScreensaver())}>
-            <Box>
+            <Box width={4 / 5}>
                 <Heading
                     as='h1'
                     variant='medium'
                     textShadow='large'
                     fontWeight='medium'
                     opacity={0.9}
+                    lineHeight='medium'
                 >
                     Learn how fishways help fish reach their spawning grounds
                     and test your fish identification skills!

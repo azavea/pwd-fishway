@@ -42,6 +42,7 @@ Text.PropTypes = {
 Text.defaultProps = {
     color: 'white',
     fontWeight: 'normal',
+    fontStyle: 'normal',
     lineHeight: 'normal',
     mb: 'small',
     opacity: '0.8',

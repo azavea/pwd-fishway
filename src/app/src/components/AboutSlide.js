@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Flex } from 'rebass';
+import { Flex, Box } from 'rebass';
 import { Heading, Text, Button } from './custom-styled-components';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,13 +8,12 @@ import { themeGet } from 'styled-system';
 import Video from './Video';
 
 const StyledAboutSlide = styled(Flex)`
-    height: 80vh;
     padding: 1rem;
-    align-items: center;
+    justify-content: flex-start;
 
     video {
         margin: auto;
-        height: fit-content;
+        height: 60vh;
         max-width: 100%;
     }
 `;
@@ -28,22 +27,35 @@ const VideoContainer = styled(Flex)`
 
 const PlayButton = styled(Button)`
     position: absolute;
-    background: gray;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    opacity: 0.5;
     top: 50%;
-    left: 18%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     font-size: 150px;
-    text-align: center;
 `;
 
 const MuteButton = styled(Button)`
     position: absolute;
     bottom: 0.75rem;
     left: 1rem;
+`;
+
+const VideoDescription = styled(Box)`
+    padding-left: 3rem;
+`;
+
+const VideoHeading = styled(Heading)`
+    line-height: ${themeGet('lineHeights.medium')};
+`;
+
+const NameText = styled(Text)`
+    margin-bottom: 0;
+`;
+
+const JobText = styled(Text)`
+    font-style: ${themeGet('fontStyles.italic')};
+    line-height: ${themeGet('lineHeights.medium')};
+    opacity: 0.5;
+    margin-bottom: ${themeGet('space.medium')};
 `;
 
 export default class AboutSlide extends Component {
@@ -83,7 +95,15 @@ export default class AboutSlide extends Component {
     };
 
     render() {
-        const { active, description, job, name, title, videoPath } = this.props;
+        const {
+            active,
+            descriptionIntro,
+            description,
+            job,
+            name,
+            title,
+            videoPath,
+        } = this.props;
         const muteIcon = this.state.muted ? 'volume' : 'volume-slash';
         const muteIconColor = this.state.muted ? '#fff' : '#666';
 
@@ -98,8 +118,11 @@ export default class AboutSlide extends Component {
                         muted={this.state.muted}
                     />
                     {!this.state.playing && (
-                        <PlayButton onClick={this.togglePlayPause}>
-                            ▶
+                        <PlayButton
+                            variant='link'
+                            onClick={this.togglePlayPause}
+                        >
+                            <FontAwesomeIcon icon={['fas', 'play-circle']} />
                         </PlayButton>
                     )}
                     <MuteButton
@@ -110,29 +133,27 @@ export default class AboutSlide extends Component {
                         <FontAwesomeIcon icon={['fa', muteIcon]} />
                     </MuteButton>
                 </VideoContainer>
-                <Flex
-                    width={2 / 5}
-                    padding='2rem'
-                    margin='auto'
-                    flexDirection='column'
-                >
-                    <Heading as='h2' variant='small'>
+                <VideoDescription width={2 / 5}>
+                    <VideoHeading as='h2' variant='base'>
                         {title}
-                    </Heading>
+                    </VideoHeading>
                     {job && (
                         <>
                             <Heading as='h3' variant='xSmall'>
                                 Name
                             </Heading>
-                            <Text>{name}</Text>
-                            <Text>{job}</Text>
+                            <NameText>{name}</NameText>
+                            <JobText>{job}</JobText>
                             <Heading as='h3' variant='xSmall'>
                                 What he does
                             </Heading>
                         </>
                     )}
+                    {descriptionIntro && (
+                        <Text variant='large'>{descriptionIntro}</Text>
+                    )}
                     <Text>{description}</Text>
-                </Flex>
+                </VideoDescription>
             </StyledAboutSlide>
         );
     }

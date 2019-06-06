@@ -79,15 +79,17 @@ export const FISH_MODAL_OPEN_DELAY = 1000; //in ms, should be 1000
 
 export const ABOUT_PROFILES = [
     {
-        title: 'About the Fishway',
+        title: 'History of the fishway',
         name: '',
         job: '',
+        descriptionIntro:
+            'When the Fairmount Dam was installed, it helped bring water to people, but was detrimental to fish who couldn’t cross to the other side.',
         description:
-            'The Fish Ladder at the Fairmount Dam was constructed in 1979. This animated 3-D video explains how the Fish Ladder works, and how it helps fish to migrate, and survive.',
+            'To counteract the negative environmental effects, the fishway at the Fairmount Dam was constructed in 1979. This animated 3-D video explains how the Fish Ladder works, and how it helps fish to migrate, and survive.',
         videoPath: overviewVideo,
     },
     {
-        title: 'Meet the Biologist',
+        title: 'How do biologists use the fishway?',
         name: 'Joe Perillo',
         job: 'Aquatic Biologist, PWD',
         description:
@@ -95,7 +97,7 @@ export const ABOUT_PROFILES = [
         videoPath: biologistVideo,
     },
     {
-        title: 'Meet the Engineer',
+        title: 'How do engineers use the fishway?',
         name: 'Chad Pindar',
         job: 'Water Resources Engineer, PWD',
         description:
@@ -103,7 +105,7 @@ export const ABOUT_PROFILES = [
         videoPath: engineerVideo,
     },
     {
-        title: 'Dams Along the Schuylkill',
+        title: 'What about other dams along the Schuylkill River?',
         name: 'Glenn McKenzie',
         job: 'Engineer, Army Corps of Engineers',
         description:
