@@ -8,6 +8,7 @@ import Text from './Text';
 import Heading from './Heading';
 
 import { QuizFish } from '../util/QuizFish';
+import FishNames from './FishNames';
 
 const StyledQuizGuess = styled(Flex)`
     text-align: center;
@@ -49,8 +50,8 @@ const CorrectMessage = styled(Message)`
 const FishImage = styled.img`
     width: auto;
     height: auto;
-    max-width: 60%;
-    max-height: 55%;
+    max-width: 50%;
+    max-height: 45%;
     position: absolute;
     top: 60%;
     left: 50%;
@@ -86,12 +87,10 @@ const QuizGuess = ({ answer, correct }) => {
                     alt='Illustration of the fish'
                 />
                 <CaptionText>
-                    <Text as='h2' variant='base'>
-                        {answer.commonName}
-                    </Text>
-                    <Text as='h3' variant='xSmall' fontStyle='italic'>
-                        {answer.scientificName}
-                    </Text>
+                    <FishNames
+                        commonName={answer.commonName}
+                        scientificName={answer.scientificName}
+                    />
                 </CaptionText>
             </Answer>
             <Text as='h2' variant='xSmall'>

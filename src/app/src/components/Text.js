@@ -59,7 +59,6 @@ Text.defaultProps = {
     mb: 'small',
     opacity: '0.8',
     variant: 'base',
-    fontStyle: 'none',
 };
 
 export default Text;

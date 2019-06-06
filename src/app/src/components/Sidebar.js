@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
-import { Heading, Text } from './custom-styled-components';
+import { Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 import moment from 'moment';
 
 import { HighlightFish } from '../util/HighlightFish';
 
 import VideoPlayer from './VideoPlayer';
+import FishNames from './FishNames';
 
 const StyledSidebar = styled(Box)`
     background: ${themeGet('colors.teals.5')};
@@ -23,10 +24,10 @@ const Sidebar = ({ fish }) => {
     const videoPlayer = fish && <VideoPlayer src={video} />;
     return (
         <StyledSidebar>
-            <Heading as='h2' variant='small'>
-                {commonName}
-                <Text variant='small'>{scientificName}</Text>
-            </Heading>
+            <FishNames
+                commonName={commonName}
+                scientificName={scientificName}
+            />
             {videoPlayer}
             <footer>
                 <Text variant='small'>{notes}</Text>
