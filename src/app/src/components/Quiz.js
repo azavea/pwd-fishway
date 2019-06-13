@@ -1,4 +1,4 @@
-import shuffle from 'lodash-es/shuffle';
+import shuffle from 'lodash/shuffle';
 import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
