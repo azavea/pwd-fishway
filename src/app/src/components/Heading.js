@@ -8,8 +8,18 @@ const variant = style({
     cssProperty: 'variant',
 });
 
+const fontStyle = style({
+    prop: 'fontStyle',
+    cssProperty: 'font-style',
+});
+
 const Heading = styled(BaseHeading)`
     ${opacity};
+    ${props =>
+        !!props.fontStyle &&
+        css`
+            font-style: ${props.fontStyle};
+        `};
     ${props =>
         props.variant === 'medium' &&
         css`
@@ -42,11 +52,13 @@ Heading.displayName = 'Heading';
 
 Heading.propTypes = {
     variant: PropTypes.string.isRequired,
+    fontStyle: PropTypes.string.isRequired,
 };
 
 Heading.PropTypes = {
     ...variant.PropTypes,
     ...opacity.PropTypes,
+    ...fontStyle.PropTypes,
 };
 
 Heading.defaultProps = {
@@ -55,6 +67,7 @@ Heading.defaultProps = {
     fontWeight: 'semibold',
     opacity: '1',
     variant: 'base',
+    fontStyle: 'none',
 };
 
 export default Heading;

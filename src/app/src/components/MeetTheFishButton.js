@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { func, number, bool } from 'prop-types';
 
-import { Heading, Text } from './custom-styled-components';
 import { CatalogFish } from '../util/CatalogFish';
 import { FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
+import FishNames from './FishNames';
+
 const FishImage = styled.img`
-    max-width: 400px;
-    max-height: 450px;
+    max-width: 350px;
+    max-height: 400px;
     transition: transform 1s linear;
 
     &.large {
@@ -27,13 +28,6 @@ const FishButton = styled.button`
 
 const MeetTheFishButton = ({ fish, index, disabled, onButtonClick }) => {
     const [isFishLarge, setIsFishLarge] = useState(false);
-
-    const caption = (
-        <Heading as='h2' variant='small'>
-            {fish.commonName}
-            <Text variant='small'>{fish.scientificName}</Text>
-        </Heading>
-    );
 
     const onFishClicked = () => {
         setIsFishLarge(true);
@@ -55,7 +49,10 @@ const MeetTheFishButton = ({ fish, index, disabled, onButtonClick }) => {
                     className={isFishLarge && 'large'}
                     alt={fish.commonName}
                 />
-                {caption}
+                <FishNames
+                    commonName={fish.commonName}
+                    scientificName={fish.scientificName}
+                />
             </FishButton>
         </>
     );

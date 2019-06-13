@@ -9,6 +9,8 @@ import {
     pauseTimer,
     showQuiz,
     hideQuiz,
+    saveQuizResults,
+    clearQuizResults,
     setBackgroundPosition,
 } from './actions';
 import { RESET, PAUSE } from './util/constants';
@@ -19,6 +21,7 @@ export const initialState = {
     timerEvent: '',
     isQuizVisible: false,
     backgroundPosition: 'top',
+    finalQuizState: null,
 };
 
 export default createReducer(
@@ -35,6 +38,10 @@ export default createReducer(
         [pauseTimer]: state => update(state, { timerEvent: { $set: PAUSE } }),
         [showQuiz]: state => update(state, { isQuizVisible: { $set: true } }),
         [hideQuiz]: state => update(state, { isQuizVisible: { $set: false } }),
+        [saveQuizResults]: (state, payload) =>
+            update(state, { finalQuizState: { $set: payload } }),
+        [clearQuizResults]: state =>
+            update(state, { finalQuizState: { $set: null } }),
         [setBackgroundPosition]: (state, payload) =>
             update(state, { backgroundPosition: { $set: payload } }),
     },

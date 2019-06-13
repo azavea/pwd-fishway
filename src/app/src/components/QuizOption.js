@@ -2,11 +2,9 @@ import { bool } from 'prop-types';
 import React from 'react';
 import { Flex } from 'rebass';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
-
-import { Heading, Text } from './custom-styled-components';
 
 import { QuizFish } from '../util/QuizFish';
+import FishNames from './FishNames';
 
 const StyledQuizOption = styled(Flex)`
     flex-direction: column;
@@ -24,15 +22,6 @@ const StyledQuizOption = styled(Flex)`
     }
 `;
 
-const CommonName = styled(Heading)`
-    color: ${themeGet('colors.white')};
-`;
-
-const ScientificName = styled(Text)`
-    color: ${themeGet('colors.white')};
-    font-style: italic;
-`;
-
 const QuizOption = ({ fish, showImage, shadeImage, ...props }) => {
     return (
         <StyledQuizOption
@@ -41,8 +30,10 @@ const QuizOption = ({ fish, showImage, shadeImage, ...props }) => {
             {...props}
         >
             <img src={fish.picturePath} alt='Illustration of the fish' />
-            <CommonName as='h3'>{fish.commonName}</CommonName>
-            <ScientificName>{fish.scientificName}</ScientificName>
+            <FishNames
+                commonName={fish.commonName}
+                scientificName={fish.scientificName}
+            />
         </StyledQuizOption>
     );
 };

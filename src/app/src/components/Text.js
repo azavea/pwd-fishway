@@ -8,8 +8,18 @@ const variant = style({
     cssProperty: 'variant',
 });
 
+const fontStyle = style({
+    prop: 'fontStyle',
+    cssProperty: 'font-style',
+});
+
 const Text = styled(BaseText)`
     ${opacity};
+    ${props =>
+        !!props.fontStyle &&
+        css`
+            font-style: ${props.fontStyle};
+        `};
     ${props =>
         props.variant === 'large' &&
         css`
@@ -32,11 +42,13 @@ Text.displayName = 'Text';
 
 Text.propTypes = {
     variant: PropTypes.string.isRequired,
+    fontStyle: PropTypes.string.isRequired,
 };
 
 Text.PropTypes = {
     ...variant.PropTypes,
     ...opacity.PropTypes,
+    ...fontStyle.PropTypes,
 };
 
 Text.defaultProps = {
