@@ -101,7 +101,7 @@ class Quiz extends React.Component {
                     question={question}
                     results={results}
                 />
-                <Timer />
+                <Timer dispatch={this.props.dispatch} />
                 {quizState}
             </Box>
         );

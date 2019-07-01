@@ -3,14 +3,22 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 import { themeGet } from 'styled-system';
 
+import Text from './Text';
+import { saveSecondsToCompleteQuiz } from '../actions';
+
 const StyledTimer = styled(Box)`
-    background: ${themeGet('colors.teals.4')};
     position: absolute;
-    color: white;
+    background-image: linear-gradient(
+        to right,
+        ${themeGet('colors.teals.0')} 30%,
+        ${themeGet('colors.teals.1')} 70%,
+        ${themeGet('colors.teals.2')} 100%
+    );
+    opacity: 11%;
     right: 0px;
     text-align: center;
-    width: 200px;
-    height: 30px;
+    width: 300px;
+    height: 50px;
 `;
 
 class Timer extends Component {
@@ -32,6 +40,10 @@ class Timer extends Component {
     }
 
     componentWillUnmount() {
+        const { dispatch } = this.props;
+        const { elapsedSeconds } = this.state;
+
+        dispatch(saveSecondsToCompleteQuiz(elapsedSeconds));
         clearInterval(this.interval);
     }
 
@@ -45,7 +57,9 @@ class Timer extends Component {
 
         return (
             <StyledTimer>
-                {formattedMins}:{formattedSecs} min
+                <Text variant='large'>
+                    {formattedMins}:{formattedSecs} min
+                </Text>
             </StyledTimer>
         );
     }
