@@ -100,6 +100,7 @@ class Quiz extends React.Component {
                     dispatch={this.props.dispatch}
                     question={question}
                     results={results}
+                    isQuestionActive={currentResult === null}
                 />
                 <Timer dispatch={this.props.dispatch} />
                 {quizState}

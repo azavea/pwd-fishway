@@ -9,6 +9,8 @@ import {
     fontFamily,
 } from 'styled-system';
 
+export const buttonWidth = '4rem';
+
 const variant = style({
     prop: 'variant',
     cssProperty: 'variant',
@@ -103,7 +105,7 @@ const Button = styled(BaseButton)`
             font-weight: ${themeGet('fontWeights.semibold')};
             border-radius: 100%;
             padding: 0;
-            width: 4rem;
+            width: ${buttonWidth};
             height: 4rem;
             &:active {
                 opacity: 0.8;
