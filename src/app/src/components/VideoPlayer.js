@@ -11,8 +11,74 @@ import { Button } from './custom-styled-components';
 import Video from './Video';
 
 const PlayButton = styled(Button)`
-    color: '#fff';
+    color: ${themeGet('colors.white')};
     font-size: ${themeGet('fontSizes.3')};
+    padding: ${themeGet('space.compact')} ${themeGet('space.compact')}
+        ${themeGet('space.compact')} 0;
+`;
+
+const Controls = styled(Flex)`
+    align-items: center;
+`;
+
+const StyledSlider = styled(Slider)`
+    padding-right: ${themeGet('space.compact')};
+
+    .rc-slider {
+        height: 20px;
+    }
+
+    .rc-slider-track,
+    .rc-slider-rail {
+        height: 8px;
+    }
+
+    .rc-slider-track {
+        background: ${themeGet('colors.teals.0')};
+    }
+
+    .rc-slider-rail {
+        background: ${themeGet('colors.teals.3')};
+    }
+
+    .rc-slider-handle {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: -0.55rem;
+        margin-top: -0.5rem;
+        border: 2px solid ${themeGet('colors.teals.6')};
+    }
+
+    .rc-slider-handle::after {
+        content: '';
+        display: block;
+        background: linear-gradient(
+            -45deg,
+            rgb(265, 265, 265) 0%,
+            rgb(165, 187, 195) 100%
+        );
+        height: 0.8rem;
+        width: 0.8rem;
+        margin-top: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        border-radius: 100%;
+    }
+
+    .rc-slider-handle:active,
+    .rc-slider-handle:focus,
+    .rc-slider-handle-click-focused:focus {
+        border: 2px solid ${themeGet('colors.lightblues.2')};
+        box-shadow: 0 0 2px 2px ${themeGet('colors.teals.6')};
+    }
+`;
+
+const StyledVideo = styled(Video)`
+    width: 30rem;
+    border-radius: 4px;
+    border: 2px solid ${themeGet('colors.teals.3')};
+    line-height: 0;
 `;
 
 const VideoPlayer = ({ src }) => {
@@ -25,7 +91,7 @@ const VideoPlayer = ({ src }) => {
 
     return (
         <Flex flexDirection='column'>
-            <Video
+            <StyledVideo
                 src={src}
                 autoPlay={true}
                 setref={videoRef}
@@ -41,7 +107,7 @@ const VideoPlayer = ({ src }) => {
                     setVideoTime(1);
                 }}
             />
-            <Flex>
+            <Controls>
                 <PlayButton
                     variant='link'
                     onClick={() => {
@@ -55,7 +121,7 @@ const VideoPlayer = ({ src }) => {
                 >
                     <FontAwesomeIcon icon={['fas', icon]} />
                 </PlayButton>
-                <Slider
+                <StyledSlider
                     max={1}
                     step={0.01}
                     value={videoTime}
@@ -72,18 +138,8 @@ const VideoPlayer = ({ src }) => {
                                 percent * videoElem.duration;
                         }
                     }}
-                    onAfterChange={percent => {
-                        // Don't play the video if the scrubber was dragged to
-                        // the end, otherwise it will *restart*
-                        if (percent !== 1) {
-                            if (videoRef.current) {
-                                videoRef.current.play();
-                            }
-                            setIsPlaying(true);
-                        }
-                    }}
                 />
-            </Flex>
+            </Controls>
         </Flex>
     );
 };

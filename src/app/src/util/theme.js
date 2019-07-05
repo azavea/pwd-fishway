@@ -1,4 +1,5 @@
 export default {
+    navHeight: '5rem',
     breakpoints: {
         small: '40em',
         medium: '52em',
@@ -41,13 +42,13 @@ export default {
         greens: ['#e9f563', '#CEE007', '#c1d12f', '#a0af04'],
         red: '#C5603B',
         teals: [
-            '#296882',
-            '#205064',
-            '#1b4455',
-            '#163846',
-            '#112c37',
-            '#0d2029',
-            '#010d13',
+            '#296882', // 0
+            '#205064', // 1
+            '#1b4455', // 2
+            '#163846', // 3
+            '#112c37', // 4
+            '#0d2029', // 5
+            '#010d13', // 6
         ],
         xlighttan: '#fffdf9',
         lighttan: '#FBF8F4',

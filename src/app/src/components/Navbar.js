@@ -14,11 +14,14 @@ import QuizHome from './QuizHome';
 import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
 const StyledTabs = styled(Tabs)`
+    position: sticky;
+    top: 0;
+    z-index: 1;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 5rem;
+    height: ${themeGet('navHeight')};
     border-bottom: 1px solid rgba(256, 256, 256, 0.2);
 
     .nav-item {

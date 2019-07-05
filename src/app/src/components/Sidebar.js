@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { Flex } from 'rebass';
 import { Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 import moment from 'moment';
@@ -11,10 +11,24 @@ import VideoPlayer from './VideoPlayer';
 import FishNames from './FishNames';
 import { LIVE_FEED_LABEL } from '../util/constants';
 
-const StyledSidebar = styled(Box)`
+const StyledSidebar = styled(Flex)`
+    position: sticky;
+    top: ${themeGet('navHeight')};
+    flex-direction: column;
+    justify-content: center;
     background: ${themeGet('colors.teals.5')};
     text-align: center;
-    width: 100%;
+    padding: 3.95rem ${themeGet('space.comfortable')};
+    height: calc(100vh - ${themeGet('navHeight')});
+`;
+
+const StyledFishNames = styled(FishNames)`
+    margin-bottom: ${themeGet('space.spacious')};
+`;
+
+const FooterNotes = styled(Text)`
+    max-width: ${themeGet('maxWidths.xsmall')};
+    margin: 0 auto ${themeGet('space.compact')};
 `;
 
 const Sidebar = ({ fish }) => {
@@ -39,14 +53,18 @@ const Sidebar = ({ fish }) => {
         );
     return (
         <StyledSidebar>
-            <FishNames
+            <StyledFishNames
                 commonName={commonName}
                 scientificName={scientificName}
             />
             {videoPlayer}
             <footer>
-                <Text variant='small'>{notes}</Text>
-                <Text variant='small'>{date}</Text>
+                <FooterNotes as='p' variant='small'>
+                    {notes}
+                </FooterNotes>
+                <Text as='p' variant='small'>
+                    {date}
+                </Text>
             </footer>
         </StyledSidebar>
     );

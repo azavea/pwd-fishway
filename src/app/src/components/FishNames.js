@@ -11,22 +11,23 @@ const StyledFishNames = styled(Flex)`
 `;
 
 const CommonName = styled(Heading)`
-    color: ${themeGet('colors.white')};
     margin-bottom: 0;
+    line-height: ${themeGet('lineHeights.compact')};
+    font-size: 2rem;
 `;
 
 const ScientificName = styled(Text)`
-    color: ${themeGet('colors.white')};
     font-style: italic;
+    margin-bottom: ${themeGet('space.medium')};
 `;
 
 const FishNames = ({ commonName, scientificName }) => {
     return (
         <StyledFishNames>
-            <CommonName as='h3' variant='small'>
-                {commonName}
-            </CommonName>
-            <ScientificName variant='small'>{scientificName}</ScientificName>
+            <CommonName as='h3'>{commonName}</CommonName>
+            <ScientificName as='h4' variant='base'>
+                {scientificName}
+            </ScientificName>
         </StyledFishNames>
     );
 };

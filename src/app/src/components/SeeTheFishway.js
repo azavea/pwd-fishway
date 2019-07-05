@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import update from 'immutability-helper';
 import { Flex, Box } from 'rebass';
+import { themeGet } from 'styled-system';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
@@ -13,9 +14,38 @@ const StyledSeeTheFishway = styled(Flex)`
     height: 100%;
 `;
 
+const PageTitle = styled(Heading)`
+    margin-bottom: ${themeGet('space.small')};
+`;
+
 const SeeTheFishwayTray = styled(Flex)`
     flex-direction: column;
     width: 100%;
+    padding: ${themeGet('space.comfortable')};
+`;
+
+const Subtitle = styled(Heading)`
+    margin-top: ${themeGet('space.medium')};
+    margin-bottom: 0;
+`;
+
+const VideoCardButtonContainer = styled(Flex)`
+    flex-wrap: wrap;
+    margin-top: ${themeGet('space.medium')};
+
+    button {
+        flex: 0 0 14.15%;
+        margin: 0 3% ${themeGet('space.medium')} 0;
+        padding: 0;
+    }
+
+    button:nth-child(6n) {
+        margin: 0 0 ${themeGet('space.medium')};
+    }
+
+    img {
+        width: 100%;
+    }
 `;
 
 const VideoCardButton = styled.button`
@@ -56,26 +86,22 @@ const SeeTheFishway = () => {
         <StyledSeeTheFishway>
             <SeeTheFishwayTray>
                 <Box>
-                    <Heading as='h1'>See the Fishway</Heading>
+                    <PageTitle as='h1'>See the Fishway</PageTitle>
                     <Text as='p' variant='large'>
-                        During the Spring migration, a video camera transmits
-                        live images to this exhibit, and to aquatic biologists.
-                    </Text>
-                    <Text as='p'>
-                        Biologists monitor fish moving up and down the river. In
-                        Springtime, fish travel upriver to their spawning
-                        grounds, to mate and lay eggs. This is when the Fish
-                        Ladder is most active.
+                        In Springtime, fish travel upriver to their spawning
+                        grounds to mate and lay their eggs — this is when the
+                        fishway is bursting with activity. Biologists monitor
+                        the fish moving up and down the river.
                     </Text>
                 </Box>
-                <Heading as='h2' variant='small'>
+                <Subtitle as='h2' variant='small'>
                     Highlight reel
-                </Heading>
+                </Subtitle>
                 <Text as='p'>
                     Check out some of the wildlife that scientists have caught
                     on tape over the years.
                 </Text>
-                <Flex flexWrap='wrap'>{cards}</Flex>
+                <VideoCardButtonContainer>{cards}</VideoCardButtonContainer>
             </SeeTheFishwayTray>
             <Sidebar fish={selectedFish} />
         </StyledSeeTheFishway>
