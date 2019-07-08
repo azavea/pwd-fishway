@@ -8,6 +8,7 @@ import QuizNavbar from './QuizNavbar';
 import QuizGuess from './QuizGuess';
 import QuizQuestion from './QuizQuestion';
 import QuizSidebar from './QuizSidebar';
+import Timer from './Timer';
 
 import {
     QUIZ_FISH,
@@ -100,6 +101,7 @@ class Quiz extends React.Component {
                     question={question}
                     results={results}
                 />
+                <Timer dispatch={this.props.dispatch} />
                 {quizState}
             </Box>
         );

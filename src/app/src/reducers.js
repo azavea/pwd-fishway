@@ -11,6 +11,7 @@ import {
     hideQuiz,
     saveQuizResults,
     clearQuizResults,
+    saveSecondsToCompleteQuiz,
     setBackgroundPosition,
 } from './actions';
 import { RESET, PAUSE } from './util/constants';
@@ -22,6 +23,7 @@ export const initialState = {
     isQuizVisible: false,
     backgroundPosition: 'top',
     finalQuizState: null,
+    secondsToCompleteQuiz: 0,
 };
 
 export default createReducer(
@@ -42,6 +44,8 @@ export default createReducer(
             update(state, { finalQuizState: { $set: payload } }),
         [clearQuizResults]: state =>
             update(state, { finalQuizState: { $set: null } }),
+        [saveSecondsToCompleteQuiz]: (state, payload) =>
+            update(state, { secondsToCompleteQuiz: { $set: payload } }),
         [setBackgroundPosition]: (state, payload) =>
             update(state, { backgroundPosition: { $set: payload } }),
     },

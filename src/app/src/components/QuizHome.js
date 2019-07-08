@@ -58,6 +58,7 @@ function mapStateToProps(state) {
     return {
         dispatch: state.dispatch,
         finalQuizState: state.finalQuizState,
+        secondsToCompleteQuiz: state.secondsToCompleteQuiz,
     };
 }
 export default connect(mapStateToProps)(QuizHome);

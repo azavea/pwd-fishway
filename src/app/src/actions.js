@@ -9,4 +9,7 @@ export const showQuiz = createAction('Show quiz');
 export const hideQuiz = createAction('Hide quiz');
 export const saveQuizResults = createAction('Save quiz results');
 export const clearQuizResults = createAction('Clear quiz results');
+export const saveSecondsToCompleteQuiz = createAction(
+    'Save seconds elapsed to complete the quiz'
+);
 export const setBackgroundPosition = createAction('Set Background position');
