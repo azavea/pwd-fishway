@@ -15,7 +15,7 @@ import {
     GUESS_MESSAGE_TIME,
     NUM_QUIZ_QUESTIONS,
 } from '../util/constants';
-import { hideQuiz, saveQuizResults } from '../actions';
+import { hideQuiz, saveQuizScore } from '../actions';
 
 const QuizContainer = styled(Flex)`
     text-align: center;
@@ -68,7 +68,7 @@ class Quiz extends React.Component {
         setTimeout(() => {
             const { dispatch } = this.props;
             if (this.state.question === NUM_QUIZ_QUESTIONS - 1) {
-                dispatch(saveQuizResults(this.state.results));
+                dispatch(saveQuizScore(this.state.score));
                 dispatch(hideQuiz());
             } else
                 this.setState(prevState => ({

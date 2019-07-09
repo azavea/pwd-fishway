@@ -4,7 +4,7 @@ import { func } from 'prop-types';
 import { Flex, Box } from 'rebass';
 import { Heading, Text, Button } from './custom-styled-components';
 import styled from 'styled-components';
-import { showQuiz, clearQuizResults } from '../actions';
+import { showQuiz, clearQuizScore } from '../actions';
 
 const StyledQuizHome = styled(Flex)`
     text-align: center;
@@ -16,16 +16,20 @@ const StyledQuizHome = styled(Flex)`
 class QuizHome extends Component {
     componentWillUnmount() {
         const { dispatch } = this.props;
-        dispatch(clearQuizResults());
+        dispatch(clearQuizScore());
     }
 
     render() {
-        const { dispatch, finalQuizState } = this.props;
+        const { dispatch, quizScore, secondsToCompleteQuiz } = this.props;
 
-        const quizHomeState = finalQuizState ? (
-            <Button mt='compact' onClick={() => dispatch(clearQuizResults())}>
-                Try again
-            </Button>
+        const quizHomeState = quizScore ? (
+            <Box>
+                {quizScore}
+                {secondsToCompleteQuiz}
+                <Button mt='compact' onClick={() => dispatch(clearQuizScore())}>
+                    Try again
+                </Button>
+            </Box>
         ) : (
             <>
                 <Box width={1 / 2} mb='4'>
@@ -57,7 +61,7 @@ QuizHome.propTypes = {
 function mapStateToProps(state) {
     return {
         dispatch: state.dispatch,
-        finalQuizState: state.finalQuizState,
+        quizScore: state.quizScore,
         secondsToCompleteQuiz: state.secondsToCompleteQuiz,
     };
 }
