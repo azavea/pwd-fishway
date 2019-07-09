@@ -8,7 +8,7 @@ import QuizNavbar from './QuizNavbar';
 import QuizGuess from './QuizGuess';
 import QuizQuestion from './QuizQuestion';
 import QuizSidebar from './QuizSidebar';
-import Timer from './Timer';
+import QuizBadge from './QuizBadge';
 
 import {
     QUIZ_FISH,
@@ -41,16 +41,29 @@ class Quiz extends React.Component {
             currentResult: null,
             results: [],
             question: 0,
+            score: 0,
             answers,
             choices,
         };
     }
 
     checkResults = result => {
-        this.setState({
+        let pointsGained = 0;
+
+        const { numWrong, usedHint } = result;
+        if (numWrong === 0 && !usedHint) {
+            pointsGained += 100;
+        } else if (numWrong === 0) {
+            pointsGained += 80;
+        } else if (numWrong === 1) {
+            pointsGained += 60;
+        }
+
+        this.setState(prevState => ({
+            score: prevState.score + pointsGained,
             currentResult: result,
-            results: this.state.results.concat(result),
-        });
+            results: prevState.results.concat(result),
+        }));
 
         setTimeout(() => {
             const { dispatch } = this.props;
@@ -58,10 +71,10 @@ class Quiz extends React.Component {
                 dispatch(saveQuizResults(this.state.results));
                 dispatch(hideQuiz());
             } else
-                this.setState({
+                this.setState(prevState => ({
                     currentResult: null,
-                    question: this.state.question + 1,
-                });
+                    question: prevState.question + 1,
+                }));
         }, GUESS_MESSAGE_TIME);
     };
 
@@ -69,6 +82,7 @@ class Quiz extends React.Component {
         const {
             choices,
             currentResult,
+            score,
             results,
             question,
             answers,
@@ -102,7 +116,7 @@ class Quiz extends React.Component {
                     results={results}
                     isQuestionActive={currentResult === null}
                 />
-                <Timer dispatch={this.props.dispatch} />
+                <QuizBadge dispatch={this.props.dispatch} score={score} />
                 {quizState}
             </Box>
         );

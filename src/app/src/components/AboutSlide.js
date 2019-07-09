@@ -87,11 +87,11 @@ export default class AboutSlide extends Component {
     }
 
     togglePlayPause = () => {
-        this.setState({ playing: !this.state.playing });
+        this.setState(prevState => ({ playing: !prevState.playing }));
     };
 
     toggledMuted = () => {
-        this.setState({ muted: !this.state.muted });
+        this.setState(prevState => ({ muted: !prevState.muted }));
     };
 
     render() {
