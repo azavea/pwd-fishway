@@ -6,11 +6,12 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { setBackgroundPosition } from '../actions';
+import { setBackgroundPosition, setActiveTab } from '../actions';
 import About from './About';
 import SeeTheFishway from './SeeTheFishway';
 import MeetTheFish from './MeetTheFish';
 import QuizHome from './QuizHome';
+import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
 const StyledTabs = styled(Tabs)`
     width: 100%;
@@ -73,16 +74,9 @@ const StyledNavbar = styled.div`
     display: ${props => props.hide};
 `;
 
-const positions = {
-    about: 'bottom',
-    see: 'high',
-    meet: 'low',
-    test: 'top',
-};
-
-const Navbar = props => {
+const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
     const titles = {
-        about: (
+        [ABOUT]: (
             <Heading as='span' variant='xSmall' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['fas', 'info-circle']}
@@ -93,7 +87,7 @@ const Navbar = props => {
                 About
             </Heading>
         ),
-        seeTheFishway: (
+        [SEE]: (
             <Heading as='span' variant='xSmall' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['fas', 'video']}
@@ -104,7 +98,7 @@ const Navbar = props => {
                 See the Fishway
             </Heading>
         ),
-        meetTheFish: (
+        [MEET]: (
             <Heading as='span' variant='xSmall' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['fas', 'fish']}
@@ -115,7 +109,7 @@ const Navbar = props => {
                 Meet the Fish
             </Heading>
         ),
-        testYourSkills: (
+        [TEST]: (
             <Heading as='span' variant='xSmall' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['far', 'bullseye-pointer']}
@@ -128,26 +122,27 @@ const Navbar = props => {
         ),
     };
     return (
-        <StyledNavbar hide={props.isQuizVisible ? 'none' : 'visible'}>
+        <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
             {/* unmountOnExit is used to ensure that videos restart when
             switching from About tab to another tab and back again */}
             <StyledTabs
-                defaultActiveKey='about'
+                activeKey={activeTab}
                 unmountOnExit={true}
-                onSelect={key =>
-                    props.dispatch(setBackgroundPosition(positions[key]))
-                }
+                onSelect={key => {
+                    dispatch(setActiveTab(key));
+                    dispatch(setBackgroundPosition(POSITIONS[key]));
+                }}
             >
-                <Tab eventKey='about' title={titles.about}>
+                <Tab eventKey={ABOUT} title={titles[ABOUT]}>
                     <About />
                 </Tab>
-                <Tab eventKey='see' title={titles.seeTheFishway}>
+                <Tab eventKey={SEE} title={titles[SEE]}>
                     <SeeTheFishway />
                 </Tab>
-                <Tab eventKey='meet' title={titles.meetTheFish}>
+                <Tab eventKey={MEET} title={titles[MEET]}>
                     <MeetTheFish />
                 </Tab>
-                <Tab eventKey='test' title={titles.testYourSkills}>
+                <Tab eventKey={TEST} title={titles[TEST]}>
                     <QuizHome />
                 </Tab>
             </StyledTabs>

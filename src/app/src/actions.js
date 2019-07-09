@@ -13,3 +13,4 @@ export const saveSecondsToCompleteQuiz = createAction(
     'Save seconds elapsed to complete the quiz'
 );
 export const setBackgroundPosition = createAction('Set Background position');
+export const setActiveTab = createAction('Set active tab');

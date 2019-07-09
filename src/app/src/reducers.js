@@ -13,8 +13,9 @@ import {
     clearQuizScore,
     saveSecondsToCompleteQuiz,
     setBackgroundPosition,
+    setActiveTab,
 } from './actions';
-import { RESET, PAUSE } from './util/constants';
+import { RESET, PAUSE, ABOUT } from './util/constants';
 
 export const initialState = {
     aboutSlideIndex: 0,
@@ -24,6 +25,7 @@ export const initialState = {
     backgroundPosition: 'top',
     quizScore: 0,
     secondsToCompleteQuiz: 0,
+    activeTab: ABOUT,
 };
 
 export default createReducer(
@@ -47,6 +49,8 @@ export default createReducer(
             update(state, { secondsToCompleteQuiz: { $set: payload } }),
         [setBackgroundPosition]: (state, payload) =>
             update(state, { backgroundPosition: { $set: payload } }),
+        [setActiveTab]: (state, payload) =>
+            update(state, { activeTab: { $set: payload } }),
     },
     initialState
 );

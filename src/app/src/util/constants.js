@@ -78,6 +78,18 @@ export const GUESS_MESSAGE_TIME = 2500; //in ms, should be 2500
 export const FISH_MODAL_OPEN_DELAY = 1000; //in ms, should be 1000
 export const NUM_QUIZ_QUESTIONS = 5;
 
+export const ABOUT = 'about';
+export const SEE = 'seeTheFishway';
+export const MEET = 'meetTheFish';
+export const TEST = 'testYourSkills';
+
+export const POSITIONS = {
+    [ABOUT]: 'bottom',
+    [SEE]: 'high',
+    [MEET]: 'low',
+    [TEST]: 'top',
+};
+
 export const ABOUT_PROFILES = [
     {
         title: 'History of the fishway',

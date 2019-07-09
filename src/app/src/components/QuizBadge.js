@@ -22,28 +22,28 @@ const StyledQuizBadge = styled(Flex)`
     justify-content: space-evenly;
 `;
 
-const QuizBadgeBox = styled(Flex)`
+const Badge = styled(Flex)`
     width: 100%;
     align-items: center;
 `;
 
-const QuizBadgeText = styled(Text)`
+const BadgeText = styled(Text)`
     margin-bottom: 0;
 `;
 
 const QuizBadge = ({ dispatch, score }) => {
     return (
         <StyledQuizBadge>
-            <QuizBadgeBox>
-                <QuizBadgeText variant='large'>{score}</QuizBadgeText>
-                <QuizBadgeText>&nbsp;points</QuizBadgeText>
-            </QuizBadgeBox>
-            <QuizBadgeBox>
-                <QuizBadgeText variant='large'>
+            <Badge>
+                <BadgeText variant='large'>{score}</BadgeText>
+                <BadgeText>&nbsp;points</BadgeText>
+            </Badge>
+            <Badge>
+                <BadgeText variant='large'>
                     <Timer dispatch={dispatch} />
-                </QuizBadgeText>
-                <QuizBadgeText>&nbsp;mins</QuizBadgeText>
-            </QuizBadgeBox>
+                </BadgeText>
+                <BadgeText>&nbsp;mins</BadgeText>
+            </Badge>
         </StyledQuizBadge>
     );
 };

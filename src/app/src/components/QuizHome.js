@@ -5,8 +5,14 @@ import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
 
 import { Text, Button } from './custom-styled-components';
-import { showQuiz, clearQuizScore } from '../actions';
+import {
+    showQuiz,
+    clearQuizScore,
+    setActiveTab,
+    setBackgroundPosition,
+} from '../actions';
 import Header from './Heading';
+import { MEET, POSITIONS } from '../util/constants';
 
 const StyledQuizHome = styled(Flex)`
     text-align: center;
@@ -19,13 +25,13 @@ const StyledFinalQuizState = styled(StyledQuizHome)`
     margin-top: 15%;
 `;
 
-const AdjacentElements = styled(Flex)`
-    align-items: baseline;
-`;
-
 const StyledScore = styled(Header)`
     font-weight: 900;
     font-size: 8.5rem;
+`;
+
+const StyledButton = styled(Button)`
+    margin: 1rem;
 `;
 
 class QuizHome extends Component {
@@ -39,31 +45,40 @@ class QuizHome extends Component {
 
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
-                <Text>YOU GOT A SCORE OF</Text>
-                <AdjacentElements>
+                <Header variant='small'>YOU GOT A SCORE OF</Header>
+                <Flex alignItems='baseline'>
                     <StyledScore>{quizScore}</StyledScore>
                     <Text variant='large'>/500 points</Text>
-                </AdjacentElements>
-                <Text>
+                </Flex>
+                <Text variant='large'>
                     Brush up on on your fish knowledge on the Meet the Fish page
                     or try again to improve your score
                 </Text>
-                <AdjacentElements>
-                    <Button mt='compact' variant='secondary'>
+                <Flex alignItems='baseline'>
+                    <StyledButton
+                        mt='compact'
+                        variant='secondary'
+                        onClick={() => {
+                            dispatch(setActiveTab(MEET));
+                            dispatch(setBackgroundPosition(POSITIONS[MEET]));
+                        }}
+                    >
                         Meet The Fish
-                    </Button>
-                    <Button
+                    </StyledButton>
+                    <StyledButton
                         mt='compact'
                         onClick={() => dispatch(clearQuizScore())}
                     >
                         Try again
-                    </Button>
-                </AdjacentElements>
+                    </StyledButton>
+                </Flex>
             </StyledFinalQuizState>
         ) : (
             <StyledFinalQuizState>
                 <Box width={1 / 2} mb='4'>
-                    <Header as='h1'>Test your skills</Header>
+                    <Header as='h1' variant='medium'>
+                        Test your skills
+                    </Header>
                     <Text as='p' variant='large'>
                         Aquatic biologists need to identify each fish that moves
                         through the fishway. This can be tough, because fish
