@@ -41,13 +41,22 @@ class QuizHome extends Component {
     }
 
     render() {
-        const { dispatch, quizScore } = this.props;
+        const { dispatch, quizScore, secondsToCompleteQuiz } = this.props;
+
+        let bonusPoints = 0;
+        if (secondsToCompleteQuiz < 31) {
+            bonusPoints += 200;
+        } else if (secondsToCompleteQuiz < 61) {
+            bonusPoints += 150;
+        } else if (secondsToCompleteQuiz < 121) {
+            bonusPoints += 100;
+        }
 
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
                 <Header variant='small'>YOU GOT A SCORE OF</Header>
                 <Flex alignItems='baseline'>
-                    <StyledScore>{quizScore}</StyledScore>
+                    <StyledScore>{quizScore + bonusPoints}</StyledScore>
                     <Text variant='large'>/500 points</Text>
                 </Flex>
                 <Text variant='large'>
