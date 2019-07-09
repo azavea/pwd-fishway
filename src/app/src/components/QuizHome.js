@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func } from 'prop-types';
+import { func, number } from 'prop-types';
 import { Flex, Box } from 'rebass';
-import { Heading, Text, Button } from './custom-styled-components';
 import styled from 'styled-components';
+
+import { Text, Button } from './custom-styled-components';
 import { showQuiz, clearQuizScore } from '../actions';
+import Header from './Heading';
 
 const StyledQuizHome = styled(Flex)`
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+`;
+
+const StyledFinalQuizState = styled(StyledQuizHome)`
+    margin-top: 15%;
+`;
+
+const AdjacentElements = styled(Flex)`
+    align-items: baseline;
+`;
+
+const StyledScore = styled(Header)`
+    font-weight: 900;
+    font-size: 8.5rem;
 `;
 
 class QuizHome extends Component {
@@ -20,20 +35,35 @@ class QuizHome extends Component {
     }
 
     render() {
-        const { dispatch, quizScore, secondsToCompleteQuiz } = this.props;
+        const { dispatch, quizScore } = this.props;
 
         const quizHomeState = quizScore ? (
-            <Box>
-                {quizScore}
-                {secondsToCompleteQuiz}
-                <Button mt='compact' onClick={() => dispatch(clearQuizScore())}>
-                    Try again
-                </Button>
-            </Box>
+            <StyledFinalQuizState>
+                <Text>YOU GOT A SCORE OF</Text>
+                <AdjacentElements>
+                    <StyledScore>{quizScore}</StyledScore>
+                    <Text variant='large'>/500 points</Text>
+                </AdjacentElements>
+                <Text>
+                    Brush up on on your fish knowledge on the Meet the Fish page
+                    or try again to improve your score
+                </Text>
+                <AdjacentElements>
+                    <Button mt='compact' variant='secondary'>
+                        Meet The Fish
+                    </Button>
+                    <Button
+                        mt='compact'
+                        onClick={() => dispatch(clearQuizScore())}
+                    >
+                        Try again
+                    </Button>
+                </AdjacentElements>
+            </StyledFinalQuizState>
         ) : (
-            <>
+            <StyledFinalQuizState>
                 <Box width={1 / 2} mb='4'>
-                    <Heading as='h1'>Test your skills</Heading>
+                    <Header as='h1'>Test your skills</Header>
                     <Text as='p' variant='large'>
                         Aquatic biologists need to identify each fish that moves
                         through the fishway. This can be tough, because fish
@@ -48,7 +78,7 @@ class QuizHome extends Component {
                 <Button mt='compact' onClick={() => dispatch(showQuiz())}>
                     Play
                 </Button>
-            </>
+            </StyledFinalQuizState>
         );
         return <StyledQuizHome>{quizHomeState}</StyledQuizHome>;
     }
@@ -56,6 +86,8 @@ class QuizHome extends Component {
 
 QuizHome.propTypes = {
     dispatch: func.isRequired,
+    quizScore: number.isRequired,
+    secondsToCompleteQuiz: number.isRequired,
 };
 
 function mapStateToProps(state) {

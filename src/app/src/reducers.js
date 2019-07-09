@@ -22,7 +22,7 @@ export const initialState = {
     timerEvent: '',
     isQuizVisible: false,
     backgroundPosition: 'top',
-    quizScore: null,
+    quizScore: 0,
     secondsToCompleteQuiz: 0,
 };
 
@@ -42,7 +42,7 @@ export default createReducer(
         [hideQuiz]: state => update(state, { isQuizVisible: { $set: false } }),
         [saveQuizScore]: (state, payload) =>
             update(state, { quizScore: { $set: payload } }),
-        [clearQuizScore]: state => update(state, { quizScore: { $set: null } }),
+        [clearQuizScore]: state => update(state, { quizScore: { $set: 0 } }),
         [saveSecondsToCompleteQuiz]: (state, payload) =>
             update(state, { secondsToCompleteQuiz: { $set: payload } }),
         [setBackgroundPosition]: (state, payload) =>
