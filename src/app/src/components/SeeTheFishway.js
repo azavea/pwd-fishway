@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import update from 'immutability-helper';
 import { Flex, Box } from 'rebass';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
-import { FISH_HIGHLIGHTS } from '../util/constants';
+import { FISH_HIGHLIGHTS, LIVE_FEED_MOCK_FISH } from '../util/constants';
 
 import Sidebar from './Sidebar';
 import VideoCard from './VideoCard';
@@ -28,10 +29,21 @@ const VideoCardButton = styled.button`
 `;
 
 const SeeTheFishway = () => {
-    const [selectedFish, selectFish] = useState(FISH_HIGHLIGHTS[0]);
+    let fishList = FISH_HIGHLIGHTS;
 
-    const cards = FISH_HIGHLIGHTS.map(fish => (
-        <VideoCardButton key={fish.timestamp} onClick={() => selectFish(fish)}>
+    // Fish migration season is June through August
+    const currentMonth = new Date().getMonth();
+    if (currentMonth > 5 && currentMonth < 8) {
+        // TODO (Issue #77): check if the stream works else don't show the option
+        fishList = update(FISH_HIGHLIGHTS, {
+            $unshift: [LIVE_FEED_MOCK_FISH],
+        });
+    }
+
+    const [selectedFish, selectFish] = useState(fishList[0]);
+
+    const cards = fishList.map(fish => (
+        <VideoCardButton key={fish.notes} onClick={() => selectFish(fish)}>
             <VideoCard
                 fish={fish}
                 selected={

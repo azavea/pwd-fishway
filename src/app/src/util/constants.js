@@ -206,6 +206,17 @@ const BLUEGILL = {
     picturePath: bluegillIllustration,
 };
 
+export const LIVE_FEED_LABEL = 'See what scientists see';
+export const LIVE_FEED_URL = 'http://184.80.36.103/axis-cgi/mjpg/video.cgi'; // TODO: Replace with IP of fishway camera
+export const LIVE_FEED_MOCK_FISH = {
+    commonName: LIVE_FEED_LABEL,
+    timestamp: new Date().getTime(),
+    video: LIVE_FEED_URL,
+    photo: LIVE_FEED_URL,
+    notes:
+        'A video camera in the fishway captures live video for this exhibit. Watch carefully and you may see someone swimming by!',
+};
+
 export const FISH_HIGHLIGHTS = [
     {
         ...AMERICAN_SHAD,
@@ -263,7 +274,6 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         commonName: 'Turtle',
-        scientificName: '—',
         video: turtleVideo,
         photo: turtlePhoto,
         timestamp: 1114119720000,
@@ -272,7 +282,6 @@ export const FISH_HIGHLIGHTS = [
     },
     {
         commonName: 'Snake',
-        scientificName: '—',
         video: snakeVideo,
         photo: snakePhoto,
         timestamp: 1115907780000,
