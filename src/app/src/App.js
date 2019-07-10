@@ -100,10 +100,15 @@ class App extends Component {
             isQuizVisible,
             dispatch,
             backgroundPosition,
+            activeTab,
         } = this.props;
         const screensaver = <Screensaver />;
         const navbar = (
-            <Navbar dispatch={dispatch} isQuizVisible={isQuizVisible} />
+            <Navbar
+                dispatch={dispatch}
+                isQuizVisible={isQuizVisible}
+                activeTab={activeTab}
+            />
         );
         const idleTimer = (
             <IdleTimer
@@ -144,6 +149,7 @@ App.propTypes = {
     timerEvent: string.isRequired,
     isQuizVisible: bool.isRequired,
     backgroundPosition: string.isRequired,
+    activeTab: string.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -153,6 +159,7 @@ function mapStateToProps(state) {
         timerEvent: state.timerEvent,
         isQuizVisible: state.isQuizVisible,
         backgroundPosition: state.backgroundPosition,
+        activeTab: state.activeTab,
     };
 }
 export default connect(mapStateToProps)(App);

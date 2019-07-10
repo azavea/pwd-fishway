@@ -9,12 +9,13 @@ import {
     pauseTimer,
     showQuiz,
     hideQuiz,
-    saveQuizResults,
-    clearQuizResults,
+    saveQuizScore,
+    clearQuizScore,
     saveSecondsToCompleteQuiz,
     setBackgroundPosition,
+    setActiveTab,
 } from './actions';
-import { RESET, PAUSE } from './util/constants';
+import { RESET, PAUSE, ABOUT } from './util/constants';
 
 export const initialState = {
     aboutSlideIndex: 0,
@@ -22,8 +23,9 @@ export const initialState = {
     timerEvent: '',
     isQuizVisible: false,
     backgroundPosition: 'top',
-    finalQuizState: null,
+    quizScore: 0,
     secondsToCompleteQuiz: 0,
+    activeTab: ABOUT,
 };
 
 export default createReducer(
@@ -40,14 +42,15 @@ export default createReducer(
         [pauseTimer]: state => update(state, { timerEvent: { $set: PAUSE } }),
         [showQuiz]: state => update(state, { isQuizVisible: { $set: true } }),
         [hideQuiz]: state => update(state, { isQuizVisible: { $set: false } }),
-        [saveQuizResults]: (state, payload) =>
-            update(state, { finalQuizState: { $set: payload } }),
-        [clearQuizResults]: state =>
-            update(state, { finalQuizState: { $set: null } }),
+        [saveQuizScore]: (state, payload) =>
+            update(state, { quizScore: { $set: payload } }),
+        [clearQuizScore]: state => update(state, { quizScore: { $set: 0 } }),
         [saveSecondsToCompleteQuiz]: (state, payload) =>
             update(state, { secondsToCompleteQuiz: { $set: payload } }),
         [setBackgroundPosition]: (state, payload) =>
             update(state, { backgroundPosition: { $set: payload } }),
+        [setActiveTab]: (state, payload) =>
+            update(state, { activeTab: { $set: payload } }),
     },
     initialState
 );
