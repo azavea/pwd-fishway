@@ -33,7 +33,7 @@ const FishNames = ({ commonName, scientificName }) => {
 
 FishNames.propTypes = {
     commonName: string.isRequired,
-    scientificName: string.isRequired,
+    scientificName: string,
 };
 
 export default FishNames;

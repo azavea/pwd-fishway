@@ -13,6 +13,8 @@ const VideoCard = ({ fish, selected }) => {
     return (
         <StyledVideoCard
             src={fish.photo}
+            height='122px'
+            width='122px'
             alt={fish.commonName}
             selected={selected}
         />

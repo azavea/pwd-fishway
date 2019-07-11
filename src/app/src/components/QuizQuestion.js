@@ -57,7 +57,7 @@ class QuizQuestion extends React.Component {
         const { guessed, usedHint } = this.state;
 
         const showHint = guessed.length > 0 || usedHint;
-        // TODO: Remove the default value here when we get hint text
+        // TODO (Issue #96): Remove the default value here when we get hint text
         let hint = showHint
             ? answer.hint || `its ${answer.commonName}`
             : 'Get a hint';
