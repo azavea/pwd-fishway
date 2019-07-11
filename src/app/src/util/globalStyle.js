@@ -77,6 +77,7 @@ const GlobalStyle = createGlobalStyle`
     .App, 
     .App >div {
         height: 100%;
+        touch-action: none; /*disable pinching, panning*/
     }
 
     .tab-pane[aria-hidden='true'] {

@@ -72,6 +72,12 @@ class App extends Component {
         this.idleTimer = null;
         this.resetTimer = this.resetTimer.bind(this);
         this.pauseTimer = this.pauseTimer.bind(this);
+
+        window.oncontextmenu = event => {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
     }
 
     componentDidUpdate(prevProps) {
