@@ -35,6 +35,23 @@ vagrant ssh
 ./scripts/server
 ```
 
+### Optimizing the browser for touchscreen mode
+The website hosted at the FWW Museum will be displayed on an ELO touchscreen of 1920 x 1080 screen size, on the latest version of Chrome at the time of initial deployment, on a Windows 10 Pro computer. Windows and Chrome have a lot of built-in touch-initiated interactions that are sub-optimal for the museum display. For example, we don't want activity from pinch-zoom, long taps, or hard left/right swipes. Chrome and Windows allows customization for some of these behaviors and Chrome does save settings. At the time of install, these should be set up:
+- [ ] Windows in Tablet mode
+- [ ] Windows launch Chrome at startup
+- [ ] Windows disable screen edge touch interactions
+  - Windows group policy > Computer Configuration > Windows Components > Edge UI > Disable all
+- [ ] Chrome fullscreen, full window (F11)
+- [ ] Chrome settings, open at the production site
+- [ ] Chrome flags at `chrome://flags`
+  - *Touch UI Layout* set to **Enabled**
+  - *Overscroll history navigation* set to **Disabled**
+  - *Overscroll history navigation on Touchpad* set to **Disabled**
+  - *Passive Event Listener Override* set to **True**
+  - *Document Level Event Listeners Passive Default* set to **Enabled**
+  - *Touch adjustment* set to **Enabled**
+
+
 ### Ports
 
 | Service            | Port                            |
