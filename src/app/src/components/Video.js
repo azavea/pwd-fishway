@@ -5,24 +5,40 @@ import { func } from 'prop-types';
 import { pauseTimer, resetTimer } from '../actions';
 
 const Video = props => {
-    const { dispatch, setref, onPlay, onPause, onEnded, ...otherProps } = props;
+    const {
+        dispatch,
+        setref,
+        onPlay,
+        onPause,
+        onEnded,
+        autoPlay,
+        ...otherProps
+    } = props;
+
+    const dispatchIfActiveVideo = action => {
+        // autoPlay is an indicator of the video being actively shown to the user
+        // in some cases, only the active video should update the global state
+        if (autoPlay) {
+            return dispatch(action());
+        }
+    };
 
     return (
         <video
             onPlay={() => {
-                dispatch(pauseTimer());
+                dispatchIfActiveVideo(pauseTimer);
                 if (onPlay) {
                     onPlay();
                 }
             }}
             onPause={() => {
-                dispatch(resetTimer());
+                dispatchIfActiveVideo(resetTimer);
                 if (onPause) {
                     onPause();
                 }
             }}
             onEnded={() => {
-                dispatch(resetTimer());
+                dispatchIfActiveVideo(resetTimer);
                 if (onEnded) {
                     onEnded();
                 }
