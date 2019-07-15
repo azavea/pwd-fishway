@@ -42,10 +42,6 @@ const VideoCardButtonContainer = styled(Flex)`
     button:nth-child(6n) {
         margin: 0 0 ${themeGet('space.medium')};
     }
-
-    img {
-        width: 100%;
-    }
 `;
 
 const VideoCardButton = styled.button`
