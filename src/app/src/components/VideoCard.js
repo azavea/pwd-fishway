@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
 const StyledVideoCard = styled('img')(props => ({
+    height: 'auto',
     borderRadius: '4px',
     boxShadow: props.selected
         ? `0 0 0 1px ${themeGet('colors.teals.0')(props)}, 0 0 0 4px ${themeGet(
