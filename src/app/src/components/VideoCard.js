@@ -43,22 +43,20 @@ const StyledLiveFeedHeading = styled(Heading)`
 `;
 
 const VideoCard = ({ fish, selected }) => {
+    const liveVideoHeading = (
+        <StyledLiveFeedHeading as='span' variant='xSmall'>
+            <FontAwesomeIcon
+                icon={['fas', 'video']}
+                pull='left'
+                size='4x'
+                opacity='0.3'
+            />
+            Live Feed
+        </StyledLiveFeedHeading>
+    );
     return (
         <StyledBox>
-            {(() => {
-                if (fish.isLiveFeed === true)
-                    return (
-                        <StyledLiveFeedHeading as='span' variant='xSmall'>
-                            <FontAwesomeIcon
-                                icon={['fas', 'video']}
-                                pull='left'
-                                size='4x'
-                                opacity='0.3'
-                            />
-                            Live Feed
-                        </StyledLiveFeedHeading>
-                    );
-            })()}
+            {fish.isLiveFeed && liveVideoHeading}
             <StyledVideoCard
                 src={fish.photo}
                 alt={fish.commonName}
