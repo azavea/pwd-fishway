@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { bool } from 'prop-types';
 import update from 'immutability-helper';
 import { Flex, Box } from 'rebass';
 import { themeGet } from 'styled-system';
@@ -54,13 +56,16 @@ const VideoCardButton = styled.button`
     }
 `;
 
-const SeeTheFishway = () => {
+const SeeTheFishway = ({ showConnectionError }) => {
     let fishList = FISH_HIGHLIGHTS;
 
     // Fish migration season is June through August
     const currentMonth = new Date().getMonth();
-    if (currentMonth > 5 && currentMonth < 8) {
-        // TODO (Issue #77): check if the stream works else don't show the option
+    if (
+        currentMonth > 5 &&
+        currentMonth < 8 &&
+        (navigator.onLine || showConnectionError)
+    ) {
         fishList = update(FISH_HIGHLIGHTS, {
             $unshift: [LIVE_FEED_MOCK_FISH],
         });
@@ -104,4 +109,14 @@ const SeeTheFishway = () => {
     );
 };
 
-export default SeeTheFishway;
+SeeTheFishway.propTypes = {
+    showConnectionError: bool.isRequired,
+};
+
+function mapStateToProps(state) {
+    return {
+        showConnectionError: state.showConnectionError,
+    };
+}
+
+export default connect(mapStateToProps)(SeeTheFishway);
