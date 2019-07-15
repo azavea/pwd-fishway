@@ -47,6 +47,18 @@ const StyledSlider = styled(Slider)`
         margin-left: -0.55rem;
         margin-top: -0.5rem;
         border: 2px solid ${themeGet('colors.teals.6')};
+        position: relative;
+    }
+
+    .rc-slider-handle::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1.5rem;
+        right: -1.5rem;
+        bottom: -1.5rem;
+        left: -1.5rem;
+        border-radius: 100%;
     }
 
     .rc-slider-handle::after {
