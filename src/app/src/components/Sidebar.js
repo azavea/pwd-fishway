@@ -10,7 +10,6 @@ import { HighlightFish } from '../util/HighlightFish';
 
 import VideoPlayer from './VideoPlayer';
 import FishNames from './FishNames';
-import { LIVE_FEED_LABEL } from '../util/constants';
 
 const StyledSidebar = styled(Flex)`
     position: sticky;
@@ -71,27 +70,26 @@ const Sidebar = ({ fish }) => {
     // The fishway's live video camera sends a stream of JPEG images, not video
     // This is typical of digital cameras
     // All other videos are properly video files (.mp4)
-    const videoPlayer =
-        fish && commonName === LIVE_FEED_LABEL ? (
-            <LiveFeed>
-                <StyledLiveFeedHeading as='span' variant='xSmall'>
-                    <FontAwesomeIcon
-                        icon={['fas', 'video']}
-                        pull='left'
-                        size='lg'
-                    />
-                    Live
-                </StyledLiveFeedHeading>
-                <img
-                    src={video}
-                    alt='Live stream from the Schuylkill fishway'
-                    height='360px'
-                    width='360px'
+    const videoPlayer = fish.isLiveFeed ? (
+        <LiveFeed>
+            <StyledLiveFeedHeading as='span' variant='xSmall'>
+                <FontAwesomeIcon
+                    icon={['fas', 'video']}
+                    pull='left'
+                    size='lg'
                 />
-            </LiveFeed>
-        ) : (
-            <VideoPlayer src={video} />
-        );
+                Live
+            </StyledLiveFeedHeading>
+            <img
+                src={video}
+                alt='Live stream from the Schuylkill fishway'
+                height='360px'
+                width='360px'
+            />
+        </LiveFeed>
+    ) : (
+        <VideoPlayer src={video} />
+    );
     return (
         <StyledSidebar>
             <StyledFishNames
