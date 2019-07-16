@@ -44,6 +44,7 @@ const Video = props => {
                 }
             }}
             ref={setref}
+            autoPlay={autoPlay}
             {...otherProps}
         />
     );

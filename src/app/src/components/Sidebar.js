@@ -123,7 +123,7 @@ class Sidebar extends Component {
                 );
             }
         } else {
-            videoPlayer = <VideoPlayer src={video} />;
+            videoPlayer = <VideoPlayer src={video} key={video} />;
         }
         return (
             <StyledSidebar>
