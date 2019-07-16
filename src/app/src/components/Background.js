@@ -18,7 +18,7 @@ const StyledBackground = styled(Box)`
     );
     background-size: 100% 500%;
     background-position: top;
-    position: absolute;
+    position: fixed;
     top: 10%;
     right: 0;
     bottom: 0;

@@ -213,6 +213,7 @@ export const LIVE_FEED_MOCK_FISH = {
     timestamp: new Date().getTime(),
     video: LIVE_FEED_URL,
     photo: LIVE_FEED_URL,
+    isLiveFeed: true,
     notes:
         'A video camera in the fishway captures live video for this exhibit. Watch carefully and you may see someone swimming by!',
 };
