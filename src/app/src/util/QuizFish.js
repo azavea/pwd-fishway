@@ -1,9 +1,8 @@
 import { shape, string } from 'prop-types';
+import { Fish } from './Fish';
 
 export const QuizFish = shape({
-    commonName: string.isRequired,
-    scientificName: string.isRequired,
-    picturePath: string.isRequired,
+    Fish,
     videoPath: string.isRequired,
     hint: string.isRequired,
 });

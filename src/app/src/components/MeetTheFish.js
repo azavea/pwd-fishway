@@ -6,7 +6,7 @@ import { Heading, Text } from './custom-styled-components';
 import MeetTheFishButton from './MeetTheFishButton';
 import MeetTheFishModal from './MeetTheFishModal';
 
-import { FISH, FISH_MODAL_OPEN_DELAY } from '../util/constants';
+import { FISH_CATALOG, FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
@@ -56,7 +56,7 @@ const MeetTheFish = () => {
         setTimeout(() => setIsModalOpen(true), FISH_MODAL_OPEN_DELAY);
     };
 
-    const fishButtons = FISH.map((fish, idx) => (
+    const fishButtons = FISH_CATALOG.map((fish, idx) => (
         <FishButtonAndModal key={fish.commonName}>
             <MeetTheFishButton
                 fish={fish}

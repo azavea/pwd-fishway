@@ -1,9 +1,8 @@
 import { shape, string, number, bool } from 'prop-types';
+import { Fish } from './Fish';
 
 export const HighlightFish = shape({
-    commonName: string.isRequired,
-    scientificName: string,
-    picturePath: string,
+    Fish,
     timestamp: number.isRequired,
     notes: string.isRequired,
     isLiveFeed: bool,

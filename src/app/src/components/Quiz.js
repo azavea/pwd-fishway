@@ -12,6 +12,7 @@ import QuizBadge from './QuizBadge';
 
 import {
     QUIZ_FISH,
+    FISH_CATALOG,
     GUESS_MESSAGE_TIME,
     NUM_QUIZ_QUESTIONS,
 } from '../util/constants';
@@ -31,7 +32,8 @@ class Quiz extends React.Component {
         super();
         const answers = shuffle(QUIZ_FISH).slice(0, NUM_QUIZ_QUESTIONS);
         const choices = answers.map(fish => {
-            const otherFish = QUIZ_FISH.filter(
+            // draw answers from the full fish catalog for more variety
+            const otherFish = FISH_CATALOG.filter(
                 a => a.commonName !== fish.commonName
             );
             const wrongChoices = shuffle(otherFish).slice(0, 2);
