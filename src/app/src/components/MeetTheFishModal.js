@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { func, bool, number } from 'prop-types';
 import Popup from 'reactjs-popup';
 import { Box, Flex, Link } from 'rebass';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,6 +10,34 @@ import { Heading, Text, Button } from './custom-styled-components';
 
 import { FISH_CATALOG } from '../util/constants';
 import Scrollspy from 'react-scrollspy';
+
+const fishBounce = keyframes`
+    0% {
+        transform: translateY(0);
+    }
+  
+    50% {
+        transform: translateY(1%);
+    }
+  
+    100% {
+        transform: translateY(0%);
+    }
+`;
+
+const shadowSize = keyframes`
+    0% {
+        transform: scaleX(0.8);
+    }
+  
+    50% {
+        transform: scaleX(1);
+    }
+  
+    100% {
+        transform: scaleX(0.8);
+    }
+`;
 
 const StyledPopup = styled(Popup)`
     text-align: left;
@@ -66,13 +94,12 @@ const FishPictureContainer = styled(Box)`
     right: -6rem;
     transform: translateY(-50%);
 
-    &:nth-child(2n) {
-        margin-left: -5%;
-    }
-
     img {
         width: 575px;
         height: auto;
+        animation: ${fishBounce} 3s infinite;
+        position: relative;
+        z-index: 1;
     }
 `;
 
@@ -80,11 +107,12 @@ const FishShadow = styled.div`
     background: ${themeGet('colors.tan')};
     border-radius: 50%;
     position: absolute;
-    left: 35%;
-    right: 35%;
+    left: 40%;
+    right: 40%;
     bottom: 10%;
-    height: 5%;
+    height: 3%;
     filter: blur(5px);
+    animation: ${shadowSize} 3s infinite;
 `;
 
 const FishCircle = styled.div`

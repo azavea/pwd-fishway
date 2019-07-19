@@ -44,10 +44,13 @@ const FishImage = styled.img`
     max-height: 400px;
     z-index: 1;
     position: relative;
-    transition: transform 0.25s ease-out;
+    transform: scale(1);
+    transition: transform 0.65s ease-out;
+    will-change: transform;
 
     ${FishButton}.is-large & {
-        transform: scale(1.5);
+        animation-play-state: paused;
+        transform: scale(1.35);
     }
 `;
 
