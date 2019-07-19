@@ -54,7 +54,7 @@ const FishReel = styled(Flex)`
     width: 280%;
 
     > div:nth-child(2n) {
-        margin-top: 2%;
+        margin-top: 0.5%;
     }
 
     > div button {
