@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 
 import { Heading, Text } from './custom-styled-components';
 import MeetTheFishButton from './MeetTheFishButton';
@@ -16,7 +17,8 @@ const StyledMeetTheFish = styled(Flex)`
 `;
 
 const Header = styled(Box)`
-    margin-top: 50px;
+    margin: 50px auto 0;
+    max-width: ${themeGet('maxWidths.med')};
 `;
 
 const Subtitle = styled(Text)`
@@ -31,10 +33,6 @@ const FishReelContainer = styled(Box)`
     ::-webkit-scrollbar {
         display: none;
     }
-`;
-
-const FishButtonAndModal = styled(Box)`
-    padding: 20px;
 `;
 
 const FishReel = styled(Flex)`
@@ -57,7 +55,7 @@ const MeetTheFish = () => {
     };
 
     const fishButtons = FISH_CATALOG.map((fish, idx) => (
-        <FishButtonAndModal key={fish.commonName}>
+        <Box key={fish.commonName}>
             <MeetTheFishButton
                 fish={fish}
                 onButtonClick={onButtonClick}
@@ -69,7 +67,7 @@ const MeetTheFish = () => {
                 open={selectedFish === idx && isModalOpen ? true : false}
                 onModalClose={onModalClose}
             />
-        </FishButtonAndModal>
+        </Box>
     ));
     return (
         <StyledMeetTheFish>
