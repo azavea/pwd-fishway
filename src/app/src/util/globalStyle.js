@@ -67,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
     body {
        line-height: 1;
        background: ${themeGet('colors.lightblues.0')};
+       -webkit-font-smoothing: antialiased;
     }
     
     *::selection {
@@ -89,6 +90,11 @@ const GlobalStyle = createGlobalStyle`
 
     strong {
         font-weight: bold;
+    }
+
+     /* To override react-popup's default styling (wasn't working on the component level) */
+    .popup-content {
+        padding: 0 !important;
     }
 `;
 
