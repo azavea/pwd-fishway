@@ -130,7 +130,8 @@ const FishCircle = styled.div`
 
 const StyledFishName = styled(Heading)`
     color: ${themeGet('colors.darkbrown')};
-    margin-bottom: 0;
+    line-height: ${themeGet('lineHeights.compact')};
+    margin-bottom: 0.15rem;
 `;
 
 const StyledFishScientificName = styled(Text)`
