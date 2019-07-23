@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex } from 'rebass';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
 import { Heading, Text } from './custom-styled-components';
@@ -8,20 +8,6 @@ import MeetTheFishButton from './MeetTheFishButton';
 import MeetTheFishModal from './MeetTheFishModal';
 
 import { FISH_CATALOG, FISH_MODAL_OPEN_DELAY } from '../util/constants';
-
-const fishBounce = keyframes`
-    0% {
-        transform: translateY(0);
-    }
-  
-    50% {
-        transform: translateY(1%);
-    }
-  
-    100% {
-        transform: translateY(0%);
-    }
-`;
 
 const StyledMeetTheFish = styled(Flex)`
     justify-content: center;
@@ -51,23 +37,23 @@ const FishReelContainer = styled(Box)`
 
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 280%;
+    width: 240%;
 
     > div:nth-child(2n) {
         margin-top: 0.5%;
     }
 
     > div button {
-        animation-name: ${fishBounce};
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
+        &.is-large img {
+            animation-play-state: paused;
+        }
     }
 
-    > div:nth-child(2n) button {
+    > div:nth-child(2n) button img {
         animation-delay: 0.5s;
     }
 
-    > div:nth-child(3n) button {
+    > div:nth-child(3n) button img {
         animation-delay: 1s;
     }
 `;

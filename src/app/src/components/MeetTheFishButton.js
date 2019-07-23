@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { func, number, bool } from 'prop-types';
 
 import { CatalogFish } from '../util/CatalogFish';
 import { FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
 import FishNames from './FishNames';
+
+const fishBounce = keyframes`
+    0% {
+        transform: translateY(0);
+    }
+  
+    50% {
+        transform: translateY(3%);
+    }
+  
+    100% {
+        transform: translateY(0%);
+    }
+`;
 
 const FishButton = styled.button`
     background-color: transparent;
@@ -25,6 +39,8 @@ const FishButton = styled.button`
     }
 
     &.is-large {
+        opacity: 1;
+
         &::after {
             background: black;
             border-radius: 50%;
@@ -44,25 +60,17 @@ const FishImage = styled.img`
     max-height: 400px;
     z-index: 1;
     position: relative;
-    transform: scale(1);
-    transition: transform 0.65s ease-out;
-    will-change: transform;
-
-    ${FishButton}.is-large & {
-        animation-play-state: paused;
-        transform: scale(1.35);
-    }
+    animation-name: ${fishBounce};
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 `;
 
 const StyledFishNames = styled(FishNames)`
-    transform: scale(0.8);
     opacity: 0.75;
     transition: all 0.25s ease-out;
-    transform-origin: top;
     text-shadow: 1px 0px rgba(0, 0, 0, 0.6);
 
     ${FishButton}.is-large & {
-        transform: scale(1);
         opacity: 1;
     }
 `;
