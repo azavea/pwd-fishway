@@ -12,7 +12,9 @@ const StyledQuizSidebar = styled(Box)`
 `;
 
 const QuizSidebar = ({ fish }) => {
-    const video = fish && <VideoPlayer src={fish.videoPath} />;
+    const video = fish && (
+        <VideoPlayer src={fish.videoPath} key={fish.videoPath} />
+    );
     return (
         <StyledQuizSidebar>
             <Heading as='h2' variant='small'>

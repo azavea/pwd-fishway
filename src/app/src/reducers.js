@@ -14,6 +14,7 @@ import {
     saveSecondsToCompleteQuiz,
     setBackgroundPosition,
     setActiveTab,
+    showConnectionErrorMessage,
 } from './actions';
 import { RESET, PAUSE, ABOUT } from './util/constants';
 
@@ -26,6 +27,7 @@ export const initialState = {
     quizScore: 0,
     secondsToCompleteQuiz: 0,
     activeTab: ABOUT,
+    showConnectionError: false,
 };
 
 export default createReducer(
@@ -51,6 +53,8 @@ export default createReducer(
             update(state, { backgroundPosition: { $set: payload } }),
         [setActiveTab]: (state, payload) =>
             update(state, { activeTab: { $set: payload } }),
+        [showConnectionErrorMessage]: state =>
+            update(state, { showConnectionError: { $set: true } }),
     },
     initialState
 );

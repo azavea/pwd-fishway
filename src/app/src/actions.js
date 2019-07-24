@@ -14,3 +14,6 @@ export const saveSecondsToCompleteQuiz = createAction(
 );
 export const setBackgroundPosition = createAction('Set Background position');
 export const setActiveTab = createAction('Set active tab');
+export const showConnectionErrorMessage = createAction(
+    'Henceforth show error message for live feed when disconnected from the internet'
+);

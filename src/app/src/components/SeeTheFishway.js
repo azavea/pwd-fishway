@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import update from 'immutability-helper';
+import { connect } from 'react-redux';
+import { bool } from 'prop-types';
 import { Flex, Box } from 'rebass';
 import { themeGet } from 'styled-system';
 import { Heading, Text } from './custom-styled-components';
 import styled from 'styled-components';
 
-import { FISH_HIGHLIGHTS, LIVE_FEED_MOCK_FISH } from '../util/constants';
+import { FISH_HIGHLIGHTS } from '../util/constants';
 
 import Sidebar from './Sidebar';
 import VideoCard from './VideoCard';
@@ -54,17 +55,31 @@ const VideoCardButton = styled.button`
     }
 `;
 
-const SeeTheFishway = () => {
+const SeeTheFishway = ({ showConnectionError }) => {
     let fishList = FISH_HIGHLIGHTS;
 
     // Fish migration season is June through August
+    /*
+
+    **********************************************************
+    Uncomment this section and update imports to reinstate the
+    live feed feature. Pending the public IP Axis camera
+    installation at the Fishway.
+
+    TODO: https://github.com/azavea/pwd-fishway/issues/122
+    **********************************************************
+
     const currentMonth = new Date().getMonth();
-    if (currentMonth > 5 && currentMonth < 8) {
-        // TODO (Issue #77): check if the stream works else don't show the option
+    if (
+        currentMonth > 5 &&
+        currentMonth < 8 &&
+        (navigator.onLine || showConnectionError)
+    ) {
         fishList = update(FISH_HIGHLIGHTS, {
             $unshift: [LIVE_FEED_MOCK_FISH],
         });
     }
+    */
 
     const [selectedFish, selectFish] = useState(fishList[0]);
 
@@ -104,4 +119,14 @@ const SeeTheFishway = () => {
     );
 };
 
-export default SeeTheFishway;
+SeeTheFishway.propTypes = {
+    showConnectionError: bool.isRequired,
+};
+
+function mapStateToProps(state) {
+    return {
+        showConnectionError: state.showConnectionError,
+    };
+}
+
+export default connect(mapStateToProps)(SeeTheFishway);

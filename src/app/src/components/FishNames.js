@@ -8,6 +8,7 @@ import { Heading, Text } from './custom-styled-components';
 
 const StyledFishNames = styled(Flex)`
     flex-direction: column;
+    margin-bottom: ${props => themeGet(`${props.spacing}`, 0)};
 `;
 
 const CommonName = styled(Heading)`
