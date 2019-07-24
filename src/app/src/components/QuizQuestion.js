@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import QuizOption from './QuizOption';
 
 import { QuizFish } from '../util/QuizFish';
+import { Fish } from '../util/Fish';
 
 const StyledQuizQuestion = styled(Flex)`
     text-align: center;
@@ -89,7 +90,7 @@ class QuizQuestion extends React.Component {
 
 QuizQuestion.propTypes = {
     answer: QuizFish.isRequired,
-    choices: arrayOf(QuizFish.isRequired),
+    choices: arrayOf(Fish.isRequired),
     onDone: func.isRequired,
 };
 

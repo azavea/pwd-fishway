@@ -7,7 +7,7 @@ import { themeGet } from 'styled-system';
 
 import { Heading, Text } from './custom-styled-components';
 
-import { FISH } from '../util/constants';
+import { FISH_CATALOG } from '../util/constants';
 
 const StyledPopup = styled(Popup)`
     width: 1500px !important;
@@ -91,7 +91,7 @@ export default class MeetTheFishModal extends Component {
     getNavigationButton(index) {
         return (
             <Button onClick={() => this.setState({ index: index })}>
-                {FISH[index].commonName}
+                {FISH_CATALOG[index].commonName}
             </Button>
         );
     }
@@ -108,10 +108,13 @@ export default class MeetTheFishModal extends Component {
     render() {
         const { open, onModalClose } = this.props;
 
-        const fish = FISH[this.state.index];
+        const fish = FISH_CATALOG[this.state.index];
 
         let navButtons = null;
-        if (this.state.index > 0 && this.state.index < FISH.length - 1) {
+        if (
+            this.state.index > 0 &&
+            this.state.index < FISH_CATALOG.length - 1
+        ) {
             navButtons = (
                 <Flex justifyContent='space-between'>
                     {this.getNavigationButton(this.state.index - 1)}

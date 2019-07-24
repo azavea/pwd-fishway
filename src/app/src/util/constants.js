@@ -354,7 +354,7 @@ export const FISH_HIGHLIGHTS = [
     },
 ];
 
-export const FISH = [
+export const FISH_CATALOG = [
     {
         commonName: 'Alewife',
         scientificName: 'Alosa pseudoharengus',

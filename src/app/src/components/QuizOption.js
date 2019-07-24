@@ -3,7 +3,7 @@ import React from 'react';
 import { Flex } from 'rebass';
 import styled from 'styled-components';
 
-import { QuizFish } from '../util/QuizFish';
+import { Fish } from '../util/Fish';
 import FishNames from './FishNames';
 
 const StyledQuizOption = styled(Flex)`
@@ -39,7 +39,7 @@ const QuizOption = ({ fish, showImage, shadeImage, ...props }) => {
 };
 
 QuizOption.propTypes = {
-    fish: QuizFish.isRequired,
+    fish: Fish.isRequired,
     showImage: bool.isRequired,
     shadeImage: bool.isRequired,
 };
