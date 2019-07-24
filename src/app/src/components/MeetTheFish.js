@@ -37,11 +37,9 @@ const FishReelContainer = styled(Box)`
 
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 240%;
-
-    > div:nth-child(2n) {
-        margin-top: 0.5%;
-    }
+    width: 244%;
+    margin-top: 2rem;
+    padding-left: 4%;
 
     > div button {
         &.is-large img {
@@ -49,8 +47,16 @@ const FishReel = styled(Flex)`
         }
     }
 
-    > div:nth-child(2n) button img {
-        animation-delay: 0.5s;
+    > div:nth-child(13n) {
+        margin-left: -3%;
+    }
+
+    > div:nth-child(2n) {
+        margin-top: 0.5%;
+
+        button img {
+            animation-delay: 0.5s;
+        }
     }
 
     > div:nth-child(3n) button img {

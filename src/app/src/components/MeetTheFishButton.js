@@ -25,6 +25,8 @@ const FishButton = styled.button`
     background-color: transparent;
     border: none;
     position: relative;
+    transition: all 0.35s ease-in;
+    transform: scale(1);
 
     &:focus {
         outline: none;
@@ -39,7 +41,7 @@ const FishButton = styled.button`
     }
 
     &.is-selected {
-        opacity: 1;
+        transform: scale(1.15);
 
         &::after {
             background: black;
@@ -68,6 +70,7 @@ const FishImage = styled.img`
 const StyledFishNames = styled(FishNames)`
     opacity: 0.75;
     transition: all 0.25s ease-out;
+    transform: translateY(-20%);
     text-shadow: 1px 0px rgba(0, 0, 0, 0.6);
 
     ${FishButton}.is-selected & {
