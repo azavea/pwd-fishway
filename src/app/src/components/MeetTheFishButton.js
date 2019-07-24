@@ -38,7 +38,7 @@ const FishButton = styled.button`
         transition: all 0.25s ease-in;
     }
 
-    &.is-large {
+    &.is-selected {
         opacity: 1;
 
         &::after {
@@ -70,24 +70,24 @@ const StyledFishNames = styled(FishNames)`
     transition: all 0.25s ease-out;
     text-shadow: 1px 0px rgba(0, 0, 0, 0.6);
 
-    ${FishButton}.is-large & {
+    ${FishButton}.is-selected & {
         opacity: 1;
     }
 `;
 
 const MeetTheFishButton = ({ fish, index, disabled, onButtonClick }) => {
-    const [isFishLarge, setIsFishLarge] = useState(false);
+    const [isFishSelected, setIsFishSelected] = useState(false);
 
     const onFishClicked = () => {
-        setIsFishLarge(true);
-        setTimeout(() => setIsFishLarge(false), FISH_MODAL_OPEN_DELAY);
+        setIsFishSelected(true);
+        setTimeout(() => setIsFishSelected(false), FISH_MODAL_OPEN_DELAY);
     };
 
     return (
         <>
             <FishButton
                 key={fish.commonName}
-                className={isFishLarge && 'is-large'}
+                className={isFishSelected && 'is-selected'}
                 onClick={() => {
                     onFishClicked();
                     onButtonClick(index);
