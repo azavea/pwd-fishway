@@ -52,6 +52,8 @@ export default {
         ],
         xlighttan: '#fffdf9',
         lighttan: '#FBF8F4',
+        tan: '#bbb8b3',
+        medtan: '#c3c0ba',
         darkbrown: '#443E34',
         black: '#000',
     },
@@ -69,6 +71,7 @@ export default {
     maxWidths: {
         xsmall: '30rem',
         small: '42.875rem',
+        med: '90rem',
         wide: '104.500rem',
     },
     shadows: {

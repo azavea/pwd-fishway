@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 
 import { Heading, Text } from './custom-styled-components';
 import MeetTheFishButton from './MeetTheFishButton';
@@ -16,7 +17,8 @@ const StyledMeetTheFish = styled(Flex)`
 `;
 
 const Header = styled(Box)`
-    margin-top: 50px;
+    margin: 50px auto 0;
+    max-width: ${themeGet('maxWidths.med')};
 `;
 
 const Subtitle = styled(Text)`
@@ -33,13 +35,33 @@ const FishReelContainer = styled(Box)`
     }
 `;
 
-const FishButtonAndModal = styled(Box)`
-    padding: 20px;
-`;
-
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 280%;
+    width: 244%;
+    margin-top: 2rem;
+    padding-left: 4%;
+
+    > div button {
+        &.is-large img {
+            animation-play-state: paused;
+        }
+    }
+
+    > div:nth-child(13n) {
+        margin-left: -3%;
+    }
+
+    > div:nth-child(2n) {
+        margin-top: 0.5%;
+
+        button img {
+            animation-delay: 0.5s;
+        }
+    }
+
+    > div:nth-child(3n) button img {
+        animation-delay: 1s;
+    }
 `;
 
 const MeetTheFish = () => {
@@ -57,7 +79,7 @@ const MeetTheFish = () => {
     };
 
     const fishButtons = FISH_CATALOG.map((fish, idx) => (
-        <FishButtonAndModal key={fish.commonName}>
+        <Box key={fish.commonName}>
             <MeetTheFishButton
                 fish={fish}
                 onButtonClick={onButtonClick}
@@ -69,7 +91,7 @@ const MeetTheFish = () => {
                 open={selectedFish === idx && isModalOpen ? true : false}
                 onModalClose={onModalClose}
             />
-        </FishButtonAndModal>
+        </Box>
     ));
     return (
         <StyledMeetTheFish>

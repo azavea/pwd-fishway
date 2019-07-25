@@ -12,20 +12,23 @@ const StyledFishNames = styled(Flex)`
 `;
 
 const CommonName = styled(Heading)`
+    font-family: ${themeGet('font')};
     margin-bottom: 0;
     line-height: ${themeGet('lineHeights.compact')};
-    font-size: 2rem;
 `;
 
 const ScientificName = styled(Text)`
-    font-style: italic;
+    font-family: ${themeGet('font')};
+    font-style: ${themeGet('fontStyles.italic')};
     margin-bottom: ${themeGet('space.medium')};
 `;
 
-const FishNames = ({ commonName, scientificName }) => {
+const FishNames = ({ className, commonName, scientificName }) => {
     return (
-        <StyledFishNames>
-            <CommonName as='h3'>{commonName}</CommonName>
+        <StyledFishNames className={className}>
+            <CommonName as='h3' variant='small'>
+                {commonName}
+            </CommonName>
             <ScientificName as='h4' variant='base'>
                 {scientificName}
             </ScientificName>
@@ -36,6 +39,7 @@ const FishNames = ({ commonName, scientificName }) => {
 FishNames.propTypes = {
     commonName: string.isRequired,
     scientificName: string,
+    className: string,
 };
 
 export default FishNames;
