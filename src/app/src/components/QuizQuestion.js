@@ -6,6 +6,7 @@ import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import QuizOption from './QuizOption';
+import QuizHint from './QuizHint';
 
 import { QuizFish } from '../util/QuizFish';
 import { Fish } from '../util/Fish';
@@ -20,6 +21,12 @@ const Options = styled(Flex)`
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
+`;
+
+const GetHintButton = styled(Button)`
+    background: transparent;
+    width: fit-content;
+    margin-left: auto;
 `;
 
 const StyledQuizOption = styled(QuizOption)`
@@ -58,13 +65,22 @@ class QuizQuestion extends React.Component {
         const { guessed, usedHint } = this.state;
 
         const showHint = guessed.length > 0 || usedHint;
+
         // TODO (Issue #96): Remove the default value here when we get hint text
-        let hint = showHint
-            ? answer.hint || `its ${answer.commonName}`
-            : 'Get a hint';
+        let hint = answer.hint || `it's ${answer.commonName}`;
         if (guessed.length > 0) {
             hint = 'Almost! ' + hint;
         }
+
+        const hintTag = showHint ? (
+            <QuizHint hint={hint} />
+        ) : (
+            <GetHintButton onClick={() => this.setState({ usedHint: true })}>
+                <FontAwesomeIcon icon={['fas', 'info-circle']} />
+                &nbsp;Give me a hint
+            </GetHintButton>
+        );
+
         const options = choices.map((fish, idx) => (
             <StyledQuizOption
                 key={idx}
@@ -78,11 +94,7 @@ class QuizQuestion extends React.Component {
         return (
             <StyledQuizQuestion>
                 <Options>{options}</Options>
-                <Button onClick={() => this.setState({ usedHint: true })}>
-                    <FontAwesomeIcon icon={['fas', 'info-circle']} />
-                    &nbsp;
-                    {hint}
-                </Button>
+                {hintTag}
             </StyledQuizQuestion>
         );
     }
