@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+if [[ -n "${pwd_fishway_DEBUG}" ]]; then
+    set -x
+fi
+
+function usage() {
+    echo -n \
+        "Usage: $(basename "$0")
+Create zip file for release.
+"
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+    if [ "${1:-}" = "--help" ]; then
+        usage
+    else
+
+    # Run linter
+    ./scripts/lint
+
+    # Build static files
+    docker-compose \
+        -f docker-compose.yml \
+        run --rm --no-deps app \
+        yarn build
+
+    # Zip the static files to the top level dir
+    cd "${PWD}"/src/app/build
+    zip -r ../../../dist/fishway.zip ./*
+    fi
+fi

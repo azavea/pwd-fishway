@@ -11,3 +11,4 @@
     - { role: "azavea.python-security" }
     - { role: "pwd-fishway.docker" }
     - { role: "pwd-fishway.shellcheck" }
+    - { role: "pwd-fishway.zip" }
