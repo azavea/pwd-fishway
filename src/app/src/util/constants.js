@@ -2,20 +2,24 @@ import alewifeIllustration from '../media/meetthefish/alewife_large.png';
 import americanEelIllustration from '../media/meetthefish/american_eel_large.png';
 import americanShadClip from '../media/quiz/american_shad_clip.mp4';
 import americanShadIllustration from '../media/meetthefish/american_shad_large.png';
+import americanShadLargeIllustration from '../media/quiz/american_shad_xlarge.png';
 import americanShadPhoto from '../media/seethefishway/american_shad.jpg';
 import americanShadVideo from '../media/seethefishway/american_shad.mp4';
 import bluebackHerringIllustration from '../media/meetthefish/blueback_herring_large.png';
 import bluegillClip from '../media/quiz/bluegill_clip.mp4';
 import bluegillIllustration from '../media/meetthefish/bluegill_large.png';
+import bluegillLargeIllustration from '../media/quiz/bluegill_xlarge.png';
 import brownTroutIllustration from '../media/meetthefish/brown_trout_large.png';
 import carpPhoto from '../media/seethefishway/carp.jpg';
 import carpVideo from '../media/seethefishway/carp.mp4';
 import channelCatfishClip from '../media/quiz/channel_catfish_clip.mp4';
 import channelCatfishIllustration from '../media/meetthefish/channel_catfish_large.png';
+import channelCatfishLargeIllustration from '../media/quiz/channel_catfish_xlarge.png';
 import channelCatfishPhoto from '../media/seethefishway/channel_catfish.jpg';
 import channelCatfishVideo from '../media/seethefishway/channel_catfish.mp4';
 import commonCarpClip from '../media/quiz/common_carp_clip.mp4';
 import commonCarpIllustration from '../media/meetthefish/common_carp_large.png';
+import commonCarpLargeIllustration from '../media/quiz/common_carp_xlarge.png';
 import commonCarpPhoto from '../media/seethefishway/common_carp.jpg';
 import commonCarpVideo from '../media/seethefishway/common_carp.mp4';
 import flatheadCatfishIllustration from '../media/meetthefish/flathead_catfish_large.png';
@@ -35,6 +39,7 @@ import quillbackCatfishPhoto from '../media/seethefishway/quillback_catfish.jpg'
 import quillbackCatfishVideo from '../media/seethefishway/quillback_catfish.mp4';
 import quillbackClip from '../media/quiz/quillback_clip.mp4';
 import quillbackIllustration from '../media/meetthefish/quillback_large.png';
+import quillbackLargeIllustration from '../media/quiz/quillback_xlarge.png';
 import quillbackPhoto from '../media/seethefishway/quillback.jpg';
 import quillbackVideo from '../media/seethefishway/quillback.mp4';
 import quillbacksPhoto from '../media/seethefishway/quillbacks.jpg';
@@ -53,18 +58,22 @@ import snakeVideo from '../media/seethefishway/snake.mp4';
 import stripedBassClip from '../media/quiz/striped_bass_clip.mp4';
 import stripedBassHybridClip from '../media/quiz/striped_bass_hybrid_clip.mp4';
 import stripedBassHybridIllustration from '../media/meetthefish/striped_bass_hybrid_large.png';
+import stripedBassHybridLargeIllustration from '../media/quiz/striped_bass_hybrid_xlarge.png';
 import stripedBassHybridPhoto from '../media/seethefishway/striped_bass_hybrid.jpg';
 import stripedBassHybridVideo from '../media/seethefishway/striped_bass_hybrid.mp4';
 import stripedBassIllustration from '../media/meetthefish/striped_bass_large.png';
+import stripedBassLargeIllustration from '../media/quiz/striped_bass_xlarge.png';
 import turtlePhoto from '../media/seethefishway/turtle.jpg';
 import turtleVideo from '../media/seethefishway/turtle.mp4';
 import walleyeIllustration from '../media/meetthefish/walleye_large.png';
 import whitePerchClip from '../media/quiz/white_perch_clip.mp4';
 import whitePerchIllustration from '../media/meetthefish/white_perch_large.png';
+import whitePerchLargeIllustration from '../media/quiz/white_perch_xlarge.png';
 import whitePerchPhoto from '../media/seethefishway/white_perch.jpg';
 import whitePerchVideo from '../media/seethefishway/white_perch.mp4';
 import whiteSuckerClip from '../media/quiz/white_sucker_clip.mp4';
 import whiteSuckerIllustration from '../media/meetthefish/white_sucker_large.png';
+import whiteSuckerLargeIllustration from '../media/quiz/white_sucker_xlarge.png';
 
 import overviewVideo from '../media/about/overview.mp4';
 import biologistVideo from '../media/about/biologist.mp4';
@@ -654,45 +663,54 @@ export const QUIZ_FISH = [
         ...AMERICAN_SHAD,
         videoPath: americanShadClip,
         hint: '',
+        largePicturePath: americanShadLargeIllustration,
     },
     {
         ...BLUEGILL,
         videoPath: bluegillClip,
         hint: '',
+        largePicturePath: bluegillLargeIllustration,
     },
     {
         ...CHANNEL_CATFISH,
         videoPath: channelCatfishClip,
         hint: '',
+        largePicturePath: channelCatfishLargeIllustration,
     },
     {
         ...COMMON_CARP,
         videoPath: commonCarpClip,
         hint: '',
+        largePicturePath: commonCarpLargeIllustration,
     },
     {
         ...QUILLBACK,
         videoPath: quillbackClip,
         hint: '',
+        largePicturePath: quillbackLargeIllustration,
     },
     {
         ...STRIPED_BASS,
         videoPath: stripedBassClip,
         hint: '',
+        largePicturePath: stripedBassLargeIllustration,
     },
     {
         ...HYBRID_STRIPED_BASS,
         videoPath: stripedBassHybridClip,
         hint: '',
+        largePicturePath: stripedBassHybridLargeIllustration,
     },
     {
         ...WHITE_PERCH,
         videoPath: whitePerchClip,
         hint: '',
+        largePicturePath: whitePerchLargeIllustration,
     },
     {
         ...WHITE_SUCKER,
         videoPath: whiteSuckerClip,
         hint: '',
+        largePicturePath: whiteSuckerLargeIllustration,
     },
 ];

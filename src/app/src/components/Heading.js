@@ -21,6 +21,18 @@ const Heading = styled(BaseHeading)`
             font-style: ${props.fontStyle};
         `};
     ${props =>
+        props.variant === 'xxlarge' &&
+        css`
+            font-size: ${themeGet('fontSizes.8')};
+            font-weight: ${themeGet('fontWeights.black')};
+        `};
+    ${props =>
+        props.variant === 'xlarge' &&
+        css`
+            font-size: ${themeGet('fontSizes.7')};
+            margin-bottom: ${themeGet('space.medium')};
+        `};
+    ${props =>
         props.variant === 'medium' &&
         css`
             font-size: ${themeGet('fontSizes.4')};

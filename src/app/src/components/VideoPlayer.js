@@ -87,7 +87,7 @@ const StyledSlider = styled(Slider)`
 `;
 
 const StyledVideo = styled(Video)`
-    width: 30rem;
+    width: 100%;
     border-radius: 4px;
     border: 2px solid ${themeGet('colors.teals.3')};
     line-height: 0;

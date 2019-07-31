@@ -15,6 +15,7 @@ export default {
         '4.5rem', // 5
         '7.594rem', // 6
         '11.391rem', // 7
+        '14rem', // 7
     ],
     fontStyles: {
         normal: 'normal',
