@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import { Text } from './custom-styled-components';
@@ -66,6 +66,17 @@ const Points = styled(Text)`
 `;
 
 const QuizMedallion = ({ value, quizDone }) => {
+    const containerEl = useCallback(node => {
+        if (node !== null) {
+            // a minimal setTimeout ensures the component registers the css transition
+            // rely on direct DOM manipulation. className must be triggered outside the
+            // React state or lifecycle methods to prevent Lottie from re-running
+            setTimeout(() => node.classList.add('animation-done'), 1);
+        }
+    }, []);
+
+    const lottieEl = useRef(null);
+
     const encouragement = (
         // Don't forget to change this based on the scenario
         <StyledEncouragement as='span' variant='xsmall'>
@@ -83,22 +94,21 @@ const QuizMedallion = ({ value, quizDone }) => {
         },
     };
 
-    const animationDone = false;
     const eventListeners = [
         {
             eventName: 'complete',
             callback: () => {
-                document
-                    .getElementById('points-container')
-                    .classList.add('animation-done');
+                setTimeout(() => {
+                    if (lottieEl.current) {
+                        lottieEl.current.anim.setDirection(-1);
+                        lottieEl.current.anim.play();
+                        document
+                            .getElementById('points-container')
+                            .classList.remove('animation-done');
+                    }
+                }, 1000);
             },
         },
-        // {
-        //     eventName: 'enterFrame',
-        //     callback: () => {
-        //         console.log('starting!!!!');
-        //     },
-        // },
     ];
 
     const MedallionIcon = () => {
@@ -107,6 +117,7 @@ const QuizMedallion = ({ value, quizDone }) => {
                 <Lottie
                     options={defaultOptions}
                     eventListeners={eventListeners}
+                    ref={lottieEl}
                 />
             </StyledMedallionIcon>
         );
@@ -114,7 +125,11 @@ const QuizMedallion = ({ value, quizDone }) => {
 
     return (
         <StyledQuizMedallion quizDone={quizDone}>
-            <PointsContainer isFullSize={quizDone} id='points-container'>
+            <PointsContainer
+                isFullSize={quizDone}
+                ref={containerEl}
+                id='points-container'
+            >
                 {quizDone && encouragement}
                 <Plus as='span' variant='xsmall'>
                     +
