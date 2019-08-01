@@ -65,7 +65,7 @@ const Points = styled(Text)`
     margin-bottom: 0;
 `;
 
-const QuizMedallion = ({ dispatch, value, quizDone, flag }) => {
+const QuizMedallion = ({ value, quizDone }) => {
     const encouragement = (
         // Don't forget to change this based on the scenario
         <StyledEncouragement as='span' variant='xsmall'>
@@ -93,12 +93,12 @@ const QuizMedallion = ({ dispatch, value, quizDone, flag }) => {
                     .classList.add('animation-done');
             },
         },
-        {
-            eventName: 'enterFrame',
-            callback: () => {
-                console.log('starting!!!!');
-            },
-        },
+        // {
+        //     eventName: 'enterFrame',
+        //     callback: () => {
+        //         console.log('starting!!!!');
+        //     },
+        // },
     ];
 
     const MedallionIcon = () => {

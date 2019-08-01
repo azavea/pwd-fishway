@@ -57,13 +57,7 @@ const BadgeLabel = styled(Text)`
 `;
 
 const QuizBadge = ({ dispatch, score, pointsGained }) => {
-    const medallion = (
-        <QuizMedallion
-            value={pointsGained}
-            quizDone={false}
-            flag={setTimeout(() => true, 500)}
-        />
-    );
+    const medallion = <QuizMedallion value={pointsGained} quizDone={false} />;
 
     return (
         <StyledQuizBadge>

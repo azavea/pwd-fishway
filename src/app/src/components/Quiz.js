@@ -81,6 +81,7 @@ class Quiz extends React.Component {
                 this.setState(prevState => ({
                     currentResult: null,
                     question: prevState.question + 1,
+                    pointsGained: 0,
                 }));
         }, GUESS_MESSAGE_TIME);
     };
