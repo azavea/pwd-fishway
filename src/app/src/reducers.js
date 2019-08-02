@@ -20,9 +20,9 @@ import { RESET, PAUSE, ABOUT } from './util/constants';
 
 export const initialState = {
     aboutSlideIndex: 0,
-    isScreensaverVisible: false,
+    isScreensaverVisible: true,
     timerEvent: '',
-    isQuizVisible: true,
+    isQuizVisible: false,
     backgroundPosition: 'top',
     quizScore: 0,
     secondsToCompleteQuiz: 0,
