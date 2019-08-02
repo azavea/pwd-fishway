@@ -40,6 +40,7 @@ const StyledScoreContainer = styled(Flex)`
 
 const StyledScore = styled(Heading)`
     line-height: 0.8;
+    position: relative;
 `;
 
 const StyledTotal = styled(Text)``;

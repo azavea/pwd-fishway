@@ -9,11 +9,17 @@ import animationData from '../media/lotties/medallion.json';
 
 const StyledQuizMedallion = styled(Box)`
     position: absolute;
-    top: -2rem;
-    right: 0;
+    top: ${props => (props.quizDone ? '-1rem' : '-2rem')};
+    right: ${props => (props.quizDone ? '-3rem' : '0')};
     z-index: 2;
-    width: ${props => (props.quizDone ? '7.5rem' : '4.25rem')};
-    height: ${props => (props.quizDone ? '7.5rem' : '4.25rem')};
+    width: ${props => (props.quizDone ? '7.2rem' : '4.25rem')};
+    height: ${props => (props.quizDone ? '7.2rem' : '4.25rem')};
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 `;
 
 const StyledEncouragement = styled(Text)`
@@ -24,6 +30,7 @@ const StyledEncouragement = styled(Text)`
     flex: 1 100%;
     margin-bottom: 0;
     line-height: ${themeGet('lineHeights.compact')};
+    white-space: nowrap;
 `;
 
 const StyledMedallionIcon = styled(Box)`
@@ -44,7 +51,7 @@ const PointsContainer = styled(Flex)`
     transform: translate(-50%, -50%) rotate(-25deg);
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.25s ease-in;
+    transition: opacity 0s ease-in;
 
     &.animation-done {
         transition: opacity 0.5s 0.5s ease-in;
@@ -79,8 +86,8 @@ const QuizMedallion = ({ value, quizDone }) => {
 
     const encouragement = (
         // Don't forget to change this based on the scenario
-        <StyledEncouragement as='span' variant='xsmall'>
-            speedy!
+        <StyledEncouragement as='span' variant='small'>
+            nice job!
         </StyledEncouragement>
     );
 
@@ -99,7 +106,8 @@ const QuizMedallion = ({ value, quizDone }) => {
             eventName: 'complete',
             callback: () => {
                 setTimeout(() => {
-                    if (lottieEl.current) {
+                    if (lottieEl.current && !quizDone) {
+                        lottieEl.current.anim.setSpeed(6);
                         lottieEl.current.anim.setDirection(-1);
                         lottieEl.current.anim.play();
                         document
@@ -131,7 +139,7 @@ const QuizMedallion = ({ value, quizDone }) => {
                 id='points-container'
             >
                 {quizDone && encouragement}
-                <Plus as='span' variant='xsmall'>
+                <Plus as='span' variant='small'>
                     +
                 </Plus>
                 <Points as='span' variant='base'>
