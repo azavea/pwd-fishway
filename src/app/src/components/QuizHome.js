@@ -43,8 +43,6 @@ const StyledScore = styled(Heading)`
     position: relative;
 `;
 
-const StyledTotal = styled(Text)``;
-
 const StyledButton = styled(Button)`
     margin: 1rem;
 `;
@@ -79,7 +77,7 @@ class QuizHome extends Component {
                         {bonusPoints > 0 && medallion}
                         {quizScore + bonusPoints}
                     </StyledScore>
-                    <StyledTotal variant='xlarge'>/500 points</StyledTotal>
+                    <Text variant='xlarge'>/500 points</Text>
                 </StyledScoreContainer>
                 <Text variant='large' width={2 / 3}>
                     Brush up on on your fish knowledge on the Meet the Fish page
