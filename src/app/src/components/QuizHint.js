@@ -25,7 +25,7 @@ const StyledQuizHint = styled(Box)`
     background: ${themeGet('colors.greens.2')};
     text-align: center;
     width: fit-content;
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: ${themeGet('space.comfortable')};
     transform: translateX(100%);
