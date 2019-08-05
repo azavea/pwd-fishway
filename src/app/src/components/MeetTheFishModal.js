@@ -91,11 +91,11 @@ const StyledLinkHeading = styled(Heading)`
 const FishPictureContainer = styled(Box)`
     position: absolute;
     top: 50%;
-    right: -6rem;
+    right: -1rem;
     transform: translateY(-50%);
 
     img {
-        width: 575px;
+        width: 400px;
         height: auto;
         animation: ${fishBounce} 3s infinite;
         position: relative;
@@ -109,7 +109,7 @@ const FishShadow = styled.div`
     position: absolute;
     left: 40%;
     right: 40%;
-    bottom: 10%;
+    bottom: -10%;
     height: 3%;
     filter: blur(5px);
     animation: ${shadowSize} 3s infinite;
