@@ -67,29 +67,29 @@ const incorrectTheme = {
     c: 'rgba(255, 255, 255, 0.38)',
 };
 
-const CorrectIcon = styled(Box)`
+const FishIcon = styled(Box)`
     position: relative;
 
     .icon {
-        color: ${themeGet('colors.greens.2')};
         stroke-width: 0;
         position: absolute;
-        top: -0.3rem;
-        left: 57%;
         transform: translateX(-30%);
     }
 `;
 
-const IncorrectIcon = styled(Box)`
-    position: relative;
+const CorrectIcon = styled(FishIcon)`
+    .icon {
+        color: ${themeGet('colors.greens.2')};
+        top: -0.3rem;
+        left: 57%;
+    }
+`;
 
+const IncorrectIcon = styled(FishIcon)`
     .icon {
         color: ${themeGet('colors.white')};
-        stroke-width: 0;
-        position: absolute;
         top: 0;
         left: 54%;
-        transform: translateX(-30%);
     }
 `;
 
@@ -124,7 +124,7 @@ const QuizNavbar = props => {
         const isCurrent = question === idx;
         const correct = result && result.numWrong < 2;
         const incorrect = result && !correct;
-        function setIconTheme() {
+        const setIconTheme = () => {
             if (isCurrent) {
                 return currentTheme;
             } else if (correct) {
@@ -134,7 +134,7 @@ const QuizNavbar = props => {
             } else {
                 return theme;
             }
-        }
+        };
         return (
             <Result
                 key={idx}
