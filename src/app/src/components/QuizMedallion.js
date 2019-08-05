@@ -9,11 +9,11 @@ import animationData from '../media/lotties/medallion.json';
 
 const StyledQuizMedallion = styled(Box)`
     position: absolute;
-    top: ${props => (props.quizDone ? '-1rem' : '-2rem')};
-    right: ${props => (props.quizDone ? '-3rem' : '0')};
+    top: ${props => (props.isFinalScorePage ? '-1rem' : '-2rem')};
+    right: ${props => (props.isFinalScorePage ? '-3rem' : '0')};
     z-index: 2;
-    width: ${props => (props.quizDone ? '7.2rem' : '4.25rem')};
-    height: ${props => (props.quizDone ? '7.2rem' : '4.25rem')};
+    width: ${props => (props.isFinalScorePage ? '7.2rem' : '4.25rem')};
+    height: ${props => (props.isFinalScorePage ? '7.2rem' : '4.25rem')};
 
     svg {
         position: absolute;
@@ -72,7 +72,7 @@ const Points = styled(Text)`
     margin-bottom: 0;
 `;
 
-const QuizMedallion = ({ value, quizDone }) => {
+const QuizMedallion = ({ value, isFinalScorePage }) => {
     const containerEl = useCallback(node => {
         if (node !== null) {
             // a minimal setTimeout ensures the component registers the css transition
@@ -85,7 +85,6 @@ const QuizMedallion = ({ value, quizDone }) => {
     const lottieEl = useRef(null);
 
     const encouragement = (
-        // Don't forget to change this based on the scenario
         <StyledEncouragement as='span' variant='small'>
             nice job!
         </StyledEncouragement>
@@ -106,7 +105,7 @@ const QuizMedallion = ({ value, quizDone }) => {
             eventName: 'complete',
             callback: () => {
                 setTimeout(() => {
-                    if (lottieEl.current && !quizDone) {
+                    if (lottieEl.current && !isFinalScorePage) {
                         lottieEl.current.anim.setSpeed(6);
                         lottieEl.current.anim.setDirection(-1);
                         lottieEl.current.anim.play();
@@ -132,13 +131,13 @@ const QuizMedallion = ({ value, quizDone }) => {
     };
 
     return (
-        <StyledQuizMedallion quizDone={quizDone}>
+        <StyledQuizMedallion isFinalScorePage={isFinalScorePage}>
             <PointsContainer
-                isFullSize={quizDone}
+                isFullSize={isFinalScorePage}
                 ref={containerEl}
                 id='points-container'
             >
-                {quizDone && encouragement}
+                {isFinalScorePage && encouragement}
                 <Plus as='span' variant='small'>
                     +
                 </Plus>
