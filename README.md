@@ -88,6 +88,11 @@ pin it to a specific version.
     - `package.json`
     - `yarn.lock`
 
-#### Notes
+#### Installing Fishway at the FWW Museum
 
-* We usually pin packages to a specific version to minimize build errors.
+In case of project updates, the React app will need to be rebuilt and re-installed on the Windows computer at the FWW Museum. 
+```
+vagrant up && vagrant ssh
+./scripts/cipublish
+```
+The output `fishway.zip` is available in the project's `dist` directory. The zipfile's contents should be unzipped into the IIS home directory on the Windows computer, `C:\inetpub\wwwroot`.
