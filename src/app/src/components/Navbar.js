@@ -135,11 +135,14 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
         </Tab>
     );
 
+    // TODO (#130): replace false with a transition to apply to Meet the Fish
+    const getTransition = key => (key === MEET ? false : Fade);
+
     return (
         <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
             <StyledTabs
                 activeKey={activeTab}
-                transition={Fade}
+                transition={getTransition(activeTab)}
                 onSelect={key => {
                     dispatch(setActiveTab(key));
                     dispatch(setBackgroundPosition(POSITIONS[key]));
