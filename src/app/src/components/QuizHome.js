@@ -65,7 +65,9 @@ class QuizHome extends Component {
             bonusPoints += 100;
         }
 
-        const medallion = <QuizMedallion value={bonusPoints} quizDone={true} />;
+        const medallion = (
+            <QuizMedallion value={bonusPoints} isFinalScorePage={true} />
+        );
 
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
