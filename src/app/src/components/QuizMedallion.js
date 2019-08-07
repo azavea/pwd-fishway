@@ -86,7 +86,7 @@ const QuizMedallion = ({ value, isFinalScorePage }) => {
 
     const encouragement = (
         <StyledEncouragement as='span' variant='small'>
-            nice job!
+            speedy!
         </StyledEncouragement>
     );
 
