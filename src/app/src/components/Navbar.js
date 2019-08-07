@@ -125,6 +125,16 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
             </Heading>
         ),
     };
+
+    /* force un/mount tab views so that tab state resets upon revisit
+    this is most critical for the About tab to restart videos upon re/visit
+    React Bootstrap built-in un/mount for tabs breaks transitions */
+    const tab = (key, component) => (
+        <Tab eventKey={key} title={titles[key]}>
+            {activeTab === key && component}
+        </Tab>
+    );
+
     return (
         <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
             <StyledTabs
@@ -135,21 +145,10 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
                     dispatch(setBackgroundPosition(POSITIONS[key]));
                 }}
             >
-                {/* force un/mount tab views so that tab state resets upon revisit
-                this is most critical for the About tab to restart videos upon re/visit
-                React Bootstrap built-in un/mount for tabs breaks transitions */}
-                <Tab eventKey={ABOUT} title={titles[ABOUT]}>
-                    {activeTab === ABOUT && <About />}
-                </Tab>
-                <Tab eventKey={SEE} title={titles[SEE]}>
-                    {activeTab === SEE && <SeeTheFishway />}
-                </Tab>
-                <Tab eventKey={MEET} title={titles[MEET]}>
-                    {activeTab === MEET && <MeetTheFish />}
-                </Tab>
-                <Tab eventKey={TEST} title={titles[TEST]}>
-                    {activeTab === TEST && <QuizHome />}
-                </Tab>
+                {tab(ABOUT, <About />)}
+                {tab(SEE, <SeeTheFishway />)}
+                {tab(MEET, <MeetTheFish />)}
+                {tab(TEST, <QuizHome />)}
             </StyledTabs>
         </StyledNavbar>
     );
