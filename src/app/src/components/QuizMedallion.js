@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react';
+import { number, bool } from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import { Text } from './custom-styled-components';
@@ -148,6 +149,11 @@ const QuizMedallion = ({ value, isFinalScorePage }) => {
             <MedallionIcon />
         </StyledQuizMedallion>
     );
+};
+
+QuizMedallion.propTypes = {
+    score: number.isRequired,
+    isFinalScorePage: bool,
 };
 
 export default QuizMedallion;
