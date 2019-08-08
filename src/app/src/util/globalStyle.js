@@ -97,6 +97,19 @@ const GlobalStyle = createGlobalStyle`
     .popup-content {
         padding: 0 !important;
     }
+
+    /* CSS Transitions for React Tabs */
+    .tab-content {
+        .fade {
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+
+          &.active.show {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+          }
+        }
+    }
 `;
 
 export default GlobalStyle;

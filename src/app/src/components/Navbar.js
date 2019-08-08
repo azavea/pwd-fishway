@@ -11,6 +11,7 @@ import About from './About';
 import SeeTheFishway from './SeeTheFishway';
 import MeetTheFish from './MeetTheFish';
 import QuizHome from './QuizHome';
+import Fade from './Fade';
 import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
 const StyledTabs = styled(Tabs)`
@@ -124,30 +125,33 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
             </Heading>
         ),
     };
+
+    /* force un/mount tab views so that tab state resets upon revisit
+    this is most critical for the About tab to restart videos upon re/visit
+    React Bootstrap built-in un/mount for tabs breaks transitions */
+    const tab = (key, component) => (
+        <Tab eventKey={key} title={titles[key]}>
+            {activeTab === key && component}
+        </Tab>
+    );
+
+    // TODO (#130): replace false with a transition to apply to Meet the Fish
+    const getTransition = key => (key === MEET ? false : Fade);
+
     return (
         <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
-            {/* unmountOnExit is used to ensure that videos restart when
-            switching from About tab to another tab and back again */}
             <StyledTabs
                 activeKey={activeTab}
-                unmountOnExit={true}
+                transition={getTransition(activeTab)}
                 onSelect={key => {
                     dispatch(setActiveTab(key));
                     dispatch(setBackgroundPosition(POSITIONS[key]));
                 }}
             >
-                <Tab eventKey={ABOUT} title={titles[ABOUT]}>
-                    <About />
-                </Tab>
-                <Tab eventKey={SEE} title={titles[SEE]}>
-                    <SeeTheFishway />
-                </Tab>
-                <Tab eventKey={MEET} title={titles[MEET]}>
-                    <MeetTheFish />
-                </Tab>
-                <Tab eventKey={TEST} title={titles[TEST]}>
-                    <QuizHome />
-                </Tab>
+                {tab(ABOUT, <About />)}
+                {tab(SEE, <SeeTheFishway />)}
+                {tab(MEET, <MeetTheFish />)}
+                {tab(TEST, <QuizHome />)}
             </StyledTabs>
         </StyledNavbar>
     );
