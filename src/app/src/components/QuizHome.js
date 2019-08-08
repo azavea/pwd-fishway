@@ -3,16 +3,18 @@ import { connect } from 'react-redux';
 import { func, number } from 'prop-types';
 import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Text, Button } from './custom-styled-components';
+import { Heading, Text, Button } from './custom-styled-components';
 import {
     showQuiz,
     clearQuizScore,
     setActiveTab,
     setBackgroundPosition,
 } from '../actions';
-import Header from './Heading';
 import { MEET, POSITIONS } from '../util/constants';
+import QuizMedallion from './QuizMedallion';
 
 const StyledQuizHome = styled(Flex)`
     text-align: center;
@@ -25,9 +27,20 @@ const StyledFinalQuizState = styled(StyledQuizHome)`
     margin-top: 15%;
 `;
 
-const StyledScore = styled(Header)`
-    font-weight: 900;
-    font-size: 8.5rem;
+const StyledScoreIntro = styled(Text)`
+    text-transform: uppercase;
+    font-weight: ${themeGet('fontWeights.semibold')};
+    letter-spacing: ${themeGet('letterSpacings.caps')};
+`;
+
+const StyledScoreContainer = styled(Flex)`
+    align-items: flex-end;
+    margin-bottom: ${themeGet('space.compact')};
+`;
+
+const StyledScore = styled(Heading)`
+    line-height: 0.8;
+    position: relative;
 `;
 
 const StyledButton = styled(Button)`
@@ -52,14 +65,23 @@ class QuizHome extends Component {
             bonusPoints += 100;
         }
 
+        const medallion = (
+            <QuizMedallion value={bonusPoints} isFinalScorePage={true} />
+        );
+
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
-                <Header variant='small'>YOU GOT A SCORE OF</Header>
-                <Flex alignItems='baseline'>
-                    <StyledScore>{quizScore + bonusPoints}</StyledScore>
-                    <Text variant='large'>/500 points</Text>
-                </Flex>
-                <Text variant='large'>
+                <StyledScoreIntro variant='large'>
+                    You got a score of
+                </StyledScoreIntro>
+                <StyledScoreContainer>
+                    <StyledScore variant='xxlarge'>
+                        {bonusPoints > 0 && medallion}
+                        {quizScore + bonusPoints}
+                    </StyledScore>
+                    <Text variant='xlarge'>/500 points</Text>
+                </StyledScoreContainer>
+                <Text variant='large' width={2 / 3}>
                     Brush up on on your fish knowledge on the Meet the Fish page
                     or try again to improve your score
                 </Text>
@@ -79,15 +101,16 @@ class QuizHome extends Component {
                         onClick={() => dispatch(clearQuizScore())}
                     >
                         Try again
+                        <FontAwesomeIcon icon={['far', 'undo']} pull='right' />
                     </StyledButton>
                 </Flex>
             </StyledFinalQuizState>
         ) : (
             <StyledFinalQuizState>
-                <Box width={1 / 2} mb='4'>
-                    <Header as='h1' variant='medium'>
+                <Box width={880} mb='4'>
+                    <Heading as='h1' variant='medium'>
                         Test your skills
-                    </Header>
+                    </Heading>
                     <Text as='p' variant='large'>
                         Aquatic biologists need to identify each fish that moves
                         through the fishway. This can be tough, because fish

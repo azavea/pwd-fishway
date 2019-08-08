@@ -5,4 +5,5 @@ export const QuizFish = shape({
     Fish,
     videoPath: string.isRequired,
     hint: string.isRequired,
+    largePicturePath: string.isRequired,
 });

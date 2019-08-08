@@ -1,9 +1,10 @@
 import { arrayOf, func } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Flex } from 'rebass';
+import { Flex } from 'rebass';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from './custom-styled-components';
 
 import QuizOption from './QuizOption';
 import QuizHint from './QuizHint';
@@ -12,27 +13,35 @@ import { QuizFish } from '../util/QuizFish';
 import { Fish } from '../util/Fish';
 
 const StyledQuizQuestion = styled(Flex)`
-    text-align: center;
-    background: ${themeGet('colors.teals.0')};
+    height: calc(100vh - ${themeGet('navHeight')});
     flex-direction: column;
+    justify-content: center;
 `;
 
 const Options = styled(Flex)`
-    flex-direction: row;
+    top: ${themeGet('navHeight')};
     flex-wrap: wrap;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    > div:nth-child(2n) img {
+        animation-delay: 0.75s;
+    }
+
+    > div:nth-child(3n) img {
+        animation-delay: 1.25s;
+    }
 `;
 
-const GetHintButton = styled(Button)`
-    background: transparent;
-    width: fit-content;
-    margin-left: auto;
+const StyledHintButton = styled(Button)`
+    position: absolute;
+    padding: ${themeGet('space.compact')};
+    right: ${themeGet('space.normal')};
+    bottom: ${themeGet('space.normal')};
 `;
 
 const StyledQuizOption = styled(QuizOption)`
-    width: 45%;
-    height: 45%;
-    margin: auto;
+    flex: 0 0 40%;
 `;
 
 class QuizQuestion extends React.Component {
@@ -75,10 +84,13 @@ class QuizQuestion extends React.Component {
         const hintTag = showHint ? (
             <QuizHint hint={hint} />
         ) : (
-            <GetHintButton onClick={() => this.setState({ usedHint: true })}>
+            <StyledHintButton
+                variant='link'
+                onClick={() => this.setState({ usedHint: true })}
+            >
                 <FontAwesomeIcon icon={['fas', 'info-circle']} />
                 &nbsp;Give me a hint
-            </GetHintButton>
+            </StyledHintButton>
         );
 
         const options = choices.map((fish, idx) => (

@@ -21,6 +21,11 @@ const Text = styled(BaseText)`
             font-style: ${props.fontStyle};
         `};
     ${props =>
+        props.variant === 'xlarge' &&
+        css`
+            font-size: ${themeGet('fontSizes.3')};
+        `};
+    ${props =>
         props.variant === 'large' &&
         css`
             font-size: ${themeGet('fontSizes.2')};

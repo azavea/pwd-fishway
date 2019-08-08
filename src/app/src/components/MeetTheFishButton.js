@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { func, number, bool } from 'prop-types';
+import { themeGet } from 'styled-system';
 
 import { CatalogFish } from '../util/CatalogFish';
 import { FISH_MODAL_OPEN_DELAY } from '../util/constants';
@@ -60,8 +61,7 @@ const FishButton = styled.button`
 `;
 
 const FishImage = styled.img`
-    max-width: 350px;
-    max-height: 400px;
+    max-height: 125px;
     z-index: 1;
     position: relative;
     animation-name: ${fishBounce};
@@ -75,6 +75,7 @@ const StyledFishNames = styled(FishNames)`
     transform: translateY(-20%);
     text-shadow: 1px 0px rgba(0, 0, 0, 0.6);
     will-change: transform;
+    margin-top: ${themeGet('space.normal')};
 
     ${FishButton}.is-selected & {
         opacity: 1;

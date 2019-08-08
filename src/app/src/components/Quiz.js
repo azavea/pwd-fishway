@@ -20,11 +20,14 @@ import { hideQuiz, saveQuizScore } from '../actions';
 
 const QuizContainer = styled(Flex)`
     text-align: center;
-    background: ${themeGet('colors.teals.0')};
 `;
 
 const QuizBody = styled(Box)`
-    background: ${themeGet('colors.teals.2')};
+    background: linear-gradient(
+        -180deg,
+        ${themeGet('colors.teals.2')} 0%,
+        ${themeGet('colors.teals.3')} 100%
+    );
 `;
 
 class Quiz extends React.Component {
@@ -44,6 +47,7 @@ class Quiz extends React.Component {
             results: [],
             question: 0,
             score: 0,
+            pointsGained: 0,
             answers,
             choices,
         };
@@ -63,6 +67,7 @@ class Quiz extends React.Component {
 
         this.setState(prevState => ({
             score: prevState.score + pointsGained,
+            pointsGained,
             currentResult: result,
             results: prevState.results.concat(result),
         }));
@@ -76,6 +81,7 @@ class Quiz extends React.Component {
                 this.setState(prevState => ({
                     currentResult: null,
                     question: prevState.question + 1,
+                    pointsGained: 0,
                 }));
         }, GUESS_MESSAGE_TIME);
     };
@@ -85,6 +91,7 @@ class Quiz extends React.Component {
             choices,
             currentResult,
             score,
+            pointsGained,
             results,
             question,
             answers,
@@ -118,7 +125,11 @@ class Quiz extends React.Component {
                     results={results}
                     isQuestionActive={currentResult === null}
                 />
-                <QuizBadge dispatch={this.props.dispatch} score={score} />
+                <QuizBadge
+                    dispatch={this.props.dispatch}
+                    score={score}
+                    pointsGained={pointsGained}
+                />
                 {quizState}
             </Box>
         );

@@ -23,6 +23,10 @@ const StyledSidebar = styled(Flex)`
     text-align: center;
     padding: 3.95rem ${themeGet('space.comfortable')};
     height: calc(100vh - ${themeGet('navHeight')});
+
+    video {
+        width: 30rem;
+    }
 `;
 
 const FooterNotes = styled(Text)`

@@ -37,9 +37,13 @@ const FishReelContainer = styled(Box)`
 
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
-    width: 244%;
-    margin-top: 2rem;
-    padding-left: 4%;
+    width: 238%;
+    margin-top: 4rem;
+    padding-left: 5%;
+
+    > div {
+        margin-right: 1%;
+    }
 
     > div button {
         &.is-large img {

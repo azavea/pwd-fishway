@@ -24,13 +24,13 @@ import {
     faLongArrowRight,
     faLongArrowLeft,
     faQuestionCircle,
+    faExclamationCircle,
     faUndo,
 } from '@fortawesome/pro-regular-svg-icons';
 import {
     faInfoCircle as fasInfoCircle,
     faVideo,
     faVolumeSlash,
-    faExclamationCircle,
     faVolume,
     faFish,
     faPlayCircle,
