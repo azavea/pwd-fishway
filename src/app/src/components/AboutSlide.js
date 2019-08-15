@@ -100,12 +100,14 @@ export default class AboutSlide extends Component {
             descriptionIntro,
             description,
             job,
+            formerEmployee,
             name,
             title,
             videoPath,
         } = this.props;
         const muteIcon = this.state.muted ? 'volume' : 'volume-slash';
         const muteIconColor = this.state.muted ? '#fff' : '#666';
+        const tense = formerEmployee ? 'did' : 'does';
 
         return (
             <StyledAboutSlide>
@@ -145,7 +147,7 @@ export default class AboutSlide extends Component {
                             <NameText>{name}</NameText>
                             <JobText>{job}</JobText>
                             <Heading as='h3' variant='xSmall'>
-                                What he does
+                                What he {tense}
                             </Heading>
                         </>
                     )}

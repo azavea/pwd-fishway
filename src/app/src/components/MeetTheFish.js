@@ -102,7 +102,7 @@ const MeetTheFish = () => {
             <Header>
                 <Heading as='h1'>Meet the Fish</Heading>
                 <Subtitle as='p' variant='large'>
-                    Did you know over 48 species of fish live in the waterways
+                    Did you know over 59 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
                 </Subtitle>
             </Header>

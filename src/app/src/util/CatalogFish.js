@@ -1,10 +1,10 @@
-import { shape, string } from 'prop-types';
+import { shape, string, arrayOf } from 'prop-types';
 import { Fish } from './Fish';
 
 export const CatalogFish = shape({
     Fish,
-    overview: string.isRequired,
-    characteristics: string.isRequired,
-    habitat: string,
-    lifespan: string.isRequired,
+    overview: arrayOf(string).isRequired,
+    characteristics: arrayOf(string).isRequired,
+    habitat: arrayOf(string),
+    lifespan: arrayOf(string).isRequired,
 });
