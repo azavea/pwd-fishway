@@ -126,7 +126,7 @@ const QuizNavbar = props => {
         const incorrect = result && !correct;
         const setIconTheme = () => {
             if (isCurrent) {
-                return currentTheme;
+                return isQuestionActive ? currentTheme : theme;
             } else if (correct) {
                 return correctTheme;
             } else if (incorrect) {

@@ -116,14 +116,16 @@ class Quiz extends React.Component {
                     </QuizBody>
                 </QuizContainer>
             );
-
+        const isQuestionActive = currentResult === null;
         return (
             <Box>
                 <QuizNavbar
                     dispatch={this.props.dispatch}
-                    question={question}
+                    // Trick the navbar into showing results during the guess page
+                    // The cheap solution over restructuring quiz state management
+                    question={isQuestionActive ? question : question + 1}
                     results={results}
-                    isQuestionActive={currentResult === null}
+                    isQuestionActive={isQuestionActive}
                 />
                 <QuizBadge
                     dispatch={this.props.dispatch}
