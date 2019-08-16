@@ -3,7 +3,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import { Heading } from './custom-styled-components';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { setBackgroundPosition, setActiveTab } from '../actions';
@@ -15,6 +14,7 @@ import Fade from './Fade';
 import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
 const StyledTabs = styled(Tabs)`
+    height: 5rem;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -22,8 +22,10 @@ const StyledTabs = styled(Tabs)`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: ${themeGet('navHeight')};
-    border-bottom: 1px solid rgba(256, 256, 256, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${props => props.theme.bc};
+    transition: border-color 1s 0.25s ease-in;
 
     .nav-item {
         text-decoration: none;
@@ -45,18 +47,23 @@ const StyledTabs = styled(Tabs)`
             right: 0;
             bottom: -27px;
             height: 2px;
-            background: right center / 250%
-                linear-gradient(
-                    to right,
-                    ${themeGet('colors.lightblues.0')} 0 20%,
-                    ${themeGet('colors.lightblues.1')} 25% 50%,
-                    transparent 50% 100%
-                );
+            background: right center / 250%;
+            background-image: linear-gradient(
+                to right,
+                ${props => props.theme.gl} 0 20%,
+                ${props => props.theme.gr} 25% 50%,
+                transparent 50% 100%
+            );
             border-radius: 2px;
             opacity: 0;
             transition: background-position 0.25s ease-in,
-                opacity 0.25s 0.05s ease-in;
+                background-image 1s 0.25s ease-in, opacity 0.25s 0.05s ease-in;
         }
+    }
+
+    ${Heading} {
+        color: ${props => props.theme.c};
+        transition: color 1s 0.25s ease-in;
     }
 
     .nav-item:focus {
@@ -77,6 +84,20 @@ const StyledTabs = styled(Tabs)`
 const StyledNavbar = styled.div`
     display: ${props => props.hide};
 `;
+
+const theme = {
+    gl: '#d1f0f3',
+    gr: '#E7FDFF',
+    bc: 'rgba(256, 256, 256, 0.2)',
+    c: 'white',
+};
+
+const invertedTheme = {
+    gl: '#93b7d1',
+    gr: '#93b7d1',
+    bc: '#add8dc',
+    c: '#041820',
+};
 
 const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
     const titles = {
@@ -137,7 +158,13 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
 
     // TODO (#130): replace false with a transition to apply to Meet the Fish
     const getTransition = key => (key === MEET ? false : Fade);
-
+    const setNavTheme = key => {
+        if (key === 'testYourSkills') {
+            return invertedTheme;
+        } else {
+            return theme;
+        }
+    };
     return (
         <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
             <StyledTabs
@@ -147,6 +174,7 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
                     dispatch(setActiveTab(key));
                     dispatch(setBackgroundPosition(POSITIONS[key]));
                 }}
+                theme={setNavTheme(activeTab)}
             >
                 {tab(ABOUT, <About />)}
                 {tab(SEE, <SeeTheFishway />)}
