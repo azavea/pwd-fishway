@@ -122,7 +122,7 @@ export const ABOUT_PROFILES = [
         title: 'How do engineers use the fishway?',
         name: 'Chad Pindar',
         job: 'Former Water Resources Engineer, PWD',
-        formerEmployee: true,
+        isFormerEmployee: true,
         description:
             'Prepares computer models of rivers and streams, works on watershed restoration projects, and develops watershed management plans.',
         videoPath: engineerVideo,
