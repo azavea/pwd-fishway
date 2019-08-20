@@ -13,6 +13,12 @@ import QuizHome from './QuizHome';
 import Fade from './Fade';
 import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
+const TestHeading = styled(Heading)`
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+`;
+
 const StyledTabs = styled(Tabs)`
     height: 5rem;
     position: sticky;
@@ -22,9 +28,9 @@ const StyledTabs = styled(Tabs)`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-width: 1px;
+    border-bottom-width: 1px;
     border-style: solid;
-    border-color: ${props => props.theme.bc};
+    border-color: ${props => props.theme.bordercolor};
     transition: border-color 1s 0.25s ease-in;
 
     .nav-item {
@@ -45,13 +51,13 @@ const StyledTabs = styled(Tabs)`
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -27px;
+            bottom: -25px;
             height: 2px;
             background: right center / 250%;
             background-image: linear-gradient(
                 to right,
-                ${props => props.theme.gl} 0 20%,
-                ${props => props.theme.gr} 25% 50%,
+                ${props => props.theme.gleft} 0 20%,
+                ${props => props.theme.gright} 25% 50%,
                 transparent 50% 100%
             );
             border-radius: 2px;
@@ -59,10 +65,19 @@ const StyledTabs = styled(Tabs)`
             transition: background-position 0.25s ease-in,
                 background-image 1s 0.25s ease-in, opacity 0.25s 0.05s ease-in;
         }
+
+        &[data-rb-event-key='testYourSkills']::after {
+            bottom: -21px;
+        }
     }
 
     ${Heading} {
-        color: ${props => props.theme.c};
+        color: ${props => props.theme.color};
+        transition: color 1s 0.25s ease-in;
+    }
+
+    ${TestHeading} {
+        color: ${props => props.theme.testcolor};
         transition: color 1s 0.25s ease-in;
     }
 
@@ -86,17 +101,19 @@ const StyledNavbar = styled.div`
 `;
 
 const theme = {
-    gl: '#d1f0f3',
-    gr: '#E7FDFF',
-    bc: 'rgba(256, 256, 256, 0.2)',
-    c: 'white',
+    gleft: '#d1f0f3',
+    gright: '#E7FDFF',
+    bordercolor: 'rgba(256, 256, 256, 0.2)',
+    color: 'white',
+    testcolor: '#e9f563',
 };
 
 const invertedTheme = {
-    gl: '#93b7d1',
-    gr: '#93b7d1',
-    bc: '#add8dc',
-    c: '#041820',
+    gleft: '#93b7d1',
+    gright: '#93b7d1',
+    bordercolor: '#add8dc',
+    color: '#041820',
+    testcolor: '#041820',
 };
 
 const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
@@ -135,15 +152,14 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
             </Heading>
         ),
         [TEST]: (
-            <Heading as='span' variant='xSmall' opacity='0.8'>
+            <TestHeading as='span' variant='small' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['far', 'bullseye-pointer']}
                     pull='left'
-                    opacity='0.8'
                     size='lg'
                 />
                 Test your Skills
-            </Heading>
+            </TestHeading>
         ),
     };
 
