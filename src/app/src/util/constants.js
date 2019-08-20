@@ -634,7 +634,7 @@ export const FISH_CATALOG = [
             'The most common size of a hickory shad is about 12 to 15 inches. A very large specimen would measure 24 inches long, but hickory shad rarely reach two pounds.',
         ],
         habitat: [
-            'In its coastal ocean enviroment, the hickory shad feeds on squid, small fish, fish eggs and some invertebrates such as crabs and crustaceans. It is unknown whether or not hickory shad feed when they enter fresh water to spawn.',
+            'In its coastal ocean environment, the hickory shad feeds on squid, small fish, fish eggs and some invertebrates such as crabs and crustaceans. It is unknown whether or not hickory shad feed when they enter fresh water to spawn.',
         ],
         lifespan: [
             'Very little is actually known about the hickory shad’s life history, except that the species is anadromous. It is believed that hickory shad enter the Delaware estuary and Delaware River, and Chesapeake Bay and the Susquehanna River, in the spring, from April to June, to spawn.',
