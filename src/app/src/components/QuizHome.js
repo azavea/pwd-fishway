@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Lottie from 'react-lottie';
+import animationData from '../media/lotties/fish_swimming.json';
+
 import { Heading, Text, Button } from './custom-styled-components';
 import {
     showQuiz,
@@ -25,6 +28,8 @@ const StyledQuizHome = styled(Flex)`
 
 const StyledFinalQuizState = styled(StyledQuizHome)`
     margin-top: 15%;
+    z-index: 1;
+    position: relative;
 `;
 
 const StyledScoreIntro = styled(Text)`
@@ -45,6 +50,16 @@ const StyledScore = styled(Heading)`
 
 const StyledButton = styled(Button)`
     margin: 1rem;
+`;
+
+const StyledFishSwiming = styled(Box)`
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
 `;
 
 class QuizHome extends Component {
@@ -68,6 +83,25 @@ class QuizHome extends Component {
         const medallion = (
             <QuizMedallion value={bonusPoints} isFinalScorePage={true} />
         );
+
+        const defaultOptions = {
+            loop: true,
+            autoplay: true,
+            animationData: animationData,
+            rendererSettings: {
+                preserveAspectRatio: 'xMidYMid slice',
+                clearCanvas: true,
+                progressiveLoad: true,
+            },
+        };
+
+        const FishSwimming = () => {
+            return (
+                <StyledFishSwiming>
+                    <Lottie options={defaultOptions} />
+                </StyledFishSwiming>
+            );
+        };
 
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
@@ -95,7 +129,7 @@ class QuizHome extends Component {
                 </Text>
                 <Flex alignItems='baseline'>
                     <StyledButton
-                        mt='compact'
+                        mt='normal'
                         variant='secondary'
                         onClick={() => {
                             dispatch(setActiveTab(MEET));
@@ -105,7 +139,7 @@ class QuizHome extends Component {
                         Meet The Fish
                     </StyledButton>
                     <StyledButton
-                        mt='compact'
+                        mt='normal'
                         onClick={() => dispatch(clearQuizScore())}
                     >
                         Try again
@@ -114,28 +148,33 @@ class QuizHome extends Component {
                 </Flex>
             </StyledFinalQuizState>
         ) : (
-            <StyledFinalQuizState>
-                <Box width={880} mb='4'>
-                    <Heading as='h1' variant='medium'>
-                        Test your skills
-                    </Heading>
-                    <Text as='p' variant='large'>
-                        Aquatic biologists monitor the live video feed captured
-                        by the fishway camera to identify and document each fish
-                        that moves through the fishway. This can be tough,
-                        because fish swim fast and are hard to see!
-                    </Text>
-                    <Text as='p'>
-                        Watch the video clip of fish moving through the fishway
-                        and match it to the correct species of fish. Work
-                        quickly and carefully to get the highest score!
-                    </Text>
-                </Box>
-                <Button mt='compact' onClick={() => dispatch(showQuiz())}>
-                    Play
-                </Button>
-            </StyledFinalQuizState>
+            <>
+                <StyledFinalQuizState>
+                    <Box width={880} mb='4'>
+                        <Heading as='h1' variant='medium'>
+                            Test your skills
+                        </Heading>
+                        <Text as='p' variant='large'>
+                            Aquatic biologists monitor the live video feed
+                            captured by the fishway camera to identify and
+                            document each fish that moves through the fishway.
+                            This can be tough, because fish swim fast and are
+                            hard to see!
+                        </Text>
+                        <Text as='p'>
+                            Watch the video clip of fish moving through the
+                            fishway and match it to the correct species of fish.
+                            Work quickly and carefully to get the highest score!
+                        </Text>
+                    </Box>
+                    <Button mt='normal' onClick={() => dispatch(showQuiz())}>
+                        Play
+                    </Button>
+                </StyledFinalQuizState>
+                <FishSwimming />
+            </>
         );
+
         return <StyledQuizHome>{quizHomeState}</StyledQuizHome>;
     }
 }
