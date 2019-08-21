@@ -152,7 +152,7 @@ const QuizMedallion = ({ value, isFinalScorePage }) => {
 };
 
 QuizMedallion.propTypes = {
-    score: number.isRequired,
+    score: number,
     isFinalScorePage: bool,
 };
 

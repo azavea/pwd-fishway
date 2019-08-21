@@ -3,7 +3,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import { Heading } from './custom-styled-components';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { setBackgroundPosition, setActiveTab } from '../actions';
@@ -14,7 +13,14 @@ import QuizHome from './QuizHome';
 import Fade from './Fade';
 import { ABOUT, SEE, MEET, TEST, POSITIONS } from '../util/constants';
 
+const TestHeading = styled(Heading)`
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+`;
+
 const StyledTabs = styled(Tabs)`
+    height: 5rem;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -22,8 +28,10 @@ const StyledTabs = styled(Tabs)`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: ${themeGet('navHeight')};
-    border-bottom: 1px solid rgba(256, 256, 256, 0.2);
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: ${props => props.theme.bordercolor};
+    transition: border-color 1s 0.25s ease-in;
 
     .nav-item {
         text-decoration: none;
@@ -43,20 +51,34 @@ const StyledTabs = styled(Tabs)`
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -27px;
+            bottom: -25px;
             height: 2px;
-            background: right center / 250%
-                linear-gradient(
-                    to right,
-                    ${themeGet('colors.lightblues.0')} 0 20%,
-                    ${themeGet('colors.lightblues.1')} 25% 50%,
-                    transparent 50% 100%
-                );
+            background: right center / 250%;
+            background-image: linear-gradient(
+                to right,
+                ${props => props.theme.gleft} 0 20%,
+                ${props => props.theme.gright} 25% 50%,
+                transparent 50% 100%
+            );
             border-radius: 2px;
             opacity: 0;
             transition: background-position 0.25s ease-in,
-                opacity 0.25s 0.05s ease-in;
+                background-image 1s 0.25s ease-in, opacity 0.25s 0.05s ease-in;
         }
+
+        &[data-rb-event-key='testYourSkills']::after {
+            bottom: -21px;
+        }
+    }
+
+    ${Heading} {
+        color: ${props => props.theme.color};
+        transition: color 1s 0.25s ease-in;
+    }
+
+    ${TestHeading} {
+        color: ${props => props.theme.testcolor};
+        transition: color 1s 0.25s ease-in;
     }
 
     .nav-item:focus {
@@ -77,6 +99,22 @@ const StyledTabs = styled(Tabs)`
 const StyledNavbar = styled.div`
     display: ${props => props.hide};
 `;
+
+const theme = {
+    gleft: '#d1f0f3',
+    gright: '#E7FDFF',
+    bordercolor: 'rgba(256, 256, 256, 0.2)',
+    color: 'white',
+    testcolor: '#e9f563',
+};
+
+const invertedTheme = {
+    gleft: '#93b7d1',
+    gright: '#93b7d1',
+    bordercolor: '#add8dc',
+    color: '#041820',
+    testcolor: '#041820',
+};
 
 const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
     const titles = {
@@ -114,15 +152,14 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
             </Heading>
         ),
         [TEST]: (
-            <Heading as='span' variant='xSmall' opacity='0.8'>
+            <TestHeading as='span' variant='small' opacity='0.8'>
                 <FontAwesomeIcon
                     icon={['far', 'bullseye-pointer']}
                     pull='left'
-                    opacity='0.8'
                     size='lg'
                 />
                 Test your Skills
-            </Heading>
+            </TestHeading>
         ),
     };
 
@@ -137,7 +174,13 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
 
     // TODO (#130): replace false with a transition to apply to Meet the Fish
     const getTransition = key => (key === MEET ? false : Fade);
-
+    const setNavTheme = key => {
+        if (key === 'testYourSkills') {
+            return invertedTheme;
+        } else {
+            return theme;
+        }
+    };
     return (
         <StyledNavbar hide={isQuizVisible ? 'none' : 'visible'}>
             <StyledTabs
@@ -147,6 +190,7 @@ const Navbar = ({ dispatch, activeTab, isQuizVisible }) => {
                     dispatch(setActiveTab(key));
                     dispatch(setBackgroundPosition(POSITIONS[key]));
                 }}
+                theme={setNavTheme(activeTab)}
             >
                 {tab(ABOUT, <About />)}
                 {tab(SEE, <SeeTheFishway />)}
