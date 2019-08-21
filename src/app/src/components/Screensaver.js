@@ -28,10 +28,10 @@ const Screensaver = props => {
                     opacity={0.9}
                     lineHeight='medium'
                 >
-                    Learn how fishways help fish reach their spawning grounds
+                    Learn how fishways help fish reach their spawning habitats
                     and test your fish identification skills!
                 </Heading>
-                <Button>Let’s go!</Button>
+                <Button>Dive in!</Button>
             </Box>
         </StyledScreensaver>
     );

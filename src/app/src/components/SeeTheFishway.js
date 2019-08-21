@@ -99,10 +99,16 @@ const SeeTheFishway = ({ showConnectionError }) => {
                 <Box>
                     <PageTitle as='h1'>See the Fishway</PageTitle>
                     <Text as='p' variant='large'>
-                        In Springtime, fish travel upriver to their spawning
-                        grounds to mate and lay their eggs — this is when the
-                        fishway is bursting with activity. Biologists monitor
-                        the fish moving up and down the river.
+                        During the Spring migration, the river becomes a living
+                        highway for fish and other aquatic species. A video
+                        camera transmits live images to this exhibit, and to
+                        aquatic biologists for real-time monitoring.
+                    </Text>
+                    <Text as='p'>
+                        Biologists study and document fish movement up and down
+                        the river. In Springtime, fish travel upriver to their
+                        spawning grounds, to mate and lay eggs. This is when the
+                        Fish Ladder is most active.
                     </Text>
                 </Box>
                 <Subtitle as='h2' variant='small'>

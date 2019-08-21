@@ -131,7 +131,7 @@ const FishCircle = styled.div`
 const StyledFishName = styled(Heading)`
     color: ${themeGet('colors.darkbrown')};
     line-height: ${themeGet('lineHeights.compact')};
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.4rem;
 `;
 
 const StyledFishScientificName = styled(Text)`
@@ -139,6 +139,7 @@ const StyledFishScientificName = styled(Text)`
     color: ${themeGet('colors.darkbrown')};
     line-height: ${themeGet('lineHeights.compact')};
     margin-bottom: ${themeGet('space.normal')};
+    font-weight: ${themeGet('fontWeights.medium')};
 `;
 
 const StyledHeading = styled(Heading)`
@@ -149,6 +150,7 @@ const StyledHeading = styled(Heading)`
 
 const StyledText = styled(Text)`
     color: ${themeGet('colors.darkbrown')};
+    margin-bottom: 0.85rem;
 `;
 
 const Content = styled(Box)`
@@ -333,6 +335,37 @@ export default class MeetTheFishModal extends Component {
             );
         });
 
+        const overviewParagraphs = fish.overview.map((paragraph, index) => (
+            <StyledText as='p' key={fish.commonName + ' overview ' + index}>
+                {paragraph}
+            </StyledText>
+        ));
+
+        const characteristicsParagraphs = fish.characteristics.map(
+            (paragraph, index) => (
+                <StyledText
+                    as='p'
+                    key={fish.commonName + ' characteristics ' + index}
+                >
+                    {paragraph}
+                </StyledText>
+            )
+        );
+
+        const habitatParagraphs =
+            fish.habitat !== undefined &&
+            fish.habitat.map((paragraph, index) => (
+                <StyledText as='p' key={fish.commonName + ' habitat ' + index}>
+                    {paragraph}
+                </StyledText>
+            ));
+
+        const lifespanParagraphs = fish.lifespan.map((paragraph, index) => (
+            <StyledText as='p' key={fish.commonName + ' lifespan ' + index}>
+                {paragraph}
+            </StyledText>
+        ));
+
         return (
             <StyledPopup
                 open={open}
@@ -383,29 +416,27 @@ export default class MeetTheFishModal extends Component {
                                     <StyledHeading as='h4' variant='small'>
                                         Overview
                                     </StyledHeading>
-                                    <StyledText>{fish.overview}</StyledText>
+                                    {overviewParagraphs}
                                 </section>
                                 <section id='section-characteristics'>
                                     <StyledHeading as='h4' variant='small'>
                                         Characteristics
                                     </StyledHeading>
-                                    <StyledText>
-                                        {fish.characteristics}
-                                    </StyledText>
+                                    {characteristicsParagraphs}
                                 </section>
-                                {fish.habitat !== '' && (
+                                {fish.habitat !== undefined && (
                                     <section id='section-habitat'>
                                         <StyledHeading as='h4' variant='small'>
                                             Habitat
                                         </StyledHeading>
-                                        <StyledText>{fish.habitat}</StyledText>
+                                        {habitatParagraphs}
                                     </section>
                                 )}
                                 <section id='section-lifespan'>
                                     <StyledHeading as='h4' variant='small'>
                                         Lifespan
                                     </StyledHeading>
-                                    <StyledText>{fish.lifespan}</StyledText>
+                                    {lifespanParagraphs}
                                 </section>
                             </Content>
 
