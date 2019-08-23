@@ -75,8 +75,7 @@ class QuizQuestion extends React.Component {
 
         const showHint = guessed.length > 0 || usedHint;
 
-        // TODO (Issue #96): Remove the default value here when we get hint text
-        let hint = answer.hint || `it's ${answer.commonName}`;
+        let hint = answer.hint;
         if (guessed.length > 0) {
             hint = 'Almost! ' + hint;
         }

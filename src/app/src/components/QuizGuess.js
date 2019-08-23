@@ -80,6 +80,15 @@ const CaptionText = styled(Box)`
     transform: scale(1.25);
 `;
 
+const Hint = styled(Text)`
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 42rem;
+    text-align: center;
+`;
+
 const QuizGuess = ({ answer, correct }) => {
     const correctText = (
         <CorrectMessage variant='xxlarge'>Correct!</CorrectMessage>
@@ -109,9 +118,9 @@ const QuizGuess = ({ answer, correct }) => {
                     </CaptionText>
                 </FishContainer>
             </Answer>
-            <Text as='h2' variant='xSmall'>
+            <Hint as='h2' variant='base'>
                 {answer.hint}
-            </Text>
+            </Hint>
         </StyledQuizGuess>
     );
 };

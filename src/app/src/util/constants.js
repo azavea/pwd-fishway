@@ -83,7 +83,7 @@ import schuylkillVideo from '../media/about/schuylkill.mp4';
 export const PAUSE = 'PAUSE';
 export const RESET = 'RESET';
 export const MAX_IDLE_TIME = 180000; //in ms, should be 180000 (3 minutes)
-export const GUESS_MESSAGE_TIME = 2500; //in ms, should be 2500
+export const GUESS_MESSAGE_TIME = 3000; //in ms, should be 3000
 export const FISH_MODAL_OPEN_DELAY = 1000; //in ms, should be 1000
 export const NUM_QUIZ_QUESTIONS = 5;
 
@@ -902,55 +902,63 @@ export const QUIZ_FISH = [
     {
         ...AMERICAN_SHAD,
         videoPath: americanShadClip,
-        hint: '',
+        hint:
+            'Look for a relatively small and triangular dorsal fin (the fin on the back of the fish)!',
         largePicturePath: americanShadLargeIllustration,
     },
     {
         ...BLUEGILL,
         videoPath: bluegillClip,
-        hint: '',
+        hint:
+            'Look for a round body and a dorsal fin that spans a majority of the back of this species!',
         largePicturePath: bluegillLargeIllustration,
     },
     {
         ...CHANNEL_CATFISH,
         videoPath: channelCatfishClip,
-        hint: '',
+        hint:
+            'Look for a long and lean body and what looks like whiskers around the mouth!',
         largePicturePath: channelCatfishLargeIllustration,
     },
     {
         ...COMMON_CARP,
         videoPath: commonCarpClip,
-        hint: '',
+        hint:
+            'Look for the beautiful chess board-like scales and long dorsal fin!',
         largePicturePath: commonCarpLargeIllustration,
     },
     {
         ...QUILLBACK,
         videoPath: quillbackClip,
-        hint: '',
+        hint:
+            'Look for the stunning silver scales and the long pointy quill of a dorsal fin!',
         largePicturePath: quillbackLargeIllustration,
     },
     {
         ...STRIPED_BASS,
         videoPath: stripedBassClip,
-        hint: '',
+        hint:
+            'Look for the two part dorsal fin, silvery to olive green shading, and horizontal stripes!',
         largePicturePath: stripedBassLargeIllustration,
     },
     {
         ...HYBRID_STRIPED_BASS,
         videoPath: stripedBassHybridClip,
-        hint: '',
+        hint: 'Look for the broken horizontal stripe patterns on the body!',
         largePicturePath: stripedBassHybridLargeIllustration,
     },
     {
         ...WHITE_PERCH,
         videoPath: whitePerchClip,
-        hint: '',
+        hint:
+            'Look for a silvery-white body, a concave small mouth and two independent dorsal fins!',
         largePicturePath: whitePerchLargeIllustration,
     },
     {
         ...WHITE_SUCKER,
         videoPath: whiteSuckerClip,
-        hint: '',
+        hint:
+            'Look for a tail fin composed of two equally-sized lobes (looks like the letter V on its side)!',
         largePicturePath: whiteSuckerLargeIllustration,
     },
 ];
