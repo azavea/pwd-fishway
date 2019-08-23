@@ -58,11 +58,11 @@ class QuizHome extends Component {
 
         let bonusPoints = 0;
         if (secondsToCompleteQuiz < 31) {
-            bonusPoints += 200;
-        } else if (secondsToCompleteQuiz < 61) {
-            bonusPoints += 150;
-        } else if (secondsToCompleteQuiz < 121) {
             bonusPoints += 100;
+        } else if (secondsToCompleteQuiz < 61) {
+            bonusPoints += 50;
+        } else if (secondsToCompleteQuiz < 121) {
+            bonusPoints += 20;
         }
 
         const medallion = (
