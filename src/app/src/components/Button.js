@@ -31,6 +31,11 @@ const Button = styled(BaseButton)`
         outline: none;
     }
 
+    &:active {
+        opacity: 0.85;
+        transform: scale(0.95);
+    }
+
     ${props =>
         props.variant === 'primary' &&
         css`
@@ -48,6 +53,7 @@ const Button = styled(BaseButton)`
             font-size: ${themeGet('fontSizes.2')};
             font-weight: ${themeGet('fontWeights.semibold')};
             text-transform: uppercase;
+
             &:active {
                 animation: ${buttonKeyframes} 0.5s linear forwards;
                 box-shadow: inset 0px 0px 1px 3px ${themeGet('colors.greens.0')};
@@ -71,6 +77,7 @@ const Button = styled(BaseButton)`
             font-size: ${themeGet('fontSizes.2')};
             font-weight: ${themeGet('fontWeights.semibold')};
             text-transform: uppercase;
+
             &:active {
                 animation: ${buttonKeyframes} 0.5s linear forwards;
                 box-shadow: inset 0px 0px 1px 3px
@@ -90,9 +97,6 @@ const Button = styled(BaseButton)`
             opacity: 0.8;
             padding: 0;
         `};
-    &:active {
-        opacity: 0.5;
-    }
 
     ${props =>
         props.variant === 'close' &&
@@ -107,9 +111,6 @@ const Button = styled(BaseButton)`
             padding: 0;
             width: ${buttonWidth};
             height: 4rem;
-            &:active {
-                opacity: 0.8;
-            }
         `};
 `;
 
