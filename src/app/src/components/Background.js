@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 import { themeGet } from 'styled-system';
 import Lottie from 'react-lottie';
-import animationData from '../media/lotties/wave.json';
+import waveAnimationData from '../media/lotties/wave.json';
+import bubblesAnimationData from '../media/lotties/bubbles.json';
 
 const StyledBackground = styled(Box)`
     height: auto !important;
@@ -47,7 +48,31 @@ const StyledBackground = styled(Box)`
     }
 `;
 
+const Sun = styled(Box)`
+    border-radius: 100%;
+    position: absolute;
+    top: -180px;
+    right: 2%;
+    z-index: 2;
+    background: linear-gradient(
+        -243.43494882292202deg,
+        rgb(255, 243, 194) 0%,
+        rgb(255, 228, 143) 100%
+    );
+    border: 4px solid rgb(255, 228, 143);
+    box-shadow: 0px 0px 34px 0px rgb(255, 235, 164);
+    height: 146px;
+    width: 146px;
+`;
+
 const StyledWaves = styled(Box)`
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 0;
+`;
+
+const StyledBubbles = styled(Box)`
     position: absolute;
     left: 0;
     right: 0;
@@ -77,16 +102,16 @@ const RiverFloor = styled(Box)`
     }
 `;
 
-const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-
 const Waves = () => {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: waveAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <StyledWaves>
             <Lottie options={defaultOptions} />
@@ -94,9 +119,28 @@ const Waves = () => {
     );
 };
 
+const Bubbles = () => {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: bubblesAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
+    return (
+        <StyledBubbles>
+            <Lottie options={defaultOptions} />
+        </StyledBubbles>
+    );
+};
+
 const Background = ({ position }) => {
     return (
         <StyledBackground className={position}>
+            <Sun />
+            <Bubbles />
             <Waves />
             <RiverFloor />
         </StyledBackground>
