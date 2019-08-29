@@ -22,6 +22,7 @@ const StyledTextContainer = styled(Box)`
     z-index: 2;
     position: relative;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 10%;
 `;
 
 const StyledButton = styled(Button)`
@@ -69,7 +70,6 @@ const Screensaver = props => {
         {
             eventName: 'loaded_images',
             callback: () => {
-                console.log(lottieEl.current.anim.wrapper);
                 lottieEl.current.anim.wrapper.classList.add('show');
                 lottieEl.current.anim.play();
             },
@@ -89,7 +89,9 @@ const Screensaver = props => {
     };
 
     return (
-        <StyledScreensaver onClick={() => dispatch(hideScreensaver())}>
+        <StyledScreensaver
+            onClick={() => setTimeout(() => dispatch(hideScreensaver()), 400)}
+        >
             <StyledTextContainer width={4 / 5}>
                 <Heading
                     as='h1'
