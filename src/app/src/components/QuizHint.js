@@ -23,14 +23,17 @@ const slideIn = keyframes`
 
 const StyledQuizHint = styled(Box)`
     background: ${themeGet('colors.greens.2')};
-    text-align: center;
     width: fit-content;
     position: fixed;
     right: 0;
+    max-width: 32rem;
+    text-align: left;
+    text-indent: -1.5rem;
     bottom: ${themeGet('space.comfortable')};
     transform: translateX(100%);
     border-radius: 10px 0 0 10px;
-    padding: ${themeGet('space.compact')};
+    padding: ${themeGet('space.compact')} ${themeGet('space.compact')}
+        ${themeGet('space.compact')} 2.5rem;
     animation: ${slideIn} 0.15s cubic-bezier(0.33, 0.1, 0.6, 0.84) 0.3s forwards;
 
     ${Text} {
