@@ -6,7 +6,7 @@ import { Text } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
 import Lottie from 'react-lottie';
-import animationData from '../media/lotties/medallion.json';
+import animationData from '../animations/medallion';
 
 const StyledQuizMedallion = styled(Box)`
     position: absolute;

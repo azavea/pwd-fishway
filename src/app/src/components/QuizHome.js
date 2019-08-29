@@ -7,7 +7,7 @@ import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Lottie from 'react-lottie';
-import animationData from '../media/lotties/fish_swimming.json';
+import animationData from '../animations/fish_swimming';
 
 import { Heading, Text, Button } from './custom-styled-components';
 import {

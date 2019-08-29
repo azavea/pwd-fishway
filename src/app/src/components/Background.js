@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 import { themeGet } from 'styled-system';
 import Lottie from 'react-lottie';
-import waveAnimationData from '../media/lotties/wave.json';
-import bubblesAnimationData from '../media/lotties/bubbles.json';
+import waveAnimationData from '../animations/wave';
+import bubblesAnimationData from '../animations/bubbles';
 
 const StyledBackground = styled(Box)`
     height: auto !important;
