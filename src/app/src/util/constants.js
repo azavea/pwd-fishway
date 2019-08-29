@@ -3,8 +3,6 @@ import americanEelIllustration from '../media/meetthefish/american_eel_large.png
 import americanShadClip from '../media/quiz/american_shad_clip.mp4';
 import americanShadIllustration from '../media/meetthefish/american_shad_large.png';
 import americanShadLargeIllustration from '../media/quiz/american_shad_xlarge.png';
-import americanShadPhoto from '../media/seethefishway/american_shad.jpg';
-import americanShadVideo from '../media/seethefishway/american_shad.mp4';
 import bluebackHerringIllustration from '../media/meetthefish/blueback_herring_large.png';
 import bluegillClip from '../media/quiz/bluegill_clip.mp4';
 import bluegillIllustration from '../media/meetthefish/bluegill_large.png';
@@ -15,13 +13,9 @@ import carpVideo from '../media/seethefishway/carp.mp4';
 import channelCatfishClip from '../media/quiz/channel_catfish_clip.mp4';
 import channelCatfishIllustration from '../media/meetthefish/channel_catfish_large.png';
 import channelCatfishLargeIllustration from '../media/quiz/channel_catfish_xlarge.png';
-import channelCatfishPhoto from '../media/seethefishway/channel_catfish.jpg';
-import channelCatfishVideo from '../media/seethefishway/channel_catfish.mp4';
 import commonCarpClip from '../media/quiz/common_carp_clip.mp4';
 import commonCarpIllustration from '../media/meetthefish/common_carp_large.png';
 import commonCarpLargeIllustration from '../media/quiz/common_carp_xlarge.png';
-import commonCarpPhoto from '../media/seethefishway/common_carp.jpg';
-import commonCarpVideo from '../media/seethefishway/common_carp.mp4';
 import flatheadCatfishIllustration from '../media/meetthefish/flathead_catfish_large.png';
 import gizzardShadIllustration from '../media/meetthefish/gizzard_shad_large.png';
 import greenSunfishIllustration from '../media/meetthefish/green_sunfish_large.png';
@@ -33,17 +27,11 @@ import muskellungeIllustration from '../media/meetthefish/muskellunge_large.png'
 import pumpkinseedIllustration from '../media/meetthefish/pumpkinseed_large.png';
 import pumpkinseedPhoto from '../media/seethefishway/pumpkinseed.jpg';
 import pumpkinseedVideo from '../media/seethefishway/pumpkinseed.mp4';
-import quillbackCarpPhoto from '../media/seethefishway/quillback_carp.jpg';
-import quillbackCarpVideo from '../media/seethefishway/quillback_carp.mp4';
-import quillbackCatfishPhoto from '../media/seethefishway/quillback_catfish.jpg';
-import quillbackCatfishVideo from '../media/seethefishway/quillback_catfish.mp4';
 import quillbackClip from '../media/quiz/quillback_clip.mp4';
 import quillbackIllustration from '../media/meetthefish/quillback_large.png';
 import quillbackLargeIllustration from '../media/quiz/quillback_xlarge.png';
 import quillbackPhoto from '../media/seethefishway/quillback.jpg';
 import quillbackVideo from '../media/seethefishway/quillback.mp4';
-import quillbacksPhoto from '../media/seethefishway/quillbacks.jpg';
-import quillbacksVideo from '../media/seethefishway/quillbacks.mp4';
 import rainbowTroutIllustration from '../media/meetthefish/rainbow_trout_large.png';
 import rainbowTroutPhoto from '../media/seethefishway/rainbow_trout.jpg';
 import rainbowTroutVideo from '../media/seethefishway/rainbow_trout.mp4';
@@ -59,8 +47,6 @@ import stripedBassClip from '../media/quiz/striped_bass_clip.mp4';
 import stripedBassHybridClip from '../media/quiz/striped_bass_hybrid_clip.mp4';
 import stripedBassHybridIllustration from '../media/meetthefish/striped_bass_hybrid_large.png';
 import stripedBassHybridLargeIllustration from '../media/quiz/striped_bass_hybrid_xlarge.png';
-import stripedBassHybridPhoto from '../media/seethefishway/striped_bass_hybrid.jpg';
-import stripedBassHybridVideo from '../media/seethefishway/striped_bass_hybrid.mp4';
 import stripedBassIllustration from '../media/meetthefish/striped_bass_large.png';
 import stripedBassLargeIllustration from '../media/quiz/striped_bass_xlarge.png';
 import turtlePhoto from '../media/seethefishway/turtle.jpg';
@@ -69,8 +55,6 @@ import walleyeIllustration from '../media/meetthefish/walleye_large.png';
 import whitePerchClip from '../media/quiz/white_perch_clip.mp4';
 import whitePerchIllustration from '../media/meetthefish/white_perch_large.png';
 import whitePerchLargeIllustration from '../media/quiz/white_perch_xlarge.png';
-import whitePerchPhoto from '../media/seethefishway/white_perch.jpg';
-import whitePerchVideo from '../media/seethefishway/white_perch.mp4';
 import whiteSuckerClip from '../media/quiz/white_sucker_clip.mp4';
 import whiteSuckerIllustration from '../media/meetthefish/white_sucker_large.png';
 import whiteSuckerLargeIllustration from '../media/quiz/white_sucker_xlarge.png';
@@ -238,27 +222,12 @@ export const FISH_HIGHLIGHTS = [
             'Three American shad dart through the ladder during their annual spawning migration.',
     },
     {
-        ...AMERICAN_SHAD,
-        video: americanShadVideo,
-        photo: americanShadPhoto,
-        timestamp: 1085515200000,
-        notes:
-            'An American shad swims upstream during the annual spawning migration.',
-    },
-    {
         ...QUILLBACK,
         video: quillbackVideo,
         photo: quillbackPhoto,
         timestamp: 1115046300000,
         notes:
             'This fish is named for its pointed dorsal fin — thought to be in the shape of a ‘quill.’',
-    },
-    {
-        ...QUILLBACK,
-        video: quillbacksVideo,
-        photo: quillbacksPhoto,
-        timestamp: 1084454640000,
-        notes: 'Three quillbacks swim by the viewing window.',
     },
     {
         ...PUMPKINSEED,
@@ -275,13 +244,6 @@ export const FISH_HIGHLIGHTS = [
         timestamp: 1114074720000,
         notes:
             'Striped bass migrate upriver each year to spawn, much like the American shad.',
-    },
-    {
-        ...HYBRID_STRIPED_BASS,
-        video: stripedBassHybridVideo,
-        photo: stripedBassHybridPhoto,
-        timestamp: 1084279080000,
-        notes: 'A very large, hybrid striped bass — an excellent specimen.',
     },
     {
         commonName: 'Turtle',
@@ -317,50 +279,12 @@ export const FISH_HIGHLIGHTS = [
             'Two enormous carp move through the ladder at night. The first carp is over three feet long!',
     },
     {
-        ...COMMON_CARP,
-        video: commonCarpVideo,
-        photo: commonCarpPhoto,
-        timestamp: 1084512000000,
-        notes: 'A very large female carp, pregnant with eggs.',
-    },
-    {
-        commonName: `${QUILLBACK_COMMON_NAME} and ${COMMON_CARP_COMMON_NAME}`,
-        scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${COMMON_CARP_SCIENTIFIC_NAME}`,
-        video: quillbackCarpVideo,
-        photo: quillbackCarpPhoto,
-        timestamp: 1084417860000,
-        notes: 'A quillback and a carp try to swim together upriver.',
-    },
-    {
         commonName: 'River Otter',
         scientificName: 'Lutra canadensis',
         video: riverOtterVideo,
         photo: riverOtterPhoto,
         timestamp: 1111371600000,
         notes: 'River Otter swims through the fish ladder to star in a video.',
-    },
-    {
-        ...CHANNEL_CATFISH,
-        video: channelCatfishVideo,
-        photo: channelCatfishPhoto,
-        timestamp: 1084417680000,
-        notes: 'Catfish group, traveling at night.',
-    },
-    {
-        commonName: `${QUILLBACK_COMMON_NAME}s and ${CHANNEL_CATFISH_COMMON_NAME}`,
-        scientificName: `${QUILLBACK_SCIENTIFIC_NAME} and ${CHANNEL_CATFISH_SCIENTIFIC_NAME}`,
-        video: quillbackCatfishVideo,
-        photo: quillbackCatfishPhoto,
-        timestamp: 1084461660000,
-        notes:
-            'A group of quillbacks swim through the fish ladder, followed by two catfish.',
-    },
-    {
-        ...WHITE_PERCH,
-        video: whitePerchVideo,
-        photo: whitePerchPhoto,
-        timestamp: 1084379160000,
-        notes: 'A white perch darts through the water.',
     },
 ];
 
