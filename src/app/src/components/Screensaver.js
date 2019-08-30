@@ -1,13 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import { Heading, Button } from './custom-styled-components';
 import { themeGet } from 'styled-system';
-
-import Lottie from 'react-lottie';
-import animationData from '../animations/fish_swimming';
+import FishSwimming from './FishSwimming';
 
 import { hideScreensaver } from '../actions';
 
@@ -30,61 +28,8 @@ const StyledButton = styled(Button)`
     padding: ${themeGet('space.normal')} 5rem;
 `;
 
-const StyledFishSwiming = styled(Box)`
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-
-    .fish-swimming {
-        opacity: 0;
-        transition: opacity 2s;
-    }
-
-    .show .fish-swimming {
-        opacity: 1;
-    }
-`;
-
 const Screensaver = props => {
     const { dispatch } = props;
-
-    const lottieEl = useRef(null);
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: false,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-            clearCanvas: true,
-            progressiveLoad: true,
-            className: 'fish-swimming',
-        },
-    };
-
-    const eventListeners = [
-        {
-            eventName: 'loaded_images',
-            callback: () => {
-                lottieEl.current.anim.wrapper.classList.add('show');
-                lottieEl.current.anim.play();
-            },
-        },
-    ];
-
-    const FishSwimming = () => (
-        <StyledFishSwiming>
-            <Lottie
-                options={defaultOptions}
-                eventListeners={eventListeners}
-                ref={lottieEl}
-            />
-        </StyledFishSwiming>
-    );
 
     return (
         <StyledScreensaver

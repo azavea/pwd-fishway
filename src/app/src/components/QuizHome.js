@@ -5,9 +5,7 @@ import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import Lottie from 'react-lottie';
-import animationData from '../animations/fish_swimming';
+import FishSwimming from './FishSwimming';
 
 import { Heading, Text, Button } from './custom-styled-components';
 import {
@@ -53,16 +51,6 @@ const StyledButton = styled(Button)`
     margin: 1rem;
 `;
 
-const StyledFishSwiming = styled(Box)`
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-`;
-
 class QuizHome extends Component {
     componentWillUnmount() {
         const { dispatch } = this.props;
@@ -83,23 +71,6 @@ class QuizHome extends Component {
 
         const medallion = (
             <QuizMedallion value={bonusPoints} isFinalScorePage={true} />
-        );
-
-        const defaultOptions = {
-            loop: true,
-            autoplay: true,
-            animationData: animationData,
-            rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice',
-                clearCanvas: true,
-                progressiveLoad: true,
-            },
-        };
-
-        const FishSwimming = () => (
-            <StyledFishSwiming>
-                <Lottie options={defaultOptions} />
-            </StyledFishSwiming>
         );
 
         const quizHomeState = quizScore ? (
