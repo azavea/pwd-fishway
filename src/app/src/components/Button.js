@@ -31,7 +31,7 @@ const Button = styled(BaseButton)`
         outline: none;
     }
 
-    &:active {
+    &:hover {
         opacity: 0.85;
         transform: scale(0.95);
     }
@@ -54,7 +54,7 @@ const Button = styled(BaseButton)`
             font-weight: ${themeGet('fontWeights.semibold')};
             text-transform: uppercase;
 
-            &:active {
+            &:hover {
                 animation: ${buttonKeyframes} 0.5s linear forwards;
                 box-shadow: inset 0px 0px 1px 3px ${themeGet('colors.greens.0')};
             }
@@ -78,7 +78,7 @@ const Button = styled(BaseButton)`
             font-weight: ${themeGet('fontWeights.semibold')};
             text-transform: uppercase;
 
-            &:active {
+            &:hover {
                 animation: ${buttonKeyframes} 0.5s linear forwards;
                 box-shadow: inset 0px 0px 1px 3px
                     ${themeGet('colors.lightblues.0')};
