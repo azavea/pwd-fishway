@@ -39,7 +39,7 @@ const Circle = styled.div`
     transform: translate(-50%, -50%);
     border-radius: 400px;
     z-index: 1;
-    opacity: 0.25;
+    opacity: 0.15;
 `;
 
 const Message = styled(Heading)`
@@ -62,7 +62,7 @@ const FishContainer = styled(Flex)`
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    bottom: 25%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -81,11 +81,7 @@ const CaptionText = styled(Box)`
 `;
 
 const Hint = styled(Text)`
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 42rem;
+    max-width: 30rem;
     text-align: center;
 `;
 
@@ -95,7 +91,7 @@ const QuizGuess = ({ answer, correct }) => {
     );
     const incorrectText = (
         <Message variant='base' fontStyle='italic'>
-            Sorry, it was the:
+            Sorry, it was the
         </Message>
     );
     const message = correct ? correctText : incorrectText;
@@ -115,12 +111,13 @@ const QuizGuess = ({ answer, correct }) => {
                             commonName={answer.commonName}
                             scientificName={answer.scientificName}
                         />
+
+                        <Hint as='h2' variant='base'>
+                            {answer.hint}
+                        </Hint>
                     </CaptionText>
                 </FishContainer>
             </Answer>
-            <Hint as='h2' variant='base'>
-                {answer.hint}
-            </Hint>
         </StyledQuizGuess>
     );
 };

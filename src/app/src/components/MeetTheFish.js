@@ -38,7 +38,7 @@ const FishReelContainer = styled(Box)`
 const FishReel = styled(Flex)`
     flex-wrap: wrap;
     width: 238%;
-    margin-top: 4rem;
+    margin-top: 6rem;
     padding-left: 5%;
 
     > div {

@@ -35,12 +35,12 @@ const VideoCardButtonContainer = styled(Flex)`
     margin-top: ${themeGet('space.medium')};
 
     button {
-        flex: 0 0 14.15%;
+        flex: 0 0 17%;
         margin: 0 3% ${themeGet('space.medium')} 0;
         padding: 0;
     }
 
-    button:nth-child(6n) {
+    button:nth-child(5n) {
         margin: 0 0 ${themeGet('space.medium')};
     }
 `;

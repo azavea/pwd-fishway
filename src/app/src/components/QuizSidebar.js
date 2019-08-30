@@ -17,6 +17,15 @@ const StyledQuizSidebar = styled(Flex)`
     height: calc(100vh - ${themeGet('navHeight')});
 `;
 
+const StyledHeading = styled(Heading)`
+    margin-bottom: 0;
+`;
+
+const StyledText = styled(Text)`
+    max-width: 32rem;
+    margin-bottom: ${themeGet('space.comfortable')};
+`;
+
 const StyledVideoPlayer = styled(VideoPlayer)`
     video {
         width: 100% !important;
@@ -29,13 +38,13 @@ const QuizSidebar = ({ fish }) => {
     );
     return (
         <StyledQuizSidebar>
-            <Heading as='h2' variant='base'>
+            <StyledHeading as='h2' variant='base'>
                 Which fish is this?
-                <Text variant='base'>
-                    Tap the fish from the right which looks most like the one in
-                    the clip below.
-                </Text>
-            </Heading>
+            </StyledHeading>
+            <StyledText variant='base'>
+                Tap the fish from the right which looks most like the one in the
+                clip below.
+            </StyledText>
             {video}
         </StyledQuizSidebar>
     );
