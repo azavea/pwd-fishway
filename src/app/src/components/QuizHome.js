@@ -96,13 +96,11 @@ class QuizHome extends Component {
             },
         };
 
-        const FishSwimming = () => {
-            return (
-                <StyledFishSwiming>
-                    <Lottie options={defaultOptions} />
-                </StyledFishSwiming>
-            );
-        };
+        const FishSwimming = () => (
+            <StyledFishSwiming>
+                <Lottie options={defaultOptions} />
+            </StyledFishSwiming>
+        );
 
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>

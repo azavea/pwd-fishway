@@ -76,17 +76,15 @@ const Screensaver = props => {
         },
     ];
 
-    const FishSwimming = () => {
-        return (
-            <StyledFishSwiming>
-                <Lottie
-                    options={defaultOptions}
-                    eventListeners={eventListeners}
-                    ref={lottieEl}
-                />
-            </StyledFishSwiming>
-        );
-    };
+    const FishSwimming = () => (
+        <StyledFishSwiming>
+            <Lottie
+                options={defaultOptions}
+                eventListeners={eventListeners}
+                ref={lottieEl}
+            />
+        </StyledFishSwiming>
+    );
 
     return (
         <StyledScreensaver
