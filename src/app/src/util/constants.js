@@ -108,7 +108,7 @@ export const ABOUT_PROFILES = [
         job: 'Former Water Resources Engineer, PWD',
         isFormerEmployee: true,
         description:
-            'Prepares computer models of rivers and streams, works on watershed restoration projects, and develops watershed management plans.',
+            'Prepared computer models of rivers and streams, worked on watershed restoration projects, and developed watershed management plans.',
         videoPath: engineerVideo,
     },
     {
