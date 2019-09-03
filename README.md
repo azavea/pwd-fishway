@@ -50,6 +50,7 @@ The website hosted at the FWW Museum will be displayed on an ELO touchscreen of 
   - *Passive Event Listener Override* set to **True**
   - *Document Level Event Listeners Passive Default* set to **Enabled**
   - *Touch adjustment* set to **Enabled**
+  - *Pull to refresh* set to **Disabled**
 
 
 ### Ports
