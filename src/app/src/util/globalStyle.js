@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
         border: 0;
         vertical-align: baseline;
         height: 100%;
+        user-select: none;
     }
     ol, ul {
         list-style: none;
