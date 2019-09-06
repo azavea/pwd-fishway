@@ -6,6 +6,7 @@ import { themeGet } from 'styled-system';
 import { Heading, Text } from './custom-styled-components';
 import MeetTheFishButton from './MeetTheFishButton';
 import MeetTheFishModal from './MeetTheFishModal';
+import SwipePrompt from './SwipePrompt';
 
 import { FISH_CATALOG, FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
@@ -109,6 +110,7 @@ const MeetTheFish = () => {
             <FishReelContainer>
                 <FishReel>{fishButtons}</FishReel>
             </FishReelContainer>
+            <SwipePrompt />
         </StyledMeetTheFish>
     );
 };

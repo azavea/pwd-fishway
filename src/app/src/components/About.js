@@ -12,6 +12,7 @@ import { saveAboutSlideIndex, resetTimer } from '../actions';
 import { ABOUT_PROFILES } from '../util/constants';
 
 import AboutSlide from './AboutSlide';
+import SwipePrompt from './SwipePrompt';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
 const slidesToShow = 1;
@@ -96,6 +97,7 @@ class About extends Component {
                 >
                     {slides}
                 </Carousel>
+                <SwipePrompt />
             </StyledAbout>
         );
     }
