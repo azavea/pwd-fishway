@@ -91,11 +91,11 @@ const StyledLinkHeading = styled(Heading)`
 const FishPictureContainer = styled(Box)`
     position: absolute;
     top: 50%;
-    right: -1rem;
+    right: -3rem;
     transform: translateY(-50%);
 
     img {
-        width: 400px;
+        width: 485px;
         height: auto;
         animation: ${fishBounce} 3s infinite;
         position: relative;
@@ -112,11 +112,12 @@ const FishShadow = styled.div`
     bottom: -10%;
     height: 3%;
     filter: blur(5px);
+    mix-blend-mode: difference;
     animation: ${shadowSize} 3s infinite;
 `;
 
 const FishCircle = styled.div`
-    background: #faf8f3;
+    background: #d9f6f9;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -325,8 +326,8 @@ export default class MeetTheFishModal extends Component {
                     <FontAwesomeIcon
                         icon={['far', link.icon]}
                         pull='left'
-                        opacity='0.8'
                         size='lg'
+                        color='#1fb8c5'
                     />
                     <StyledLinkHeading as='span' variant='xSmall'>
                         {link.text}
