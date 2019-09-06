@@ -67,7 +67,7 @@ import schuylkillVideo from '../media/about/schuylkill.mp4';
 export const PAUSE = 'PAUSE';
 export const RESET = 'RESET';
 export const MAX_IDLE_TIME = 180000; //in ms, should be 180000 (3 minutes)
-export const GUESS_MESSAGE_TIME = 3000; //in ms, should be 3000
+export const GUESS_MESSAGE_TIME = 7000; //in ms, should be 7000
 export const FISH_MODAL_OPEN_DELAY = 1000; //in ms, should be 1000
 export const NUM_QUIZ_QUESTIONS = 5;
 

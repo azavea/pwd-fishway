@@ -73,6 +73,13 @@ class QuizHome extends Component {
             <QuizMedallion value={bonusPoints} isFinalScorePage={true} />
         );
 
+        const callToActionText =
+            quizScore >= 300
+                ? 'You are ready for a deeper dive! Let us know if you’d like to learn more about becoming a Fairmount Water Works water steward or getting involved with one of our freshwater mussel outreach programs!'
+                : quizScore >= 200
+                ? 'You might be ready for a deeper dive! Let us know if you’d like to learn more about becoming a Fairmount Water Works water steward or getting involved with one of our freshwater mussel outreach programs!'
+                : 'Brush up on on your fish knowledge on the Meet the Fish page or try again to improve your score.';
+
         const quizHomeState = quizScore ? (
             <StyledFinalQuizState>
                 <StyledScoreIntro variant='large'>
@@ -85,17 +92,8 @@ class QuizHome extends Component {
                     </StyledScore>
                     <Text variant='xlarge'>/500 points</Text>
                 </StyledScoreContainer>
-
                 <Text variant='large' width={880}>
-                    You might be ready for a deeper dive! Let us know if you’d
-                    like to learn more about becoming a water steward or getting
-                    involved with one of our freshwater mussel outreach
-                    programs!
-                </Text>
-
-                <Text variant='base' width={880}>
-                    Brush up on on your fish knowledge on the Meet the Fish page
-                    or try again to improve your score.
+                    {callToActionText}
                 </Text>
                 <Flex alignItems='baseline'>
                     <StyledButton
