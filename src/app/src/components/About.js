@@ -31,7 +31,7 @@ const StyledAbout = styled(Flex)`
     }
 
     .slider-slide {
-        opacity: 0.25;
+        opacity: 0;
         transition: opacity 0.25s;
     }
 
