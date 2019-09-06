@@ -254,7 +254,7 @@ export const FISH_HIGHLIGHTS = [
             'A turtle moves downstream through the ladder, carried along by the current.',
     },
     {
-        commonName: 'Snake',
+        commonName: 'River Snake',
         video: snakeVideo,
         photo: snakePhoto,
         timestamp: 1115907780000,
