@@ -10,6 +10,7 @@ const StyledPrompt = styled(Flex)`
     bottom: 2rem;
     right: 2rem;
     align-items: center;
+    pointer-events: none;
     transition: opacity 0.5s;
 
     &.animation-done {
