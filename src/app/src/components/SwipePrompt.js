@@ -17,15 +17,13 @@ const StyledPrompt = styled(Flex)`
     }
 `;
 
-const StyledSwipeHand = styled.div``;
-
 const StyledText = styled(Text)`
     font-style: italic;
     margin-top: 1rem;
     margin-left: 0.5rem;
 `;
 
-const SwipeHand = () => {
+const SwipeHand = ({ turnOffFunc, dispatch }) => {
     const defaultOptions = {
         loop: 1,
         autoplay: true,
@@ -42,18 +40,19 @@ const SwipeHand = () => {
                 document
                     .getElementById('swipe-prompt')
                     .classList.add('animation-done');
+                dispatch(turnOffFunc());
             },
         },
     ];
 
     return (
         <StyledPrompt id='swipe-prompt'>
-            <StyledSwipeHand>
+            <div>
                 <Lottie
                     options={defaultOptions}
                     eventListeners={eventListeners}
                 />
-            </StyledSwipeHand>
+            </div>
             <StyledText variant='base'>Swipe to continue</StyledText>
         </StyledPrompt>
     );

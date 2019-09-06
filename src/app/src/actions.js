@@ -17,3 +17,9 @@ export const setActiveTab = createAction('Set active tab');
 export const showConnectionErrorMessage = createAction(
     'Henceforth show error message for live feed when disconnected from the internet'
 );
+export const turnOffSwipePromptAboutTab = createAction(
+    'Turn off the Swipe Prompt from the About Tab'
+);
+export const turnOffSwipePromptMeetTheFishTab = createAction(
+    'Turn off the Swipe Prompt from the Meet The Fish Tab'
+);
