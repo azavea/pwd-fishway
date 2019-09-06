@@ -11,7 +11,7 @@ const StyledPrompt = styled(Flex)`
     right: 2rem;
     align-items: center;
     pointer-events: none;
-    transition: opacity 0.5s;
+    transition: opacity 1s 1s;
 
     &.animation-done {
         opacity: 0;
@@ -41,7 +41,7 @@ const SwipeHand = ({ turnOffFunc, dispatch }) => {
                 document
                     .getElementById('swipe-prompt')
                     .classList.add('animation-done');
-                dispatch(turnOffFunc());
+                setTimeout(() => dispatch(turnOffFunc()), 2000);
             },
         },
     ];
