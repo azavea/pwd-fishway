@@ -96,7 +96,7 @@ const SeeTheFishway = ({ showConnectionError }) => {
     return (
         <StyledSeeTheFishway>
             <SeeTheFishwayTray>
-                <Box>
+                <Box width={880}>
                     <PageTitle as='h1'>See the Fishway</PageTitle>
                     <Text as='p' variant='large'>
                         During the Spring migration, the river becomes a living
