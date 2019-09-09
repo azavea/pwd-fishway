@@ -35,8 +35,9 @@ const PlayButton = styled(Button)`
 
 const MuteButton = styled(Button)`
     position: absolute;
-    bottom: 0.75rem;
-    left: 1rem;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
 `;
 
 const VideoDescription = styled(Box)`

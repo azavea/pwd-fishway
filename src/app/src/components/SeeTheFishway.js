@@ -15,14 +15,14 @@ const StyledSeeTheFishway = styled(Flex)`
     height: 100%;
 `;
 
-const PageTitle = styled(Heading)`
-    margin-bottom: ${themeGet('space.small')};
-`;
-
 const SeeTheFishwayTray = styled(Flex)`
     flex-direction: column;
     width: 100%;
     padding: ${themeGet('space.comfortable')};
+`;
+
+const StyledPageTitle = styled(Heading)`
+    align-items: flex-start;
 `;
 
 const Subtitle = styled(Heading)`
@@ -96,8 +96,10 @@ const SeeTheFishway = ({ showConnectionError }) => {
     return (
         <StyledSeeTheFishway>
             <SeeTheFishwayTray>
-                <Box>
-                    <PageTitle as='h1'>See the Fishway</PageTitle>
+                <Box width={880}>
+                    <StyledPageTitle as='h1' variant='pageTitle'>
+                        See the Fishway
+                    </StyledPageTitle>
                     <Text as='p' variant='large'>
                         During the Spring migration, the river becomes a living
                         highway for fish and other aquatic species. A video

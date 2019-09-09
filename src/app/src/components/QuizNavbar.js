@@ -64,7 +64,7 @@ const correctTheme = {
 const incorrectTheme = {
     sw: '50px',
     s: 'rgba(49, 86, 105, 0.8)',
-    c: 'rgba(255, 255, 255, 0.38)',
+    c: 'rgba(41, 104, 130, 0.5)',
 };
 
 const FishIcon = styled(Box)`
@@ -87,9 +87,11 @@ const CorrectIcon = styled(FishIcon)`
 
 const IncorrectIcon = styled(FishIcon)`
     .icon {
-        color: ${themeGet('colors.white')};
+        color: ${themeGet('colors.teals.0')};
         top: 0;
         left: 54%;
+        opacity: 0.5;
+        mix-blend-mode: screen;
     }
 `;
 

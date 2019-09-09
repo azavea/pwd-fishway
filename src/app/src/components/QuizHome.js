@@ -121,7 +121,7 @@ class QuizHome extends Component {
             <>
                 <StyledFinalQuizState>
                     <Box width={880} mb='4'>
-                        <Heading as='h1' variant='medium'>
+                        <Heading as='h1' variant='pageTitle'>
                             Test your skills
                         </Heading>
                         <Text as='p' variant='large'>

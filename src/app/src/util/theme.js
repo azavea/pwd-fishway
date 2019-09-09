@@ -70,7 +70,7 @@ export default {
         large: '8rem',
     },
     maxWidths: {
-        xsmall: '30rem',
+        xsmall: '25rem',
         small: '42.875rem',
         med: '90rem',
         wide: '104.500rem',

@@ -112,7 +112,9 @@ const MeetTheFish = ({ showSwipePromptMeetTheFishTab, dispatch }) => {
     return (
         <StyledMeetTheFish>
             <Header>
-                <Heading as='h1'>Meet the Fish</Heading>
+                <Heading as='h1' variant='pageTitle'>
+                    Meet the Fish
+                </Heading>
                 <Subtitle as='p' variant='large'>
                     Did you know over 59 species of fish live in the waterways
                     of Philadelphia? Here are 24 of the most common species.
