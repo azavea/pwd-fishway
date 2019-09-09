@@ -93,7 +93,7 @@ class About extends Component {
 
         return (
             <StyledAbout>
-                <Heading as='h1' textAlign='center'>
+                <Heading as='h1' variant='pageTitle' textAlign='center'>
                     About
                 </Heading>
                 <Carousel

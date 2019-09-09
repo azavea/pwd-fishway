@@ -58,6 +58,26 @@ const Heading = styled(BaseHeading)`
             text-transform: uppercase;
             letter-spacing: 1px;
         `};
+    ${props =>
+        props.variant === 'pageTitle' &&
+        css`
+            font-size: ${themeGet('fontSizes.3')};
+            margin-bottom: ${themeGet('space.normal')};
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                content: '';
+                display: block;
+                margin-top: ${themeGet('space.small')};
+                width: 4rem;
+                height: 2px;
+                background: ${themeGet('colors.lightblues.0')};
+                opacity: 0.4;
+            }
+        `};
 `;
 
 Heading.displayName = 'Heading';
