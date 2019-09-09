@@ -117,7 +117,7 @@ const FishShadow = styled.div`
 `;
 
 const FishCircle = styled.div`
-    background: #d9f6f9;
+    background: #ddf4f0;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -327,7 +327,7 @@ export default class MeetTheFishModal extends Component {
                         icon={['far', link.icon]}
                         pull='left'
                         size='lg'
-                        color='#1fb8c5'
+                        color='#2a8171'
                     />
                     <StyledLinkHeading as='span' variant='xSmall'>
                         {link.text}
