@@ -15,6 +15,8 @@ import {
     setBackgroundPosition,
     setActiveTab,
     showConnectionErrorMessage,
+    turnOffSwipePromptAboutTab,
+    turnOffSwipePromptMeetTheFishTab,
 } from './actions';
 import { RESET, PAUSE, ABOUT } from './util/constants';
 
@@ -28,6 +30,8 @@ export const initialState = {
     secondsToCompleteQuiz: 0,
     activeTab: ABOUT,
     showConnectionError: false,
+    showSwipePromptAboutTab: true,
+    showSwipePromptMeetTheFishTab: true,
 };
 
 export default createReducer(
@@ -55,6 +59,10 @@ export default createReducer(
             update(state, { activeTab: { $set: payload } }),
         [showConnectionErrorMessage]: state =>
             update(state, { showConnectionError: { $set: true } }),
+        [turnOffSwipePromptAboutTab]: state =>
+            update(state, { showSwipePromptAboutTab: { $set: false } }),
+        [turnOffSwipePromptMeetTheFishTab]: state =>
+            update(state, { showSwipePromptMeetTheFishTab: { $set: false } }),
     },
     initialState
 );

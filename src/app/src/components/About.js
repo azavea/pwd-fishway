@@ -1,17 +1,22 @@
 import Carousel from 'nuka-carousel';
 import { Flex } from 'rebass';
 import { PagingDots } from 'nuka-carousel/lib';
-import { func, number } from 'prop-types';
+import { func, number, bool } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Heading } from './custom-styled-components';
 import { themeGet } from 'styled-system';
 
-import { saveAboutSlideIndex, resetTimer } from '../actions';
+import {
+    saveAboutSlideIndex,
+    resetTimer,
+    turnOffSwipePromptAboutTab,
+} from '../actions';
 import { ABOUT_PROFILES } from '../util/constants';
 
 import AboutSlide from './AboutSlide';
+import SwipePrompt from './SwipePrompt';
 
 // Amounts greater than 1 indicate how much of the surrounding slides to show
 const slidesToShow = 1;
@@ -65,7 +70,11 @@ class About extends Component {
     }
 
     render() {
-        const { dispatch, aboutSlideIndex } = this.props;
+        const {
+            dispatch,
+            aboutSlideIndex,
+            showSwipePromptAboutTab,
+        } = this.props;
 
         const slides = ABOUT_PROFILES.map((profile, index) => (
             <AboutSlide
@@ -74,6 +83,13 @@ class About extends Component {
                 {...profile}
             />
         ));
+
+        const swipePrompt = (
+            <SwipePrompt
+                turnOffFunc={turnOffSwipePromptAboutTab}
+                dispatch={dispatch}
+            />
+        );
 
         return (
             <StyledAbout>
@@ -96,6 +112,7 @@ class About extends Component {
                 >
                     {slides}
                 </Carousel>
+                {showSwipePromptAboutTab && swipePrompt}
             </StyledAbout>
         );
     }
@@ -104,12 +121,14 @@ class About extends Component {
 About.propTypes = {
     aboutSlideIndex: number.isRequired,
     dispatch: func.isRequired,
+    showSwipePromptAboutTab: bool.isRequired,
 };
 
 function mapStateToProps(state) {
     return {
         aboutSlideIndex: state.aboutSlideIndex,
         dispatch: state.dispatch,
+        showSwipePromptAboutTab: state.showSwipePromptAboutTab,
     };
 }
 

@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
+import { func, bool } from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Heading, Text } from './custom-styled-components';
 import MeetTheFishButton from './MeetTheFishButton';
 import MeetTheFishModal from './MeetTheFishModal';
+import SwipePrompt from './SwipePrompt';
 
+import { turnOffSwipePromptMeetTheFishTab } from '../actions';
 import { FISH_CATALOG, FISH_MODAL_OPEN_DELAY } from '../util/constants';
 
 const StyledMeetTheFish = styled(Flex)`
@@ -68,7 +72,7 @@ const FishReel = styled(Flex)`
     }
 `;
 
-const MeetTheFish = () => {
+const MeetTheFish = ({ showSwipePromptMeetTheFishTab, dispatch }) => {
     const [selectedFish, setSelectedFish] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -97,6 +101,14 @@ const MeetTheFish = () => {
             />
         </Box>
     ));
+
+    const swipePrompt = (
+        <SwipePrompt
+            turnOffFunc={turnOffSwipePromptMeetTheFishTab}
+            dispatch={dispatch}
+        />
+    );
+
     return (
         <StyledMeetTheFish>
             <Header>
@@ -109,8 +121,21 @@ const MeetTheFish = () => {
             <FishReelContainer>
                 <FishReel>{fishButtons}</FishReel>
             </FishReelContainer>
+            {showSwipePromptMeetTheFishTab && swipePrompt}
         </StyledMeetTheFish>
     );
 };
 
-export default MeetTheFish;
+MeetTheFish.propTypes = {
+    dispatch: func.isRequired,
+    showSwipePromptMeetTheFishTab: bool.isRequired,
+};
+
+function mapStateToProps(state) {
+    return {
+        dispatch: state.dispatch,
+        showSwipePromptMeetTheFishTab: state.showSwipePromptMeetTheFishTab,
+    };
+}
+
+export default connect(mapStateToProps)(MeetTheFish);
