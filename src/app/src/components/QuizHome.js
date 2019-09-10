@@ -122,7 +122,7 @@ class QuizHome extends Component {
                 <StyledFinalQuizState>
                     <Box width={880} mb='4'>
                         <Heading as='h1' variant='pageTitle'>
-                            Test your skills
+                            Test Your Skills
                         </Heading>
                         <Text as='p' variant='large'>
                             Aquatic biologists monitor the live video feed
