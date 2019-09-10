@@ -165,7 +165,7 @@ const QuizNavbar = props => {
     return (
         <StyledQuizNavbar>
             <Heading as='h1' variant='xSmall'>
-                Test your skills
+                Test Your Skills
             </Heading>
             <Flex>{icons}</Flex>
             {closeButton}
